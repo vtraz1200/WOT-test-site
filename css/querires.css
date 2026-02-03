@@ -1,0 +1,130 @@
+/* Responsive: stack neatly */
+@media (max-width: 900px) {
+  .footer {
+    padding: 4.8rem 2.4rem;
+  }
+
+  .logo-link-copy {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 1.6rem;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .footer-logo {
+    width: 120px;
+  }
+}
+
+/* Responsive: stack into 1 column on mobile */
+@media (max-width: 900px) {
+  .section-window-tint-prices {
+    padding: 4.8rem 2.4rem;
+  }
+
+  .tint-prices-container {
+    grid-template-columns: 1fr;
+    gap: 2.2rem;
+  }
+}
+
+/* responsive: stack nicely on mobile */
+@media (max-width: 900px) {
+  .booking-tint-container {
+    grid-template-columns: 1fr;
+    padding: 3.6rem;
+    gap: 3.2rem;
+  }
+
+  .booking-info {
+    text-align: center;
+  }
+
+  .booking-accent {
+    width: 100%;
+    height: 8px;
+    top: 0;
+    bottom: auto;
+  }
+
+  .booking-image {
+    height: 320px;
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .package-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .package-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .details-media {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+/* Responsive stacking */
+@media (max-width: 900px) {
+  .catcher {
+    grid-template-columns: 1fr;
+  }
+
+  .catch-img {
+    height: 26rem;
+    max-width: 48rem;
+  }
+
+  .catcher-information {
+    padding: 2.4rem;
+  }
+
+  .catcher-information h2.catcher-text {
+    font-size: 2.8rem;
+  }
+}
+
+/* Responsive: stack into one column */
+@media (max-width: 900px) {
+  .services-container {
+    grid-template-columns: 1fr;
+    gap: 3.2rem;
+  }
+
+  .services-image {
+    height: 28rem;
+  }
+
+  .service {
+    padding: 2.4rem;
+  }
+
+  .service-heading {
+    font-size: 2.8rem;
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .gallery-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gallery-images {
+    height: 22rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .gallery-container {
+    grid-template-columns: 1fr;
+  }
+  .gallery-images {
+    height: 24rem;
+  }
+}
