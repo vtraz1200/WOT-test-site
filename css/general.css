@@ -225,7 +225,7 @@ Bold: 700
 /* info slider  */
 .info-slider {
   /* margin-top: 9.6rem; */
-  max-width: 100rem;
+  max-width: 100%;
   margin: auto;
   overflow: hidden;
   /* border-radius: 12px; */
@@ -253,7 +253,7 @@ Bold: 700
 
 .info-content {
   position: absolute;
-  top: 2rem;
+  top: 8rem;
   left: 2rem;
   text-align: left;
   font-size: 2rem;
@@ -263,3 +263,93 @@ Bold: 700
   border-radius: 8px;
   max-width: 80%;
 }
+
+/* info-video section */
+
+.section-info-video {
+  padding: 6.4rem 2.4rem;
+  max-width: 120rem;
+  margin: 0 auto;
+  background: linear-gradient(
+    to right,
+    rgba(20, 20, 20, 0.95),
+    rgba(126, 16, 11, 0.95)
+  );
+}
+
+.info-video-container {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3.2rem;
+  align-items: center;
+}
+
+.info-video-media {
+  border-radius: 1.6rem;
+  overflow: hidden;
+  box-shadow: 0 1.2rem 3.2rem rgba(255, 255, 255, 0.25);
+}
+
+.info-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+/* Text styling */
+.info-video-text-box {
+  font-size: 1.8rem;
+  line-height: 1.7;
+  padding: 2.4rem;
+  border-radius: 1.6rem;
+  background-color: rgba(255, 255, 255);
+  box-shadow: 0 0.8rem 2.4rem rgba(0, 0, 0, 0.15);
+}
+
+/* may use still */
+/***********************************HEADER SECTION***********************************/
+
+.header-secondary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: rgb(0, 0, 0, 0.8); */
+  background-color: #e9ecef;
+
+  /* Because we want header to be sticky later */
+  height: 6.2rem;
+  padding: 3.6rem 4.8rem;
+  background: linear-gradient(
+    to right,
+    rgba(20, 20, 20, 0.95),
+    rgba(126, 16, 11, 0.95)
+  );
+
+  position: relative;
+}
+
+.sticky .header-secondary {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 6.2rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  /* background-color: rgb(0, 0, 0, 0.8); */
+  background: linear-gradient(
+    to right,
+    rgba(20, 20, 20, 0.95),
+    rgba(126, 16, 11, 0.95)
+  );
+
+  z-index: 999;
+  box-shadow: 0 1.2rem 3.2rem rgba(0, 0, 0, 0.03);
+}
+
+/* Fixes glitch */
+
+/* .sticky .section-hero-tint {
+  margin-top: 6.2rem;
+} */

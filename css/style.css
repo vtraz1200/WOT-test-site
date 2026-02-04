@@ -998,51 +998,6 @@ body {
 /***********************************TINT PAGE STYLING***********************************/
 /************************************************************************************/
 /************************************************************************************/
-/***********************************HEADER SECTION***********************************/
-
-.header-secondary {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  /* background-color: rgb(0, 0, 0, 0.8); */
-  background-color: #e9ecef;
-
-  /* Because we want header to be sticky later */
-  height: 6.2rem;
-  padding: 3.6rem 4.8rem;
-  background: linear-gradient(
-    to right,
-    rgba(20, 20, 20, 0.95),
-    rgba(126, 16, 11, 0.95)
-  );
-
-  position: relative;
-}
-
-.sticky .header-secondary {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-  height: 6.2rem;
-  padding-top: 0;
-  padding-bottom: 0;
-  /* background-color: rgb(0, 0, 0, 0.8); */
-  background: linear-gradient(
-    to right,
-    rgba(20, 20, 20, 0.95),
-    rgba(126, 16, 11, 0.95)
-  );
-
-  z-index: 999;
-  box-shadow: 0 1.2rem 3.2rem rgba(0, 0, 0, 0.03);
-}
-
-/* Fixes glitch */
-
-.sticky .section-hero-tint {
-  margin-top: 6.2rem;
-}
 
 /***********************************HERO SECTION***********************************/
 
@@ -1056,7 +1011,7 @@ body {
   background: url("../images/background-images/tinted-car-background.jpg")
     center / cover no-repeat;
   height: 100vh;
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
 }
@@ -1183,7 +1138,13 @@ body {
 .section-window-tint-benefits {
   border-top: solid 1px #7e100b;
   padding: 9.6rem;
-  background-color: #f2f2f2;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    url("../images/xpel/ppf-images/PPF-background.jpg");
+
+  background-size: cover;
+  background-position: center;
+  color: #fff; /* makes text readable */
   text-align: center;
 }
 
@@ -1192,7 +1153,7 @@ body {
   grid-template-columns: repeat(4, 1fr);
   column-gap: 2rem;
   border: solid 5px #7e100b;
-  background-color: #e9ecef;
+  background-color: rgb(233, 236, 239, 0.5);
   padding: 5rem;
   border-radius: 15px;
 }
@@ -1338,7 +1299,7 @@ body {
 /* Fixes glitch */
 
 .sticky .section-hero-ppf {
-  margin-top: 6.2rem;
+  /* margin-top: 6.2rem; */
 }
 
 /* Hero Section */
@@ -1349,10 +1310,13 @@ body {
 
 .section-hero-ppf {
   position: relative;
-  background: url("../images/background-images/ceramic-caoting-background.jpg")
-    center / cover no-repeat;
-  height: 90vh;
-  display: flex;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url("../images/background-images/ceramic-caoting-background.jpg") center /
+      cover no-repeat;
+  height: 100vh;
+  background-position: center 42%;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
 }
@@ -1362,15 +1326,9 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    120deg,
-    rgba(0, 0, 0, 0.7) 0%,
-    /* dark left */ rgba(0, 0, 0, 0) 50%,
-    /* fade out */ rgba(0, 0, 0, 0.7) 100% /* dark right */
-  );
-  background-size: 200% 100%; /* twice as wide for sliding effect */
-  animation: slideTint 8s linear infinite;
-  z-index: 1;
+  /* background-size: 200% 100%; twice as wide for sliding effect */
+  /* animation: slideTint 8s linear infinite; */
+  /* z-index: 1; */
 }
 
 /* Keep content on top */
