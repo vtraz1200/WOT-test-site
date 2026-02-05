@@ -93,6 +93,7 @@ Bold: 700
   transform: translate(-50%, -50%);
   text-align: center;
   width: 900px;
+  z-index: 1;
 }
 
 .heading-primary {
