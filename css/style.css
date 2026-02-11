@@ -45,7 +45,7 @@ body {
   position: relative;
   text-decoration: none;
   color: #f2f2f2;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
 }
 
 .main-nav-link:hover {
@@ -229,12 +229,12 @@ body {
 
 .catcher {
   display: grid;
-  grid-template-columns: 1fr 1.2fr 1fr; /* center gets slightly more space */
+  grid-template-columns: 0.65fr 1fr 0.65fr;
   align-items: center;
   gap: 3.2rem;
   max-width: 120rem; /* a bit tighter than 145rem looks more premium */
   margin: 0 auto;
-  padding: 0 2rem;
+  /* padding: 0 2rem; */
 
   /* subtle entrance animation */
   animation: catcherFadeUp 700ms ease-out both;
@@ -261,7 +261,7 @@ body {
 .catch-img {
   width: 100%;
   max-width: 30rem;
-  height: 34rem;
+  height: 30rem;
   object-fit: cover;
 
   border-radius: 2.4rem; /* less “pill”, more modern premium */
@@ -293,15 +293,14 @@ body {
 /* Make the inner heading look like a real CTA headline */
 .catcher-information h2.catcher-text {
   color: #111;
-  font-size: 3.2rem;
+  font-size: 2.4rem;
   line-height: 1.15;
-  letter-spacing: -0.5px;
   margin: 0;
 }
 
 /* Make the paragraph more readable */
 .catcher-information p.catcher-text {
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   line-height: 1.7;
   max-width: 48rem;
   margin: 0 auto;
