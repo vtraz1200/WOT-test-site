@@ -1291,7 +1291,7 @@ body {
 
 /************************************************************************************/
 /************************************************************************************/
-/***********************************CERAMIC COATING PAGE STYLING*********************/
+/***********************************PPF PAGE STYLING*********************/
 /************************************************************************************/
 /************************************************************************************/
 /* header */
@@ -1346,9 +1346,9 @@ body {
   }
 }
 
-/***********************************CERAMIC PACKAGES SECTION***********************************/
+/***********************************PPF  PACKAGES SECTION***********************************/
 /* =========================================================
-   CERAMIC PACKAGE PICKER (Light theme, #333 text)
+   PPF PICKER (Light theme, #333 text)
    Copy/paste CSS
    ========================================================= */
 
@@ -1560,6 +1560,157 @@ body {
 .btn-ghost:hover {
   transform: translateY(-1px);
 }
+
+/************************************************************************************/
+/************************************************************************************/
+/***********************************CERAMIC COATING PAGE STYLING*********************/
+/************************************************************************************/
+/************************************************************************************/
+
+.section-hero-ceramic > * {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.section-hero-ceramic {
+  position: relative;
+  background: url("../images/ceramic/ceramic-coating-backgrounds/ceramic-coating-hero-background.jpg")
+    center 38% / cover no-repeat;
+  height: 100vh;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+}
+
+.section-hero-ceramic::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  animation: fadeTint 1.2s ease-out forwards;
+}
+
+.section-ceramic-coating-prices {
+  padding: 9.6rem;
+  text-align: center;
+  border-top: solid 1px #7e100b;
+  background: linear-gradient(
+    to right,
+    rgba(20, 20, 20, 0.95),
+    rgba(126, 16, 11, 0.95)
+  );
+}
+
+.ceramic-prices-container {
+  max-width: 1100px;
+  margin: 3.2rem auto 0;
+
+  display: grid;
+  /* grid-template-columns: repeat(2, minmax(0, 1fr)); */
+  gap: 2.8rem;
+}
+
+.ceramic-card {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+
+  text-align: center;
+  padding: 3.2rem;
+  background-color: #e9ecef;
+  border-radius: 18px;
+  border: solid 2px rgba(126, 16, 11, 0.35);
+
+  box-shadow: 0 2.2rem 4.6rem rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+  will-change: transform;
+}
+
+/* subtle brand glow (same color, transparent) */
+.ceramic-card::before {
+  content: "";
+  position: absolute;
+  inset: -60px;
+  background: radial-gradient(
+    circle at 25% 20%,
+    rgba(126, 16, 11, 0.1),
+    transparent 55%
+  );
+  pointer-events: none;
+}
+
+.ceramic-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hover lift */
+.ceramic-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.22);
+}
+
+.ceramic-card-image {
+  width: 700px;
+  height: 400px;
+  object-fit: cover;
+
+  border-radius: 16px;
+  border: solid 2px rgba(126, 16, 11, 0.35);
+  box-shadow: 0 1.4rem 2.8rem rgba(0, 0, 0, 0.14);
+
+  margin: 0 auto 1.4rem;
+  display: block;
+}
+
+.ceramic-card-description-heading {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 0.35rem;
+}
+
+.ceramic-card li {
+  list-style: none;
+  position: relative;
+  padding-left: 1.8rem;
+  margin-bottom: 0.6rem;
+}
+.ceramic-card li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6rem;
+  width: 7px;
+  height: 7px;
+  background-color: #7e100b;
+  border-radius: 50%;
+}
+
+/* Turn OFF the custom bullets for this section */
+.ceramic-card li {
+  padding-left: 0;
+}
+
+.ceramic-card li::before {
+  content: none;
+}
+
+.ceramic-card-description {
+  color: #525252; /* softer than #333 */
+  font-size: 1.05rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ul {
+  padding-left: 17rem;
+} */
 
 /************************************************************************************/
 /************************************************************************************/

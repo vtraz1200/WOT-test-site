@@ -234,6 +234,13 @@ Bold: 700
   border: solid 1px #7e100b;
 }
 
+/* .info-slide-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(0.92);
+} */
+
 .info-track {
   display: flex;
   transition: transform 1s ease-in-out;
