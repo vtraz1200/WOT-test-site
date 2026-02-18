@@ -24,13 +24,13 @@ body {
   /* background-color: rgb(233, 236, 239, 0.8); */
 
   /* Because we want header to be sticky later */
-  height: 5.2rem;
-  padding: 3.6rem 4.8rem;
+  height: 4.2rem;
+  padding: 1.2rem 2rem;
   position: relative;
 }
 
 .logo {
-  height: 8rem;
+  height: 5rem;
 }
 
 /* Navigation  */
@@ -38,14 +38,14 @@ body {
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 3.2rem;
+  gap: 2.2rem;
 }
 
 .main-nav-link {
   position: relative;
   text-decoration: none;
   color: #f2f2f2;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .main-nav-link:hover {
@@ -176,8 +176,8 @@ body {
   top: 0;
   bottom: 0;
   width: 100%;
-  height: 6.2rem;
-  padding: 3.6rem 4.8rem;
+  /* height: 6.2rem; */
+  /* padding: 3.6rem 4.8rem; */
 
   /* background-color: rgb(0, 0, 0, 0.8); */
   background: linear-gradient(
@@ -224,7 +224,14 @@ body {
 /***********************************CATCHER SECTION***********************************/
 .section-catcher {
   padding: 9.6rem;
-  background-color: #f2f2f2;
+  /* background-color: #f2f2f2; */
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("../images/background-images/highwah-background.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .catcher {
@@ -348,7 +355,7 @@ body {
 
 .services-container {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 6rem 4rem; /* replaces row-gap/column-gap with a cleaner spacing system */
   padding-top: 3.2rem;
   max-width: 120rem;
@@ -360,14 +367,15 @@ body {
 .service {
   background: #fff;
   border-radius: 1.6rem;
-  padding: 3.2rem;
+  padding: 2.4rem;
   border: 1px solid rgba(0, 0, 0, 0.08);
   box-shadow: 0 1.4rem 3.2rem rgba(0, 0, 0, 0.08);
+  text-align: center;
 }
 
 .services-image {
   width: 100%;
-  max-width: 52rem; /* keeps images consistent */
+  max-width: 36rem;
   height: 36rem; /* gives consistent card-image height */
   object-fit: cover;
   border-radius: 1.6rem;
@@ -379,7 +387,7 @@ body {
 
 .service-heading {
   color: #111;
-  font-size: 3.2rem; /* slightly tighter */
+  font-size: 2.8rem; /* slightly tighter */
   letter-spacing: -0.5px;
   margin-bottom: 1.2rem;
 }
@@ -411,8 +419,8 @@ body {
 
 .service-text {
   color: #333;
-  font-size: 1.6rem;
-  line-height: 1.7;
+  font-size: 1.2rem;
+  line-height: 1.5;
 }
 
 /* Optional: make your button sit nicely (only if .btn needs help) */
@@ -474,18 +482,18 @@ body {
   margin: 0 auto;
 
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.6rem; /* professional spacing */
 }
 
 .gallery-images {
   width: 100%;
-  height: 26rem; /* key: consistent thumbnail size */
+  height: 20rem; /* key: consistent thumbnail size */
   object-fit: cover; /* key: crops nicely */
   display: block;
 
   border-radius: 1.6rem;
-  border: 1px solid rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 1.4rem 3.2rem rgba(0, 0, 0, 0.12);
 
   transform: translateY(0) scale(1);
