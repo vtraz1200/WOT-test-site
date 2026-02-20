@@ -590,10 +590,10 @@ body {
 }
 
 .testimonials-review {
-  font-size: 2rem;
+  font-size: 1.6rem;
   padding-top: 1.8rem;
   font-family: "merriweather";
-  line-height: 1.8;
+  line-height: 1.4;
   color: #333;
 }
 .test-parenth {
@@ -1293,8 +1293,8 @@ body {
 
 .window-tint-booking-description {
   color: #333;
-  font-size: 1.8rem;
-  line-height: 1.6;
+  font-size: 1.4rem;
+  line-height: 1.4;
   padding: 0;
   margin: 1.2rem 0;
 }
@@ -1398,13 +1398,6 @@ body {
   padding: 4rem 1rem;
   max-width: 1200px;
   margin: 0 auto;
-}
-
-.section-heading {
-  margin: 0 0 2rem;
-  text-align: center;
-  font-size: 2rem;
-  color: #222;
 }
 
 /* Theme tokens scoped to this component */
