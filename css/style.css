@@ -1049,8 +1049,8 @@ body {
 
 .section-hero-tint {
   position: relative;
-  background: url("../images/background-images/tinted-car-background.jpg")
-    center / cover no-repeat;
+  background: url("../images/tint/tintbackgoundimg.png") center / cover
+    no-repeat;
   height: 100vh;
   /* display: flex; */
   justify-content: center;
@@ -1146,7 +1146,7 @@ body {
 
 /* Image looks more premium + consistent */
 .window-tint-card-image {
-  width: 16rem;
+  /* width: 16rem; */
   height: 16rem;
   object-fit: cover;
 
@@ -1181,7 +1181,7 @@ body {
   padding: 9.6rem;
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
-    url("../images/xpel/ppf-images/PPF-background.jpg");
+    url("../images/tint/cartintrain.jpg");
 
   background-size: cover;
   background-position: center;
