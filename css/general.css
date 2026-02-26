@@ -265,7 +265,7 @@ Bold: 700
   left: 2rem;
   text-align: left;
   font-size: 2rem;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.6);
   color: #f2f2f2;
   padding: 2.4rem;
   border-radius: 8px;
@@ -287,7 +287,7 @@ Bold: 700
 
 .info-video-container {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 3.2rem;
   align-items: center;
 }
@@ -308,6 +308,7 @@ Bold: 700
 /* Text styling */
 .info-video-text-box {
   font-size: 1.8rem;
+  text-align: center;
   line-height: 1.7;
   padding: 2.4rem;
   border-radius: 1.6rem;
@@ -361,3 +362,45 @@ Bold: 700
 /* .sticky .section-hero-tint {
   margin-top: 6.2rem;
 } */
+
+/* ************************************BENEFITS CARD************************************************************ */
+
+.benefits-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 2rem;
+  border: solid 5px #7e100b;
+  background-color: rgb(233, 236, 239, 0.5);
+  padding: 5rem;
+  border-radius: 15px;
+}
+
+.benefits-card {
+  text-align: center;
+  padding: 1rem;
+  border-radius: 15px;
+  border: solid 5px #7e100b;
+  background-color: #e9ecef;
+
+  /* 🔑 hover setup */
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+  will-change: transform;
+}
+
+.benefits-card:hover {
+  transform: translateY(-8px); /* slides card up */
+  box-shadow: 0 1.6rem 3.2rem rgba(0, 0, 0, 0.25);
+}
+
+.window-tint-benifits-description {
+  color: #333;
+  padding-top: 1rem;
+}
+
+.tint-icon {
+  color: #7e100b;
+  font-size: 5rem;
+  padding-bottom: 1rem;
+}
