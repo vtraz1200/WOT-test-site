@@ -2020,3 +2020,37 @@ input[type="number"]::-webkit-outer-spin-button {
   border-radius: 1.2rem;
   display: block;
 }
+
+/************************************************************************************/
+/************************************************************************************/
+/***********************************CUSTOM PAGE STYLING*********************/
+/************************************************************************************/
+/************************************************************************************/
+
+/* ///////////////////////////// info slider section */
+/* --- text box --- */
+.info-slider-textbox {
+  text-align: left; /* looks more premium than centered */
+  padding: 2.2rem 2.2rem;
+  max-width: 48rem;
+  z-index: 2;
+  background-color: #fff;
+}
+
+.info-slider-custom-paragraph {
+  font-size: 1.2rem;
+  line-height: 1.75;
+  letter-spacing: 0.2px;
+  color: #333;
+  margin: 0 0 1.25rem 0;
+}
+
+.info-slider-custom-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+/* subtle “spruce up” without extra markup */
+.info-slider-custom-paragraph::first-line {
+  font-weight: 600;
+  color: #333;
+}

@@ -296,6 +296,37 @@ document.querySelectorAll(".info-slider").forEach((slider) => {
   }, 3500);
 });
 
+//////////////////////////////////////////////////////////
+// INFO SLIDER Custom
+
+document.querySelectorAll(".info-slider-custom").forEach((slider) => {
+  const track = slider.querySelector(".info-track-custom");
+  const slides = Array.from(track.children);
+  const slideCount = slides.length;
+  let index = 0;
+
+  // Clone first slide for seamless looping
+  const firstClone = slides[0].cloneNode(true);
+  track.appendChild(firstClone);
+
+  setInterval(() => {
+    index++;
+    track.style.transform = `translateX(-${index * 100}%)`;
+
+    // When reaching clone, reset instantly (no animation)
+    if (index === slideCount) {
+      setTimeout(() => {
+        track.style.transition = "none";
+        index = 0;
+        track.style.transform = `translateX(0)`;
+      }, 700);
+
+      setTimeout(() => {
+        track.style.transition = "transform 0.7s ease-in-out";
+      }, 750);
+    }
+  }, 3500);
+});
 /// FOOTER SCHEDULE
 
 // ✅ Set your hours here (24-hour format). Use null for closed days.
