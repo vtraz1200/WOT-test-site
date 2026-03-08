@@ -1937,7 +1937,7 @@ input[type="number"]::-webkit-outer-spin-button {
   position: relative;
   background:
     linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
-    url("../images/xpel/ceramic-images/detail-background.png") center / cover
+    url("../images/detailing/auto-detailing-hero-background.png") center / cover
       no-repeat;
   height: 100vh;
   background-position: center 42%;
