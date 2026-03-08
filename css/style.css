@@ -1179,10 +1179,7 @@ body {
 .section-window-tint-benefits {
   border-top: solid 1px #7e100b;
   padding: 9.6rem;
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
-    url("../images/tint/cartintrain.jpg");
-
+  background-color: #000;
   background-size: cover;
   background-position: center;
   color: #fff; /* makes text readable */
@@ -1666,7 +1663,6 @@ body {
 .ceramic-card-image {
   width: 700px;
   height: 400px;
-  object-fit: cover;
 
   border-radius: 16px;
   border: solid 2px rgba(126, 16, 11, 0.35);
@@ -1734,114 +1730,136 @@ body {
   padding: 6rem 2rem;
 }
 
+.contact-container {
+  max-width: 120rem;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* gap: 4rem; */
+
+  align-items: center;
+}
+
+/* Card */
 /* Card */
 .footer-card {
   margin: auto;
-  width: min(50rem, 100%);
+  width: min(95rem, 100%);
   background-color: #121212;
   border-radius: 2rem;
-  padding: 2.5rem;
+  padding: 2rem;
   text-align: left;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: stretch;
 
-  /* modern touches */
-  border: 1px solid rgba(242, 242, 242, 0.18);
-  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(242, 242, 242, 0.14);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55);
 }
 
 .footer-card-head {
-  margin-bottom: 2rem;
+  margin-bottom: 1.4rem;
 }
 
 .footer-card-title {
   color: #f2f2f2;
-  font-size: 2.6rem;
-  margin: 0 0 0.6rem 0;
-  letter-spacing: 0.5px;
+  font-size: 2.1rem;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: 0.3px;
+  line-height: 1.2;
   font-family: "merriweather";
 }
 
 .footer-card-subtitle {
   color: rgba(242, 242, 242, 0.75);
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   margin: 0;
-  line-height: 1.6;
+  line-height: 1.5;
+  max-width: 42rem;
 }
 
 /* Form layout */
 .footer-card-info {
   display: grid;
   grid-template-columns: 1fr;
-  row-gap: 1.6rem;
+  row-gap: 1.1rem;
 }
 
 .footer-card-firlas-name-cont {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.2rem;
+  gap: 1rem;
 }
 
 /* Labels */
 .footer-card-info-title {
   color: rgba(242, 242, 242, 0.85);
-  font-size: 1.4rem;
+  font-size: 1.25rem;
   font-weight: 600;
-  margin: 0.6rem 0 -0.2rem;
+  margin: 0.4rem 0 0;
   font-family: "merriweather";
 }
 
-/* Inputs - unified look */
+/* Inputs */
 .footer-input-form-card,
 .footer-input-form-card-two,
 .footer-input-form-message {
   width: 100%;
   background-color: rgba(255, 255, 255, 0.04);
   color: #f2f2f2;
-
-  /* CHANGED: neutral → brand-aware */
   border: 1px solid rgba(126, 16, 11, 0.35);
-
-  border-radius: 1.2rem;
-
-  padding: 1.4rem;
-  font-size: 1.6rem;
+  border-radius: 1rem;
+  padding: 1rem 1.1rem;
+  font-size: 1.35rem;
   font-family: "merriweather";
-
   transition:
     border-color 0.15s ease,
     box-shadow 0.15s ease,
     background-color 0.15s ease;
+  box-sizing: border-box;
 }
 
-/* Remove old input bottom-border style */
-input {
-  border: 1px solid rgba(242, 242, 242, 0.18);
+/* Remove old input border conflicts */
+input,
+textarea {
+  border: none;
+}
+
+/* Put the intended border back */
+.footer-input-form-card,
+.footer-input-form-card-two,
+.footer-input-form-message {
+  border: 1px solid rgba(126, 16, 11, 0.35);
 }
 
 /* Placeholder */
-::placeholder {
-  color: rgba(242, 242, 242, 0.65);
-  font-size: 1.4rem;
+.footer-input-form-card::placeholder,
+.footer-input-form-card-two::placeholder,
+.footer-input-form-message::placeholder {
+  color: rgba(242, 242, 242, 0.62);
+  font-size: 1.25rem;
 }
 
 /* Textarea */
 .footer-input-form-message {
-  resize: none;
+  resize: vertical;
+  min-height: 11rem;
   line-height: 1.5;
 }
 
-/* Focus states (big “modern” feel) */
+/* Focus states */
 .footer-input-form-card:focus,
 .footer-input-form-card-two:focus,
-.footer-input-form-message:focus,
-input:focus,
-textarea:focus {
+.footer-input-form-message:focus {
   outline: none;
-  border-color: var(--brand-red-border);
-  box-shadow: 0 0 0 4px var(--brand-red-glow);
+  border-color: #a3140d;
+  box-shadow: 0 0 0 3px rgba(126, 16, 11, 0.2);
   background-color: rgba(255, 255, 255, 0.06);
 }
 
-/* Remove spinner for number (kept just in case) */
+/* Remove spinner for number */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -1850,34 +1868,56 @@ input[type="number"]::-webkit-outer-spin-button {
   margin: 0;
 }
 
-/* Button (kept your classes, added modern styling) */
-.submit-btn {
-  margin-top: 2rem;
+/* Map */
+.footer-map {
+  display: block;
   width: 100%;
-  padding: 1.4rem;
-  border-radius: 1.2rem;
-  border: none;
-  cursor: pointer;
-
-  font-weight: 700;
-  font-size: 1.6rem;
-
-  /* CHANGED */
-  color: #f2f2f2;
-  background: linear-gradient(135deg, var(--brand-red-light), var(--brand-red));
-
-  transition:
-    transform 0.15s ease,
-    filter 0.15s ease;
+  height: 100%;
+  min-height: 42rem;
+  border: 1px solid rgba(126, 16, 11, 0.5);
+  border-radius: 1.5rem;
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.2);
 }
 
-.submit-btn:hover {
-  transform: translateY(-1px);
-  filter: brightness(1.05);
+/* Keep if you still use .map elsewhere */
+.map {
+  border: solid 3px #7e100b;
+  border-radius: 15px;
 }
 
-.submit-btn:active {
-  transform: translateY(0px);
+/* Responsive */
+@media (max-width: 900px) {
+  .footer-card {
+    grid-template-columns: 1fr;
+    width: min(60rem, 100%);
+    padding: 1.6rem;
+    gap: 1.6rem;
+  }
+
+  .footer-map {
+    min-height: 28rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-card-title {
+    font-size: 1.9rem;
+  }
+
+  .footer-card-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .footer-card-firlas-name-cont {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-input-form-card,
+  .footer-input-form-card-two,
+  .footer-input-form-message {
+    font-size: 1.3rem;
+    padding: 0.95rem 1rem;
+  }
 }
 
 /************************************************************************************/
