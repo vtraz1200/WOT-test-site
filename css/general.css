@@ -43,14 +43,22 @@ Bold: 700
 
 */
 
+p {
+  font-family: "lato";
+}
+
+h3 {
+  font-family: "nanum";
+}
 .section-heading {
   color: #7e100b;
-  font-size: 4.8rem; /* slightly smaller = more premium */
+  font-size: 4.2rem; /* slightly smaller = more premium */
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.2rem;
   text-align: center;
   position: relative;
+  font-family: "Nanum";
 }
 
 /* Accent line under heading */
@@ -66,13 +74,14 @@ Bold: 700
 
 .section-heading-white {
   color: #fff;
-  font-size: 4.8rem; /* slightly smaller = more premium */
+  font-size: 4.2rem; /* slightly smaller = more premium */
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.2rem;
   margin-bottom: 2.4rem;
   position: relative;
   text-align: center;
+  font-family: "Nanum";
 }
 
 /* Accent line under heading */
@@ -115,6 +124,7 @@ Bold: 700
   animation-name: moveInLeft;
   animation-duration: 1s;
   animation-timing-function: ease-out;
+  font-family: "Nanum";
 
   /*animation-delay: 3s; animation-iteration-count: 3; */
 }

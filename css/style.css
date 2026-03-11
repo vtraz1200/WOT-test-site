@@ -1074,11 +1074,6 @@ body {
   }
 }
 
-/***********************************WINDOW TINT Tiers SECTION***********************************/
-
-/* .section-window-tint-tiers {
-} */
-
 /***********************************WINDOW TINT PRICES SECTION***********************************/
 .section-window-tint-prices {
   padding: 9.6rem;
@@ -1173,6 +1168,93 @@ body {
   max-width: 48ch;
   margin: 0 auto 1.6rem;
   padding: 0;
+}
+
+/***********************************WINDOW TINT Options SECTION***********************************/
+.section-window-tint-options {
+  padding: 5rem;
+  background-color: #f8f8f8;
+}
+
+.window-tint-options-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3.2rem;
+  max-width: 140rem;
+  margin: 4.8rem auto 0 auto;
+}
+
+.window-tint-options-column {
+  background-color: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: 1.6rem;
+  padding: 3.2rem 2.8rem;
+  box-shadow: 0 1.2rem 3rem rgba(0, 0, 0, 0.06);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.window-tint-options-column:hover {
+  transform: translateY(-0.8rem);
+  box-shadow: 0 1.8rem 4rem rgba(0, 0, 0, 0.1);
+}
+
+.window-tint-options-column h3 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  color: #111;
+}
+
+.window-tint-options-column h3 + p {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #7e100b;
+  text-transform: uppercase;
+  letter-spacing: 0.08rem;
+  margin-bottom: 2rem;
+}
+
+.window-tint-options-column p {
+  font-size: 1.7rem;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 1.6rem;
+}
+
+.window-tint-options-column p strong {
+  display: inline-block;
+  font-size: 1.6rem;
+  color: #111;
+  margin-top: 1.2rem;
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+}
+
+.window-tint-options-column ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 2rem;
+}
+
+.window-tint-options-column li {
+  position: relative;
+  padding-left: 2.4rem;
+  margin-bottom: 1.2rem;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.window-tint-options-column li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #7e100b;
+  font-weight: 700;
 }
 
 /***********************************WINDOW TINT BENEFITS SECTION***********************************/
