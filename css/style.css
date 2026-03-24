@@ -16,6 +16,10 @@ body {
   overflow-x: hidden;
 }
 
+a {
+  text-decoration: none;
+}
+
 .logo {
   height: 5rem;
 }
@@ -186,7 +190,7 @@ body {
   text-align: center;
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
-    url("../images/background-images/temp-main-background.jpg");
+    url("../images/background-images/temp-main-background.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
