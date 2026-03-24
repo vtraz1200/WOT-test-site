@@ -15,19 +15,6 @@ body {
   padding: 0px;
   overflow-x: hidden;
 }
-/* Header */
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  /* background-color: rgb(0, 0, 0, 0.8); */
-  /* background-color: rgb(233, 236, 239, 0.8); */
-
-  /* Because we want header to be sticky later */
-  height: 4.2rem;
-  padding: 1.2rem 2rem;
-  position: relative;
-}
 
 .logo {
   height: 5rem;
@@ -197,6 +184,12 @@ body {
   position: relative;
   overflow: hidden;
   text-align: center;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url("../images/background-images/temp-main-background.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
 }
 
 .back-video {
@@ -1805,11 +1798,15 @@ body {
 /************************************************************************************/
 
 .section-contact {
-  background: linear-gradient(to bottom, #1a1a1a, #3a0b09, #7e100b);
+  background: linear-gradient(
+    to right,
+    rgba(20, 20, 20, 0.95),
+    rgba(126, 16, 11, 0.95)
+  );
 }
 
 .section-contact {
-  padding: 6rem 2rem;
+  padding: 3rem 2rem;
 }
 
 .contact-container {

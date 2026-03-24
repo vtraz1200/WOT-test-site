@@ -375,16 +375,31 @@ h3 {
 /* may use still */
 /***********************************HEADER SECTION***********************************/
 
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: rgb(0, 0, 0, 0.8); */
+  /* background-color: rgb(233, 236, 239, 0.8); */
+
+  /* Because we want header to be sticky later */
+  height: 4.2rem;
+  padding: 1.2rem 2rem;
+  position: relative;
+}
+
 .header-secondary {
   display: flex;
   justify-content: space-between;
   align-items: center;
   /* background-color: rgb(0, 0, 0, 0.8); */
-  background-color: #e9ecef;
+  /* background-color: rgb(233, 236, 239, 0.8); */
 
   /* Because we want header to be sticky later */
-  height: 6.2rem;
-  padding: 3.6rem 4.8rem;
+  height: 4.2rem;
+  padding: 1.2rem 2rem;
+  position: relative;
   background: linear-gradient(
     to right,
     rgba(20, 20, 20, 0.95),
@@ -459,4 +474,8 @@ h3 {
   color: #7e100b;
   font-size: 5rem;
   padding-bottom: 1rem;
+}
+
+.center {
+  margin: auto;
 }
