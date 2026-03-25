@@ -130,6 +130,48 @@ if (sectionHeroFifthEl) {
   obs.observe(sectionHeroFifthEl);
 }
 
+const sectionHeroSixthEl = document.querySelector(".section-hero-wraps");
+if (sectionHeroSixthEl) {
+  const obs = new IntersectionObserver(
+    function (entries) {
+      const ent = entries[0];
+
+      if (!ent.isIntersecting) {
+        document.body.classList.add("sticky");
+      } else {
+        document.body.classList.remove("sticky");
+      }
+    },
+    {
+      root: null,
+      threshold: 0,
+      rootMargin: "-80px",
+    },
+  );
+  obs.observe(sectionHeroSixthEl);
+}
+
+const sectionHeroSevenEl = document.querySelector(".section-hero-custom");
+if (sectionHeroSevenEl) {
+  const obs = new IntersectionObserver(
+    function (entries) {
+      const ent = entries[0];
+
+      if (!ent.isIntersecting) {
+        document.body.classList.add("sticky");
+      } else {
+        document.body.classList.remove("sticky");
+      }
+    },
+    {
+      root: null,
+      threshold: 0,
+      rootMargin: "-80px",
+    },
+  );
+  obs.observe(sectionHeroSevenEl);
+}
+
 //////////////////////////////////////////////////////////
 // REVEAL SECTIONS
 

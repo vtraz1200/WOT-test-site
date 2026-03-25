@@ -2150,6 +2150,30 @@ input[type="number"]::-webkit-outer-spin-button {
 /************************************************************************************/
 /************************************************************************************/
 
+.section-hero-custom > * {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.section-hero-custom {
+  position: relative;
+  background: url("../images/background-images/custom-background-img.png")
+    center / cover no-repeat;
+  height: 100vh;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+}
+
+.section-hero-custom::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  animation: fadeTint 1.2s ease-out forwards;
+}
+
 /* ///////////////////////////// info slider section */
 /* --- text box --- */
 .info-slider-textbox {
