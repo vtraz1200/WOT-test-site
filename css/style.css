@@ -751,12 +751,7 @@ a {
 .social-icon:active {
   color: #ff5248;
 }
-.copyright {
-  font-size: 1.4rem;
-  line-height: 2rem;
-  text-align: center;
-  color: #333;
-}
+
 .copyright-order-1 {
   order: 1;
 }
@@ -973,7 +968,7 @@ a {
 
 /* Copyright: clean, centered, consistent */
 .copyright {
-  font-size: 1.4rem;
+  font-size: 20px;
   line-height: 2.1rem;
   text-align: center;
   color: #333;
@@ -1068,6 +1063,114 @@ a {
   }
   to {
     opacity: 1.2;
+  }
+}
+/***********************************WINDOW TINT COMPARISON SECTION*******************************/
+.section-tint-comparison {
+  padding: 80px 20px;
+  background: #0d0d0d;
+  color: #fff;
+}
+
+.tint-comparison-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* Cards */
+.tint-card {
+  background: #161616;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.tint-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+}
+
+/* Titles */
+.tint-title {
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+}
+
+.tint-subtitle {
+  font-size: 1rem;
+  color: #bbb;
+  margin-bottom: 20px;
+}
+
+/* Text */
+.tint-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #ddd;
+}
+
+/* Best for */
+.tint-best-for span {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #ff5248;
+}
+
+.tint-best-for p {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+/* Image */
+.tint-image-wrapper {
+  grid-column: span 2;
+  margin-top: 20px;
+}
+
+.tint-image-wrapper img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* Highlight Ceramic (money maker 👀) */
+.tint-card.ceramic {
+  border: 1px solid #7e100b;
+  background: linear-gradient(145deg, #161616, #1a1a1a);
+}
+
+.tint-card.ceramic .tint-title {
+  color: #fff;
+}
+
+.tint-card.ceramic::before {
+  content: "MOST POPULAR";
+  display: inline-block;
+  background: #7e100b;
+  color: #fff;
+  font-size: 0.7rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tint-comparison-container {
+    grid-template-columns: 1fr;
+  }
+
+  .tint-image-wrapper {
+    grid-column: span 1;
   }
 }
 
