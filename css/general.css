@@ -245,9 +245,14 @@ h3 {
   font-size: 3rem;
 }
 
+.bold {
+  font-weight: 900;
+  color: #000;
+}
+
 .small-heading-h3 {
   color: #333;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
 }
 
 /* info slider  */
