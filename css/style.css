@@ -2203,6 +2203,120 @@ input[type="number"]::-webkit-outer-spin-button {
   z-index: 2;
 }
 
+.section-extra-servcies {
+  padding: 8rem 2rem;
+}
+
+.extra-services-container {
+  max-width: 100%;
+  margin: 0 auto;
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* border: solid 10px black; */
+  padding: 3rem;
+  gap: 2rem;
+}
+
+.extra-service {
+  position: relative;
+  overflow: hidden;
+  padding: 2.6rem 2.4rem;
+  border-radius: 2rem;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.05),
+      rgba(255, 255, 255, 0.02)
+    ),
+    linear-gradient(145deg, #1b1b1b, #111111);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 1.2rem 3rem rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  transition:
+    transform 240ms ease,
+    box-shadow 240ms ease,
+    border-color 240ms ease;
+}
+
+.extra-service::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(126, 16, 11, 0.18),
+    transparent 35%,
+    transparent 70%,
+    rgba(255, 255, 255, 0.02)
+  );
+  pointer-events: none;
+}
+
+.extra-service::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 2.4rem;
+  width: 7rem;
+  height: 4px;
+  border-radius: 999px;
+  background: #7e100b;
+  box-shadow: 0 0 16px rgba(126, 16, 11, 0.4);
+}
+
+.extra-service:hover {
+  transform: translateY(-6px);
+  border-color: rgba(126, 16, 11, 0.45);
+  box-shadow:
+    0 2rem 4rem rgba(0, 0, 0, 0.34),
+    0 0 0 1px rgba(126, 16, 11, 0.12);
+}
+
+.extra-service h3 {
+  margin: 0 0 1.6rem;
+  color: #ffffff;
+  font-size: 2.3rem;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.extra-service ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.extra-service li {
+  position: relative;
+  padding: 1.2rem 1.4rem 1.2rem 4.2rem;
+  border-radius: 1.2rem;
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.55rem;
+  line-height: 1.5;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.extra-service li::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 1.4rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  background: #7e100b;
+  box-shadow:
+    0 0 0 6px rgba(126, 16, 11, 0.16),
+    0 0 12px rgba(126, 16, 11, 0.35);
+}
+
 /************************************************************************************/
 /************************************************************************************/
 /***********************************WRAPS PAGE STYLING*********************/
