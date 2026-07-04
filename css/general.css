@@ -444,20 +444,21 @@ h3 {
 
 .benefits-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  column-gap: 2rem;
-  border: solid 5px #7e100b;
-  background-color: rgb(233, 236, 239, 0.5);
-  padding: 5rem;
-  border-radius: 15px;
+  /* Cards keep a stable minimum width and wrap onto new rows instead of
+     shrinking — font size and card size stay constant at every viewport. */
+  grid-template-columns: repeat(auto-fit, minmax(min(24rem, 100%), 1fr));
+  gap: 3.2rem;
+  max-width: 120rem;
+  margin: 0 auto;
 }
 
 .benefits-card {
   text-align: center;
-  padding: 1rem;
-  border-radius: 15px;
-  border: solid 5px #7e100b;
+  padding: 3.2rem 2.4rem;
+  border-radius: 1.6rem;
+  border: 1px solid rgba(126, 16, 11, 0.35);
   background-color: #e9ecef;
+  box-shadow: 0 1.2rem 2.4rem rgba(0, 0, 0, 0.18);
 
   /* 🔑 hover setup */
   transition:
@@ -468,17 +469,19 @@ h3 {
 
 .benefits-card:hover {
   transform: translateY(-8px); /* slides card up */
-  box-shadow: 0 1.6rem 3.2rem rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1.6rem 3.2rem rgba(0, 0, 0, 0.28);
 }
 
 .window-tint-benifits-description {
   color: #333;
+  font-size: 1.4rem;
+  line-height: 1.5;
   padding-top: 1rem;
 }
 
 .tint-icon {
   color: #7e100b;
-  font-size: 5rem;
+  font-size: 3.6rem;
   padding-bottom: 1rem;
 }
 

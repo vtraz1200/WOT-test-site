@@ -594,7 +594,7 @@ a {
   max-width: 145rem;
 }
 .section-testimonials {
-  padding: 9.6rem;
+  padding: 6.4rem 4.8rem;
   justify-content: center;
   background-color: rgba(126, 16, 11, 0.06);
 }
@@ -610,19 +610,20 @@ a {
 
 .testimonials-box {
   display: inline-block;
-  border-radius: 5%;
-  padding: 1.8rem;
+  max-width: 60rem;
+  border-radius: 1.6rem;
+  padding: 2.4rem 3.2rem;
   transition: 0.3s;
   text-align: center;
-  margin: 8rem;
+  margin: 0 auto;
 }
 
 .testimonials-name {
   font-weight: 700;
-  font-size: 5rem;
+  font-size: 2.2rem;
   font-family: "merriweather";
   color: #7e100b;
-  padding-top: 1.6rem;
+  padding-top: 0.8rem;
 }
 
 .testimonials-logo {
@@ -634,14 +635,14 @@ a {
 }
 
 .testimonials-review {
-  font-size: 1.6rem;
-  padding-top: 1.8rem;
+  font-size: 1.5rem;
+  padding-top: 1.2rem;
   font-family: "merriweather";
   line-height: 1.4;
   color: #333;
 }
 .test-parenth {
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: #7e100b;
 }
 
@@ -658,7 +659,7 @@ a {
 /* SLIDER */
 .slider {
   max-width: 100rem;
-  height: 40rem;
+  height: 30rem;
   margin: 0 auto;
   position: relative;
 
@@ -710,12 +711,12 @@ a {
   justify-content: center;
   display: grid;
   grid-template-columns: repeat(5, 0.09fr);
-  padding-top: 1.2rem;
+  padding-top: 0.8rem;
 }
 
 .star-icon {
   color: #7e100b;
-  font-size: 50px;
+  font-size: 2rem;
 }
 
 .dots {
@@ -1423,9 +1424,12 @@ a {
 .section-window-tint-benefits {
   border-top: solid 1px #7e100b;
   padding: 9.6rem;
-  background-color: #000;
-  background-size: cover;
-  background-position: center;
+  background: linear-gradient(
+    to right,
+    rgba(126, 16, 11, 0.95),
+    #141414,
+    #1e1e1e
+  );
   color: #fff; /* makes text readable */
   text-align: center;
 }
@@ -1506,16 +1510,79 @@ a {
   justify-content: center;
 }
 
-.booking-image {
-  width: 100%;
-  max-width: 420px;
-  height: 420px;
-  object-fit: cover;
+/* Icon-led contact rows inside the booking card */
+.booking-contact-row {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
 
-  border-radius: 16px;
+.booking-icon {
+  flex-shrink: 0;
+  font-size: 1.8rem;
+  color: #7e100b;
+}
+
+/* Map card: mirrors the booking card so the pair feels intentional */
+.map-card {
+  background: #fff;
   border: 2px solid rgba(126, 16, 11, 0.35);
+  border-radius: 18px;
+  padding: 2.4rem;
+  box-shadow: 0 2.4rem 5.2rem rgba(0, 0, 0, 0.18);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
 
+.map-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.22);
+}
+
+.map-card .footer-map {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 32rem;
+  border: none;
+  border-radius: 12px;
+  box-shadow: none;
+}
+
+/* Nested inside the booking card, replacing the truck photo:
+   the outer card already frames it, so drop the map card's own
+   padding/background/shadow and match the old image's dimensions. */
+.booking-image-wrap .map-card {
+  width: 100%;
+  max-width: 500px;
+  height: 460px;
+  padding: 0;
+  background: transparent;
+  border-radius: 16px;
   box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.22);
+  overflow: hidden;
+}
+
+/* Give the map column more room than the text column now that it's a
+   map instead of a photo. */
+@media (min-width: 901px) {
+  .footer-pic-info .booking-tint-container,
+  .section-booking-tint .booking-tint-container {
+    grid-template-columns: 1fr 1.15fr;
+    padding: 4.8rem;
+  }
+}
+
+.booking-image-wrap .map-card:hover {
+  transform: none;
+}
+
+.booking-image-wrap .map-card .footer-map {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  border-radius: 0;
 }
 
 /* optional: hover "lift" like your other cards */

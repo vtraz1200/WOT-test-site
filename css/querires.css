@@ -31,6 +31,18 @@
   }
 }
 
+/* Responsive: give the benefits grid room to breathe on smaller screens */
+@media (max-width: 900px) {
+  .section-window-tint-benefits,
+  .section-ppf-benefits {
+    padding: 4.8rem 2.4rem;
+  }
+
+  .benefits-container {
+    gap: 2.4rem;
+  }
+}
+
 /* responsive: stack nicely on mobile */
 @media (max-width: 900px) {
   .booking-tint-container {
@@ -50,8 +62,8 @@
     bottom: auto;
   }
 
-  .booking-image {
-    height: 320px;
+  .booking-image-wrap .map-card {
+    height: 360px;
   }
 }
 
