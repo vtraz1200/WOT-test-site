@@ -272,6 +272,40 @@ if (slides.length && btnLeft && btnRight && dotContainer) {
 }
 
 //////////////////////////////////////////////////////////
+// GALLERY LIGHTBOX
+
+const galleryImages = document.querySelectorAll(".gallery-images");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = lightbox?.querySelector(".lightbox-img");
+const lightboxClose = lightbox?.querySelector(".lightbox-close");
+
+if (galleryImages.length && lightbox && lightboxImg) {
+  const openLightbox = (src, alt) => {
+    lightboxImg.src = src;
+    lightboxImg.alt = alt || "";
+    lightbox.classList.add("active");
+  };
+
+  const closeLightbox = () => {
+    lightbox.classList.remove("active");
+  };
+
+  galleryImages.forEach((img) => {
+    img.addEventListener("click", () => openLightbox(img.src, img.alt));
+  });
+
+  lightboxClose?.addEventListener("click", closeLightbox);
+
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeLightbox();
+  });
+}
+
+//////////////////////////////////////////////////////////
 // CAROUSEL ANIMATION (YOUR ORIGINAL FEATURE)
 
 document.querySelectorAll(".carousel").forEach((carousel) => {

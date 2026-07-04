@@ -488,6 +488,7 @@ a {
   height: 20rem; /* key: consistent thumbnail size */
   object-fit: cover; /* key: crops nicely */
   display: block;
+  cursor: pointer;
 
   border-radius: 1.6rem;
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -504,6 +505,52 @@ a {
   transform: translateY(-4px) scale(1.02);
   box-shadow: 0 2.4rem 5.2rem rgba(0, 0, 0, 0.18);
   filter: saturate(1.05) contrast(1.02);
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 9999;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 1rem;
+  box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.5);
+  animation: lightbox-pop 220ms ease;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 2rem;
+  right: 3rem;
+  font-size: 4rem;
+  line-height: 1;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+@keyframes lightbox-pop {
+  from {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 /***********************************PARTNERSHIP SECTION***********************************/
 .section-partnerships {
