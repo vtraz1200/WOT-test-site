@@ -51,11 +51,24 @@ h3 {
   font-family: "roboto";
 }
 .section-heading {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+
+  /* Gradient text: a subtle sheen rather than a flat fill. Kept dark
+     end-to-end (deep red only) so contrast holds up on the near-white
+     backgrounds this heading sits on across the site.
+     Fallback color keeps it legible if background-clip: text isn't supported. */
   color: #7e100b;
-  font-size: 4.2rem; /* slightly smaller = more premium */
-  font-weight: 700;
+  background: linear-gradient(90deg, #7e100b 0%, #9c1710 50%, #7e100b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  font-size: 4.2rem;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.2rem;
+  letter-spacing: 0.15rem;
   text-align: center;
   position: relative;
   font-family: "roboto";
@@ -66,33 +79,40 @@ h3 {
   content: "";
   display: block;
   width: 7rem;
-  height: 0.4rem;
-  background-color: #7e100b;
-  margin-top: 1rem;
+  height: 0.5rem;
+  background: linear-gradient(90deg, #7e100b, #ff5248);
+  margin: 1.2rem auto 0;
   border-radius: 999px;
+  box-shadow: 0 0 18px rgba(126, 16, 11, 0.45);
 }
 
 .section-heading-white {
+  display: block;
+  width: fit-content;
+  margin: 0 auto 2.4rem;
+
   color: #fff;
-  font-size: 4.2rem; /* slightly smaller = more premium */
-  font-weight: 700;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.35);
+  font-size: 4.2rem;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.2rem;
-  margin-bottom: 2.4rem;
+  letter-spacing: 0.15rem;
   position: relative;
   text-align: center;
   font-family: "roboto";
 }
 
-/* Accent line under heading */
+/* Accent line under heading — brand-red gradient, not plain white, so every
+   heading (light or dark section) shares the same signature accent color */
 .section-heading-white::after {
   content: "";
   display: block;
   width: 7rem;
-  height: 0.4rem;
-  background-color: #fff;
-  margin-top: 1.6rem;
+  height: 0.5rem;
+  background: linear-gradient(90deg, #7e100b, #ff5248);
+  margin: 1.6rem auto 0;
   border-radius: 999px;
+  box-shadow: 0 0 18px rgba(126, 16, 11, 0.55);
 }
 
 .text-box {
@@ -257,21 +277,12 @@ h3 {
 
 /* info slider  */
 .info-slider {
-  /* margin-top: 9.6rem; */
+  position: relative;
   max-width: 100%;
   margin: auto;
   overflow: hidden;
-  /* border-radius: 12px; */
-  /* margin-top: 2rem; */
-  border: solid 1px #7e100b;
+  box-shadow: 0 1.6rem 4rem rgba(0, 0, 0, 0.25);
 }
-
-/* .info-slide-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transform: scale(0.92);
-} */
 
 .info-track {
   display: flex;
@@ -285,23 +296,90 @@ h3 {
 
 .info-slide img {
   width: 100%;
-  height: 45rem;
+  height: 32rem;
   object-fit: cover;
   object-position: center 60%;
   display: block;
 }
 
+/* Bottom gradient so the caption reads clearly no matter how bright the photo is */
+.info-slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.2) 45%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
 .info-content {
   position: absolute;
-  top: 8rem;
-  left: 2rem;
+  left: 2.4rem;
+  right: 2.4rem;
+  bottom: 2.4rem;
+  max-width: 46rem;
+  padding: 1.8rem 2rem;
+  border-radius: 1.2rem;
+  background: rgba(10, 10, 10, 0.45);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   text-align: left;
-  font-size: 2rem;
-  background: rgba(0, 0, 0, 0.6);
-  color: #f2f2f2;
-  padding: 2.4rem;
-  border-radius: 8px;
-  max-width: 80%;
+  color: #fff;
+}
+
+.info-content::before {
+  content: "";
+  display: block;
+  width: 4.4rem;
+  height: 4px;
+  border-radius: 999px;
+  background: #7e100b;
+  box-shadow: 0 0 16px rgba(126, 16, 11, 0.5);
+  margin-bottom: 1.2rem;
+}
+
+.info-content h3 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 0.5rem;
+  color: #fff;
+}
+
+.info-content p {
+  font-size: 1.4rem;
+  line-height: 1.5;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+/* Slide position indicators — kept clear of the bottom caption panel */
+.info-dots {
+  position: absolute;
+  z-index: 2;
+  right: 2rem;
+  top: 2rem;
+  display: flex;
+  gap: 0.7rem;
+}
+
+.info-dot {
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: background 0.3s ease;
+}
+
+.info-dot--active {
+  background: #7e100b;
+  border-color: #7e100b;
 }
 
 /* info slider Custom  */
@@ -347,6 +425,16 @@ h3 {
   );
 }
 
+.info-video-kicker {
+  text-align: center;
+  color: #ff5248;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  margin: 0 0 0.8rem;
+}
+
 .info-video-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -355,9 +443,35 @@ h3 {
 }
 
 .info-video-media {
+  position: relative;
   border-radius: 1.6rem;
   overflow: hidden;
-  box-shadow: 0 1.2rem 3.2rem rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 1.6rem 3.6rem rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(126, 16, 11, 0.25);
+}
+
+/* Small step badge so the two clips read as a sequence, not two random videos */
+.info-video-step {
+  position: absolute;
+  z-index: 2;
+  top: 1.2rem;
+  left: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50%;
+  background: rgba(10, 10, 10, 0.55);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+  font-family: "roboto";
+  font-weight: 700;
+  font-size: 1.2rem;
 }
 
 .info-video {
@@ -367,15 +481,29 @@ h3 {
   object-fit: cover;
 }
 
-/* Text styling */
+/* Caption card: icon + copy, with a brand accent instead of a flat white box */
 .info-video-text-box {
-  font-size: 1.8rem;
+  position: relative;
   text-align: center;
-  line-height: 1.7;
-  padding: 2.4rem;
+  padding: 2.8rem 2.4rem 2.4rem;
   border-radius: 1.6rem;
-  background-color: rgba(255, 255, 255);
-  box-shadow: 0 0.8rem 2.4rem rgba(0, 0, 0, 0.15);
+  background-color: #fff;
+  border-top: 4px solid #7e100b;
+  box-shadow: 0 1.2rem 2.8rem rgba(0, 0, 0, 0.25);
+}
+
+.info-video-text-box ion-icon {
+  display: block;
+  margin: 0 auto 1rem;
+  font-size: 2.6rem;
+  color: #7e100b;
+}
+
+.info-video-text-box p {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
 }
 
 /* may use still */

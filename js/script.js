@@ -349,6 +349,22 @@ document.querySelectorAll(".info-slider").forEach((slider) => {
   const slideCount = slides.length;
   let index = 0;
 
+  const dotsContainer = slider.querySelector(".info-dots");
+  if (dotsContainer) {
+    slides.forEach((_, i) => {
+      const dot = document.createElement("span");
+      dot.className = "info-dot";
+      if (i === 0) dot.classList.add("info-dot--active");
+      dotsContainer.appendChild(dot);
+    });
+  }
+
+  const activateDot = (i) => {
+    dotsContainer
+      ?.querySelectorAll(".info-dot")
+      .forEach((dot, di) => dot.classList.toggle("info-dot--active", di === i));
+  };
+
   // Clone first slide for seamless looping
   const firstClone = slides[0].cloneNode(true);
   track.appendChild(firstClone);
@@ -356,6 +372,7 @@ document.querySelectorAll(".info-slider").forEach((slider) => {
   setInterval(() => {
     index++;
     track.style.transform = `translateX(-${index * 100}%)`;
+    activateDot(index % slideCount);
 
     // When reaching clone, reset instantly (no animation)
     if (index === slideCount) {
