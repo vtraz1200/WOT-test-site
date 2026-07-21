@@ -21,6 +21,20 @@ if (toggle && menu && dropdown) {
 }
 
 //////////////////////////////////////////////////////////
+// EXPANDABLE PRICE CARD
+
+document.querySelectorAll(".price-card-trigger").forEach((trigger) => {
+  const list = document.getElementById(trigger.getAttribute("aria-controls"));
+  if (!list) return;
+
+  trigger.addEventListener("click", () => {
+    const isOpen = trigger.classList.toggle("open");
+    list.classList.toggle("open", isOpen);
+    trigger.setAttribute("aria-expanded", String(isOpen));
+  });
+});
+
+//////////////////////////////////////////////////////////
 // STICKY NAVIGATION
 
 const sectionHeroEl = document.querySelector(".section-hero");

@@ -17,6 +17,27 @@
 /*******************************************/
 
 @media (max-width: 59em) {
+  .window-tint-options-container {
+    grid-template-columns: 1fr;
+    max-width: 50rem;
+  }
+
+  .price-card--feature {
+    grid-template-columns: 1fr;
+  }
+
+  .price-card-feature-media {
+    min-height: 22rem;
+  }
+
+  .section-price-cards {
+    padding: 5rem 3rem;
+  }
+
+  .price-cards-container {
+    grid-template-columns: 1fr;
+    max-width: 50rem;
+  }
 }
 
 /*******************************************/
@@ -24,6 +45,17 @@
 /*******************************************/
 
 @media (max-width: 740px) {
+  .section-window-tint-options {
+    padding: 4rem 2rem;
+  }
+
+  .section-price-cards {
+    padding: 4rem 1.6rem;
+  }
+
+  .price-card-feature-body {
+    padding: 2.4rem 2rem;
+  }
 }
 
 /*******************************************/
@@ -31,6 +63,12 @@
 /*******************************************/
 
 @media (max-width: 34em) {
+  .tint-most-popular-badge {
+    top: 1.5rem;
+    right: -3.9rem;
+    width: 13rem;
+    font-size: 0.95rem;
+  }
 }
 
 /*******************************************/

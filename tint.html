@@ -208,44 +208,143 @@
       <section class="section-price-cards">
         <h2 class="section-heading">Window Tint Services</h2>
         <div class="price-cards-container">
-          <div class="price-card">
-            <img
-              src="images/tint/diver-passenger-window-tint.png"
-              alt=""
-              class="price-card-image"
-            />
-            <h3 class="price-card-title">Driver and Passenger Window</h3>
-            <p class="price-card-description">Starting at $129</p>
+          <div class="price-card price-card--expandable">
+            <button
+              type="button"
+              class="price-card-trigger"
+              aria-expanded="false"
+              aria-controls="driver-passenger-back-options"
+            >
+              <img
+                src="images/tint/passenger-andrear-window-tint.png"
+                alt=""
+                class="price-card-image"
+              />
+              <h3 class="price-card-title">Sides & Back</h3>
+              <p class="price-card-description">Starting at $299.99</p>
+              <span class="price-card-toggle-hint">
+                <span>View Pricing Options</span>
+                <span class="arrow">▾</span>
+              </span>
+            </button>
+
+            <ul class="price-options-list" id="driver-passenger-back-options">
+              <li class="price-option">
+                <span class="price-option-name">CS Standard Car/Truck</span>
+                <span class="price-option-meta">$299.99 · 3 hr</span>
+              </li>
+              <li class="price-option">
+                <span class="price-option-name"
+                  >CS Standard Crossover / Small SUV</span
+                >
+                <span class="price-option-meta">$324.99 · 3 hr 30 min</span>
+              </li>
+              <li class="price-option">
+                <span class="price-option-name"
+                  >CS Large SUV / Premium Car</span
+                >
+                <span class="price-option-meta">$349.99 · 4 hr</span>
+              </li>
+              <li class="price-option">
+                <span class="price-option-name">XR Standard Car/Truck</span>
+                <span class="price-option-meta">$499.99 · 3 hr</span>
+              </li>
+              <li class="price-option">
+                <span class="price-option-name"
+                  >XR Standard Crossover / Small SUV</span
+                >
+                <span class="price-option-meta">$529.99 · 3 hr 30 min</span>
+              </li>
+              <li class="price-option">
+                <span class="price-option-name">XR Premium Car</span>
+                <span class="price-option-meta">$574.99 · 3 hr 30 min</span>
+              </li>
+              <li class="price-option">
+                <span class="price-option-name">XR Large SUV</span>
+                <span class="price-option-meta">$599.99 · 4 hr</span>
+              </li>
+            </ul>
+
             <a href="contact.html">
               <button class="btn-small">Get Quote</button></a
             >
           </div>
-          <div class="price-card">
-            <img
-              src="images/tint/front-window-tint.png"
-              alt=""
-              class="price-card-image"
-            />
-            <h3 class="price-card-title">Front Windshield</h3>
-            <p class="price-card-description">Starting at $199</p>
+          <div class="price-card price-card--expandable">
+            <button
+              type="button"
+              class="price-card-trigger"
+              aria-expanded="false"
+              aria-controls="front-windshield-options"
+            >
+              <img
+                src="images/tint/front-window-tint.png"
+                alt=""
+                class="price-card-image"
+              />
+              <h3 class="price-card-title">Front Windshield</h3>
+              <p class="price-card-description">Starting at $199.99</p>
+              <span class="price-card-toggle-hint">
+                <span>View Pricing Options</span>
+                <span class="arrow">▾</span>
+              </span>
+            </button>
+
+            <ul class="price-options-list" id="front-windshield-options">
+              <li class="price-option">
+                <span class="price-option-name">CS Windshield</span>
+                <span class="price-option-meta">$199.99 · 2 hr</span>
+              </li>
+              <li class="price-option">
+                <span class="price-option-name">XR Windshield</span>
+                <span class="price-option-meta">$274.99 · 2 hr</span>
+              </li>
+            </ul>
+
             <a href="contact.html">
               <button class="btn-small">Get Quote</button></a
             >
           </div>
 
-          <div class="price-card">
-            <img
-              src="images/tint/brow-window-tint.png"
-              alt=""
-              class="price-card-image"
-            />
-            <h3 class="price-card-title">Brow</h3>
-            <p class="price-card-description">Starting at $80</p>
+          <div class="price-card price-card--expandable">
+            <button
+              type="button"
+              class="price-card-trigger"
+              aria-expanded="false"
+              aria-controls="brow-options"
+            >
+              <img
+                src="images/tint/brow-window-tint.png"
+                alt=""
+                class="price-card-image"
+              />
+              <h3 class="price-card-title">Brow</h3>
+              <p class="price-card-description">Starting at $80.00</p>
+              <span class="price-card-toggle-hint">
+                <span>View Pricing Options</span>
+                <span class="arrow">▾</span>
+              </span>
+            </button>
+
+            <ul class="price-options-list" id="brow-options">
+              <li class="price-option">
+                <span class="price-option-name">CS Standard Vehicle</span>
+                <span class="price-option-meta">$80.00 · 40 min</span>
+              </li>
+              <li class="price-option">
+                <span class="price-option-name">CS Oversize Vehicle Brow</span>
+                <span class="price-option-meta">$140.00 · 50 min</span>
+              </li>
+              <li class="price-option">
+                <span class="price-option-name">XR Premium Car Brow</span>
+                <span class="price-option-meta">$100.00 · 45 min</span>
+              </li>
+            </ul>
+
             <a href="contact.html">
               <button class="btn-small">Get Quote</button></a
             >
           </div>
-          <div class="price-card">
+          <!-- <div class="price-card">
             <img
               src="images/tint/passenger-andrear-window-tint.png"
               alt=""
@@ -256,8 +355,8 @@
             <a href="contact.html">
               <button class="btn-small">Get Quote</button></a
             >
-          </div>
-          <div class="price-card">
+          </div> -->
+          <!-- <div class="price-card">
             <img
               src="images/tint/sun-roof-window-tint.png"
               alt=""
@@ -268,7 +367,7 @@
             <a href="contact.html">
               <button class="btn-small">Get Quote</button></a
             >
-          </div>
+          </div> -->
         </div>
       </section>
       <section class="section-window-tint-options">
@@ -276,78 +375,108 @@
 
         <div class="window-tint-options-container">
           <div class="window-tint-options-column">
-            <ion-icon name="car-outline" class="tint-options-icon"></ion-icon>
+            <span class="tint-icon-badge">
+              <ion-icon
+                name="car-outline"
+                class="tint-options-icon"
+              ></ion-icon>
+            </span>
             <h3>Prime CS</h3>
-            <p>Drive in Comfort</p>
-            <p>
-              A reliable and affordable tint that enhances privacy and improves
-              the look of your vehicle while blocking harmful UV rays.
+            <p class="tint-tagline">Drive in Comfort</p>
+            <p class="tint-description-text">
+              A reliable and affordable tint that enhances privacy and
+              improves the look of your vehicle while blocking harmful UV
+              rays.
             </p>
 
-            <p><strong>Best For</strong></p>
-            <ul>
-              <li>Budget-friendly tinting</li>
-              <li>Privacy and appearance</li>
-              <li>Everyday drivers</li>
-            </ul>
+            <div class="tint-option-section">
+              <p class="tint-section-label">Best For</p>
+              <ul class="best-for-list">
+                <li>Budget-friendly tinting</li>
+                <li>Privacy and appearance</li>
+                <li>Everyday drivers</li>
+              </ul>
+            </div>
 
-            <p><strong>Features</strong></p>
-            <ul>
-              <li>99% UV protection</li>
-              <li>Reduces glare from sunlight</li>
-              <li>Deep black color for a clean look</li>
-              <li>No signal interference (GPS, radio, Bluetooth)</li>
-            </ul>
+            <div class="tint-option-section">
+              <p class="tint-section-label">Features</p>
+              <ul class="features-list">
+                <li>99% UV protection</li>
+                <li>Reduces glare from sunlight</li>
+                <li>Deep black color for a clean look</li>
+                <li>No signal interference (GPS, radio, Bluetooth)</li>
+              </ul>
+            </div>
           </div>
 
-          <div class="window-tint-options-column">
-            <ion-icon name="flame-outline" class="tint-options-icon"></ion-icon>
+          <div class="window-tint-options-column featured">
+            <span class="tint-most-popular-badge">Most Popular</span>
+            <span class="tint-icon-badge">
+              <ion-icon
+                name="flame-outline"
+                class="tint-options-icon"
+              ></ion-icon>
+            </span>
             <h3>Prime XR</h3>
-            <p>Advanced Heat Protection</p>
-            <p>
-              A high-performance nano-ceramic tint designed to reduce interior
-              heat while maintaining excellent clarity and comfort.
+            <p class="tint-tagline">Advanced Heat Protection</p>
+            <p class="tint-description-text">
+              A high-performance nano-ceramic tint designed to reduce
+              interior heat while maintaining excellent clarity and comfort.
             </p>
 
-            <p><strong>Best For</strong></p>
-            <ul>
-              <li>Daily drivers in warm climates</li>
-              <li>Strong heat rejection</li>
-              <li>Premium performance without premium pricing</li>
-            </ul>
+            <div class="tint-option-section">
+              <p class="tint-section-label">Best For</p>
+              <ul class="best-for-list">
+                <li>Daily drivers in warm climates</li>
+                <li>Strong heat rejection</li>
+                <li>Premium performance without premium pricing</li>
+              </ul>
+            </div>
 
-            <p><strong>Features</strong></p>
-            <ul>
-              <li>99% UV protection</li>
-              <li>Advanced nano-ceramic technology</li>
-              <li>Excellent heat rejection</li>
-              <li>No signal interference (GPS, radio, Bluetooth)</li>
-            </ul>
+            <div class="tint-option-section">
+              <p class="tint-section-label">Features</p>
+              <ul class="features-list">
+                <li>99% UV protection</li>
+                <li>Advanced nano-ceramic technology</li>
+                <li>Excellent heat rejection</li>
+                <li>No signal interference (GPS, radio, Bluetooth)</li>
+              </ul>
+            </div>
           </div>
 
           <div class="window-tint-options-column">
-            <ion-icon name="diamond-outline" class="tint-options-icon"></ion-icon>
+            <span class="tint-icon-badge">
+              <ion-icon
+                name="diamond-outline"
+                class="tint-options-icon"
+              ></ion-icon>
+            </span>
             <h3>Prime XR+</h3>
-            <p>Ultimate Heat Protection</p>
-            <p>
+            <p class="tint-tagline">Ultimate Heat Protection</p>
+            <p class="tint-description-text">
               Our highest-performing tint film, engineered for maximum heat
-              rejection, premium comfort, and a more refined driving experience.
+              rejection, premium comfort, and a more refined driving
+              experience.
             </p>
 
-            <p><strong>Best For</strong></p>
-            <ul>
-              <li>Luxury vehicles</li>
-              <li>Maximum heat protection</li>
-              <li>Drivers who want the best available tint</li>
-            </ul>
+            <div class="tint-option-section">
+              <p class="tint-section-label">Best For</p>
+              <ul class="best-for-list">
+                <li>Luxury vehicles</li>
+                <li>Maximum heat protection</li>
+                <li>Drivers who want the best available tint</li>
+              </ul>
+            </div>
 
-            <p><strong>Features</strong></p>
-            <ul>
-              <li>99% UV protection</li>
-              <li>Multi-layer nano-ceramic construction</li>
-              <li>Maximum heat rejection</li>
-              <li>Superior optical clarity</li>
-            </ul>
+            <div class="tint-option-section">
+              <p class="tint-section-label">Features</p>
+              <ul class="features-list">
+                <li>99% UV protection</li>
+                <li>Multi-layer nano-ceramic construction</li>
+                <li>Maximum heat rejection</li>
+                <li>Superior optical clarity</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>

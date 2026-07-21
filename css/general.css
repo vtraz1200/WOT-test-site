@@ -213,7 +213,7 @@ h3 {
 
 .btn-submit-block {
   display: block;
-  padding: 13px 20px;
+  padding: 0.85rem 1.5rem;
   background-color: #7e100b;
   color: #fff;
   font-weight: 600;
@@ -221,7 +221,7 @@ h3 {
   text-decoration: none;
   border: solid #000;
   border-radius: 5rem;
-  font-size: 2.5rem;
+  font-size: 1.15rem;
   cursor: pointer;
   transition: all 0.5s;
   box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.25);
@@ -256,8 +256,9 @@ h3 {
 }
 
 .btn-block {
-  margin: auto;
-  width: 50%;
+  margin: 1rem auto 0;
+  width: 100%;
+  text-align: center;
 }
 
 .hero-section-message {
