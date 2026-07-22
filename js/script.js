@@ -21,6 +21,52 @@ if (toggle && menu && dropdown) {
 }
 
 //////////////////////////////////////////////////////////
+// SCROLL REVEAL (shared by any element that should fade/slide in once it
+// actually scrolls into view, instead of animating immediately on load —
+// a plain CSS animation on a below-the-fold element plays out invisibly
+// before the user ever scrolls to it)
+
+function initScrollReveal(selector, { threshold = 0.2, stagger = 0 } = {}) {
+  const els = document.querySelectorAll(selector);
+  if (!els.length || !("IntersectionObserver" in window)) return;
+
+  els.forEach((el, i) => {
+    el.classList.add("reveal-pending");
+    if (stagger) el.style.transitionDelay = `${i * stagger}s`;
+  });
+
+  const reveal = (entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("is-visible");
+      observer.unobserve(entry.target);
+    });
+  };
+
+  const observer = new IntersectionObserver(reveal, { root: null, threshold });
+  els.forEach((el) => observer.observe(el));
+}
+
+initScrollReveal(".info-video-text-box", { threshold: 0.2, stagger: 0.15 });
+initScrollReveal(".catcher", { threshold: 0.2 });
+initScrollReveal(".section-services .service", { threshold: 0.15, stagger: 0.1 });
+
+//////////////////////////////////////////////////////////
+// CUSTOM VIDEO PLAY BUTTON
+
+document.querySelectorAll(".info-video-media").forEach((wrap) => {
+  const video = wrap.querySelector("video");
+  const playBtn = wrap.querySelector(".info-video-play");
+  if (!video || !playBtn) return;
+
+  playBtn.addEventListener("click", () => video.play());
+
+  video.addEventListener("play", () => wrap.classList.add("is-playing"));
+  video.addEventListener("pause", () => wrap.classList.remove("is-playing"));
+  video.addEventListener("ended", () => wrap.classList.remove("is-playing"));
+});
+
+//////////////////////////////////////////////////////////
 // EXPANDABLE PRICE CARD
 
 document.querySelectorAll(".price-card-trigger").forEach((trigger) => {
@@ -185,6 +231,49 @@ if (sectionHeroSevenEl) {
   );
   obs.observe(sectionHeroSevenEl);
 }
+
+//////////////////////////////////////////////////////////
+// AUTO-HIDE HEADER ON SCROLL DIRECTION
+// Only has a visual effect once .sticky is already on <body> (see the
+// IntersectionObserver blocks above) — the CSS gates on that ancestor class,
+// so hiding here is a no-op until the header has actually become fixed.
+
+(() => {
+  const MIN_DELTA = 8; // ignore tiny scroll jitter
+  const HIDE_AFTER = 120; // stay visible until scrolled this far down
+
+  let lastY = window.scrollY;
+  let ticking = false;
+
+  const onScroll = () => {
+    const currentY = window.scrollY;
+    const delta = currentY - lastY;
+
+    if (Math.abs(delta) > MIN_DELTA) {
+      const dropdownOpen = document.querySelector(".dropdown-menu.open");
+
+      if (delta > 0 && currentY > HIDE_AFTER && !dropdownOpen) {
+        document.body.classList.add("nav-hidden");
+      } else {
+        document.body.classList.remove("nav-hidden");
+      }
+      lastY = currentY;
+    }
+
+    ticking = false;
+  };
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!ticking) {
+        requestAnimationFrame(onScroll);
+        ticking = true;
+      }
+    },
+    { passive: true },
+  );
+})();
 
 //////////////////////////////////////////////////////////
 // REVEAL SECTIONS
@@ -355,23 +444,23 @@ document.querySelectorAll(".carousel").forEach((carousel) => {
 });
 
 //////////////////////////////////////////////////////////
-// INFO SLIDER
+// AUTO SLIDER (shared by .info-slider and .info-slider-custom)
 
-document.querySelectorAll(".info-slider").forEach((slider) => {
-  const track = slider.querySelector(".info-track");
+function initAutoSlider(slider, { trackSelector, dotsSelector }) {
+  const track = slider.querySelector(trackSelector);
+  const dotsContainer = slider.querySelector(dotsSelector);
+  const pauseBtn = slider.querySelector(".info-slider-pause");
+  if (!track) return;
+
   const slides = Array.from(track.children);
   const slideCount = slides.length;
-  let index = 0;
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
 
-  const dotsContainer = slider.querySelector(".info-dots");
-  if (dotsContainer) {
-    slides.forEach((_, i) => {
-      const dot = document.createElement("span");
-      dot.className = "info-dot";
-      if (i === 0) dot.classList.add("info-dot--active");
-      dotsContainer.appendChild(dot);
-    });
-  }
+  let index = 0;
+  let timer = null;
+  let isPaused = false;
 
   const activateDot = (i) => {
     dotsContainer
@@ -379,11 +468,29 @@ document.querySelectorAll(".info-slider").forEach((slider) => {
       .forEach((dot, di) => dot.classList.toggle("info-dot--active", di === i));
   };
 
+  const goToSlide = (i) => {
+    index = i;
+    track.style.transform = `translateX(-${index * 100}%)`;
+    activateDot(index);
+  };
+
+  if (dotsContainer) {
+    slides.forEach((_, i) => {
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "info-dot";
+      dot.setAttribute("aria-label", `Go to slide ${i + 1}`);
+      if (i === 0) dot.classList.add("info-dot--active");
+      dot.addEventListener("click", () => goToSlide(i));
+      dotsContainer.appendChild(dot);
+    });
+  }
+
   // Clone first slide for seamless looping
   const firstClone = slides[0].cloneNode(true);
   track.appendChild(firstClone);
 
-  setInterval(() => {
+  const nextSlide = () => {
     index++;
     track.style.transform = `translateX(-${index * 100}%)`;
     activateDot(index % slideCount);
@@ -400,40 +507,63 @@ document.querySelectorAll(".info-slider").forEach((slider) => {
         track.style.transition = "transform 0.7s ease-in-out";
       }, 750);
     }
-  }, 3500);
-});
+  };
 
-//////////////////////////////////////////////////////////
-// INFO SLIDER Custom
+  const startTimer = () => {
+    if (timer || isPaused) return;
+    timer = setInterval(nextSlide, 3500);
+  };
 
-document.querySelectorAll(".info-slider-custom").forEach((slider) => {
-  const track = slider.querySelector(".info-track-custom");
-  const slides = Array.from(track.children);
-  const slideCount = slides.length;
-  let index = 0;
+  const stopTimer = () => {
+    clearInterval(timer);
+    timer = null;
+  };
 
-  // Clone first slide for seamless looping
-  const firstClone = slides[0].cloneNode(true);
-  track.appendChild(firstClone);
-
-  setInterval(() => {
-    index++;
-    track.style.transform = `translateX(-${index * 100}%)`;
-
-    // When reaching clone, reset instantly (no animation)
-    if (index === slideCount) {
-      setTimeout(() => {
-        track.style.transition = "none";
-        index = 0;
-        track.style.transform = `translateX(0)`;
-      }, 700);
-
-      setTimeout(() => {
-        track.style.transition = "transform 0.7s ease-in-out";
-      }, 750);
+  const setPaused = (paused) => {
+    isPaused = paused;
+    if (paused) {
+      stopTimer();
+    } else {
+      startTimer();
     }
-  }, 3500);
-});
+    if (pauseBtn) {
+      pauseBtn.setAttribute("aria-pressed", String(paused));
+      pauseBtn.setAttribute(
+        "aria-label",
+        paused ? "Play slideshow" : "Pause slideshow",
+      );
+      pauseBtn
+        .querySelector("ion-icon")
+        ?.setAttribute("name", paused ? "play" : "pause");
+    }
+  };
+
+  // Pause while the user is looking at or interacting with the slider
+  slider.addEventListener("mouseenter", stopTimer);
+  slider.addEventListener("mouseleave", () => !isPaused && startTimer());
+  slider.addEventListener("focusin", stopTimer);
+  slider.addEventListener("focusout", () => !isPaused && startTimer());
+
+  pauseBtn?.addEventListener("click", () => setPaused(!isPaused));
+
+  // Respect the user's OS-level motion preference
+  setPaused(prefersReducedMotion);
+}
+
+document
+  .querySelectorAll(".info-slider")
+  .forEach((slider) =>
+    initAutoSlider(slider, { trackSelector: ".info-track", dotsSelector: ".info-dots" }),
+  );
+
+document
+  .querySelectorAll(".info-slider-custom")
+  .forEach((slider) =>
+    initAutoSlider(slider, {
+      trackSelector: ".info-track-custom",
+      dotsSelector: ".info-dots-custom",
+    }),
+  );
 /// FOOTER SCHEDULE
 
 // ✅ Set your hours here (24-hour format). Use null for closed days.

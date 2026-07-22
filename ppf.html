@@ -140,7 +140,7 @@
       <section class="info-slider">
         <div class="info-track">
           <div class="info-slide">
-            <img src="images/ppf/ppf-carousel-multi-colors.png" />
+            <img src="images/ppf/ppf-carousel-multi-colors-slide.jpg" alt="" />
             <div class="info-content">
               <h3>Premium Paint Protection Film</h3>
               <p>Protection Built For Real Roads.</p>
@@ -148,7 +148,7 @@
           </div>
 
           <div class="info-slide">
-            <img src="images/ppf/ppf-carousel-purple.png" />
+            <img src="images/ppf/ppf-carousel-purple-slide.jpg" alt="" />
             <div class="info-content">
               <h3>Expert Film Installation</h3>
               <p>Professionally executed by trained technicians.</p>
@@ -156,7 +156,7 @@
           </div>
 
           <div class="info-slide">
-            <img src="images/ppf/ppf-carousel-blue.png" />
+            <img src="images/ppf/ppf-carousel-blue-slide.jpg" alt="" />
             <div class="info-content">
               <h3>Maintains Resale Value</h3>
               <p>Protect your investment long term.</p>
@@ -164,6 +164,14 @@
           </div>
         </div>
         <div class="info-dots"></div>
+        <button
+          type="button"
+          class="info-slider-pause"
+          aria-pressed="false"
+          aria-label="Pause slideshow"
+        >
+          <ion-icon name="pause"></ion-icon>
+        </button>
       </section>
       <section class="section-info-video">
         <p class="info-video-kicker">See It In Action</p>
@@ -174,17 +182,27 @@
         <div class="info-video-container">
           <div class="info-video-media">
             <span class="info-video-step">01</span>
-            <video class="info-video" controls>
+            <video
+              class="info-video"
+              controls
+              preload="metadata"
+              poster="images/ppf/ppf-video-poster-01.jpg"
+            >
               <source
-                src="videos/xpel/ppf-videos/07.23.24 - Dealership - F&I Penske_PPF_V1_1.mp4"
+                src="videos/xpel/ppf-videos/web/ppf-defense-mode-web.mp4"
                 type="video/mp4"
               />
               Your browser does not support the video tag.
             </video>
+            <button class="info-video-play" aria-label="Play video">
+              <ion-icon name="play"></ion-icon>
+            </button>
           </div>
 
           <div class="info-video-text-box">
-            <ion-icon name="shield-checkmark-outline"></ion-icon>
+            <span class="info-video-icon-badge">
+              <ion-icon name="shield-checkmark-outline"></ion-icon>
+            </span>
             <p>
               Think of PPF as defense mode for your paint. Press play to see
               how it absorbs impact and prevents damage.
@@ -192,7 +210,9 @@
           </div>
 
           <div class="info-video-text-box">
-            <ion-icon name="construct-outline"></ion-icon>
+            <span class="info-video-icon-badge">
+              <ion-icon name="construct-outline"></ion-icon>
+            </span>
             <p>
               Watch the installation in action and see the precision behind
               every panel.
@@ -201,13 +221,21 @@
 
           <div class="info-video-media">
             <span class="info-video-step">02</span>
-            <video class="info-video" controls>
+            <video
+              class="info-video"
+              controls
+              preload="metadata"
+              poster="images/ppf/ppf-video-poster-02.jpg"
+            >
               <source
-                src="videos/xpel/ppf-videos/11.18.24 - Product - Ultimate PLus Fusion Full V24 _V1_1.mp4"
+                src="videos/xpel/ppf-videos/web/ppf-installation-web.mp4"
                 type="video/mp4"
               />
               Your browser does not support the video tag.
             </video>
+            <button class="info-video-play" aria-label="Play video">
+              <ion-icon name="play"></ion-icon>
+            </button>
           </div>
         </div>
       </section>
@@ -217,13 +245,19 @@
           <div class="price-card">
             <img
               src="images/ppf/main-page-ppf-new.png"
-              alt=""
+              alt="Partial front end paint protection film"
               class="price-card-image"
             />
-            <h3 class="price-card-title">Bronze Package</h3>
+            <h3 class="price-card-title">Partial Front End</h3>
+            <span class="price-card-tag">Entry-Level Coverage</span>
             <p class="price-card-description">
-              1-Year Protection — entry-level coverage for daily drivers.
+              Budget-friendly protection for daily drivers.
             </p>
+            <ul class="features-list">
+              <li>Hood leading edge</li>
+              <li>Front bumper</li>
+              <li>Mirrors</li>
+            </ul>
             <a href="contact.html">
               <button class="btn-small">Get Quote</button></a
             >
@@ -231,13 +265,21 @@
           <div class="price-card">
             <img
               src="images/ppf/ppf-carousel-purple.png"
-              alt=""
+              alt="Full front end paint protection film"
               class="price-card-image"
             />
-            <h3 class="price-card-title">Silver Package</h3>
+            <h3 class="price-card-title">Full Front End</h3>
+            <span class="price-card-tag">Balanced Protection</span>
             <p class="price-card-description">
-              3-Year Protection — balanced gloss and durability.
+              Complete coverage for every forward-facing surface, in one
+              package.
             </p>
+            <ul class="features-list">
+              <li>Full hood</li>
+              <li>Front bumper</li>
+              <li>Fenders</li>
+              <li>Mirrors &amp; headlights</li>
+            </ul>
             <a href="contact.html">
               <button class="btn-small">Get Quote</button></a
             >
@@ -245,13 +287,20 @@
           <div class="price-card">
             <img
               src="images/ppf/ppf-carousel-blue.png"
-              alt=""
+              alt="High impact area paint protection film"
               class="price-card-image"
             />
-            <h3 class="price-card-title">Gold Package</h3>
+            <h3 class="price-card-title">High Impact Areas</h3>
+            <span class="price-card-tag">Targeted Protection</span>
             <p class="price-card-description">
-              5-Year Protection — our best value package.
+              Targeted protection for the vehicle's most vulnerable points.
             </p>
+            <ul class="features-list">
+              <li>Door edges</li>
+              <li>Rear bumper</li>
+              <li>Rocker panels</li>
+              <li>Mirrors</li>
+            </ul>
             <a href="contact.html">
               <button class="btn-small">Get Quote</button></a
             >
@@ -259,13 +308,20 @@
           <div class="price-card">
             <img
               src="images/ppf/ppf-carousel-multi-colors.png"
-              alt=""
+              alt="Full vehicle paint protection film"
               class="price-card-image"
             />
-            <h3 class="price-card-title">Platinum Package</h3>
+            <h3 class="price-card-title">Full Vehicle</h3>
+            <span class="price-card-tag">Complete Coverage</span>
             <p class="price-card-description">
-              7+ Year Protection — full show-car finish.
+              Complete, showroom-level protection for every panel.
             </p>
+            <ul class="features-list">
+              <li>Doors</li>
+              <li>Roof</li>
+              <li>Trunk</li>
+              <li>Quarter panels</li>
+            </ul>
             <a href="contact.html">
               <button class="btn-small">Get Quote</button></a
             >
