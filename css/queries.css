@@ -63,6 +63,31 @@
 /*******************************************/
 
 @media (max-width: 75em) {
+  /* HOURS BAR (footer) — 7 fixed-minimum pills need ~940px, but the footer
+     only has ~790-940px to give them in this range, so the last day or two
+     get clipped/require horizontal scrolling. Shrink the minimum column
+     width and pill padding/type so all 7 fit without scrolling. */
+  .hours-bar {
+    grid-template-columns: repeat(7, minmax(6rem, 1fr));
+    gap: 0.8rem;
+  }
+
+  .hours-pill {
+    min-width: 6rem;
+    padding: 1rem 0.8rem 0.8rem;
+  }
+
+  .hours-day {
+    font-size: 0.85rem;
+  }
+
+  .hours-time {
+    font-size: 0.78rem;
+  }
+
+  .hours-status {
+    font-size: 0.62rem;
+  }
 }
 
 /*******************************************/
