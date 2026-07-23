@@ -49,7 +49,10 @@ function initScrollReveal(selector, { threshold = 0.2, stagger = 0 } = {}) {
 
 initScrollReveal(".info-video-text-box", { threshold: 0.2, stagger: 0.15 });
 initScrollReveal(".catcher", { threshold: 0.2 });
-initScrollReveal(".section-services .service", { threshold: 0.15, stagger: 0.1 });
+initScrollReveal(".section-services .service", {
+  threshold: 0.15,
+  stagger: 0.1,
+});
 
 //////////////////////////////////////////////////////////
 // CUSTOM VIDEO PLAY BUTTON
@@ -550,20 +553,19 @@ function initAutoSlider(slider, { trackSelector, dotsSelector }) {
   setPaused(prefersReducedMotion);
 }
 
-document
-  .querySelectorAll(".info-slider")
-  .forEach((slider) =>
-    initAutoSlider(slider, { trackSelector: ".info-track", dotsSelector: ".info-dots" }),
-  );
+document.querySelectorAll(".info-slider").forEach((slider) =>
+  initAutoSlider(slider, {
+    trackSelector: ".info-track",
+    dotsSelector: ".info-dots",
+  }),
+);
 
-document
-  .querySelectorAll(".info-slider-custom")
-  .forEach((slider) =>
-    initAutoSlider(slider, {
-      trackSelector: ".info-track-custom",
-      dotsSelector: ".info-dots-custom",
-    }),
-  );
+document.querySelectorAll(".info-slider-custom").forEach((slider) =>
+  initAutoSlider(slider, {
+    trackSelector: ".info-track-custom",
+    dotsSelector: ".info-dots-custom",
+  }),
+);
 /// FOOTER SCHEDULE
 
 // ✅ Set your hours here (24-hour format). Use null for closed days.
@@ -685,6 +687,16 @@ document.addEventListener("DOMContentLoaded", renderHours);
 //       headerEl.classList.toggle("nav-open");
 //   });
 // });
+
+///////////////////////////////////////////////////////////
+// Make Mobile Nav work
+const btnNavEl = document.querySelector(".btn-mobile-nav");
+const headerEl = document.querySelector(".header, .header-secondary");
+const heroWel = document.querySelector(".section-heading-white");
+
+btnNavEl.addEventListener("click", function () {
+  headerEl.classList.toggle("nav-open");
+});
 
 //////////////////////////////////////////////////////////
 // FLEXBOX GAP SAFARI FIX

@@ -3,6 +3,59 @@
 /*******************************************/
 /* 1350/16 = 84  pixel/em */
 @media (max-width: 84em) {
+  /* Trim the biggest sections down from their full-desktop padding so
+     content doesn't drown in whitespace once the viewport shrinks. */
+  .section-catcher,
+  .section-services,
+  .section-window-tint-benefits,
+  .section-booking-tint,
+  .section-ppf-benefits,
+  .section-price-cards,
+  .section-extra-servcies {
+    padding: 6.4rem 4rem;
+  }
+
+  .section-partnerships {
+    padding: 6.4rem 4rem;
+  }
+
+  .footer {
+    padding: 5.6rem 4.8rem;
+  }
+
+  /* SERVICES GRID (index.html) — auto-fit lands on 2 columns right around
+     this breakpoint, leaving the 5th card orphaned alone on its own row.
+     Lock to 2 columns and center that leftover card at normal card width
+     instead of letting it hang off to one side. */
+  .services-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .services-container:has(.service:nth-child(5):last-child)
+    .service:last-child {
+    grid-column: 1 / -1;
+    max-width: calc(50% - 1.6rem);
+    margin: 0 auto;
+  }
+
+  /* PRICE CARDS — shared by tint/custom/ppf/details. Pages with an odd
+     number of cards (tint.html has 3) leave the last one orphaned in the
+     fixed 2-column grid; center it at normal card width instead. */
+  .price-cards-container:has(.price-card:nth-child(3):last-child)
+    .price-card:last-child {
+    grid-column: 1 / -1;
+    max-width: calc(50% - 1.4rem);
+    margin: 0 auto;
+  }
+
+  /* CATCHER SECTION (index.html "Elevate Your Ride") — the side images
+     have a fixed 30rem height but a fluid width, so as the 3-column grid
+     narrows they stretch into tall, distorted slivers. Let height follow
+     width on a sane portrait ratio instead. */
+  .catch-img {
+    height: auto;
+    aspect-ratio: 3 / 4;
+  }
 }
 
 /*******************************************/
@@ -17,44 +70,68 @@
 /*******************************************/
 
 @media (max-width: 59em) {
-  .window-tint-options-container {
-    grid-template-columns: 1fr;
-    max-width: 50rem;
+  /* MOBILE Navigation */
+
+  .btn-mobile-nav {
+    display: block;
+    z-index: 3;
   }
 
-  .price-card--feature {
-    grid-template-columns: 1fr;
+  .navigation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 2;
+    background-size: cover;
+    transform: translateX(100%);
+    z-index: 2;
+
+    background-color: rgb(0, 0, 0, 0.97);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease-in;
+
+    /* Hide navigation */
+    /* Allows no transition at all */
+    /* display: none; */
+
+    /* 1) Hide element visually */
+    opacity: 0;
+
+    /* 2) Make it unaccessible to mouse and keyboard */
+    pointer-events: none;
+
+    /* 3) Hide it from screen readers */
+    visibility: hidden;
   }
 
-  .price-card-feature-media {
-    min-height: 22rem;
+  .nav-open .navigation {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateX(0);
   }
 
-  .section-price-cards {
-    padding: 5rem 3rem;
+  .nav-open .icon-mobile-nav[name="close-outline"] {
+    display: block;
   }
 
-  .price-cards-container {
-    grid-template-columns: 1fr;
-    max-width: 50rem;
+  .nav-open .icon-mobile-nav[name="menu-outline"] {
+    display: none;
   }
 
-  .section-catcher {
-    padding: 6rem 3rem;
+  .main-nav-list {
+    flex-direction: column;
+    gap: 2.2rem;
   }
 
-  .catcher {
-    grid-template-columns: 1fr;
-    max-width: 40rem;
-    gap: 2.4rem;
-  }
-
-  .section-services {
-    padding: 6rem 3rem;
-  }
-
-  .services-container {
-    max-width: 50rem;
+  .main-nav-link:link,
+  .main-nav-link:visited {
+    font-size: 2.6rem;
   }
 }
 
@@ -63,17 +140,6 @@
 /*******************************************/
 
 @media (max-width: 740px) {
-  .section-window-tint-options {
-    padding: 4rem 2rem;
-  }
-
-  .section-price-cards {
-    padding: 4rem 1.6rem;
-  }
-
-  .price-card-feature-body {
-    padding: 2.4rem 2rem;
-  }
 }
 
 /*******************************************/
@@ -81,32 +147,6 @@
 /*******************************************/
 
 @media (max-width: 34em) {
-  .tint-most-popular-badge {
-    top: 1.5rem;
-    right: -3.9rem;
-    width: 13rem;
-    font-size: 0.95rem;
-  }
-
-  .section-catcher {
-    padding: 4.8rem 2rem;
-  }
-
-  .catch-img {
-    height: 22rem;
-  }
-
-  .catcher-information {
-    padding: 2.4rem 2rem;
-  }
-
-  .section-services {
-    padding: 4.8rem 1.6rem;
-  }
-
-  .services-container {
-    grid-template-columns: 1fr;
-  }
 }
 
 /*******************************************/
