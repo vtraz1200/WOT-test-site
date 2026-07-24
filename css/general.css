@@ -53,7 +53,7 @@ h3 {
 .section-heading {
   display: block;
   width: fit-content;
-  margin: 0 auto;
+  margin: 0 auto 2.4rem;
 
   /* Gradient text: a subtle sheen rather than a flat fill. Kept dark
      end-to-end (deep red only) so contrast holds up on the near-white
@@ -543,11 +543,11 @@ h3 {
   padding: 6.4rem 2.4rem;
   max-width: 120rem;
   margin: 0 auto;
-  background: linear-gradient(
+  /* background: linear-gradient(
     to right,
     rgba(20, 20, 20, 0.95),
     rgba(126, 16, 11, 0.95)
-  );
+  ); */
 }
 
 .info-video-kicker {

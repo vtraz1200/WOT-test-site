@@ -35,7 +35,7 @@
     .service:last-child {
     grid-column: 1 / -1;
     max-width: calc(50% - 1.6rem);
-    margin: 0 auto;
+    /* margin: 0 auto; */
   }
 
   /* PRICE CARDS — shared by tint/custom/ppf/details. Pages with an odd
@@ -44,7 +44,7 @@
   .price-cards-container:has(.price-card:nth-child(3):last-child)
     .price-card:last-child {
     grid-column: 1 / -1;
-    max-width: calc(50% - 1.4rem);
+    /* max-width: calc(50% - 1.4rem); */
     margin: 0 auto;
   }
 
@@ -87,6 +87,71 @@
 
   .hours-status {
     font-size: 0.62rem;
+  }
+
+  .slider__btn--left {
+    left: 5%;
+  }
+
+  .slider__btn--right {
+    right: 5%;
+  }
+
+  .slider__btn {
+    height: 5rem;
+    width: 5rem;
+  }
+
+  /* BOOKING / SCHEDULE CARD — the card's full-desktop type scale (a
+     2.5rem button, 1.8rem icons, 1.6rem heading) reads oversized next
+     to the narrower map/text columns at this width. Scale it all down
+     and tighten the card's own padding/gap to match. */
+  .booking-tint-container {
+    padding: 3.2rem;
+    gap: 2.8rem;
+  }
+
+  .booking-info .small-heading-h3 {
+    font-size: 1.3rem;
+  }
+
+  .booking-tint-container .booking-icon {
+    font-size: 1.4rem;
+  }
+
+  .booking-tint-container .window-tint-booking-description {
+    font-size: 1.15rem;
+  }
+
+  .booking-tint-container .card-schedule-today-link {
+    font-size: 1.05rem;
+  }
+
+  /* INFO SLIDER (custom.html) — .info-slider-textbox has no flex-shrink
+     limit of its own, so it holds onto its full 48rem max-width no
+     matter how narrow the section gets, squeezing .info-track-custom
+     (flex: 1) down to as little as ~177px at the bottom of this range.
+     Cap the textbox much narrower and shrink its type to match, freeing
+     up most of the section for the image carousel. */
+  .info-slider-textbox {
+    max-width: 30rem;
+    padding: 2rem 1.8rem;
+  }
+
+  .info-slider-custom-paragraph {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0 0 1rem 0;
+  }
+
+  .info-slider-textbox .btn {
+    font-size: 1.4rem;
+    padding: 0.8rem 1.6rem;
+  }
+
+  .booking-info .btn {
+    font-size: 1.4rem;
+    padding: 0.8rem 1.6rem;
   }
 }
 
@@ -158,6 +223,237 @@
   .main-nav-link:visited {
     font-size: 2.6rem;
   }
+
+  /* The CONTACT pill's solid-black background is meant to stand out
+     against the header bar, but it's invisible against this full-black
+     mobile nav overlay. Give it the brand red instead so it still reads
+     as the primary call-to-action. */
+  .main-nav-list > li:last-child {
+    background-color: #7e100b;
+  }
+
+  .main-nav-list > li:last-child:hover {
+    background-color: #a3140d;
+  }
+
+  /* HERO HEADING — .text-box is a fixed 900px box. Below ~944px it
+     overflows the viewport on both sides and, since overflow-x is
+     hidden site-wide, the heading text gets silently clipped off both
+     edges instead of wrapping. Let it size to the viewport instead. */
+  .text-box {
+    width: min(90vw, 60rem);
+  }
+
+  .heading-primary-main {
+    font-size: 3.4rem;
+  }
+
+  .heading-primary-sub {
+    font-size: 1.6rem;
+  }
+
+  /* CATCHER SECTION (index.html "Elevate Your Ride") — 3 columns leave
+     the paragraph copy in a cramped ~220px-wide strip; stack into one
+     readable column instead. */
+  .section-catcher {
+    padding: 5rem 3rem;
+  }
+
+  .catcher {
+    grid-template-columns: 1fr;
+    max-width: 40rem;
+    gap: 2.4rem;
+  }
+
+  /* SERVICES GRID (index.html) — 2 columns get too tight for an
+     image + heading + bullet list + button at this width; one
+     full-width column reads far better. */
+  .section-services {
+    padding: 5rem 3rem;
+  }
+
+  .services-container {
+    grid-template-columns: 1fr;
+    max-width: 50rem;
+    margin: 0 auto;
+  }
+
+  .partnerships-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .section-heading {
+    font-size: 3.4rem;
+  }
+
+  .section-heading-white {
+    font-size: 3.4rem;
+  }
+
+  .service-image {
+    height: 20rem;
+  }
+
+  /* Testimonials */
+
+  .testimonials-review {
+    font-size: 1.2rem;
+    padding: 1.2rem;
+  }
+
+  .slider__btn--left {
+    left: 4%;
+  }
+
+  .slider__btn--right {
+    right: 4%;
+  }
+
+  .slider__btn {
+    height: 3.6rem;
+    width: 3.6rem;
+  }
+
+  .test-parenth {
+    font-size: 1.2rem;
+  }
+
+  /* GALLERY */
+  .gallery-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* FOOTER  */
+
+  .footer-link {
+    font-size: 2.8rem;
+  }
+
+  .copyright.copyright-order-1 {
+    font-size: 1rem;
+  }
+
+  /* Regression fix: the 84em breakpoint centers the 5th service card at
+     half-width to sit neatly beside its neighbor in a 2-column grid.
+     Now that this breakpoint forces a single column, that same rule
+     left the last card stranded at half-width instead of matching its
+     full-width siblings. Undo it now that there's no neighbor to match. */
+  .services-container:has(.service:nth-child(5):last-child)
+    .service:last-child {
+    grid-column: auto;
+    max-width: none;
+    /* margin: 0; */
+  }
+
+  /* PRICE CARDS — same reasoning as the services grid above. */
+  .section-price-cards {
+    padding: 4.5rem 3rem;
+  }
+
+  .price-cards-container {
+    grid-template-columns: 1fr;
+    max-width: 50rem;
+  }
+
+  /* Trim the generous full-desktop whitespace inside each price card
+     (tint/custom/ppf/details) at this width. */
+  .price-card {
+    padding: 2rem;
+  }
+
+  .price-card-image {
+    height: 13rem;
+    margin: 0 auto 1rem;
+  }
+
+  .price-card-title {
+    padding: 0.4rem 0 0.3rem;
+  }
+
+  .price-card-tag {
+    margin: 0 0 0.6rem;
+  }
+
+  .price-card-description {
+    margin: 0 auto 1rem;
+  }
+
+  .price-card-toggle-hint {
+    margin-bottom: 0.8rem;
+  }
+
+  /* WINDOW TINT TIER CARDS (tint.html "XPEL Window Tinting Film") — 3
+     fixed columns get unreadably narrow; stack to one column. */
+  .window-tint-options-container {
+    grid-template-columns: 1fr;
+    max-width: 50rem;
+  }
+
+  /* FEATURE PRICE CARD (ceramic.html, details.html) — the image column
+     keeps its 38% grid width but stretches (align-items: stretch) to
+     match the much taller text column, turning it into a bizarre,
+     extremely tall, narrow sliver. Stack instead: full-width image at a
+     sane height on top, copy below. */
+  .price-card--feature {
+    grid-template-columns: 1fr;
+  }
+
+  .price-card-feature-media {
+    min-height: 22rem;
+  }
+
+  .price-card-image {
+    height: 25rem;
+  }
+
+  /* BOOKING / SCHEDULE CARD — below the 901px breakpoint where
+     style.css widens the map column, the base 2-column grid squeezes
+     the map into a ~160px sliver (too narrow to read). Stack it and
+     give the map a real height instead. Matches the specificity of the
+     style.css selectors so it actually wins in the 901-944px overlap. */
+  .section-booking-tint .booking-tint-container,
+  .footer-pic-info .booking-tint-container {
+    grid-template-columns: 1fr;
+    padding: 3.6rem 2.8rem;
+  }
+
+  .booking-image-wrap .map-card {
+    width: 100%;
+    max-width: 100%;
+    height: 26rem;
+  }
+
+  /* Center everything in the text half now that it's stacked full-width
+     above the map — left-aligned copy under a centered map looked
+     lopsided. */
+  .booking-info {
+    text-align: center;
+  }
+
+  .booking-contact-row {
+    justify-content: center;
+  }
+
+  /* The left-edge accent stripe reads oddly once its content is
+     centered instead of left-aligned; run it along the top instead so
+     it still frames the card without pulling the eye to one side. */
+  .booking-accent {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    width: auto;
+    height: 6px;
+  }
+
+  /* HOURS BAR (footer) — even the shrunk 75em pills don't all fit in one
+     row once the footer itself narrows past ~900px, clipping the last
+     day(s) off the edge. Let the grid wrap into 2 comfortable rows
+     instead of forcing a single cramped (or scrolling) row. */
+  .hours-bar {
+    grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+    gap: 0.8rem;
+  }
 }
 
 /*******************************************/
@@ -165,6 +461,37 @@
 /*******************************************/
 
 @media (max-width: 740px) {
+  /* GALLERY (index.html) — a fixed 20rem height against a shrinking
+     3-column width turns each thumbnail into a tall, distorted sliver
+     (as narrow as ~143px wide by 320px tall). Let height follow width
+     on a clean square ratio instead. */
+  .gallery-images {
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  /* INFO VIDEO SECTION (ppf.html, custom.html) — 2 columns squeeze the
+     caption text box down to ~205px, wrapping it into an almost
+     one-word-per-line column. Stack video and caption instead. */
+  .info-video-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  /* FOOTER LOGO / COPYRIGHT / SOCIALS — the 3-column grid (logo,
+     copyright, social icons) squeezes the copyright column down to
+     ~90-130px, wrapping "Copyright © 2025 by Wide Open Throttle..."
+     into a single word per line. Stack into one centered column. */
+  .logo-link-copy {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    gap: 1.6rem;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
 }
 
 /*******************************************/
@@ -172,6 +499,18 @@
 /*******************************************/
 
 @media (max-width: 34em) {
+  /* SECTION HEADINGS — every section title on the site ("Testimonials",
+     "Schedule Today", "Trusted Industry Partners", "Gallery"...) uses
+     these two classes at 4.2rem. Multi-word titles at least wrap, but a
+     single unbreakable word like "Testimonials" can't wrap at all, so
+     its full ~500px width just overflows the ~220-280px available on a
+     phone and gets silently clipped by the site-wide overflow-x: hidden.
+     Scale both down to a size that fits even single-word titles. */
+  .section-heading,
+  .section-heading-white {
+    font-size: 2.4rem;
+    letter-spacing: 0.08rem;
+  }
 }
 
 /*******************************************/
