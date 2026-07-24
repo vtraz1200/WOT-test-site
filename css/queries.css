@@ -418,7 +418,14 @@
      style.css selectors so it actually wins in the 901-944px overlap. */
   .section-booking-tint .booking-tint-container,
   .footer-pic-info .booking-tint-container {
-    grid-template-columns: 1fr;
+    /* A bare `1fr` track has an implicit min-width: auto, so it can
+       grow to fit its content's min-content size instead of actually
+       respecting the container's padded width — that's what let
+       .booking-info overflow past the card's right edge further down
+       this cascade (34em). minmax(0, 1fr) removes that implicit
+       floor so the track — and everything inside it — actually
+       respects the available space. */
+    grid-template-columns: minmax(0, 1fr);
     padding: 3.6rem 2.8rem;
   }
 
@@ -967,8 +974,15 @@
      the gap between elements to match a phone-sized card instead. */
   .section-booking-tint .booking-tint-container,
   .footer-pic-info .booking-tint-container {
-    padding: 2rem 1.6rem;
+    padding: 2.8rem 2.2rem;
     gap: 1.8rem;
+    /* width: auto isn't stretching to fill its grid track here (it
+       computes wider than the ~236px column it sits in and overflows
+       to the right instead of centering) — pin it to 100% so it
+       actually matches the track, with auto margins as a backup. */
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .booking-image-wrap .map-card {
@@ -1047,6 +1061,10 @@
     line-height: 1.2;
   }
 
+  .section-services {
+    padding: 2rem;
+  }
+
   .btn {
     font-size: 1.2rem;
   }
@@ -1062,7 +1080,45 @@
     padding: 3.2rem 2rem;
   }
 
+  /* PARTNER LOGOS — simple static 2x2 grid. */
   .partnerships-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.4rem;
+    justify-items: center;
+  }
+
+  .partnerships-img {
+    max-width: 130px;
+  }
+
+  .testimonials-review {
+    font-size: 0.9rem;
+    padding-top: 1rem;
+  }
+
+  .slider__btn {
+    font-size: 2rem;
+  }
+
+  .slider__btn--left {
+    left: 8%;
+  }
+
+  .slider__btn--right {
+    right: 8%;
+  }
+
+  .booking-info .btn {
+    font-size: 1rem;
+  }
+
+  .footer {
+    padding: 2.8rem;
+  }
+
+  .service-body .features-list li {
+    font-size: 1rem;
   }
 }
 
