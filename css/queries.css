@@ -102,6 +102,11 @@
     width: 5rem;
   }
 
+  .price-card-image {
+    width: 100%;
+    height: 15rem;
+  }
+
   /* BOOKING / SCHEDULE CARD — the card's full-desktop type scale (a
      2.5rem button, 1.8rem icons, 1.6rem heading) reads oversized next
      to the narrower map/text columns at this width. Scale it all down
@@ -302,11 +307,11 @@
   }
 
   .slider__btn--left {
-    left: 4%;
+    left: 4.2%;
   }
 
   .slider__btn--right {
-    right: 4%;
+    right: 4.2%;
   }
 
   .slider__btn {
@@ -327,6 +332,10 @@
 
   .footer-link {
     font-size: 2.8rem;
+  }
+
+  .logo-link-copy {
+    gap: 1.2rem;
   }
 
   .copyright.copyright-order-1 {
@@ -402,10 +411,6 @@
     min-height: 22rem;
   }
 
-  .price-card-image {
-    height: 25rem;
-  }
-
   /* BOOKING / SCHEDULE CARD — below the 901px breakpoint where
      style.css widens the map column, the base 2-column grid squeezes
      the map into a ~160px sliver (too narrow to read). Stack it and
@@ -454,6 +459,143 @@
     grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
     gap: 0.8rem;
   }
+
+  /* INFO VIDEO SECTION (ppf.html only) — pairing each video with its
+     caption side-by-side forced them to fight over the same row
+     height (video shrinks with width via its 16:9 ratio, caption
+     grows as its copy wraps). Drop to a single column instead, with
+     each caption sitting above its own video (looks better as an
+     intro line than a caption trailing underneath).
+
+     The source order in the HTML is media–text–text–media (it's
+     arranged as a criss-cross 2-up grid at desktop widths: video next
+     to caption 1, caption 2 next to video 2), so a plain single
+     column would stack it media/text/text/media — pairing caption 2
+     with the wrong video. `order` re-sequences it to the intended
+     text → video → text → video without touching the markup. */
+  .info-video-container {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .info-video-container > .info-video-media:nth-child(1) {
+    order: 2;
+  }
+
+  .info-video-container > .info-video-text-box:nth-child(2) {
+    order: 1;
+  }
+
+  .info-video-container > .info-video-text-box:nth-child(3) {
+    order: 3;
+    margin-top: 1.6rem;
+  }
+
+  .info-video-container > .info-video-media:nth-child(4) {
+    order: 4;
+  }
+
+  .info-video {
+    aspect-ratio: 16 / 9;
+  }
+
+  .info-video-text-box {
+    padding: 2rem 2.2rem;
+  }
+
+  .info-video-text-box p {
+    font-size: 1.45rem;
+  }
+
+  /* INFO SLIDER (custom.html) — side-by-side felt cramped at this
+     width (the 75em fix's 30rem-wide textbox was still eating over
+     half the section, leaving the truck photo as little as 270px
+     wide). Stack it instead: photo on top, copy below, full width for
+     both — the general convention for mobile/tablet media sections is
+     image first so the visual lands before the pitch. .info-slider-custom
+     is a flex row (textbox, then track, in that DOM order); switching
+     to a column and using `order` puts the track on top without
+     touching the markup. */
+  .info-slider-custom {
+    flex-direction: column;
+  }
+
+  .info-track-custom {
+    order: 1;
+  }
+
+  .info-slide-custom img {
+    height: 24rem;
+  }
+
+  .info-slider-textbox {
+    order: 2;
+    max-width: 100%;
+    padding: 1.8rem 1.6rem;
+  }
+
+  .info-slider-textbox::before {
+    width: 3.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .info-slider-custom-paragraph {
+    font-size: 1rem;
+    line-height: 1.55;
+    margin: 0 0 0.8rem 0;
+  }
+
+  .info-slider-textbox .btn {
+    font-size: 1.3rem;
+    padding: 0.8rem 1.6rem;
+  }
+
+  /* details */
+
+  .price-card-feature-media {
+    height: 15rem;
+  }
+
+  /* WRAPS PRICING CARD (wraps.html) — the photo is capped at its
+     320px min-width, so via its 3:4 ratio it tops out ~427px tall
+     while the text column next to it (subheading + paragraph +
+     feature grid) runs ~650px — the photo reads small and stranded
+     next to a much taller block of copy. Stretch the image column to
+     match the text column's height and let the photo fill most of
+     that height (object-fit handles the crop), instead of being
+     capped by its own width. Shrinking the card's padding and the
+     paragraph type brings the whole card down a size too. */
+  .wraps-prices-container {
+    align-items: stretch;
+    padding: 2.2rem;
+    gap: 2rem;
+  }
+
+  .wrap-prices-image-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .wrap-prices-image {
+    width: 100%;
+    height: 90%;
+    aspect-ratio: auto;
+  }
+
+  .wrap-prices-textbox-text {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .wrap-prices-subheading {
+    font-size: 1.15rem;
+  }
+
+  .wrap-prices-feature {
+    padding: 0.8rem 0.9rem;
+    font-size: 0.9rem;
+  }
 }
 
 /*******************************************/
@@ -461,6 +603,193 @@
 /*******************************************/
 
 @media (max-width: 740px) {
+  /* index.html */
+
+  .catch-img {
+    height: 550px;
+  }
+
+  .services-container {
+    padding: 3rem;
+  }
+
+  .section-testimonials {
+    padding: 6.4rem 1.8rem;
+  }
+
+  .testimonials-review {
+    font-size: 1rem;
+  }
+
+  .test-parenth {
+    font-size: 1rem;
+  }
+
+  .slider__btn--left {
+    left: 4.4%;
+  }
+
+  .slider__btn--right {
+    right: 4.4%;
+  }
+  /* HERO (index.html) — the 59em fix (3.4rem heading / 40px buttons)
+     was sized for tablets; at phone widths a 54px heading and 40px
+     button label read oversized. clamp() keeps the heading fluid
+     between a 32px floor and 40px ceiling — the mobile H1 range most
+     style guides land on — instead of a single fixed size. */
+  .heading-primary-main {
+    font-size: clamp(4rem);
+  }
+
+  .heading-primary-sub {
+    font-size: clamp(2rem);
+  }
+
+  .heading-primary .btn {
+    font-size: 2.2rem;
+    padding: 0.8rem 1.6rem;
+  }
+
+  .btn {
+    font-size: 2rem;
+  }
+
+  .section-heading {
+    font-size: 3rem;
+  }
+
+  .section-heading-white {
+    font-size: 3rem;
+  }
+
+  /* MOBILE NAV ICON — 4.8rem (76.8px) is a huge hamburger/close icon
+     on a phone-width header. 2.8rem (~45px) keeps it comfortably
+     above the 44px accessible tap-target minimum without dominating
+     the bar. */
+  .icon-mobile-nav {
+    height: 2.8rem;
+    width: 2.8rem;
+  }
+
+  /* PRICE CARD IMAGE (tint.html "Window Tint Services" cards) — the
+     image has no width constraint of its own, so with only a height
+     set, its rendered width follows the source photo's natural aspect
+     ratio instead of the card. At this width that pushes it past the
+     card's content box (~598px image vs. ~580px available), so it
+     overflows to one side instead of centering. Pin width to 100% so
+     it can never outgrow the card regardless of the source photo's
+     shape, and bring the height down to match. */
+  .price-card-image {
+    width: 100%;
+    height: 20rem;
+  }
+
+  /* FEATURE PRICE CARDS (details.html "Interior Detail" / "Wash &
+     Wax") — still carrying full-desktop scale at this width: a 22rem
+     image, 3rem/3.2rem body padding, and a 2.3rem title push each
+     card to ~1200px tall on a 740px-wide screen. Shrink the image,
+     padding, and every type size in the body so the card reads like
+     a compact mobile card instead of a desktop card squeezed narrow. */
+  .price-card-feature-media {
+    min-height: 19rem;
+  }
+
+  .price-card-feature-body {
+    padding: 1.8rem 1.6rem;
+  }
+
+  .price-card-feature-title {
+    font-size: 1.8rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .price-card-feature-meta {
+    font-size: 0.95rem;
+    padding: 0.4rem 0.9rem;
+    margin: 0 0 0.9rem;
+  }
+
+  .price-card-feature-tagline {
+    font-size: 1.1rem;
+    margin: 0 0 1rem;
+  }
+
+  .price-card-feature-list {
+    margin-bottom: 1.2rem;
+  }
+
+  .price-card-feature-list li {
+    font-size: 1rem;
+  }
+
+  .price-card-feature-intro {
+    font-size: 1rem;
+    margin: 0 0 1.1rem;
+  }
+
+  .price-card-feature-note {
+    padding: 0.9rem 1rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .price-card-feature-note p {
+    font-size: 0.95rem;
+  }
+
+  .price-card-feature-trigger {
+    font-size: 1.05rem;
+    margin-bottom: 0.7rem;
+  }
+
+  /* WRAPS PRICING CARD (wraps.html) — .wrap-prices-image-box carries a
+     320px min-width from the base desktop layout, which refuses to
+     shrink even though the card is too narrow to fit it beside the
+     text column. The row doesn't wrap (no flex-wrap), so the image
+     column just pokes ~20px past the white card's right edge instead
+     of staying inside it. Drop the min-width floor so flex-shrink can
+     actually fit it in the available space — the 59em fix's
+     height: 90% stretch still applies, so the image stays a tall,
+     well-proportioned panel, just narrower. */
+  .wrap-prices-image-box {
+    min-width: 0;
+  }
+
+  /* EXTRA SERVICES CARDS (details.html "Clay Bar" / "1 Step Polish" /
+     etc.) — still at full-desktop scale here: 544px wide, 38.4/35.2px
+     padding, a 73.6px icon and a 27.2px heading make each card ~345px
+     tall stacked full-width. Shrink the card's own max-width, padding,
+     icon, and every type size so it reads as a compact mobile list
+     item instead of a desktop card squeezed into one column. */
+  .extra-service {
+    max-width: 28rem;
+    padding: 1.6rem 1.6rem 1.5rem;
+  }
+
+  .extra-service-icon {
+    width: 3.4rem;
+    height: 3.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .extra-service-icon ion-icon {
+    font-size: 1.6rem;
+  }
+
+  .extra-service h3 {
+    font-size: 1.4rem;
+    margin: 0 0 0.9rem;
+  }
+
+  .extra-service-price-row {
+    padding: 0.6rem 0;
+    font-size: 1.05rem;
+  }
+
+  .extra-service-price {
+    font-size: 1rem;
+    padding: 0.25rem 0.8rem;
+  }
+
   /* GALLERY (index.html) — a fixed 20rem height against a shrinking
      3-column width turns each thumbnail into a tall, distorted sliver
      (as narrow as ~143px wide by 320px tall). Let height follow width
@@ -499,6 +828,50 @@
 /*******************************************/
 
 @media (max-width: 34em) {
+  /* index.html */
+  .heading-primary .btn {
+    font-size: 1.8rem;
+  }
+
+  .catcher-information p.catcher-text {
+    font-size: 1.2rem;
+    line-height: 1.4;
+  }
+
+  .catch-img {
+    height: 400px;
+  }
+
+  .services-container {
+    padding: 1rem;
+  }
+
+  .partnerships-container {
+    margin: auto;
+    gap: 2.5rem;
+  }
+
+  .testimonials-review {
+    font-size: 0.9rem;
+    padding: 1rem;
+  }
+
+  .slider__btn {
+    font-size: 2.2rem;
+  }
+
+  .slider__btn--left {
+    left: 6%;
+  }
+
+  .slider__btn--right {
+    right: 6%;
+  }
+
+  .section-testimonials {
+    padding: 1rem;
+  }
+
   /* SECTION HEADINGS — every section title on the site ("Testimonials",
      "Schedule Today", "Trusted Industry Partners", "Gallery"...) uses
      these two classes at 4.2rem. Multi-word titles at least wrap, but a
@@ -510,6 +883,152 @@
   .section-heading-white {
     font-size: 2.4rem;
     letter-spacing: 0.08rem;
+  }
+
+  .booking-tint-container .window-tint-booking-description {
+    font-size: 1rem;
+  }
+
+  /* ceramic coating */
+
+  /* CERAMIC COATING PRICE CARD (ceramic.html) — the card runs
+     ~1760px tall on a 352px-wide phone screen: a 304px image, full
+     desktop-scale body padding, a 28.8px title, and generously
+     spaced highlight rows all add up. Shrink the image, padding, and
+     every type/spacing value in the body so the whole card reads as
+     a compact mobile card instead of a desktop layout squeezed narrow. */
+  .price-card-feature-media {
+    min-height: 12rem;
+  }
+
+  .price-card-feature-body {
+    padding: 1.4rem 1.3rem;
+  }
+
+  .price-card-feature-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .price-card-feature-meta {
+    font-size: 0.85rem;
+    padding: 0.35rem 0.8rem;
+    margin: 0 0 0.7rem;
+  }
+
+  .price-card-feature-intro {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0 0 0.9rem;
+  }
+
+  .ceramic-highlights {
+    margin-bottom: 1rem;
+  }
+
+  .ceramic-highlights li {
+    padding-bottom: 0.7rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .ceramic-highlight-title {
+    font-size: 0.95rem;
+    padding-left: 1rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .ceramic-highlights li p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    padding-left: 1rem;
+  }
+
+  .price-card-feature-note {
+    padding: 0.8rem 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .price-card-feature-note p {
+    font-size: 0.85rem;
+  }
+
+  .price-card-feature-trigger {
+    font-size: 0.95rem;
+    margin-bottom: 0.6rem;
+  }
+
+  /* BOOKING / SCHEDULE CARD (index.html "Schedule Today") — the map
+     card carries a fixed 26rem height from the 59em fix, but at this
+     width the card is only ~234px wide, so it renders as a tall,
+     narrow 234x416px strip instead of a map. Switch to aspect-ratio
+     1/1 so it scales into an actual square with the card's width.
+     The card's own 3.6rem/2.8rem padding was also sized for tablet
+     width and eats a huge share of a ~330px-wide card; tighten it and
+     the gap between elements to match a phone-sized card instead. */
+  .section-booking-tint .booking-tint-container,
+  .footer-pic-info .booking-tint-container {
+    padding: 2rem 1.6rem;
+    gap: 1.8rem;
+  }
+
+  .booking-image-wrap .map-card {
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  .booking-image-wrap .map-card .footer-map {
+    height: 100%;
+  }
+
+  /* WRAPS PRICING CARD (wraps.html) — the text column's min-content
+     width leaves the image column almost nothing to work with at this
+     size (it was measured down to ~4px wide — a hairline, not a
+     photo). Side-by-side simply doesn't work in ~350px of space.
+     Stack instead, photo first (the general mobile convention — the
+     visual lands before the pitch, same approach used on custom.html's
+     info slider): full-width image at a clean 4:3 ratio, text below. */
+  .wraps-prices-container {
+    flex-direction: column;
+    padding: 1.8rem 1.6rem;
+    gap: 1.6rem;
+  }
+
+  .wrap-prices-image-box {
+    order: -1;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .wrap-prices-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  .wrap-prices-textbox {
+    flex: none;
+  }
+
+  .wrap-prices-subheading {
+    font-size: 1.1rem;
+  }
+
+  .wrap-prices-textbox-text {
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  .wrap-prices-features {
+    gap: 0.8rem;
+  }
+
+  .wrap-prices-feature {
+    padding: 0.8rem 0.9rem;
+    font-size: 0.9rem;
+  }
+
+  .info-content-custom {
+    padding: 0.7rem;
   }
 }
 
