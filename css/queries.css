@@ -1062,7 +1062,7 @@
   }
 
   .section-services {
-    padding: 2rem;
+    padding: 1rem;
   }
 
   .btn {
@@ -1114,11 +1114,40 @@
   }
 
   .footer {
-    padding: 2.8rem;
+    padding: 1rem;
   }
 
   .service-body .features-list li {
     font-size: 1rem;
+  }
+
+  /* tint */
+  .section-price-cards {
+    padding: 1rem;
+  }
+
+  .price-card-image {
+    height: 100%;
+  }
+
+  .section-window-tint-options {
+    padding: 1.5rem;
+  }
+
+  .tint-description-text {
+    font-size: 1.2rem;
+  }
+
+  .section-window-tint-benefits {
+    padding: 1rem;
+  }
+
+  .window-tint-benifits-description {
+    font-size: 1.1rem;
+  }
+
+  .section-booking-tint {
+    padding: 1rem;
   }
 }
 
