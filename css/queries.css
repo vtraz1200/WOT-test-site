@@ -827,7 +827,7 @@
 /* BELOW 544px (Phones) */
 /*******************************************/
 
-@media (max-width: 34em) {
+@media (max-width: 39em) {
   /* index.html */
   .heading-primary .btn {
     font-size: 1.8rem;
@@ -1029,6 +1029,21 @@
 
   .info-content-custom {
     padding: 0.7rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .section-catcher {
+    padding: 0rem 1rem;
+  }
+
+  .catcher-information p.catcher-text {
+    font-size: 1.2rem;
+    line-height: 1.2;
+  }
+
+  .btn {
+    font-size: 1.2rem;
   }
 }
 
