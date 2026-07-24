@@ -1032,9 +1032,14 @@
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 390px) {
   .section-catcher {
     padding: 0rem 1rem;
+    padding: 1rem;
+  }
+
+  .catcher-information {
+    padding: 1.2rem;
   }
 
   .catcher-information p.catcher-text {
@@ -1044,6 +1049,20 @@
 
   .btn {
     font-size: 1.2rem;
+  }
+  .section-heading {
+    font-size: 2rem;
+  }
+
+  .section-heading-white {
+    font-size: 2rem;
+  }
+
+  .section-partnerships {
+    padding: 3.2rem 2rem;
+  }
+
+  .partnerships-container {
   }
 }
 
