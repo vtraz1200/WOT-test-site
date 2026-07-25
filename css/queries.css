@@ -1149,6 +1149,59 @@
   .section-booking-tint {
     padding: 1rem;
   }
+
+  .heading-primary-main {
+    font-size: 3rem;
+  }
+
+  .heading-primary-sub {
+    font-size: 2rem;
+  }
+
+  .heading-primary .btn {
+    font-size: 2.2rem;
+    padding: 0.8rem 1.6rem;
+  }
+
+  .section-ppf-benefits {
+    padding: 1rem;
+  }
+
+  /* ceramic page */
+  .section-ceramic-coating-prices {
+    padding: 1rem;
+  }
+
+  /* FEATURE PRICE CARD (details.html "Interior Detail") — two stacked
+     bugs push the image past the card's right edge:
+     1) an earlier fix's bare `.price-card { padding: 2rem }` rule
+        (meant for the plain grid cards) leaks onto this flush-image
+        card too, since `.price-card--feature`'s own `padding: 0`
+        (style.css) has equal selector specificity and loses the
+        cascade to this later queries.css rule.
+     2) `.price-card--feature`'s bare `1fr` track (59em fix) has the
+        same issue we hit on .booking-tint-container: it sizes itself
+        as if that padding weren't there, so the image is both offset
+        inward AND still full-width — overflowing outward.
+     Reset the padding back to 0 and swap to minmax(0, 1fr) so the
+     track actually respects the card's real (padding-free) width. */
+  .price-card--feature {
+    padding: 0;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* wraps page */
+  .section-wraps-prices {
+    padding: 1rem;
+  }
+
+  .info-content h3 {
+    font-size: 1.8rem;
+  }
+
+  .info-content p {
+    font-size: 1rem;
+  }
 }
 
 /*******************************************/
