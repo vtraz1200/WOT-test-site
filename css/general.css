@@ -261,11 +261,6 @@ h3 {
   text-align: center;
 }
 
-.hero-section-message {
-  color: #f2f2f2;
-  font-size: 3rem;
-}
-
 .bold {
   font-weight: 900;
   color: #000;
@@ -543,11 +538,7 @@ h3 {
   padding: 6.4rem 2.4rem;
   max-width: 120rem;
   margin: 0 auto;
-  /* background: linear-gradient(
-    to right,
-    rgba(20, 20, 20, 0.95),
-    rgba(126, 16, 11, 0.95)
-  ); */
+  background-color: #f2f2f2;
 }
 
 .info-video-kicker {

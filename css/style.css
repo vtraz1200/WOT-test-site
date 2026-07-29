@@ -650,7 +650,7 @@ a {
 /***********************************PARTNERSHIP SECTION***********************************/
 .section-partnerships {
   padding: 9.6rem 4.8rem;
-  background-color: #f8f9fa;
+  background-color: #f2f2f2;
   text-align: center;
 }
 
@@ -683,24 +683,11 @@ a {
 
 /***********************************TESTIMONIAL SECTION***********************************/
 
-.testimonials {
-  margin: 0 auto;
-  padding: 9.6rem;
-  max-width: 145rem;
-}
 .section-testimonials {
   padding: 6.4rem 4.8rem;
   justify-content: center;
-  background-color: rgba(126, 16, 11, 0.06);
-}
-
-.section-testimonials-heading {
-  font-size: 4.4rem;
-  padding-bottom: 9.6rem;
-  color: #7e100b;
-  font-weight: 600;
-  text-transform: uppercase;
-  font-style: italic;
+  background-color: #f2f2f2;
+  border-top: 1px solid #7e100b;
 }
 
 .testimonials-box {
@@ -721,10 +708,6 @@ a {
   padding-top: 0.8rem;
 }
 
-.testimonials-logo {
-  width: 30%;
-}
-
 .testimonials-title {
   align-items: center;
 }
@@ -739,16 +722,6 @@ a {
 .test-parenth {
   font-size: 1.8rem;
   color: #7e100b;
-}
-
-.testimonials-icon {
-  font-size: 2rem;
-  padding-top: 1rem;
-}
-
-.testimonials {
-  margin: 0 auto;
-  max-width: 100rem;
 }
 
 /* SLIDER */
@@ -858,19 +831,9 @@ a {
   max-width: 145rem;
 }
 
-.grid--footer {
-  display: grid;
-  grid-template-columns: 1.5fr 1.5fr 1.5fr;
-  align-items: center;
-}
-
 .footer-logo {
   width: 8rem;
   height: auto;
-}
-
-.footer-logo-img {
-  width: 9.6rem;
 }
 
 .logo-icons {
@@ -883,64 +846,12 @@ a {
   gap: 1.8rem;
 }
 
-.social-icon {
-  height: 3.2rem;
-  width: 3.2rem;
-  color: #333;
-  transition: all 0.5s;
-}
-
-.social-icon:hover,
-.social-icon:active {
-  color: #ff5248;
-}
-
 .copyright-order-1 {
   order: 1;
 }
 
 .copyright-order-2 {
   order: 2;
-}
-
-.footer-heading {
-  font-size: 6rem;
-  font-weight: 500;
-  margin-bottom: 3.2rem;
-  color: #fff;
-  text-transform: uppercase;
-}
-
-.contacts {
-  font-style: normal;
-  font-size: 1.6rem;
-  line-height: 1.6rem;
-}
-
-.address {
-  font-size: 2rem;
-  line-height: 2rem;
-  color: #f2f2f2;
-}
-
-.footer-contact-address-info {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 1.8rem;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  row-gap: 4.8rem;
-}
-
-.footer-bold {
-  line-height: 4.2rem;
-}
-
-.contact-info {
-  font-size: 2rem;
-  line-height: 2rem;
-  color: #f2f2f2;
 }
 
 .footer-link:link,
@@ -987,16 +898,6 @@ a {
   border-radius: 15px;
 
   box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.2);
-}
-.map {
-  border: solid 3px #7e100b;
-  border-radius: 15px;
-}
-
-.ma .footer-input-form-card-two:last-child {
-  margin-bottom: 1.8rem;
-  border-radius: 10px;
-  border: solid 1px;
 }
 
 .footer-card-info-title {
@@ -1160,27 +1061,11 @@ a {
   background-color: #e9ecef;
 }
 
-/* Keep icons neutral until hover */
-.social-icon {
-  height: 2.6rem;
-  width: 2.6rem;
-  color: #333;
-  transition:
-    color 0.25s ease,
-    transform 0.25s ease;
-}
-
 /* Hover: brand pop, but still classy */
 .footer-link:hover,
 .footer-link:active {
   background-color: rgba(0, 0, 0, 0.1);
   transform: translateY(-2px);
-}
-
-.footer-link:hover .social-icon,
-.footer-link:active .social-icon {
-  color: #7e100b;
-  transform: translateY(-1px);
 }
 
 /************************************************************************************/
@@ -1337,9 +1222,7 @@ a {
   padding: 9.6rem;
   text-align: center;
   border-top: solid 1px #7e100b;
-
-  /* more premium than flat #f2f2f2 but same palette */
-  background: linear-gradient(135deg, #ffffff, #f2f2f2, #e9ecef);
+  background-color: #f2f2f2;
 }
 
 /* Center + constrain the grid so it looks intentional */
@@ -1689,7 +1572,8 @@ a {
 /***********************************WINDOW TINT Options SECTION***********************************/
 .section-window-tint-options {
   padding: 6rem 5rem;
-  background-color: #f8f8f8;
+  background-color: #f2f2f2;
+  border-top: 1px solid #7e100b;
 }
 
 .window-tint-options-container {
@@ -1931,12 +1815,7 @@ a {
 .section-window-tint-benefits {
   border-top: solid 1px #7e100b;
   padding: 9.6rem;
-  background: linear-gradient(
-    to right,
-    rgba(126, 16, 11, 0.95),
-    #141414,
-    #1e1e1e
-  );
+  background-color: #f2f2f2;
   color: #fff; /* makes text readable */
   text-align: center;
 }
@@ -2172,10 +2051,7 @@ a {
 .section-ppf-benefits {
   border-top: solid 1px #7e100b;
   padding: 9.6rem;
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-    url("../images/ppf/benefits-background.png");
-
+  background-color: #f2f2f2;
   background-size: cover;
   background-position: center;
   color: #fff; /* makes text readable */
@@ -2241,18 +2117,6 @@ a {
   padding: 2.5rem 2rem;
 }
 
-.contact-container {
-  max-width: 120rem;
-  margin: 0 auto;
-
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  /* gap: 4rem; */
-
-  align-items: center;
-}
-
-/* Card */
 /* Card */
 .footer-card {
   margin: auto;
@@ -2429,12 +2293,6 @@ input[type="number"]::-webkit-outer-spin-button {
   border: 1px solid rgba(126, 16, 11, 0.5);
   border-radius: 1.2rem;
   box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.2);
-}
-
-/* Keep if you still use .map elsewhere */
-.map {
-  border: solid 3px #7e100b;
-  border-radius: 15px;
 }
 
 /* Responsive */
