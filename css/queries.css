@@ -1092,6 +1092,18 @@
     max-width: 130px;
   }
 
+  .section-testimonials {
+    padding: 0.5rem;
+  }
+
+  .testimonials-box {
+    padding: 0;
+  }
+
+  .wrap-prices-features {
+    grid-template-columns: 1fr;
+  }
+
   .testimonials-review {
     font-size: 0.9rem;
     padding-top: 1rem;
@@ -1099,22 +1111,32 @@
 
   .slider__btn {
     font-size: 2rem;
+    top: 85%;
   }
 
   .slider__btn--left {
-    left: 8%;
+    left: 10%;
   }
 
   .slider__btn--right {
-    right: 8%;
+    right: 10%;
   }
 
   .booking-info .btn {
     font-size: 1rem;
   }
 
-  .footer {
+  .dots .footer {
     padding: 1rem;
+  }
+
+  .dots__dot {
+    height: 0.7rem;
+    width: 0.7rem;
+  }
+
+  .dots {
+    bottom: 5%;
   }
 
   .service-body .features-list li {

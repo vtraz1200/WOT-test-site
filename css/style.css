@@ -218,7 +218,7 @@ a {
   text-align: center;
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
-    url("../images/background-images/temp-main-background.png");
+    url("../images/background-images/temp-main-background.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -264,7 +264,7 @@ a {
       rgba(0, 0, 0, 0.45) 30%,
       rgba(0, 0, 0, 0.72) 100%
     ),
-    url("../images/background-images/highwah-background.png");
+    url("../images/background-images/highwah-background.jpg");
 
   background-size: cover;
   background-position: center;
@@ -1084,7 +1084,7 @@ a {
 
 .section-hero-tint {
   position: relative;
-  background: url("../images/tint/tintbackgoundimg.png") center / cover
+  background: url("../images/tint/tintbackgoundimg.jpg") center / cover
     no-repeat;
   height: 100vh;
   /* display: flex; */
@@ -2003,7 +2003,7 @@ a {
   position: relative;
   background:
     linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
-    url("../images/ppf/ppf-hero.png") center / cover no-repeat;
+    url("../images/ppf/ppf-hero.jpg") center / cover no-repeat;
   height: 100vh;
   background-position: center 42%;
   /* display: flex; */
@@ -2347,7 +2347,7 @@ input[type="number"]::-webkit-outer-spin-button {
   position: relative;
   background:
     linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
-    url("../images/detailing/auto-detailing-hero-background.png") center / cover
+    url("../images/detailing/auto-detailing-hero-background.jpg") center / cover
       no-repeat;
   height: 100vh;
   background-position: center 42%;
@@ -2637,7 +2637,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .section-hero-custom {
   position: relative;
-  background: url("../images/background-images/custom-background-img.png")
+  background: url("../images/background-images/custom-background-img.jpg")
     center / cover no-repeat;
   height: 100vh;
   /* display: flex; */
