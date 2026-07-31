@@ -463,7 +463,7 @@
      day(s) off the edge. Let the grid wrap into 2 comfortable rows
      instead of forcing a single cramped (or scrolling) row. */
   .hours-bar {
-    grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+    grid-template-columns: repeat(2, 2fr);
     gap: 0.8rem;
   }
 
@@ -1223,6 +1223,10 @@
 
   .info-content p {
     font-size: 1rem;
+  }
+
+  .footer {
+    padding: 1rem;
   }
 }
 
