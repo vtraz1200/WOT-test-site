@@ -98,55 +98,77 @@ a {
   position: relative;
 }
 
-/* Dropdown menu base */
+/* Dropdown menu base — dark glass panel matching the site's premium
+   glassmorphic accents elsewhere (.catcher-information, the mobile-nav
+   overlay), floating below the toggle instead of a flat light box.
+   Reveal is driven by opacity + transform (GPU-accelerated) rather than
+   the old max-height animation, which forces a layout recalc every
+   frame — the current recommended pattern for CSS-only dropdowns. */
 .dropdown-menu {
   position: absolute;
-  top: 40px;
-  left: 0;
-  background: #f2f2f2;
-  width: 180px;
+  top: 100%;
+  left: 50%;
+  margin-top: 0.9rem;
+  background: rgba(20, 20, 20, 0.82);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  width: 210px;
   list-style: none;
-  padding: 0;
-  margin: 0;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 0.5rem;
+  margin-bottom: 0;
+  border-radius: 14px;
+  box-shadow:
+    0 1.2rem 3rem rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(126, 16, 11, 0.18);
   overflow: hidden;
-  max-height: 0;
   opacity: 0;
-  transform: translateY(-10px);
+  transform: translate(-50%, -8px) scale(0.96);
   transition:
-    max-height 0.35s ease,
-    opacity 0.35s ease,
-    transform 0.35s ease;
+    opacity 0.25s ease,
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   pointer-events: none;
   z-index: 9999;
 }
 
 /* Open state */
 .dropdown-menu.open {
-  max-height: 500px;
   opacity: 1;
-  transform: translateY(0);
+  transform: translate(-50%, 0) scale(1);
   pointer-events: auto;
 }
 
-/* Dropdown links */
+/* Dropdown links — individually rounded "pill" rows inside the glass
+   panel (the same nested-chip pattern used in .price-card-tag /
+   .tint-most-popular-badge elsewhere) instead of full-width flat rows,
+   with a solid brand-red fill and a slight forward nudge on hover. */
 .dropdown-menu li a {
-  display: block;
-  padding: 12px 15px;
-  color: #333;
-  transition: background 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1rem;
+  border-radius: 9px;
+  color: #f2f2f2;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.dropdown-menu li + li {
+  margin-top: 0.2rem;
 }
 
 .dropdown-menu li a:hover {
   background: #7e100b;
   color: #f9e5ba;
+  transform: translateX(2px);
 }
 
 /* Arrow rotation */
 .dropdown-toggle .arrow {
   display: inline-block;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .dropdown-toggle.open .arrow {
@@ -155,7 +177,9 @@ a {
 
 .main-nav-dropdown-menu-link {
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
   text-decoration: none;
 }
 
@@ -1284,6 +1308,7 @@ a {
 
 /* Image looks more premium + consistent */
 .price-card-image {
+  width: 100%;
   height: 16rem;
   object-fit: cover;
 
@@ -1574,6 +1599,12 @@ a {
   padding: 6rem 5rem;
   background-color: #f2f2f2;
   border-top: 1px solid #7e100b;
+  background: linear-gradient(
+    to right,
+    #141414,
+    #1e1e1e,
+    rgba(126, 16, 11, 0.95)
+  );
 }
 
 .window-tint-options-container {
@@ -2374,7 +2405,12 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .section-extra-servcies {
   padding: 8rem 2rem;
-  background: linear-gradient(180deg, #1a1a1a, #101010);
+  background: linear-gradient(
+    to right,
+    #141414,
+    #1e1e1e,
+    rgba(126, 16, 11, 0.95)
+  );
   border-top: solid 1px #7e100b;
 }
 

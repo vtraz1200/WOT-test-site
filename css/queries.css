@@ -183,7 +183,11 @@
     transform: translateX(100%);
     z-index: 2;
 
-    background-color: rgb(0, 0, 0, 0.97);
+    background: linear-gradient(
+      160deg,
+      rgba(15, 15, 15, 1),
+      rgba(126, 16, 11, 1)
+    );
     background-size: cover;
     display: flex;
     align-items: center;
@@ -211,6 +215,18 @@
     transform: translateX(0);
   }
 
+  /* SCROLL LOCK — nothing previously stopped the page behind the
+     overlay from scrolling; .nav-open only ever toggled the overlay's
+     own opacity/transform, never anything on the actual document.
+     Lock it for as long as the overlay is open. Uses :has() (already
+     used elsewhere in this codebase, e.g. .services-container:has(...)
+     in this same file) to key off headerEl's existing .nav-open class
+     instead of adding a separate JS-driven body class. */
+  body:has(.header.nav-open),
+  body:has(.header-secondary.nav-open) {
+    overflow: hidden;
+  }
+
   .nav-open .icon-mobile-nav[name="close-outline"] {
     display: block;
   }
@@ -234,7 +250,7 @@
      mobile nav overlay. Give it the brand red instead so it still reads
      as the primary call-to-action. */
   .main-nav-list > li:last-child {
-    background-color: #7e100b;
+    background-color: #000;
   }
 
   .main-nav-list > li:last-child:hover {

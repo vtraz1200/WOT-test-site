@@ -514,10 +514,17 @@ function initAutoSlider(slider, { trackSelector, dotsSelector }) {
 
   const startTimer = () => {
     if (timer || isPaused) return;
-    timer = setInterval(nextSlide, 3500);
+    // setInterval waits a full cycle before its first tick, which made the
+    // slider look frozen for 3.5s right after the page loads. Fire the
+    // first advance sooner, then settle into the normal interval.
+    timer = setTimeout(() => {
+      nextSlide();
+      timer = setInterval(nextSlide, 3500);
+    }, 1500);
   };
 
   const stopTimer = () => {
+    clearTimeout(timer);
     clearInterval(timer);
     timer = null;
   };
@@ -541,9 +548,12 @@ function initAutoSlider(slider, { trackSelector, dotsSelector }) {
     }
   };
 
-  // Pause while the user is looking at or interacting with the slider
-  slider.addEventListener("mouseenter", stopTimer);
-  slider.addEventListener("mouseleave", () => !isPaused && startTimer());
+  // Pause on keyboard focus (tabbing into slider controls/links). Not
+  // mouseenter/mouseleave — scrolling the page while the cursor stays
+  // physically still fires a real mouseenter the instant the slider
+  // scrolls under it, which then never un-pauses until it scrolls back
+  // out from under that same stationary cursor. The explicit pause
+  // button below already covers manual pause/resume.
   slider.addEventListener("focusin", stopTimer);
   slider.addEventListener("focusout", () => !isPaused && startTimer());
 
