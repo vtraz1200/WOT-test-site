@@ -215,18 +215,6 @@
     transform: translateX(0);
   }
 
-  /* SCROLL LOCK — nothing previously stopped the page behind the
-     overlay from scrolling; .nav-open only ever toggled the overlay's
-     own opacity/transform, never anything on the actual document.
-     Lock it for as long as the overlay is open. Uses :has() (already
-     used elsewhere in this codebase, e.g. .services-container:has(...)
-     in this same file) to key off headerEl's existing .nav-open class
-     instead of adding a separate JS-driven body class. */
-  body:has(.header.nav-open),
-  body:has(.header-secondary.nav-open) {
-    overflow: hidden;
-  }
-
   .nav-open .icon-mobile-nav[name="close-outline"] {
     display: block;
   }
@@ -1109,7 +1097,7 @@
   }
 
   .section-testimonials {
-    padding: 0.5rem;
+    padding: 0.8rem;
   }
 
   .testimonials-box {
@@ -1127,7 +1115,11 @@
 
   .slider__btn {
     font-size: 2rem;
-    top: 85%;
+    top: 70%;
+  }
+
+  .slide {
+    height: 70%;
   }
 
   .slider__btn--left {
@@ -1242,7 +1234,7 @@
   }
 
   .footer {
-    padding: 1rem;
+    padding: 1.2rem;
   }
 }
 

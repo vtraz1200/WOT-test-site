@@ -240,43 +240,49 @@ if (sectionHeroSevenEl) {
 // Only has a visual effect once .sticky is already on <body> (see the
 // IntersectionObserver blocks above) — the CSS gates on that ancestor class,
 // so hiding here is a no-op until the header has actually become fixed.
+//
+// DISABLED (not deleted) — experimental removal, uncomment to restore.
+// With this off, "nav-hidden" is never added, so the sticky header just
+// stays visible at all times once .sticky is active, regardless of
+// scroll direction. The .sticky.nav-hidden CSS rules (style.css,
+// general.css) are left in place and simply go dormant.
 
-(() => {
-  const MIN_DELTA = 8; // ignore tiny scroll jitter
-  const HIDE_AFTER = 120; // stay visible until scrolled this far down
+// (() => {
+//   const MIN_DELTA = 8; // ignore tiny scroll jitter
+//   const HIDE_AFTER = 120; // stay visible until scrolled this far down
 
-  let lastY = window.scrollY;
-  let ticking = false;
+//   let lastY = window.scrollY;
+//   let ticking = false;
 
-  const onScroll = () => {
-    const currentY = window.scrollY;
-    const delta = currentY - lastY;
+//   const onScroll = () => {
+//     const currentY = window.scrollY;
+//     const delta = currentY - lastY;
 
-    if (Math.abs(delta) > MIN_DELTA) {
-      const dropdownOpen = document.querySelector(".dropdown-menu.open");
+//     if (Math.abs(delta) > MIN_DELTA) {
+//       const dropdownOpen = document.querySelector(".dropdown-menu.open");
 
-      if (delta > 0 && currentY > HIDE_AFTER && !dropdownOpen) {
-        document.body.classList.add("nav-hidden");
-      } else {
-        document.body.classList.remove("nav-hidden");
-      }
-      lastY = currentY;
-    }
+//       if (delta > 0 && currentY > HIDE_AFTER && !dropdownOpen) {
+//         document.body.classList.add("nav-hidden");
+//       } else {
+//         document.body.classList.remove("nav-hidden");
+//       }
+//       lastY = currentY;
+//     }
 
-    ticking = false;
-  };
+//     ticking = false;
+//   };
 
-  window.addEventListener(
-    "scroll",
-    () => {
-      if (!ticking) {
-        requestAnimationFrame(onScroll);
-        ticking = true;
-      }
-    },
-    { passive: true },
-  );
-})();
+//   window.addEventListener(
+//     "scroll",
+//     () => {
+//       if (!ticking) {
+//         requestAnimationFrame(onScroll);
+//         ticking = true;
+//       }
+//     },
+//     { passive: true },
+//   );
+// })();
 
 //////////////////////////////////////////////////////////
 // REVEAL SECTIONS
