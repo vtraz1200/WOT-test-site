@@ -4,7 +4,12 @@
       "WebSearch",
       "Bash(ffmpeg -version)",
       "Bash(cd \"d:/Web Development Projects/Wide Open Throttle\")",
-      "Bash('C:\\\\Users\\\\vtraz\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python312\\\\Lib\\\\site-packages\\\\imageio_ffmpeg\\\\binaries\\\\ffmpeg-win-x86_64-v7.1.exe' -y -ss 00:00:02 -i 'videos/xpel/ppf-videos/07.23.24 - Dealership - F&I Penske_PPF_V1_1.mp4' -frames:v 1 -q:v 2 images/ppf/ppf-video-poster-01.jpg)"
+      "Bash('C:\\\\Users\\\\vtraz\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python312\\\\Lib\\\\site-packages\\\\imageio_ffmpeg\\\\binaries\\\\ffmpeg-win-x86_64-v7.1.exe' -y -ss 00:00:02 -i 'videos/xpel/ppf-videos/07.23.24 - Dealership - F&I Penske_PPF_V1_1.mp4' -frames:v 1 -q:v 2 images/ppf/ppf-video-poster-01.jpg)",
+      "Bash(npx --yes prettier --write ceramic.html custom.html tint.html details.html ppf.html wraps.html)",
+      "Bash(npx --yes prettier --write index.html ceramic.html custom.html tint.html details.html ppf.html wraps.html css/general.css css/style.css)",
+      "Bash(npx --yes prettier --check index.html ceramic.html custom.html tint.html details.html ppf.html wraps.html css/general.css css/style.css)",
+      "Bash(npx --yes prettier --write index.html css/general.css)",
+      "Bash(npx --yes prettier --check index.html css/general.css)"
     ]
   }
 }

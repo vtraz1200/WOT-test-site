@@ -386,12 +386,12 @@ if (slides.length && btnLeft && btnRight && dotContainer) {
 //////////////////////////////////////////////////////////
 // GALLERY LIGHTBOX
 
-const galleryImages = document.querySelectorAll(".gallery-images");
+const galleryContainer = document.querySelector(".gallery-container");
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = lightbox?.querySelector(".lightbox-img");
 const lightboxClose = lightbox?.querySelector(".lightbox-close");
 
-if (galleryImages.length && lightbox && lightboxImg) {
+if (galleryContainer && lightbox && lightboxImg) {
   const openLightbox = (src, alt) => {
     lightboxImg.src = src;
     lightboxImg.alt = alt || "";
@@ -402,8 +402,15 @@ if (galleryImages.length && lightbox && lightboxImg) {
     lightbox.classList.remove("active");
   };
 
-  galleryImages.forEach((img) => {
-    img.addEventListener("click", () => openLightbox(img.src, img.alt));
+  // Event delegation instead of one listener per image — the carousel
+  // script (below) clones each gallery image for seamless looping,
+  // and cloneNode() doesn't carry JS listeners with it, so a
+  // per-element listener would silently miss every cloned copy a
+  // visitor scrolls past. A single delegated listener on the
+  // container catches clicks on originals and clones alike.
+  galleryContainer.addEventListener("click", (e) => {
+    const img = e.target.closest(".gallery-images");
+    if (img) openLightbox(img.src, img.alt);
   });
 
   lightboxClose?.addEventListener("click", closeLightbox);

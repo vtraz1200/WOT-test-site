@@ -602,9 +602,36 @@ a {
   gap: 1.6rem; /* professional spacing */
 }
 
-.gallery-images {
-  width: 100%;
+/* index.html's gallery only — two rows scrolling in opposite
+   directions (reuses the same generic .carousel/.carousel-track
+   mechanism as the partnerships logos and the Tintcar strip) instead
+   of the static 3-column grid above. Scoped with :has() so
+   wraps.html's separate, un-converted .gallery-container (3 images,
+   no .carousel children) keeps its original grid layout untouched —
+   .gallery-container is a shared class name between the two pages. */
+.gallery-container:has(.carousel) {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.gallery-container .carousel-track {
+  gap: 1.6rem;
+}
+
+/* .carousel img (sized/cropped for the Tintcar photo strip elsewhere
+   on the site) is a class+tag selector, more specific than the single
+   class on .gallery-images, so it would otherwise win the cascade
+   here and force every photo into a fixed, non-responsive 400x250 box
+   — silently breaking the 740px breakpoint's aspect-ratio:1/1 rule in
+   queries.css. Override with a selector specific enough to win,
+   restoring the original sizing/appearance untouched. */
+.gallery-container .gallery-images {
+  width: 26rem; /* fixed, not 100% — in a flex row, 100% competes with
+    every sibling for the same space and flex-shrink squeezes each one
+    down by a different amount depending on its own aspect ratio */
   height: 20rem; /* key: consistent thumbnail size */
+  flex-shrink: 0; /* lock the fixed size above instead of letting it shrink */
   object-fit: cover; /* key: crops nicely */
   display: block;
   cursor: pointer;
@@ -681,11 +708,35 @@ a {
 .partnerships-container {
   /* max-width: 1100px; */
   margin: 6.4rem auto 0;
+}
 
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+/* Auto-scrolling marquee — reuses the site's existing generic
+   .carousel/.carousel-track mechanism (see the Tintcar strip), which
+   auto-discovers any matching element via JS, so no new script is
+   needed here. .partnerships-img's own sizing is left untouched so
+   the queries.css breakpoints for it keep working unchanged; only the
+   original 4.8rem gap is preserved here (the shared .carousel-track
+   default is 2rem). */
+.partnerships-container .carousel-track {
   align-items: center;
   gap: 4.8rem;
+}
+
+/* .carousel img (sized/cropped for the Tintcar photo strip elsewhere
+   on the site) is a class+tag selector, more specific than the single
+   class on .partnerships-img, so it was winning the cascade here and
+   force-cropping every logo into a fixed 400x250 box. Override with a
+   selector specific enough to win, restoring the original untouched
+   sizing and dropping the photo-strip's rounded corners/shadow that
+   don't belong on a logo. */
+.partnerships-container .partnerships-img {
+  width: auto; /* not 100% — see .gallery-container .gallery-images above */
+  height: auto;
+  max-width: 260px;
+  flex-shrink: 0;
+  object-fit: initial;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .partnerships-img {
@@ -694,14 +745,10 @@ a {
   height: auto;
   margin: 0 auto;
 
-  opacity: 0.75;
-  filter: grayscale(100%);
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .partnerships-img:hover {
-  opacity: 1;
-  filter: grayscale(0%);
   transform: scale(1.05);
 }
 
@@ -1919,6 +1966,17 @@ a {
   line-height: 1.4;
   padding: 0;
   margin: 1.2rem 0;
+}
+
+/* Groups the "Schedule Now" + "Get a quote" CTAs — a controlled row
+   with breathing room between the two targets (well above the ~8px
+   minimum recommended to avoid mis-taps between adjacent buttons),
+   wrapping to a stacked column on narrow screens instead of squeezing
+   both buttons into one cramped row. */
+.booking-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 /* image frame looks more premium */

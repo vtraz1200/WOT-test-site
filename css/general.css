@@ -162,6 +162,15 @@ h3 {
   animation: moveInRight 1s ease-out;
 }
 
+/* Groups the hero's 3 CTA buttons — a controlled row with breathing
+   room between targets, wrapping to a stacked column on narrow
+   screens instead of squeezing 3 buttons into one row. */
+.hero-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -253,6 +262,70 @@ h3 {
   border: solid #000;
   opacity: 1;
   color: #7e100b;
+}
+
+/* Secondary (outline) button — pairs with .btn as a visually
+   subordinate CTA. Side-by-side CTA buttons with identical styling
+   give users no way to tell which action is preferred; this keeps
+   the same shape/size/type scale as .btn but drops the solid fill so
+   it reads as the lighter-weight option next to a primary .btn. */
+.btn.btn-secondary {
+  background-color: transparent;
+  color: #7e100b;
+  border: solid 2px #7e100b;
+  box-shadow: none;
+}
+
+.btn.btn-secondary:hover {
+  background-color: #7e100b;
+  color: #fff;
+}
+
+/* .btn-secondary on any hero (dark photo background) — the flat
+   red-on-transparent outline above was built for the light booking
+   section and reads as a hollow/broken button here. Frosted glass
+   instead, matching the glassmorphism this site already uses
+   elsewhere (.catcher-information, .dropdown-menu) — same pill
+   shape/size as its .btn siblings, just a lighter fill instead of a
+   bare outline. [class*="section-hero"] matches every page's hero
+   section class (.section-hero, .section-hero-tint,
+   .section-hero-ppf, .section-hero-ceramic, .section-hero-details,
+   .section-hero-wraps, .section-hero-custom) instead of just
+   index.html's exact .section-hero. Same specificity as
+   .btn.btn-secondary above (attribute selector counts as a class for
+   specificity), so this must stay physically after it in this file
+   to win the cascade regardless of link order. */
+[class*="section-hero"] .btn-secondary {
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #fff;
+}
+
+[class*="section-hero"] .btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.26);
+  border-color: rgba(255, 255, 255, 0.55);
+  color: #fff;
+}
+
+/* Tertiary button — the lowest-priority option in a 3-CTA row.
+   Deliberately keeps the exact same pill shape/size/type-scale as
+   .btn (no shape or size change at all, unlike the previous attempt)
+   so it still reads as part of the same button family instead of an
+   orphaned stray link — hierarchy comes from fill weight alone, a
+   fainter glass than .btn-secondary's. */
+.btn.btn-tertiary {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: rgba(255, 255, 255, 0.85);
+  box-shadow: none;
+}
+
+.btn.btn-tertiary:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.32);
+  color: #fff;
 }
 
 .btn-block {
