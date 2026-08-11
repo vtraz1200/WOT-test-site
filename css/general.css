@@ -162,13 +162,45 @@ h3 {
   animation: moveInRight 1s ease-out;
 }
 
-/* Groups the hero's 3 CTA buttons — a controlled row with breathing
-   room between targets, wrapping to a stacked column on narrow
-   screens instead of squeezing 3 buttons into one row. */
+/* Groups the hero's 3 CTA buttons — Schedule Now centered on its own
+   row on top, Phone and Get a Quote splitting a row below it. Relies
+   on DOM order (phone, schedule, quote) via :nth-child rather than
+   HTML changes, since the <a> tags themselves have no distinguishing
+   classes. */
 .hero-cta-group {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "schedule schedule"
+    "phone quote";
   gap: 1rem;
+}
+
+.hero-cta-group > a:nth-child(1) {
+  grid-area: phone;
+  justify-self: center;
+}
+
+.hero-cta-group > a:nth-child(2) {
+  grid-area: schedule;
+  justify-self: center;
+}
+
+.hero-cta-group > a:nth-child(3) {
+  grid-area: quote;
+  justify-self: center;
+}
+
+/* All three centered within their grid area (above) and given the
+   same fixed width here, rather than letting Phone/Get a Quote
+   stretch to fill their column — a shared column width can't be
+   trusted to match Schedule Now's own auto-sized width, since
+   Schedule Now sits alone on its row. 24rem comfortably fits the
+   longest label, "(248)795-5751", at the current font-size/padding. */
+.hero-cta-group .btn {
+  display: block;
+  width: 24rem;
+  text-align: center;
 }
 
 @keyframes moveInLeft {
@@ -214,7 +246,7 @@ h3 {
   text-decoration: none;
   border: solid #000;
   border-radius: 5rem;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   cursor: pointer;
   transition: all 0.5s;
   box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.25);

@@ -67,6 +67,16 @@
      only has ~790-940px to give them in this range, so the last day or two
      get clipped/require horizontal scrolling. Shrink the minimum column
      width and pill padding/type so all 7 fit without scrolling. */
+
+  .hero-cta-group .btn {
+    width: 20rem;
+  }
+
+  .section-heading,
+  .section-heading-white {
+    font-size: 3.6rem;
+  }
+
   .hours-bar {
     grid-template-columns: repeat(7, minmax(6rem, 1fr));
     gap: 0.8rem;
@@ -303,6 +313,11 @@
     height: 20rem;
   }
 
+  .gallery-container .gallery-images {
+    width: 24rem;
+    height: 18rem;
+  }
+
   /* Testimonials */
 
   .testimonials-review {
@@ -330,6 +345,10 @@
   /* GALLERY */
   .gallery-container {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .booking-cta-group {
+    justify-content: center;
   }
 
   /* FOOTER  */
@@ -616,6 +635,19 @@
 @media (max-width: 740px) {
   /* index.html */
 
+  .hero-cta-group .btn {
+    width: 18rem;
+  }
+
+  .heading-primary .btn {
+    font-size: 1.8rem;
+    padding: 0.8rem 1.6rem;
+  }
+
+  .btn {
+    font-size: 2rem;
+  }
+
   .catch-img {
     height: 550px;
   }
@@ -654,15 +686,6 @@
 
   .heading-primary-sub {
     font-size: clamp(2rem);
-  }
-
-  .heading-primary .btn {
-    font-size: 2.2rem;
-    padding: 0.8rem 1.6rem;
-  }
-
-  .btn {
-    font-size: 2rem;
   }
 
   .section-heading {
@@ -840,6 +863,15 @@
 
 @media (max-width: 39em) {
   /* index.html */
+
+  .hero-cta-group {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "schedule"
+      "phone"
+      "quote";
+  }
+
   .heading-primary .btn {
     font-size: 1.8rem;
   }
@@ -855,6 +887,11 @@
 
   .services-container {
     padding: 1rem;
+  }
+
+  .partnerships-container .partnerships-img {
+    height: 100px;
+    width: 250px;
   }
 
   .partnerships-container {
@@ -881,6 +918,11 @@
 
   .section-testimonials {
     padding: 1rem;
+  }
+
+  .gallery-container .gallery-images {
+    height: auto;
+    width: 250px;
   }
 
   /* SECTION HEADINGS — every section title on the site ("Testimonials",
@@ -1185,7 +1227,7 @@
   }
 
   .heading-primary .btn {
-    font-size: 2.2rem;
+    /* font-size: 2.2rem; */
     padding: 0.8rem 1.6rem;
   }
 
