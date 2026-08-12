@@ -8,6 +8,14 @@
   /* background-color: #f2f2f2; */
 }
 
+html {
+  /* Nearly everything site-wide is sized in rem, so this one change
+     scales almost the entire page proportionally (default is 16px).
+     Experimental — revert to removing this rule (or set back to
+     100%) if it doesn't hold up. */
+  font-size: 90%;
+}
+
 html,
 body {
   width: 100%;
