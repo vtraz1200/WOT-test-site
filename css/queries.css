@@ -112,10 +112,10 @@
     width: 5rem;
   }
 
-  .price-card-image {
-    width: 100%;
-    height: 15rem;
-  }
+  /* height removed — .price-card-image now uses aspect-ratio (style.css),
+     which scales proportionally with width at every breakpoint on its
+     own, so a fixed height here would fight it and reintroduce
+     cropping/letterboxing at this width. */
 
   /* BOOKING / SCHEDULE CARD — the card's full-desktop type scale (a
      2.5rem button, 1.8rem icons, 1.6rem heading) reads oversized next
@@ -393,8 +393,9 @@
     padding: 2rem;
   }
 
+  /* height removed — see note near the 75em breakpoint's
+     .price-card-image rule; aspect-ratio handles this now. */
   .price-card-image {
-    height: 13rem;
     margin: 0 auto 1rem;
   }
 
@@ -705,17 +706,12 @@
     width: 2.8rem;
   }
 
-  /* PRICE CARD IMAGE (tint.html "Window Tint Services" cards) — the
-     image has no width constraint of its own, so with only a height
-     set, its rendered width follows the source photo's natural aspect
-     ratio instead of the card. At this width that pushes it past the
-     card's content box (~598px image vs. ~580px available), so it
-     overflows to one side instead of centering. Pin width to 100% so
-     it can never outgrow the card regardless of the source photo's
-     shape, and bring the height down to match. */
+  /* width: 100% still needed here (base rule already has it, but
+     kept for clarity at this breakpoint); height removed — see note
+     near the 75em breakpoint's .price-card-image rule, aspect-ratio
+     handles proportional sizing now instead of a fixed height. */
   .price-card-image {
     width: 100%;
-    height: 20rem;
   }
 
   /* FEATURE PRICE CARDS (details.html "Interior Detail" / "Wash &

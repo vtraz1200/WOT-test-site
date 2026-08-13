@@ -1364,7 +1364,12 @@ a {
 /* Image looks more premium + consistent */
 .price-card-image {
   width: 100%;
-  height: 16rem;
+  /* Every source photo used here is already ~3:2 (1200x800,
+     800x533, 1536x1024 all round to a 1.5 ratio), so matching the
+     box to that ratio means cover shows the whole image with zero
+     cropping AND zero letterboxing — no fixed height fighting each
+     photo's own shape, no fill color needed to hide empty gaps. */
+  aspect-ratio: 3 / 2;
   object-fit: cover;
 
   border-radius: 16px;
