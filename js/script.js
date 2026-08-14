@@ -724,7 +724,9 @@ btnNavEl.addEventListener("click", function () {
 // Close the mobile nav once a link is actually followed — but not the
 // "Services" dropdown toggle, which just expands the submenu in place.
 document
-  .querySelectorAll(".main-nav-link:not(.dropdown-toggle), .main-nav-dropdown-menu-link")
+  .querySelectorAll(
+    ".main-nav-link:not(.dropdown-toggle), .main-nav-dropdown-menu-link",
+  )
   .forEach((link) => {
     link.addEventListener("click", () => {
       headerEl.classList.remove("nav-open");
