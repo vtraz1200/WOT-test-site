@@ -892,6 +892,8 @@ h3 {
   /* Cards keep a stable minimum width and wrap onto new rows instead of
      shrinking — font size and card size stay constant at every viewport. */
   grid-template-columns: repeat(auto-fit, minmax(min(24rem, 100%), 1fr));
+  /* grid-template-columns: repeat(auto-fit, minmax(min(24rem, 100%), 1fr)); */
+
   gap: 3.2rem;
   max-width: 120rem;
   margin: 0 auto;

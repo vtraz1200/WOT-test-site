@@ -422,6 +422,35 @@
     max-width: 50rem;
   }
 
+  /* RESIDENTIAL & COMMERCIAL TINT (tint.html) — single column; reset
+     the desktop-only order swap so both blocks fall back to the DOM's
+     natural image-first order instead of the commercial block still
+     showing content before its image. */
+  .rescom-block {
+    grid-template-columns: 1fr;
+    max-width: 50rem;
+  }
+
+  .rescom-block--reverse .rescom-media,
+  .rescom-block--reverse .rescom-content {
+    order: 0;
+  }
+
+  .rescom-content {
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Tag/heading read fine centered (short, single-line), but a
+     centered multi-line paragraph and bullet list is harder to scan
+     than left-aligned body copy — keep those left-aligned within the
+     otherwise-centered column. */
+  .rescom-text,
+  .rescom-features {
+    text-align: left;
+    max-width: none;
+  }
+
   /* FEATURE PRICE CARD (ceramic.html, details.html) — the image column
      keeps its 38% grid width but stretches (align-items: stretch) to
      match the much taller text column, turning it into a bizarre,
