@@ -610,6 +610,36 @@
     padding: 0.8rem 1.6rem;
   }
 
+  /* INFO SLIDER (tint/ppf/ceramic/details/wraps) — on small screens the
+     width is already limited, so the base 16:9 box (general.css) would
+     leave the photo a thin strip. Use 3:2 here for a taller frame. */
+  .info-slide img {
+    aspect-ratio: 3 / 2;
+  }
+
+  /* With that shorter frame the full-size overlay caption swallows most of
+     the photo — tighten it and pull it into the bottom corner. */
+  .info-content {
+    left: 1.2rem;
+    right: 1.2rem;
+    bottom: 1.2rem;
+    max-width: none;
+    padding: 1.2rem 1.4rem;
+  }
+
+  .info-content::before {
+    margin-bottom: 0.8rem;
+  }
+
+  .info-content h3 {
+    font-size: 1.7rem;
+  }
+
+  .info-content p {
+    font-size: 1.15rem;
+    line-height: 1.4;
+  }
+
   /* details */
 
   .price-card-feature-media {
@@ -915,8 +945,8 @@
   }
 
   .partnerships-container .partnerships-img {
-    height: 100px;
-    width: 250px;
+    height: auto;
+    width: auto;
   }
 
   .partnerships-container {
@@ -947,7 +977,7 @@
 
   .gallery-container .gallery-images {
     height: auto;
-    width: 250px;
+    width: 200px;
   }
 
   /* SECTION HEADINGS — every section title on the site ("Testimonials",

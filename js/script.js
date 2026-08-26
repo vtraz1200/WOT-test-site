@@ -462,7 +462,7 @@ document.querySelectorAll(".carousel").forEach((carousel) => {
 //////////////////////////////////////////////////////////
 // AUTO SLIDER (shared by .info-slider and .info-slider-custom)
 
-function initAutoSlider(slider, { trackSelector, dotsSelector }) {
+function initAutoSlider(slider, { trackSelector, dotsSelector, intervalMs = 3500 }) {
   const track = slider.querySelector(trackSelector);
   const dotsContainer = slider.querySelector(dotsSelector);
   const pauseBtn = slider.querySelector(".info-slider-pause");
@@ -528,11 +528,11 @@ function initAutoSlider(slider, { trackSelector, dotsSelector }) {
   const startTimer = () => {
     if (timer || isPaused) return;
     // setInterval waits a full cycle before its first tick, which made the
-    // slider look frozen for 3.5s right after the page loads. Fire the
-    // first advance sooner, then settle into the normal interval.
+    // slider look frozen right after the page loads. Fire the first advance
+    // sooner, then settle into the normal interval.
     timer = setTimeout(() => {
       nextSlide();
-      timer = setInterval(nextSlide, 3500);
+      timer = setInterval(nextSlide, intervalMs);
     }, 1500);
   };
 
@@ -580,6 +580,7 @@ document.querySelectorAll(".info-slider").forEach((slider) =>
   initAutoSlider(slider, {
     trackSelector: ".info-track",
     dotsSelector: ".info-dots",
+    intervalMs: 5000,
   }),
 );
 
