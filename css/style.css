@@ -2467,6 +2467,12 @@ a {
   gap: 0.85rem;
 }
 
+.footer-card-vehicle-cont {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.85rem;
+}
+
 /* Labels */
 .footer-card-info-title {
   color: rgba(242, 242, 242, 0.85);
@@ -2575,7 +2581,8 @@ input[type="number"]::-webkit-outer-spin-button {
     font-size: 0.95rem;
   }
 
-  .footer-card-firlas-name-cont {
+  .footer-card-firlas-name-cont,
+  .footer-card-vehicle-cont {
     grid-template-columns: 1fr;
   }
 

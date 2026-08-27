@@ -465,7 +465,6 @@ document.querySelectorAll(".carousel").forEach((carousel) => {
 function initAutoSlider(slider, { trackSelector, dotsSelector, intervalMs = 3500 }) {
   const track = slider.querySelector(trackSelector);
   const dotsContainer = slider.querySelector(dotsSelector);
-  const pauseBtn = slider.querySelector(".info-slider-pause");
   if (!track) return;
 
   const slides = Array.from(track.children);
@@ -549,28 +548,15 @@ function initAutoSlider(slider, { trackSelector, dotsSelector, intervalMs = 3500
     } else {
       startTimer();
     }
-    if (pauseBtn) {
-      pauseBtn.setAttribute("aria-pressed", String(paused));
-      pauseBtn.setAttribute(
-        "aria-label",
-        paused ? "Play slideshow" : "Pause slideshow",
-      );
-      pauseBtn
-        .querySelector("ion-icon")
-        ?.setAttribute("name", paused ? "play" : "pause");
-    }
   };
 
-  // Pause on keyboard focus (tabbing into slider controls/links). Not
+  // Pause on keyboard focus (tabbing into slider links). Not
   // mouseenter/mouseleave — scrolling the page while the cursor stays
   // physically still fires a real mouseenter the instant the slider
   // scrolls under it, which then never un-pauses until it scrolls back
-  // out from under that same stationary cursor. The explicit pause
-  // button below already covers manual pause/resume.
+  // out from under that same stationary cursor.
   slider.addEventListener("focusin", stopTimer);
   slider.addEventListener("focusout", () => !isPaused && startTimer());
-
-  pauseBtn?.addEventListener("click", () => setPaused(!isPaused));
 
   // Respect the user's OS-level motion preference
   setPaused(prefersReducedMotion);

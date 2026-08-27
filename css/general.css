@@ -614,36 +614,6 @@ h3 {
   gap: 0.7rem;
 }
 
-/* Pause/play control — auto-rotating slides must stay pausable (WCAG 2.2.2) */
-.info-slider-pause {
-  position: absolute;
-  z-index: 3;
-  bottom: 1.8rem;
-  right: 1.8rem;
-  width: 3.6rem;
-  height: 3.6rem;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  background: rgba(10, 10, 10, 0.55);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  color: #fff;
-  font-size: 1.4rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition:
-    background-color 0.2s ease,
-    transform 0.2s ease;
-}
-
-.info-slider-pause:hover,
-.info-slider-pause:focus-visible {
-  background: rgba(126, 16, 11, 0.85);
-  transform: scale(1.06);
-}
-
 /* info-video section */
 
 .section-info-video {
