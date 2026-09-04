@@ -1,0 +1,341 @@
+/* ============================================================================
+   HERO PREVIEW  —  demo of audit recommendation C1, applied to every hero.
+
+   This is a throwaway preview layer. To revert the entire hero experiment:
+     git checkout -- *.html   &&   rm css/hero-preview.css
+
+   Placeholder data used in the markup (rating, review count, years,
+   warranty terms, brand-partner / dealer claims) must be replaced with
+   real, verified values before anything ships.
+   Load this LAST in <head> so it wins over queries.css.
+   ========================================================================== */
+
+.text-box {
+  width: min(92vw, 58rem);
+  top: 50%;
+}
+
+.hero2 {
+  position: relative;
+  text-align: left;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.55);
+}
+
+/* localized scrim so the lighter sub-copy and trust row stay legible over
+   the darkest parts of the background photo */
+.hero2::before {
+  content: "";
+  position: absolute;
+  inset: -3.5rem -12vw -3rem -10vw;
+  z-index: -1;
+  background: radial-gradient(
+    130% 120% at 32% 45%,
+    rgba(0, 0, 0, 0.72) 0%,
+    rgba(0, 0, 0, 0.52) 42%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero2 {
+    animation: hero2In 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  @keyframes hero2In {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+  }
+}
+
+.hero2-eyebrow {
+  font-family: "Roboto", sans-serif;
+  font-size: clamp(0.68rem, 0.63rem + 0.2vw, 0.78rem);
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.88);
+  margin: 0 0 1.1rem;
+}
+
+.hero2-title {
+  font-family: "Roboto", sans-serif;
+  text-transform: none;
+  color: #fff;
+  font-size: clamp(2.35rem, 1.6rem + 2.9vw, 4.1rem);
+  font-weight: 800;
+  line-height: 1.04;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+  margin: 0 0 1rem;
+}
+.hero2-title-brand {
+  display: block;
+  font-size: 0.4em;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: #ff5248;
+  margin-bottom: 0.55rem;
+}
+
+.hero2-sub {
+  font-family: "Lato", sans-serif;
+  color: #fff;
+  font-size: clamp(1.02rem, 0.95rem + 0.35vw, 1.25rem);
+  line-height: 1.5;
+  max-width: 48ch;
+  margin: 0 0 1.7rem;
+}
+.hero2-sub strong {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.hero2-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.9rem;
+}
+
+.hero2-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 1;
+  padding: 0.95rem 1.8rem;
+  border-radius: 5rem;
+  text-decoration: none;
+  text-shadow: none;
+  border: 2px solid transparent;
+  transition: background-color 0.22s ease, color 0.22s ease,
+    border-color 0.22s ease;
+}
+.hero2-btn ion-icon {
+  font-size: 1.15em;
+}
+.hero2-btn--primary {
+  background: #7e100b;
+  color: #fff;
+  box-shadow: 0 0.9rem 2rem rgba(0, 0, 0, 0.4);
+}
+.hero2-btn--primary:hover,
+.hero2-btn--primary:focus-visible {
+  background: #fff;
+  color: #7e100b;
+}
+.hero2-btn--ghost {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+.hero2-btn--ghost:hover,
+.hero2-btn--ghost:focus-visible {
+  background: #fff;
+  color: #141110;
+  border-color: #fff;
+}
+
+.hero2-tertiary {
+  display: inline-block;
+  margin: 0 0 1.6rem;
+  font-family: "Lato", sans-serif;
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.82);
+  text-underline-offset: 3px;
+}
+.hero2-tertiary:hover {
+  color: #fff;
+}
+
+.hero2-trust {
+  list-style: none;
+  margin: 0;
+  padding: 1.2rem 0 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+}
+.hero2-trust li {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: "Lato", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #fff;
+}
+.hero2-trust ion-icon {
+  color: #ff5248;
+  font-size: 1.05rem;
+  flex: none;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.5));
+}
+
+@media (max-width: 740px) {
+  .hero2 {
+    text-align: center;
+  }
+  .hero2::before {
+    inset: -2.5rem -18vw;
+  }
+  .hero2-sub {
+    margin-inline: auto;
+  }
+  .hero2-cta {
+    justify-content: center;
+  }
+  .hero2-btn {
+    flex: 1 1 100%;
+    justify-content: center;
+  }
+  .hero2-trust {
+    justify-content: center;
+  }
+}
+
+@media (max-height: 760px) {
+  .hero2-title {
+    margin-bottom: 0.7rem;
+  }
+  .hero2-sub {
+    margin-bottom: 1.1rem;
+  }
+  .hero2-eyebrow {
+    margin-bottom: 0.8rem;
+  }
+  .hero2-trust {
+    padding-top: 0.9rem;
+  }
+  .g-badge {
+    margin-bottom: 0.9rem;
+  }
+}
+
+/* ============================================================================
+   GOOGLE REVIEWS BADGE  —  real data: 5.0 rating, 40 reviews.
+   Sits as the first element in the hero so it's among the first things seen.
+   The href is a generic Google search that surfaces the business panel;
+   swap in the real "leave a review" / Google Maps place link when available.
+   ========================================================================== */
+
+.g-badge {
+  display: flex;
+  width: fit-content;
+  max-width: 100%;
+  align-items: center;
+  gap: 0.62rem;
+  margin: 0 0 1.5rem;
+  padding: 0.55rem 0.95rem 0.55rem 0.68rem;
+  border-radius: 999px;
+  text-decoration: none;
+  text-shadow: none;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+  box-shadow: 0 12px 34px -12px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+.g-badge:hover,
+.g-badge:focus-visible {
+  transform: translateY(-1px);
+  border-color: rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.g-badge-g {
+  width: 20px;
+  height: 20px;
+  flex: none;
+}
+
+.g-badge-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.g-badge-score {
+  font-family: "Roboto", sans-serif;
+  font-weight: 800;
+  font-size: 1.02rem;
+  line-height: 1;
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+}
+.g-badge-stars {
+  color: #fbbc04;
+  font-size: 0.95rem;
+  letter-spacing: 1.5px;
+  line-height: 1;
+  /* trims the trailing letter-spacing after the last star */
+  margin-right: -1.5px;
+}
+
+.g-badge-divider {
+  width: 1px;
+  height: 15px;
+  flex: none;
+  background: rgba(255, 255, 255, 0.32);
+}
+
+.g-badge-count {
+  font-family: "Lato", sans-serif;
+  font-size: 0.85rem;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.85);
+  white-space: nowrap;
+}
+
+.g-badge-chevron {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.55);
+  flex: none;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+.g-badge:hover .g-badge-chevron,
+.g-badge:focus-visible .g-badge-chevron {
+  color: #fff;
+  transform: translateX(2px);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .g-badge::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(
+      115deg,
+      transparent 32%,
+      rgba(255, 255, 255, 0.38) 50%,
+      transparent 68%
+    );
+    transform: translateX(-130%);
+    animation: gBadgeSheen 1.05s ease-out 0.9s 1 both;
+  }
+  @keyframes gBadgeSheen {
+    to {
+      transform: translateX(130%);
+    }
+  }
+}
+
+@media (max-width: 740px) {
+  .g-badge {
+    margin-inline: auto;
+  }
+}

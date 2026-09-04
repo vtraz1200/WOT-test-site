@@ -43,6 +43,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/general.css" />
     <link rel="stylesheet" href="css/queries.css" />
+    <link rel="stylesheet" href="css/hero-preview.css" />
 
     <!-- Javascript file -->
     <script defer src="js/script.js"></script>
@@ -54,6 +55,158 @@
     ></script>
 
     <title>Wide Open Throttle</title>
+
+    <!-- ===== DEMO: reworked hero (recommendation C1). Scoped here so the
+         whole preview reverts with `git checkout -- index.html`.
+         Rating / review count / years are PLACEHOLDERS — swap in real
+         Google Business Profile numbers before shipping. ===== -->
+    <style>
+      .section-hero .text-box {
+        width: min(92vw, 58rem);
+        top: 50%;
+      }
+      .hero2 {
+        position: relative;
+        text-align: left;
+        text-shadow: 0 2px 16px rgba(0, 0, 0, 0.55);
+      }
+      /* localized scrim so the lighter sub-copy and trust row stay legible
+         over the darkest parts of the shop photo */
+      .hero2::before {
+        content: "";
+        position: absolute;
+        inset: -3.5rem -12vw -3rem -10vw;
+        z-index: -1;
+        background: radial-gradient(
+          130% 120% at 32% 45%,
+          rgba(0, 0, 0, 0.72) 0%,
+          rgba(0, 0, 0, 0.52) 42%,
+          rgba(0, 0, 0, 0) 100%
+        );
+        pointer-events: none;
+      }
+      @media (prefers-reduced-motion: no-preference) {
+        .hero2 { animation: hero2In 0.7s cubic-bezier(0.22, 1, 0.36, 1) both; }
+        @keyframes hero2In { from { opacity: 0; transform: translateY(12px); } }
+      }
+      .hero2-eyebrow {
+        font-family: "Roboto", sans-serif;
+        font-size: clamp(0.68rem, 0.63rem + 0.2vw, 0.78rem);
+        font-weight: 600;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.88);
+        margin: 0 0 1.1rem;
+      }
+      .hero2-title {
+        font-family: "Roboto", sans-serif;
+        text-transform: none;
+        color: #fff;
+        font-size: clamp(2.35rem, 1.6rem + 2.9vw, 4.1rem);
+        font-weight: 800;
+        line-height: 1.04;
+        letter-spacing: -0.01em;
+        text-wrap: balance;
+        margin: 0 0 1rem;
+      }
+      .hero2-sub {
+        font-family: "Lato", sans-serif;
+        color: #fff;
+        font-size: clamp(1.02rem, 0.95rem + 0.35vw, 1.25rem);
+        line-height: 1.5;
+        max-width: 46ch;
+        margin: 0 0 1.7rem;
+      }
+      .hero2-sub strong { font-weight: 700; white-space: nowrap; }
+      .hero2-cta {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.8rem;
+        margin-bottom: 0.9rem;
+      }
+      .hero2-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-family: "Roboto", sans-serif;
+        font-weight: 700;
+        font-size: 1.1rem;
+        line-height: 1;
+        padding: 0.95rem 1.8rem;
+        border-radius: 5rem;
+        text-decoration: none;
+        text-shadow: none;
+        border: 2px solid transparent;
+        transition: background-color 0.22s ease, color 0.22s ease,
+          border-color 0.22s ease;
+      }
+      .hero2-btn ion-icon { font-size: 1.15em; }
+      .hero2-btn--primary {
+        background: #7e100b;
+        color: #fff;
+        box-shadow: 0 0.9rem 2rem rgba(0, 0, 0, 0.4);
+      }
+      .hero2-btn--primary:hover,
+      .hero2-btn--primary:focus-visible { background: #fff; color: #7e100b; }
+      .hero2-btn--ghost {
+        background: rgba(255, 255, 255, 0.08);
+        color: #fff;
+        border-color: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+      }
+      .hero2-btn--ghost:hover,
+      .hero2-btn--ghost:focus-visible { background: #fff; color: #141110; border-color: #fff; }
+      .hero2-tertiary {
+        display: inline-block;
+        margin: 0 0 1.6rem;
+        font-family: "Lato", sans-serif;
+        font-size: 0.92rem;
+        color: rgba(255, 255, 255, 0.82);
+        text-underline-offset: 3px;
+      }
+      .hero2-tertiary:hover { color: #fff; }
+      .hero2-trust {
+        list-style: none;
+        margin: 0;
+        padding: 1.2rem 0 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.22);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem 1.5rem;
+      }
+      .hero2-trust li {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-family: "Lato", sans-serif;
+        font-size: 0.88rem;
+        font-weight: 600;
+        color: #fff;
+      }
+      .hero2-trust ion-icon {
+        color: #ff5248;
+        font-size: 1.05rem;
+        flex: none;
+        filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.5));
+      }
+
+      @media (max-width: 740px) {
+        .hero2 { text-align: center; }
+        .hero2::before { inset: -2.5rem -18vw; }
+        .hero2-sub { margin-inline: auto; }
+        .hero2-cta { justify-content: center; }
+        .hero2-btn { flex: 1 1 100%; justify-content: center; }
+        .hero2-trust { justify-content: center; }
+      }
+      @media (max-height: 760px) {
+        .hero2-title { margin-bottom: 0.7rem; }
+        .hero2-sub { margin-bottom: 1.1rem; }
+        .hero2-eyebrow { margin-bottom: 0.8rem; }
+        .hero2-trust { padding-top: 0.9rem; }
+      }
+    </style>
   </head>
   <body>
     <main>
@@ -120,28 +273,60 @@
           </button>
         </div>
         <div class="text-box">
-          <h1 class="heading-primary">
-            <span class="heading-primary-main">Wide Open Throttle</span>
-            <span class="heading-primary-sub">Reach us Today</span>
+          <!-- ===== DEMO: reworked hero (recommendation C1) ===== -->
+          <div class="hero2">
+            <a
+              class="g-badge"
+              href="https://www.google.com/search?q=Wide+Open+Throttle+LLC+Lake+Orion+reviews"
+              target="_blank"
+              rel="noopener"
+              aria-label="Rated 5.0 out of 5 from 40 Google reviews — read them on Google"
+            >
+              <svg class="g-badge-g" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+                <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+                <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+                <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+              </svg>
+              <span class="g-badge-rating">
+                <span class="g-badge-score">5.0</span>
+                <span class="g-badge-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+              </span>
+              <span class="g-badge-divider" aria-hidden="true"></span>
+              <span class="g-badge-count">40 Google reviews</span>
+              <ion-icon class="g-badge-chevron" name="chevron-forward" aria-hidden="true"></ion-icon>
+            </a>
+            <p class="hero2-eyebrow">
+              Tint &middot; Paint Protection Film &middot; Ceramic Coating &middot;
+              Wraps &middot; Detailing &middot; Custom Builds
+            </p>
+            <h1 class="hero2-title">
+              <span class="hero2-title-brand">Wide Open Throttle LLC</span>
+              Lake&nbsp;Orion&rsquo;s vehicle protection &amp; custom shop
+            </h1>
+            <p class="hero2-sub">
+              XPEL-grade film, precision installs, and every job backed in
+              writing &mdash; for daily drivers, enthusiasts, trucks, and fleets.
+            </p>
 
-            <div class="hero-cta-group">
-              <a href="tel:+2487955751">
-                <button class="btn btn-primary btn-secondary">
-                  (248)795-5751
-                </button>
-              </a>
-              <a
-                href="https://book.squareup.com/appointments/o9tmaf38mre1zm/location/LCZQ3RDFCTK9K/services"
-              >
-                <button class="btn btn-primary">Schedule Now</button>
-              </a>
-              <a href="contact.html">
-                <button class="btn btn-primary btn-tertiary">
-                  Get a Quote
-                </button>
+            <div class="hero2-cta">
+              <a href="contact.html" class="hero2-btn hero2-btn--primary">Get My Quote</a>
+              <a href="tel:+2487955751" class="hero2-btn hero2-btn--ghost">
+                <ion-icon name="call"></ion-icon> (248)&nbsp;795-5751
               </a>
             </div>
-          </h1>
+            <a
+              class="hero2-tertiary"
+              href="https://book.squareup.com/appointments/o9tmaf38mre1zm/location/LCZQ3RDFCTK9K/services"
+              >or book a tint / detail appointment online &rarr;</a
+            >
+
+            <ul class="hero2-trust">
+              <li><ion-icon name="ribbon-outline"></ion-icon> XPEL Certified Installer</li>
+              <li><ion-icon name="navigate-outline"></ion-icon> Serving Lake Orion &amp; Oakland County</li>
+              <li><ion-icon name="shield-checkmark-outline"></ion-icon> Workmanship warranty</li>
+            </ul>
+          </div>
         </div>
         <!-- <video autoplay loop muted class="back-video">
           <source src="videos/backgroundVideo.mp4" />
