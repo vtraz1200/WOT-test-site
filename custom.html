@@ -118,6 +118,14 @@
             </ul>
           </nav>
 
+          <!-- DEMO: desktop header action strip (audit rec H1) -->
+          <div class="header-cta">
+            <a class="header-cta-phone" href="tel:+2487955751">
+              <ion-icon name="call" aria-hidden="true"></ion-icon>(248)&nbsp;795-5751
+            </a>
+            <a class="header-cta-btn" href="contact.html">Get a Quote</a>
+          </div>
+
           <button class="btn-mobile-nav">
             <ion-icon class="icon-mobile-nav" name="menu-outline"></ion-icon>
             <ion-icon class="icon-mobile-nav" name="close-outline"></ion-icon>
@@ -550,5 +558,19 @@
         </div>
       </footer>
     </main>
+
+    <!-- DEMO: sticky mobile action bar (audit rec H1). Reverts with the rest
+         of the hero preview:  git checkout -- *.html && rm css/hero-preview.css -->
+    <nav class="mobile-bar" aria-label="Quick contact">
+      <a href="tel:+2487955751" class="mobile-bar-item">
+        <ion-icon name="call" aria-hidden="true"></ion-icon><span>Call</span>
+      </a>
+      <a href="sms:+2487955751" class="mobile-bar-item">
+        <ion-icon name="chatbubble-ellipses" aria-hidden="true"></ion-icon><span>Text</span>
+      </a>
+      <a href="contact.html" class="mobile-bar-item mobile-bar-item--primary">
+        <ion-icon name="document-text" aria-hidden="true"></ion-icon><span>Get a Quote</span>
+      </a>
+    </nav>
   </body>
 </html>

@@ -339,3 +339,160 @@
     margin-inline: auto;
   }
 }
+
+/* ============================================================================
+   STICKY MOBILE ACTION BAR  —  audit recommendation H1.
+   Fixed to the bottom of the viewport on phones so Call / Text / Get a Quote
+   are one tap away at every scroll position. Hidden on desktop (the phone
+   number belongs in the header there instead).
+   ========================================================================== */
+
+.mobile-bar {
+  display: none;
+}
+
+@media (max-width: 740px) {
+  .mobile-bar {
+    display: flex;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background: rgba(19, 16, 15, 0.94);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.16);
+    box-shadow: 0 -8px 26px rgba(0, 0, 0, 0.4);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    transition: transform 0.25s ease;
+  }
+
+  .mobile-bar-item {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    min-height: 3.6rem;
+    padding: 0.5rem 0.35rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 0.92rem;
+    line-height: 1;
+    color: #fff;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .mobile-bar-item + .mobile-bar-item {
+    border-left: 1px solid rgba(255, 255, 255, 0.12);
+  }
+  .mobile-bar-item ion-icon {
+    font-size: 1.2rem;
+    color: #ff5248;
+    flex: none;
+  }
+  .mobile-bar-item:active {
+    background: rgba(255, 255, 255, 0.09);
+  }
+
+  .mobile-bar-item--primary {
+    background: #7e100b;
+  }
+  .mobile-bar-item--primary ion-icon {
+    color: #fff;
+  }
+  .mobile-bar-item--primary:active {
+    background: #9c1710;
+  }
+
+  /* keep the fixed bar from covering the end of the page / footer */
+  body {
+    padding-bottom: 3.6rem;
+  }
+
+  /* slide the bar out of the way while the full-screen mobile nav is open */
+  body:has(.nav-open) .mobile-bar {
+    transform: translateY(110%);
+    pointer-events: none;
+  }
+}
+
+@media (max-width: 740px) and (prefers-reduced-motion: no-preference) {
+  .mobile-bar {
+    animation: mobileBarUp 0.45s ease-out 0.35s both;
+  }
+  @keyframes mobileBarUp {
+    from {
+      transform: translateY(100%);
+    }
+  }
+}
+
+/* ============================================================================
+   DESKTOP HEADER ACTION STRIP  —  audit recommendation H1 (desktop half).
+   Phone + "Get a Quote" live in the header, so once the site's existing
+   sticky-header behavior pins the bar to the top on scroll (.sticky .header
+   in style.css) both actions stay visible on every screen. Hidden below the
+   desktop-nav breakpoint, where the hamburger + sticky bottom bar take over.
+   ========================================================================== */
+
+.header-cta {
+  display: none;
+}
+
+@media (min-width: 945px) {
+  .header-cta {
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
+    margin-left: 1.4rem;
+  }
+
+  .header-cta-phone {
+    display: none; /* shown at a wider breakpoint below */
+    align-items: center;
+    gap: 0.4rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 1.02rem;
+    color: #fff;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+  }
+  .header-cta-phone ion-icon {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+  }
+  .header-cta-phone:hover {
+    color: #ff8078;
+  }
+
+  .header-cta-btn {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    line-height: 1;
+    color: #7e100b;
+    background: #fff;
+    border: 2px solid #fff;
+    border-radius: 5rem;
+    padding: 0.55rem 1.2rem;
+    text-decoration: none;
+    white-space: nowrap;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+  .header-cta-btn:hover,
+  .header-cta-btn:focus-visible {
+    background: transparent;
+    color: #fff;
+  }
+}
+
+@media (min-width: 1120px) {
+  .header-cta-phone {
+    display: inline-flex;
+  }
+}
