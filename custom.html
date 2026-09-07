@@ -5,8 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Wide Open Throttle delivers premium window tinting, lift kits, and custom vehicle upgrades."
+      content="Custom truck builds in Lake Orion, MI — lift &amp; leveling, wheels &amp; tires, off-road armor, lighting, audio, exhaust, and performance. Fitment-first, in-house install, financing available. 5.0 stars on Google."
     />
+
+    <!-- DEMO: decision-maker preview. Reverts with:
+         git checkout -- custom.html css/hero-preview.css -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Wide Open Throttle LLC" />
+    <meta
+      property="og:title"
+      content="Custom Truck Builds in Lake Orion, MI | Wide Open Throttle"
+    />
+    <meta
+      property="og:description"
+      content="Lift, wheels &amp; tires, off-road armor, lighting, audio, exhaust and performance — dialed for fitment and installed in-house. Financing available."
+    />
+    <meta property="og:image" content="images/custom-vehicle-images/info-slider-image-one.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
 
     <link rel="icon" href="images/favicon-images/favicon-16x16.png" />
     <link rel="manifest" href="manifest.webmanifest" />
@@ -53,7 +68,75 @@
       type="module"
       src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
     ></script>
-    <title>WOT Custom</title>
+    <title>Custom Truck Builds in Lake Orion, MI | Wide Open Throttle</title>
+
+    <!-- DEMO: Service + FAQ schema (audit rec). -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Custom Truck Builds",
+        "provider": {
+          "@type": "AutoRepair",
+          "name": "Wide Open Throttle LLC",
+          "telephone": "+1-248-795-5751",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "677 S Lapeer Rd",
+            "addressLocality": "Lake Orion",
+            "addressRegion": "MI",
+            "postalCode": "48362",
+            "addressCountry": "US"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "40"
+          }
+        },
+        "areaServed": "Oakland County, MI"
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Do you only build trucks?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Trucks are our focus, but we also build Jeeps and SUVs, and we do wheels, lighting, audio, and exhaust on cars. Tell us what you have."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I finance a build?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Builds are often several thousand dollars or more, so we offer financing to spread the cost. Ask for terms with your quote."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you install parts I buy myself?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "In many cases yes, though we prefer to spec the parts so fitment and warranty are covered. We are dealers for the major wheel, suspension, lighting, and audio brands."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does a build take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A leveling kit and wheels can be a day or two; a full build with fabrication, armor, and lighting is planned out in stages. We give you a timeline with the quote."
+            }
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <main>
@@ -178,6 +261,17 @@
           </div>
         </div>
       </section>
+
+      <!-- ===== DEMO: page-jump nav ===== -->
+      <nav class="page-jump" aria-label="Jump to section">
+        <div class="page-jump-inner">
+          <a href="#build-services">What We Build</a>
+          <a href="#build-work">Recent Builds</a>
+          <a href="#build-faq">FAQ</a>
+          <a href="#build-quote">Start a Build</a>
+        </div>
+      </nav>
+
       <section class="info-slider-custom">
         <div class="info-slider-textbox">
           <p class="info-slider-custom-paragraph">
@@ -237,10 +331,74 @@
 
         <div class="info-dots-custom"></div>
       </section>
-      <section class="section-price-cards">
+      <!-- ===== DEMO: on-page proof (credentials + reviews) ===== -->
+      <section class="hp-band hp-band--light">
+        <div class="hp-inner">
+          <p class="hp-kicker">Why Build It Here</p>
+          <h2 class="hp-h2 hp-h2--light">Authorized dealer, in-house install, backed by the shop</h2>
+          <div class="tproof-cred">
+            <span
+              ><ion-icon name="ribbon-outline"></ion-icon> Dealer for Fuel, KMC,
+              Black Rhino, ReadyLIFT, DS18
+              <!-- [confirm brand list] --></span
+            >
+            <span
+              ><ion-icon name="construct-outline"></ion-icon> In-house install
+              &amp; fabrication</span
+            >
+            <span
+              ><ion-icon name="star"></ion-icon> 5.0&#9733; &middot; 40 Google
+              reviews</span
+            >
+            <span
+              ><ion-icon name="card-outline"></ion-icon> Financing available</span
+            >
+          </div>
+          <div class="tproof-reviews">
+            <div class="tproof-review">
+              <div class="tpr-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p>
+                &ldquo;Great job leveling and fitting new tires on my truck.
+                Provided great expertise on the benefits and downsides of each
+                component &mdash; helped me make the most informed decision
+                possible. Ended up with the exact look and performance that I
+                wanted.&rdquo;
+              </p>
+              <div class="tpr-name">Adam Zentner</div>
+              <div class="tpr-src">Google review</div>
+            </div>
+            <div class="tproof-review">
+              <div class="tpr-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p>
+                &ldquo;Team WOT is excellent! I trust them for all my
+                modifications and accessories.&rdquo;
+              </p>
+              <div class="tpr-name">Dan Bilan</div>
+              <div class="tpr-src">Google review</div>
+            </div>
+            <div class="tproof-review">
+              <div class="tpr-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p>
+                &ldquo;I&rsquo;ve been bringing my truck here for a while and
+                these guys always take care of me. Fair prices, honest
+                work.&rdquo;
+              </p>
+              <div class="tpr-name">Ethan Smotherman</div>
+              <div class="tpr-src">Google review</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-price-cards" id="build-services">
         <h2 class="section-heading">
           Transform Your Truck Into a Head-Turning Build
         </h2>
+        <p class="ppf-finance" style="max-width: 64rem">
+          Most builds run <b>$[confirm]&ndash;$[confirm]+</b> depending on scope.
+          <b>Financing available</b> &mdash; ask for terms with your quote. Also
+          building Jeeps &amp; SUVs.
+        </p>
         <div class="price-cards-container">
           <div class="price-card">
             <img
@@ -257,8 +415,8 @@
               <li>Shocks &amp; control arms</li>
               <li>Ride height &amp; alignment tuning</li>
             </ul>
-            <a href="contact.html">
-              <button class="btn-small">Get Quote</button></a
+            <a href="#build-quote">
+              <button class="btn-small">Quote This</button></a
             >
           </div>
           <div class="price-card">
@@ -276,8 +434,8 @@
               <li>All-terrain &amp; mud-terrain tires</li>
               <li>Mount, balance &amp; alignment</li>
             </ul>
-            <a href="contact.html">
-              <button class="btn-small">Get Quote</button></a
+            <a href="#build-quote">
+              <button class="btn-small">Quote This</button></a
             >
           </div>
           <div class="price-card">
@@ -295,8 +453,8 @@
               <li>Skid plates &amp; rock sliders</li>
               <li>Auxiliary lighting &amp; recovery gear</li>
             </ul>
-            <a href="contact.html">
-              <button class="btn-small">Get Quote</button></a
+            <a href="#build-quote">
+              <button class="btn-small">Quote This</button></a
             >
           </div>
           <div class="price-card">
@@ -314,8 +472,8 @@
               <li>Suspension &amp; handling upgrades</li>
               <li>Engine &amp; drivetrain upgrades</li>
             </ul>
-            <a href="contact.html">
-              <button class="btn-small">Get Quote</button></a
+            <a href="#build-quote">
+              <button class="btn-small">Quote This</button></a
             >
           </div>
           <div class="price-card">
@@ -333,8 +491,8 @@
               <li>Headlight &amp; taillight upgrades</li>
               <li>Underglow &amp; accent lighting</li>
             </ul>
-            <a href="contact.html">
-              <button class="btn-small">Get Quote</button></a
+            <a href="#build-quote">
+              <button class="btn-small">Quote This</button></a
             >
           </div>
           <div class="price-card">
@@ -352,8 +510,8 @@
               <li>Amplifiers &amp; sound deadening</li>
               <li>Head unit upgrades</li>
             </ul>
-            <a href="contact.html">
-              <button class="btn-small">Get Quote</button></a
+            <a href="#build-quote">
+              <button class="btn-small">Quote This</button></a
             >
           </div>
           <div class="price-card">
@@ -371,8 +529,8 @@
               <li>Performance headers</li>
               <li>Custom exhaust tuning</li>
             </ul>
-            <a href="contact.html">
-              <button class="btn-small">Get Quote</button></a
+            <a href="#build-quote">
+              <button class="btn-small">Quote This</button></a
             >
           </div>
           <div class="price-card">
@@ -390,9 +548,168 @@
               <li>Paint &amp; wrap coordination</li>
               <li>Fully personalized builds</li>
             </ul>
-            <a href="contact.html">
-              <button class="btn-small">Get Quote</button></a
+            <a href="#build-quote">
+              <button class="btn-small">Quote This</button></a
             >
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== DEMO: recent builds (labeled). Swap in real customer trucks;
+           captions are placeholders. ===== -->
+      <section class="hp-band hp-band--dark" id="build-work">
+        <div class="hp-inner">
+          <p class="hp-kicker">Recent Builds</p>
+          <h2 class="hp-h2 hp-h2--dark">Trucks out of our shop</h2>
+          <div class="twork-grid">
+            <figure>
+              <img src="images/custom-vehicle-images/info-slider-image-one.jpg" alt="Lifted truck build" />
+              <figcaption>Lift + 20&quot; wheels, dialed stance</figcaption>
+            </figure>
+            <figure>
+              <img src="images/custom-vehicle-images/info-slider-image-two.jpg" alt="Off-road bumper and lighting build" />
+              <figcaption>Off-road bumper &amp; LED light bar</figcaption>
+            </figure>
+            <figure>
+              <img src="images/custom-vehicle-images/info-slider-image-three.jpg" alt="Custom wheel and fender fitment" />
+              <figcaption>Fender flares &amp; fitment</figcaption>
+            </figure>
+            <figure>
+              <img src="images/custom-vehicle-images/custom-services/lifted-truck.jpg" alt="Completed lifted truck" />
+              <figcaption>Full build &mdash; suspension, wheels, armor</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== DEMO: FAQ ===== -->
+      <section class="hp-band hp-band--light" id="build-faq">
+        <div class="hp-inner">
+          <p class="hp-kicker">Common Questions</p>
+          <h2 class="hp-h2 hp-h2--light">Build FAQ</h2>
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary>Do you only build trucks?</summary>
+              <div class="faq-a">
+                Trucks are our focus, but we build Jeeps and SUVs too, and we do
+                wheels, lighting, audio, and exhaust on plenty of cars. Tell us
+                what you have.
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>Can I finance a build?</summary>
+              <div class="faq-a">
+                Yes. A full build runs into the thousands, so we offer financing
+                to spread the cost. Ask for terms with your quote.
+                <b>[confirm financing partner]</b>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>Will you install parts I supply?</summary>
+              <div class="faq-a">
+                Often yes &mdash; though we usually prefer to spec the parts so
+                fitment and warranty are covered. We&rsquo;re dealers for the
+                major wheel, suspension, lighting, and audio brands, so pricing
+                is competitive.
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>How long does a build take?</summary>
+              <div class="faq-a">
+                A leveling kit and wheels can be a day or two. A full build with
+                fabrication, armor, and lighting is planned in stages so your
+                truck isn&rsquo;t down the whole time. You get a timeline with
+                the quote.
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>Will a lift affect my warranty or ride?</summary>
+              <div class="faq-a">
+                We use quality kits and set alignment and geometry correctly, so
+                ride quality stays good. We&rsquo;ll walk you through any factory
+                warranty considerations for your specific truck before we start.
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== DEMO: build consultation intake ===== -->
+      <section class="hp-band hp-band--dark" id="build-quote">
+        <div class="hp-inner">
+          <p class="hp-kicker">Start a Build</p>
+          <h2 class="hp-h2 hp-h2--dark">Tell us about your build</h2>
+          <p class="hp-lead">
+            Give us the truck and what you&rsquo;re picturing. We&rsquo;ll set up
+            a consult, spec the parts, and get you a plan and a number.
+          </p>
+          <div class="qq-wrap">
+            <form
+              class="qq-form"
+              action="https://api.web3forms.com/submit"
+              method="POST"
+            >
+              <input
+                type="hidden"
+                name="access_key"
+                value="26408754-11fc-47ae-ba6e-036a18819a21"
+              />
+              <input type="hidden" name="service" value="Custom Build" />
+              <input type="hidden" name="from_page" value="build-quote" />
+              <input
+                class="qq-input qq-full"
+                type="text"
+                name="vehicle"
+                placeholder="Year, make &amp; model"
+              />
+              <select class="qq-select qq-full" name="scope" required>
+                <option value="" disabled selected>What are you after?</option>
+                <option>Lift / leveling</option>
+                <option>Wheels &amp; tires</option>
+                <option>Off-road armor &amp; lighting</option>
+                <option>Audio</option>
+                <option>Exhaust / performance</option>
+                <option>Full build</option>
+                <option>Not sure &mdash; want a consult</option>
+              </select>
+              <input
+                class="qq-input"
+                type="text"
+                name="name"
+                placeholder="Name"
+                required
+              />
+              <input
+                class="qq-input"
+                type="tel"
+                name="phone"
+                placeholder="Phone"
+                required
+              />
+              <input
+                class="qq-input qq-full"
+                type="email"
+                name="email"
+                placeholder="Email"
+                required
+              />
+              <input
+                class="qq-input qq-full"
+                type="text"
+                name="budget"
+                placeholder="Rough budget (optional)"
+              />
+              <textarea
+                class="qq-textarea qq-full"
+                name="message"
+                placeholder="The vision — inspiration builds, wheel size, timeline&hellip;"
+              ></textarea>
+              <button class="qq-btn" type="submit">Start My Build</button>
+            </form>
+            <p class="qq-alt">
+              Prefer to talk it through?
+              <a href="tel:+2487955751">Call (248)&nbsp;795-5751</a>
+            </p>
           </div>
         </div>
       </section>
@@ -429,15 +746,13 @@
           <div class="booking-accent" aria-hidden="true"></div>
 
           <div class="booking-info">
-            <h3 class="small-heading-h3">
-              Drive Cooler. Tint Smarter. Schedule Now.
-            </h3>
+            <h3 class="small-heading-h3">Ready to build? Let&rsquo;s get started.</h3>
 
             <p class="window-tint-booking-description booking-contact-row">
               <ion-icon name="navigate" class="booking-icon"></ion-icon>
               <a
                 class="card-schedule-today-link"
-                href=" https://www.google.com/maps?gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MggIAhAAGBYYHjIICAMQABgWGB4yCAgEEAAYFhgeMgYIBRBFGDwyBggGEEUYPDIGCAcQRRg80gEINTk3NGowajeoAgCwAgA&um=1&ie=UTF-8&fb=1&gl=us&sa=X&geocode=KUW1oqH_7TiIMSAUQMx7pxPK&daddr=187+W+Olentangy+St+%23+D,+Powell,+OH+43065"
+                href="https://www.google.com/maps/dir/?api=1&destination=677+S+Lapeer+Rd,+Lake+Orion,+MI+48362"
               >
                 677 S Lapeer Rd, Lake Orion, MI 48362
               </a>

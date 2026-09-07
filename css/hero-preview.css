@@ -496,3 +496,715 @@
     display: inline-flex;
   }
 }
+
+/* ============================================================================
+   HOMEPAGE DECISION-MAKER PREVIEW  —  audit follow-up.
+   New homepage sections (credibility band, reworked services/reviews,
+   how-it-works, reframed partners, fleet & commercial, quick-quote).
+   Reverts with the rest:  git checkout -- *.html && rm css/hero-preview.css
+   ========================================================================== */
+
+.hp-band {
+  padding: clamp(4rem, 8vw, 7rem) clamp(1.2rem, 5vw, 4.8rem);
+}
+.hp-band--dark {
+  background: #131110;
+  color: #f2ede4;
+}
+.hp-band--light {
+  background: #f2f2f2;
+  color: #201c19;
+}
+.hp-inner {
+  max-width: 120rem;
+  margin-inline: auto;
+}
+.hp-kicker {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #ff5248;
+  margin: 0 0 0.8rem;
+  text-align: center;
+}
+.hp-h2 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.9rem, 1.3rem + 2vw, 2.9rem);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  text-align: center;
+  text-wrap: balance;
+  margin: 0 0 1rem;
+}
+.hp-h2--dark {
+  color: #fff;
+}
+.hp-h2--light {
+  color: #201c19;
+}
+.hp-lead {
+  max-width: 62ch;
+  margin: 0 auto 3rem;
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  opacity: 0.92;
+}
+
+/* --- credibility band (under hero) --- */
+.cred-band {
+  background: #0d0c0b;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1.35rem clamp(1rem, 4vw, 3rem);
+}
+.cred-band-inner {
+  max-width: 122rem;
+  margin-inline: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.9rem 2.4rem;
+}
+.cred-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: "Lato", sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #f2ede4;
+  position: relative;
+}
+.cred-item ion-icon {
+  font-size: 1.3rem;
+  color: #ff5248;
+  flex: none;
+}
+@media (min-width: 940px) {
+  .cred-item + .cred-item::before {
+    content: "";
+    position: absolute;
+    left: -1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 1.5rem;
+    background: rgba(255, 255, 255, 0.16);
+  }
+}
+
+/* --- reviews aggregate header --- */
+.reviews-agg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin: -1rem auto 2.6rem;
+}
+.reviews-agg-top {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+.reviews-agg-score {
+  font-family: "Roboto", sans-serif;
+  font-weight: 800;
+  font-size: 2.5rem;
+  line-height: 1;
+  color: #201c19;
+}
+.reviews-agg-stars {
+  color: #fbbc04;
+  font-size: 1.35rem;
+  letter-spacing: 2px;
+}
+.reviews-agg-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Lato", sans-serif;
+  font-size: 0.95rem;
+  color: #5a5148;
+}
+.reviews-agg-meta svg {
+  width: 17px;
+  height: 17px;
+}
+.reviews-agg-links {
+  display: flex;
+  gap: 1.3rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 0.88rem;
+}
+.rev-tag {
+  display: inline-block;
+  margin-left: 0.6rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #7e100b;
+  background: rgba(126, 16, 11, 0.1);
+  border-radius: 4px;
+  padding: 0.12rem 0.4rem;
+  vertical-align: middle;
+}
+
+/* --- how it works --- */
+.how-steps {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.6rem;
+  max-width: 108rem;
+  margin-inline: auto;
+}
+.how-step {
+  text-align: center;
+  padding: 0 0.4rem;
+}
+.how-step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: 2px solid #ff5248;
+  color: #ff5248;
+  font-family: "Roboto", sans-serif;
+  font-weight: 800;
+  font-size: 1.15rem;
+  margin-bottom: 1rem;
+}
+.how-step h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 1.12rem;
+  color: #fff;
+  margin: 0 0 0.4rem;
+}
+.how-step p {
+  font-family: "Lato", sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: rgba(242, 237, 228, 0.75);
+  margin: 0;
+}
+@media (max-width: 760px) {
+  .how-steps {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem 1rem;
+  }
+}
+@media (max-width: 430px) {
+  .how-steps {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- fleet & commercial --- */
+.fleet-wrap {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  max-width: 112rem;
+  margin-inline: auto;
+  text-align: left;
+}
+.fleet-wrap > div:last-child img {
+  width: 100%;
+  border-radius: 1rem;
+  display: block;
+}
+.fleet-wrap .hp-kicker,
+.fleet-wrap .hp-h2 {
+  text-align: left;
+}
+.fleet-wrap .hp-h2 {
+  margin-bottom: 0.8rem;
+}
+.fleet-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.3rem 0 2rem;
+  display: grid;
+  gap: 0.7rem;
+}
+.fleet-list li {
+  display: flex;
+  gap: 0.6rem;
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.fleet-list ion-icon {
+  color: #ff5248;
+  font-size: 1.2rem;
+  flex: none;
+  margin-top: 0.15rem;
+}
+@media (max-width: 860px) {
+  .fleet-wrap {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .fleet-wrap > div:last-child {
+    order: -1;
+  }
+}
+
+/* --- quick quote --- */
+.qq-wrap {
+  max-width: 58rem;
+  margin-inline: auto;
+  background: #1b1613;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1.2rem;
+  padding: clamp(1.6rem, 4vw, 2.6rem);
+}
+.qq-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+}
+.qq-form .qq-full {
+  grid-column: 1 / -1;
+}
+.qq-input,
+.qq-select,
+.qq-textarea {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(126, 16, 11, 0.45);
+  border-radius: 0.7rem;
+  padding: 0.8rem 1rem;
+  color: #f2ede4;
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+}
+.qq-input::placeholder,
+.qq-textarea::placeholder {
+  color: rgba(242, 237, 228, 0.5);
+}
+.qq-select {
+  appearance: none;
+}
+.qq-select:invalid {
+  color: rgba(242, 237, 228, 0.5);
+}
+/* the native option list renders on a light system menu — force dark text
+   so it stays readable when the dropdown is open */
+.qq-select option {
+  color: #201c19;
+  background: #fff;
+}
+.qq-textarea {
+  min-height: 5.5rem;
+  resize: vertical;
+}
+.qq-input:focus,
+.qq-select:focus,
+.qq-textarea:focus {
+  outline: none;
+  border-color: #b23d2f;
+  background: rgba(255, 255, 255, 0.08);
+}
+.qq-btn {
+  grid-column: 1 / -1;
+  background: #7e100b;
+  color: #fff;
+  border: 2px solid #7e100b;
+  border-radius: 5rem;
+  padding: 0.95rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.qq-btn:hover,
+.qq-btn:focus-visible {
+  background: #fff;
+  color: #7e100b;
+}
+.qq-alt {
+  text-align: center;
+  margin: 1rem 0 0;
+  font-family: "Lato", sans-serif;
+  font-size: 0.9rem;
+  color: rgba(242, 237, 228, 0.72);
+}
+.qq-alt a {
+  color: #ff8078;
+}
+@media (max-width: 560px) {
+  .qq-form {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- partners reframe --- */
+.partners-claim {
+  max-width: 64ch;
+  margin: 0.5rem auto 0;
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: #5a5148;
+  text-align: center;
+}
+
+/* ============================================================================
+   TINT PAGE DECISION-MAKER PREVIEW  —  audit follow-up.
+   Page-jump nav, CS/XR explainer, Michigan tint law, on-page proof,
+   labeled work, FAQ, and commercial enhancements.
+   Reverts with:  git checkout -- tint.html css/hero-preview.css
+   ========================================================================== */
+
+/* --- page jump nav (under hero) --- */
+.page-jump {
+  background: #0d0c0b;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.85rem clamp(1rem, 4vw, 3rem);
+}
+.page-jump-inner {
+  max-width: 122rem;
+  margin-inline: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem 0.7rem;
+}
+.page-jump a {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  color: #f2ede4;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  padding: 0.4rem 0.95rem;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+.page-jump a:hover {
+  background: rgba(255, 82, 72, 0.14);
+  border-color: #ff5248;
+  color: #fff;
+}
+
+/* --- CS vs XR explainer (before price cards) --- */
+.csxr-note {
+  max-width: 70rem;
+  margin: 0 auto 2.4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.csxr-card {
+  background: var(--wot-surface, #fff);
+  border: 1px solid #e0dccf;
+  border-left: 3px solid #7e100b;
+  border-radius: 0.7rem;
+  padding: 1rem 1.2rem;
+  font-family: "Lato", sans-serif;
+}
+.csxr-card b {
+  font-family: "Roboto", sans-serif;
+  display: block;
+  font-size: 1.02rem;
+  margin-bottom: 0.2rem;
+  color: #201c19;
+}
+.csxr-card span {
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: #4a423b;
+}
+.csxr-help {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  font-size: 0.95rem;
+  color: #4a423b;
+}
+.csxr-help a {
+  font-weight: 700;
+  color: #7e100b;
+}
+@media (max-width: 620px) {
+  .csxr-note {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Michigan tint law --- */
+.tintlaw-grid {
+  max-width: 78rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0.8rem;
+  overflow: hidden;
+}
+.tintlaw-cell {
+  background: #17130f;
+  padding: 1.1rem 1.2rem;
+}
+.tintlaw-cell dt {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #ff8078;
+  margin-bottom: 0.4rem;
+}
+.tintlaw-cell dd {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #f2ede4;
+}
+.tintlaw-cell dd b {
+  color: #fff;
+}
+.tintlaw-foot {
+  max-width: 78rem;
+  margin: 1.2rem auto 0;
+  font-family: "Lato", sans-serif;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: rgba(242, 237, 228, 0.62);
+  text-align: center;
+}
+
+/* --- on-page proof (credentials + reviews) --- */
+.tproof-cred {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem 2rem;
+  margin: 0 auto 2.6rem;
+  max-width: 90rem;
+}
+.tproof-cred span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Lato", sans-serif;
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: #201c19;
+}
+.tproof-cred ion-icon {
+  font-size: 1.25rem;
+  color: #7e100b;
+  flex: none;
+}
+.tproof-reviews {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.2rem;
+  max-width: 100rem;
+  margin-inline: auto;
+}
+.tproof-review {
+  background: #fff;
+  border: 1px solid #e0dccf;
+  border-radius: 0.8rem;
+  padding: 1.3rem 1.4rem;
+  font-family: "Lato", sans-serif;
+}
+.tproof-review .tpr-stars {
+  color: #fbbc04;
+  letter-spacing: 2px;
+  font-size: 0.95rem;
+}
+.tproof-review p {
+  margin: 0.5rem 0 0.8rem;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: #33302b;
+}
+.tproof-review .tpr-name {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #201c19;
+}
+.tproof-review .tpr-src {
+  font-size: 0.8rem;
+  color: #7a7168;
+}
+
+/* --- labeled tint work --- */
+.twork-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+  max-width: 116rem;
+  margin-inline: auto;
+}
+.twork-grid figure {
+  position: relative;
+  margin: 0;
+  border-radius: 0.7rem;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+}
+.twork-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.twork-grid figcaption {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 1.4rem 0.85rem 0.7rem;
+  font-family: "Lato", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.82), transparent);
+}
+
+/* --- FAQ (native details/summary) --- */
+.faq-list {
+  max-width: 68rem;
+  margin-inline: auto;
+  display: grid;
+  gap: 0.7rem;
+}
+.faq-item {
+  background: #fff;
+  border: 1px solid #e0dccf;
+  border-radius: 0.7rem;
+  overflow: hidden;
+}
+.faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 1.05rem 1.3rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #201c19;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+.faq-item summary::after {
+  content: "+";
+  font-size: 1.4rem;
+  color: #7e100b;
+  line-height: 1;
+  flex: none;
+}
+.faq-item[open] summary::after {
+  content: "\2013";
+}
+.faq-item .faq-a {
+  padding: 0 1.3rem 1.15rem;
+  font-family: "Lato", sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #4a423b;
+}
+
+/* --- commercial section enhancements --- */
+.commx-row {
+  max-width: 100rem;
+  margin: 2rem auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.7rem 1.8rem;
+}
+.commx-row span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Lato", sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #33302b;
+}
+.commx-row ion-icon {
+  color: #7e100b;
+  font-size: 1.15rem;
+  flex: none;
+}
+.commx-cta {
+  max-width: 100rem;
+  margin: 2.4rem auto 0;
+  text-align: center;
+}
+.commx-cta p {
+  font-family: "Lato", sans-serif;
+  font-size: 0.95rem;
+  color: #4a423b;
+  margin: 0.8rem 0 0;
+}
+.commx-cta p a {
+  font-weight: 700;
+  color: #7e100b;
+}
+
+/* ============================================================================
+   PPF PAGE DECISION-MAKER PREVIEW  —  audit follow-up.
+   Reuses .page-jump / .hp-band / .tproof-* / .twork-grid / .faq-* / .qq-*.
+   Adds price bands on the package cards + a financing note.
+   Reverts with:  git checkout -- ppf.html css/hero-preview.css
+   ========================================================================== */
+
+.ppf-price {
+  font-family: "Roboto", sans-serif;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: #7e100b;
+  margin: 0.2rem 0 0.1rem;
+}
+.ppf-price small {
+  display: block;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 0.78rem;
+  color: #7a7168;
+}
+.ppf-finance {
+  max-width: 60rem;
+  margin: 0 auto 2.4rem;
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  font-size: 0.95rem;
+  color: #4a423b;
+  background: #fff;
+  border: 1px solid #e0dccf;
+  border-radius: 0.7rem;
+  padding: 0.9rem 1.2rem;
+}
+.ppf-finance b {
+  font-family: "Roboto", sans-serif;
+  color: #7e100b;
+}

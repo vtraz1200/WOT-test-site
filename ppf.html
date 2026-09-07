@@ -5,8 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Wide Open Throttle delivers premium window tinting, lift kits, and custom vehicle upgrades."
+      content="XPEL paint protection film in Lake Orion, MI — self-healing urethane on the panels that take the hits. Partial front to full-vehicle packages, manufacturer warranty, financing available. 5.0 stars on Google."
     />
+
+    <!-- DEMO: decision-maker preview. Reverts with:
+         git checkout -- ppf.html css/hero-preview.css -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Wide Open Throttle LLC" />
+    <meta
+      property="og:title"
+      content="Paint Protection Film in Lake Orion, MI | Wide Open Throttle"
+    />
+    <meta
+      property="og:description"
+      content="Genuine XPEL self-healing paint protection film. Partial-front to full-vehicle coverage, manufacturer warranty, financing available."
+    />
+    <meta property="og:image" content="images/ppf/ppf-carousel-purple.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
 
     <link rel="icon" href="images/favicon-images/favicon-16x16.png" />
     <link rel="manifest" href="manifest.webmanifest" />
@@ -53,7 +68,77 @@
       type="module"
       src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
     ></script>
-    <title>WOT Paint Protection Film</title>
+    <title>
+      Paint Protection Film in Lake Orion, MI | Wide Open Throttle
+    </title>
+
+    <!-- DEMO: Service + FAQ schema (audit rec). -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Paint Protection Film Installation",
+        "provider": {
+          "@type": "AutoRepair",
+          "name": "Wide Open Throttle LLC",
+          "telephone": "+1-248-795-5751",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "677 S Lapeer Rd",
+            "addressLocality": "Lake Orion",
+            "addressRegion": "MI",
+            "postalCode": "48362",
+            "addressCountry": "US"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "40"
+          }
+        },
+        "areaServed": "Oakland County, MI"
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How long does paint protection film last?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Quality XPEL film typically lasts 7 to 10 years with proper care and carries a manufacturer warranty against yellowing, cracking, and delamination."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does PPF yellow over time?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Modern XPEL film has UV inhibitors that keep it clear. Yellowing was a problem with older films and is covered by the manufacturer warranty on current film."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can paint protection film be removed?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. When installed and removed correctly, PPF comes off cleanly without damaging factory paint, which is why it protects resale value."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much does PPF cost?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It depends on coverage and vehicle. Partial-front packages start lower; full-vehicle coverage is the largest investment. We give a firm quote after seeing the vehicle, and financing is available."
+            }
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <main>
@@ -173,10 +258,22 @@
             <ul class="hero2-trust">
               <li><ion-icon name="ribbon-outline"></ion-icon> Genuine XPEL film</li>
               <li><ion-icon name="medkit-outline"></ion-icon> Self-healing surface</li>
-              <li><ion-icon name="shield-checkmark-outline"></ion-icon> Manufacturer warranty</li>            </ul>
+              <li><ion-icon name="shield-checkmark-outline"></ion-icon> Manufacturer warranty</li>
+            </ul>
           </div>
         </div>
       </section>
+
+      <!-- ===== DEMO: page-jump nav ===== -->
+      <nav class="page-jump" aria-label="Jump to section">
+        <div class="page-jump-inner">
+          <a href="#ppf-packages">Packages &amp; Pricing</a>
+          <a href="#ppf-work">Our Work</a>
+          <a href="#ppf-faq">FAQ</a>
+          <a href="#ppf-quote">Get a Quote</a>
+        </div>
+      </nav>
+
       <section class="info-slider">
         <div class="info-track">
           <div class="info-slide">
@@ -269,8 +366,75 @@
           </div>
         </div>
       </section>
-      <section class="section-price-cards">
+      <!-- ===== DEMO: on-page proof (credentials + PPF reviews) ===== -->
+      <section class="hp-band hp-band--light">
+        <div class="hp-inner">
+          <p class="hp-kicker">Why Owners Trust Us With Their Paint</p>
+          <h2 class="hp-h2 hp-h2--light">Installed right, warrantied in writing</h2>
+          <div class="tproof-cred">
+            <span
+              ><ion-icon name="ribbon-outline"></ion-icon> XPEL Certified
+              Installer</span
+            >
+            <span
+              ><ion-icon name="shield-checkmark-outline"></ion-icon> 10-year
+              manufacturer warranty
+              <!-- [confirm exact term] --></span
+            >
+            <span
+              ><ion-icon name="star"></ion-icon> 5.0&#9733; &middot; 40 Google
+              reviews</span
+            >
+            <span
+              ><ion-icon name="hand-left-outline"></ion-icon> Hand-cut edges,
+              wrapped where possible</span
+            >
+          </div>
+          <div class="tproof-reviews">
+            <div class="tproof-review">
+              <div class="tpr-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p>
+                &ldquo;They did a wonderful job applying PPF and tint to both of
+                my vehicles. Will take every vehicle I get there. Customer support
+                is 10/10.&rdquo;
+              </p>
+              <div class="tpr-name">Scott Reitman</div>
+              <div class="tpr-src">Google review</div>
+            </div>
+            <div class="tproof-review">
+              <div class="tpr-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p>
+                &ldquo;Team WOT is excellent! I trust them for all my
+                modifications and accessories. Honest work, and they do it right
+                the first time.&rdquo;
+              </p>
+              <div class="tpr-name">Dan Bilan</div>
+              <div class="tpr-src">Google review</div>
+            </div>
+            <div class="tproof-review">
+              <div class="tpr-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p>
+                &ldquo;Hard to find a shop you can trust like this one. Fair
+                prices, honest work, and they do it right the first time.&rdquo;
+              </p>
+              <div class="tpr-name">Ethan Smotherman</div>
+              <div class="tpr-src">Google review</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-price-cards" id="ppf-packages">
         <h2 class="section-heading">Paint Protection Film Packages</h2>
+
+        <!-- ===== DEMO: price bands are PLACEHOLDERS. Replace [confirm] with
+             the shop's real starting prices before this ships. ===== -->
+        <p class="ppf-finance">
+          Most customers invest <b>$[confirm]&ndash;$[confirm]</b> depending on
+          coverage and vehicle. <b>Financing available</b> &mdash; from
+          <b>$[confirm]/mo</b>. Firm quote after we see the vehicle.
+        </p>
+
         <div class="price-cards-container">
           <div class="price-card">
             <img
@@ -280,6 +444,9 @@
             />
             <h3 class="price-card-title">Partial Front End</h3>
             <span class="price-card-tag">Entry-Level Coverage</span>
+            <p class="ppf-price">
+              From $[confirm]<small>most daily drivers</small>
+            </p>
             <p class="price-card-description">
               Budget-friendly protection for daily drivers.
             </p>
@@ -288,8 +455,8 @@
               <li>Front bumper</li>
               <li>Mirrors</li>
             </ul>
-            <a href="contact.html">
-              <button class="btn-small">Get Quote</button></a
+            <a href="#ppf-quote">
+              <button class="btn-small">Quote This Package</button></a
             >
           </div>
           <div class="price-card">
@@ -299,7 +466,10 @@
               class="price-card-image"
             />
             <h3 class="price-card-title">Full Front End</h3>
-            <span class="price-card-tag">Balanced Protection</span>
+            <span class="price-card-tag">Most Popular</span>
+            <p class="ppf-price">
+              From $[confirm]<small>the balanced choice</small>
+            </p>
             <p class="price-card-description">
               Complete coverage for every forward-facing surface, in one
               package.
@@ -310,8 +480,8 @@
               <li>Fenders</li>
               <li>Mirrors &amp; headlights</li>
             </ul>
-            <a href="contact.html">
-              <button class="btn-small">Get Quote</button></a
+            <a href="#ppf-quote">
+              <button class="btn-small">Quote This Package</button></a
             >
           </div>
           <div class="price-card">
@@ -322,6 +492,9 @@
             />
             <h3 class="price-card-title">High Impact Areas</h3>
             <span class="price-card-tag">Targeted Protection</span>
+            <p class="ppf-price">
+              From $[confirm]<small>add-on or standalone</small>
+            </p>
             <p class="price-card-description">
               Targeted protection for the vehicle's most vulnerable points.
             </p>
@@ -331,8 +504,8 @@
               <li>Rocker panels</li>
               <li>Mirrors</li>
             </ul>
-            <a href="contact.html">
-              <button class="btn-small">Get Quote</button></a
+            <a href="#ppf-quote">
+              <button class="btn-small">Quote This Package</button></a
             >
           </div>
           <div class="price-card">
@@ -343,6 +516,9 @@
             />
             <h3 class="price-card-title">Full Vehicle</h3>
             <span class="price-card-tag">Complete Coverage</span>
+            <p class="ppf-price">
+              From $[confirm]<small>total protection</small>
+            </p>
             <p class="price-card-description">
               Complete, showroom-level protection for every panel.
             </p>
@@ -352,8 +528,8 @@
               <li>Trunk</li>
               <li>Quarter panels</li>
             </ul>
-            <a href="contact.html">
-              <button class="btn-small">Get Quote</button></a
+            <a href="#ppf-quote">
+              <button class="btn-small">Quote This Package</button></a
             >
           </div>
         </div>
@@ -377,7 +553,7 @@
             <p class="window-tint-benifits-description">
               Constant sun exposure can cause paint to fade and oxidize. PPF
               blocks harmful UV rays to preserve your vehicle’s original color
-              and gloss. It keeps your finish looking newer for longer.e.
+              and gloss. It keeps your finish looking newer for longer.
             </p>
           </div>
           <div class="benefits-card">
@@ -402,6 +578,164 @@
           </div>
         </div>
       </section>
+
+      <!-- ===== DEMO: recent PPF work (labeled). Swap in real photos /
+           before-after pairs; captions are placeholders. ===== -->
+      <section class="hp-band hp-band--dark" id="ppf-work">
+        <div class="hp-inner">
+          <p class="hp-kicker">Recent Work</p>
+          <h2 class="hp-h2 hp-h2--dark">Paint we&rsquo;ve protected</h2>
+          <div class="twork-grid">
+            <figure>
+              <img src="images/ppf/ppf-carousel-purple.jpg" alt="Full front end PPF" />
+              <figcaption>Full front end &mdash; XPEL Ultimate Plus</figcaption>
+            </figure>
+            <figure>
+              <img src="images/ppf/ppf-carousel-blue.jpg" alt="High impact area PPF" />
+              <figcaption>High-impact package &mdash; rockers &amp; rear bumper</figcaption>
+            </figure>
+            <figure>
+              <img src="images/ppf/ppf-carousel-multi-colors-slide.jpg" alt="Full vehicle PPF" />
+              <figcaption>Full-vehicle wrap in clear film</figcaption>
+            </figure>
+            <figure>
+              <img src="images/ppf/main-page-ppf-new.jpg" alt="Partial front PPF install" />
+              <figcaption>Partial front &mdash; hood edge, bumper, mirrors</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== DEMO: FAQ ===== -->
+      <section class="hp-band hp-band--light" id="ppf-faq">
+        <div class="hp-inner">
+          <p class="hp-kicker">Common Questions</p>
+          <h2 class="hp-h2 hp-h2--light">PPF FAQ</h2>
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary>How long does paint protection film last?</summary>
+              <div class="faq-a">
+                Quality XPEL film typically lasts 7&ndash;10 years with normal
+                care, and carries a manufacturer warranty against yellowing,
+                cracking, and delamination. <b>[confirm exact warranty term]</b>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>Will it yellow or discolor over time?</summary>
+              <div class="faq-a">
+                Not with current XPEL film &mdash; it has UV inhibitors that keep
+                it clear. Yellowing was a problem with older, cheaper films and is
+                covered by the warranty on the film we install.
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>Can PPF be removed later?</summary>
+              <div class="faq-a">
+                Yes. Installed and removed correctly, it comes off cleanly without
+                harming your factory paint &mdash; which is exactly why it
+                protects resale value.
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>Full front end or full vehicle &mdash; which do I need?</summary>
+              <div class="faq-a">
+                If your main concern is highway rock chips, the full front end
+                covers the panels that take almost all the damage. Full vehicle
+                makes sense for a new or high-value car you plan to keep, or for
+                soft/delicate paint. We&rsquo;ll walk you through it.
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>I already have a few rock chips &mdash; can you still wrap it?</summary>
+              <div class="faq-a">
+                Usually yes. We assess the paint first; minor chips can be touched
+                in before film goes on so they&rsquo;re not sealed under it.
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>Do you offer financing?</summary>
+              <div class="faq-a">
+                Yes &mdash; full-vehicle PPF is a real investment, so we offer
+                financing to spread it out. Ask for terms with your quote.
+                <b>[confirm financing partner]</b>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== DEMO: on-page quote form ===== -->
+      <section class="hp-band hp-band--dark" id="ppf-quote">
+        <div class="hp-inner">
+          <p class="hp-kicker">Get Started</p>
+          <h2 class="hp-h2 hp-h2--dark">Get Your PPF Quote</h2>
+          <p class="hp-lead">
+            Tell us the vehicle and the coverage you&rsquo;re after. We&rsquo;ll
+            come back with a firm number &mdash; usually the same day.
+          </p>
+          <div class="qq-wrap">
+            <form
+              class="qq-form"
+              action="https://api.web3forms.com/submit"
+              method="POST"
+            >
+              <input
+                type="hidden"
+                name="access_key"
+                value="26408754-11fc-47ae-ba6e-036a18819a21"
+              />
+              <input type="hidden" name="service" value="Paint Protection Film" />
+              <input type="hidden" name="from_page" value="ppf-quote" />
+              <select class="qq-select qq-full" name="package" required>
+                <option value="" disabled selected>Which package?</option>
+                <option>Partial Front End</option>
+                <option>Full Front End</option>
+                <option>High Impact Areas</option>
+                <option>Full Vehicle</option>
+                <option>Not sure &mdash; help me choose</option>
+              </select>
+              <input
+                class="qq-input qq-full"
+                type="text"
+                name="vehicle"
+                placeholder="Year, make &amp; model"
+              />
+              <input
+                class="qq-input"
+                type="text"
+                name="name"
+                placeholder="Name"
+                required
+              />
+              <input
+                class="qq-input"
+                type="tel"
+                name="phone"
+                placeholder="Phone"
+                required
+              />
+              <input
+                class="qq-input qq-full"
+                type="email"
+                name="email"
+                placeholder="Email"
+                required
+              />
+              <textarea
+                class="qq-textarea qq-full"
+                name="message"
+                placeholder="Anything else? (new car, soft paint, timeline&hellip;)"
+              ></textarea>
+              <button class="qq-btn" type="submit">Get My Quote</button>
+            </form>
+            <p class="qq-alt">
+              Prefer to talk it through?
+              <a href="tel:+2487955751">Call (248)&nbsp;795-5751</a>
+            </p>
+          </div>
+        </div>
+      </section>
+
       <!-- <section class="section-carousel">
         <div class="carousel">
           <h2 class="section-heading">Check out our work</h2>
@@ -434,15 +768,13 @@
           <div class="booking-accent" aria-hidden="true"></div>
 
           <div class="booking-info">
-            <h3 class="small-heading-h3">
-              Drive Cooler. Tint Smarter. Schedule Now.
-            </h3>
+            <h3 class="small-heading-h3">Protect your paint &mdash; get on the schedule.</h3>
 
             <p class="window-tint-booking-description booking-contact-row">
               <ion-icon name="navigate" class="booking-icon"></ion-icon>
               <a
                 class="card-schedule-today-link"
-                href=" https://www.google.com/maps?gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MggIAhAAGBYYHjIICAMQABgWGB4yCAgEEAAYFhgeMgYIBRBFGDwyBggGEEUYPDIGCAcQRRg80gEINTk3NGowajeoAgCwAgA&um=1&ie=UTF-8&fb=1&gl=us&sa=X&geocode=KUW1oqH_7TiIMSAUQMx7pxPK&daddr=187+W+Olentangy+St+%23+D,+Powell,+OH+43065"
+                href="https://www.google.com/maps/dir/?api=1&destination=677+S+Lapeer+Rd,+Lake+Orion,+MI+48362"
               >
                 677 S Lapeer Rd, Lake Orion, MI 48362
               </a>

@@ -5,8 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Wide Open Throttle delivers premium window tinting, lift kits, and custom vehicle upgrades."
+      content="Vinyl wraps in Lake Orion, MI — full color changes, roof &amp; accent wraps, and commercial fleet graphics in matte, satin, gloss, and color-shift. Paint-safe and fully reversible. 5.0 stars on Google."
     />
+
+    <!-- DEMO: decision-maker preview. Reverts with:
+         git checkout -- wraps.html css/hero-preview.css -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Wide Open Throttle LLC" />
+    <meta
+      property="og:title"
+      content="Vinyl Wraps &amp; Fleet Graphics in Lake Orion, MI | Wide Open Throttle"
+    />
+    <meta
+      property="og:description"
+      content="Color-change wraps, accent wraps, and commercial fleet graphics. Matte, satin, gloss, color-shift. Paint-safe and reversible."
+    />
+    <meta property="og:image" content="images/car-wraps/wrap-price-image.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
 
     <link rel="icon" href="images/favicon-images/favicon-16x16.png" />
     <link rel="manifest" href="manifest.webmanifest" />
@@ -53,7 +68,77 @@
       type="module"
       src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
     ></script>
-    <title>WOT Wraps</title>
+    <title>
+      Vinyl Wraps &amp; Fleet Graphics in Lake Orion, MI | Wide Open Throttle
+    </title>
+
+    <!-- DEMO: Service + FAQ schema (audit rec). -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Vehicle Wraps",
+        "provider": {
+          "@type": "AutoRepair",
+          "name": "Wide Open Throttle LLC",
+          "telephone": "+1-248-795-5751",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "677 S Lapeer Rd",
+            "addressLocality": "Lake Orion",
+            "addressRegion": "MI",
+            "postalCode": "48362",
+            "addressCountry": "US"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "40"
+          }
+        },
+        "areaServed": "Oakland County, MI"
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How long does a vehicle wrap last?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A quality color-change wrap lasts about 5 to 7 years on a garage-kept vehicle. Commercial graphics are often replaced sooner as branding changes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Will a wrap damage my factory paint?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. On factory paint in good condition, wrap film removes cleanly and actually protects the paint underneath from UV and light abrasion while it is on."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much does a wrap cost?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It depends on vehicle size, finish, and coverage. Partial and accent wraps start lower; a full color change on a larger vehicle is the most involved. We quote after seeing the vehicle."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you do commercial and fleet graphics?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. We handle single-vehicle branding through multi-vehicle fleets, with consistent color and layout across every unit, plus design help if you need it."
+            }
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <main>
@@ -173,10 +258,23 @@
             <ul class="hero2-trust">
               <li><ion-icon name="color-palette-outline"></ion-icon> Matte &middot; satin &middot; gloss</li>
               <li><ion-icon name="shield-outline"></ion-icon> Paint-safe &amp; removable</li>
-              <li><ion-icon name="business-outline"></ion-icon> Fleet &amp; commercial</li>            </ul>
+              <li><ion-icon name="business-outline"></ion-icon> Fleet &amp; commercial</li>
+            </ul>
           </div>
         </div>
       </section>
+
+      <!-- ===== DEMO: page-jump nav ===== -->
+      <nav class="page-jump" aria-label="Jump to section">
+        <div class="page-jump-inner">
+          <a href="#wrap-finishes">Finishes &amp; Pricing</a>
+          <a href="#wrap-work">Our Work</a>
+          <a href="#wrap-fleet">Fleet &amp; Commercial</a>
+          <a href="#wrap-faq">FAQ</a>
+          <a href="#wrap-quote">Get a Quote</a>
+        </div>
+      </nav>
+
       <section class="info-slider">
         <div class="info-track">
           <div class="info-slide">
@@ -261,6 +359,60 @@
           </div>
         </div>
       </section>
+
+      <!-- ===== DEMO: on-page proof (credentials + reviews) ===== -->
+      <section class="hp-band hp-band--light">
+        <div class="hp-inner">
+          <p class="hp-kicker">Why Trust Us With Your Vehicle</p>
+          <h2 class="hp-h2 hp-h2--light">Factory-quality installs, paint left intact</h2>
+          <div class="tproof-cred">
+            <span
+              ><ion-icon name="cut-outline"></ion-icon> Edges disassembled &amp;
+              wrapped &mdash; no lifting</span
+            >
+            <span
+              ><ion-icon name="shield-outline"></ion-icon> Paint-safe removal</span
+            >
+            <span
+              ><ion-icon name="star"></ion-icon> 5.0&#9733; &middot; 40 Google
+              reviews</span
+            >
+            <span
+              ><ion-icon name="business-outline"></ion-icon> Single vehicle to
+              full fleet</span
+            >
+          </div>
+          <div class="tproof-reviews">
+            <div class="tproof-review">
+              <div class="tpr-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p>
+                &ldquo;Ended up with the exact look and performance that I wanted.
+                Great expertise on every component I was considering.&rdquo;
+              </p>
+              <div class="tpr-name">Adam Zentner</div>
+              <div class="tpr-src">Google review</div>
+            </div>
+            <div class="tproof-review">
+              <div class="tpr-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p>
+                &ldquo;Team WOT is excellent! I trust them for all my
+                modifications and accessories.&rdquo;
+              </p>
+              <div class="tpr-name">Dan Bilan</div>
+              <div class="tpr-src">Google review</div>
+            </div>
+            <div class="tproof-review">
+              <div class="tpr-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p>
+                &ldquo;Hard to find a shop you can trust like this one. Fair
+                prices, honest work, and they do it right the first time.&rdquo;
+              </p>
+              <div class="tpr-name">Ethan Smotherman</div>
+              <div class="tpr-src">Google review</div>
+            </div>
+          </div>
+        </div>
+      </section>
       <!-- <section class="section-gallery" id="gallery">
         <h2 class="section-heading-white">Gallery</h2>
         <div div class="gallery-container">
@@ -319,7 +471,7 @@
             <h3 class="small-heading-h3">Seamless Finish</h3>
             <p class="window-tint-benifits-description">
               Professionally installed wraps create a smooth, high-end finish
-              that looks just like paint
+              that looks just like paint.
             </p>
           </div>
           <div class="benefits-card">
@@ -327,11 +479,229 @@
             <h3 class="small-heading-h3">Fully Reversible</h3>
             <p class="window-tint-benifits-description">
               Wraps can be safely removed anytime, revealing the original paint
-              undernea
+              underneath.
             </p>
           </div>
         </div>
       </section>
+
+      <!-- ===== DEMO: recent wrap work (labeled). Swap in real photos;
+           captions are placeholders. ===== -->
+      <section class="hp-band hp-band--dark" id="wrap-work">
+        <div class="hp-inner">
+          <p class="hp-kicker">Our Work</p>
+          <h2 class="hp-h2 hp-h2--dark">Wraps we&rsquo;ve installed</h2>
+          <div class="twork-grid">
+            <figure>
+              <img src="images/car-wraps/info-wraps-slide.jpg" alt="Color-change vinyl wrap" />
+              <figcaption>Full color change &mdash; satin finish</figcaption>
+            </figure>
+            <figure>
+              <img src="images/car-wraps/info-wraps-two-slide.jpg" alt="Vehicle wrap detail" />
+              <figcaption>Gloss color-shift wrap</figcaption>
+            </figure>
+            <figure>
+              <img src="images/car-wraps/info-wraps-three-slide.jpg" alt="Wrapped vehicle on the street" />
+              <figcaption>Roof &amp; accent wrap</figcaption>
+            </figure>
+            <figure>
+              <img src="images/car-wraps/wrap-price-image.jpg" alt="Finished vinyl wrap" />
+              <figcaption>Matte black full wrap</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== DEMO: finishes + pricing band. [confirm] = placeholder. ===== -->
+      <section class="hp-band hp-band--light" id="wrap-finishes">
+        <div class="hp-inner">
+          <p class="hp-kicker">Finishes &amp; Pricing</p>
+          <h2 class="hp-h2 hp-h2--light">Pick a look, get a real number</h2>
+          <p class="ppf-finance">
+            Accent &amp; partial wraps from <b>$[confirm]</b> &middot; full color
+            change from <b>$[confirm]</b> &middot; commercial graphics quoted per
+            vehicle. Final price depends on vehicle size, finish, and coverage.
+          </p>
+          <div class="tproof-cred">
+            <span><ion-icon name="ellipse-outline"></ion-icon> Matte</span>
+            <span><ion-icon name="ellipse-outline"></ion-icon> Satin</span>
+            <span><ion-icon name="ellipse-outline"></ion-icon> Gloss</span>
+            <span><ion-icon name="ellipse-outline"></ion-icon> Color-shift</span>
+            <span><ion-icon name="ellipse-outline"></ion-icon> Textured / carbon</span>
+            <span><ion-icon name="ellipse-outline"></ion-icon> Printed graphics</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== DEMO: fleet & commercial ===== -->
+      <section class="hp-band hp-band--dark" id="wrap-fleet">
+        <div class="hp-inner fleet-wrap">
+          <div>
+            <p class="hp-kicker">Fleet &amp; Commercial</p>
+            <h2 class="hp-h2 hp-h2--dark">Your business, on every job site</h2>
+            <p style="font-family: 'Lato', sans-serif; line-height: 1.6; color: rgba(242,237,228,.9)">
+              A wrapped van or truck is a billboard that works while it&rsquo;s
+              parked. We handle single vehicles through full fleets &mdash;
+              consistent color and layout across every unit.
+            </p>
+            <ul class="fleet-list">
+              <li>
+                <ion-icon name="color-palette-outline"></ion-icon>
+                <span>Full or partial branding, printed graphics, lettering</span>
+              </li>
+              <li>
+                <ion-icon name="copy-outline"></ion-icon>
+                <span>Repeatable spec so unit #10 matches unit #1</span>
+              </li>
+              <li>
+                <ion-icon name="brush-outline"></ion-icon>
+                <span>Design help if you don&rsquo;t have print-ready art</span>
+              </li>
+              <li>
+                <ion-icon name="calendar-outline"></ion-icon>
+                <span>Scheduled in batches around your operations</span>
+              </li>
+              <li>
+                <ion-icon name="document-text-outline"></ion-icon>
+                <span>Consolidated invoicing &amp; COI on request</span>
+              </li>
+            </ul>
+            <a href="contact.html"
+              ><button class="btn">Request a Fleet Quote</button></a
+            >
+          </div>
+          <div>
+            <img
+              src="images/car-wraps/info-wraps-two-slide.jpg"
+              alt="A commercially wrapped vehicle"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== DEMO: FAQ ===== -->
+      <section class="hp-band hp-band--light" id="wrap-faq">
+        <div class="hp-inner">
+          <p class="hp-kicker">Common Questions</p>
+          <h2 class="hp-h2 hp-h2--light">Wrap FAQ</h2>
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary>How long does a wrap last?</summary>
+              <div class="faq-a">
+                A quality color-change wrap lasts about 5&ndash;7 years on a
+                garage-kept vehicle. Sun and weather exposure shorten that;
+                commercial graphics are often refreshed sooner as branding
+                changes.
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>Will it damage my factory paint?</summary>
+              <div class="faq-a">
+                No &mdash; on factory paint in good condition, the film removes
+                cleanly and protects the paint underneath from UV and light
+                abrasion while it&rsquo;s on. Aftermarket repaint or peeling
+                clear-coat is a different story; we check first.
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>Can I wash a wrapped vehicle?</summary>
+              <div class="faq-a">
+                Yes &mdash; hand wash or touchless. Avoid brush car washes and
+                pressure washing seams. We&rsquo;ll give you a care sheet.
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>How long does the install take?</summary>
+              <div class="faq-a">
+                A full color change is typically a few days &mdash; the vehicle
+                is disassembled at the edges, wrapped, and reassembled so there
+                are no lifting edges. Partial wraps are faster.
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>Do you do commercial fleet graphics?</summary>
+              <div class="faq-a">
+                Yes &mdash; single vehicles through multi-vehicle fleets, with a
+                repeatable spec so every unit matches. See the Fleet &amp;
+                Commercial section above.
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== DEMO: on-page quote form ===== -->
+      <section class="hp-band hp-band--dark" id="wrap-quote">
+        <div class="hp-inner">
+          <p class="hp-kicker">Get Started</p>
+          <h2 class="hp-h2 hp-h2--dark">Get Your Wrap Quote</h2>
+          <p class="hp-lead">
+            Tell us the vehicle and the look you&rsquo;re after. Photos help
+            &mdash; you can send those after.
+          </p>
+          <div class="qq-wrap">
+            <form
+              class="qq-form"
+              action="https://api.web3forms.com/submit"
+              method="POST"
+            >
+              <input
+                type="hidden"
+                name="access_key"
+                value="26408754-11fc-47ae-ba6e-036a18819a21"
+              />
+              <input type="hidden" name="service" value="Vinyl Wrap" />
+              <input type="hidden" name="from_page" value="wrap-quote" />
+              <select class="qq-select qq-full" name="scope" required>
+                <option value="" disabled selected>What kind of wrap?</option>
+                <option>Full color change</option>
+                <option>Partial / accent / roof</option>
+                <option>Commercial branding &mdash; single vehicle</option>
+                <option>Fleet &mdash; multiple vehicles</option>
+                <option>Not sure yet</option>
+              </select>
+              <input
+                class="qq-input qq-full"
+                type="text"
+                name="vehicle"
+                placeholder="Year, make &amp; model"
+              />
+              <input
+                class="qq-input"
+                type="text"
+                name="name"
+                placeholder="Name"
+                required
+              />
+              <input
+                class="qq-input"
+                type="tel"
+                name="phone"
+                placeholder="Phone"
+                required
+              />
+              <input
+                class="qq-input qq-full"
+                type="email"
+                name="email"
+                placeholder="Email"
+                required
+              />
+              <textarea
+                class="qq-textarea qq-full"
+                name="message"
+                placeholder="Colour / finish, coverage, timeline&hellip;"
+              ></textarea>
+              <button class="qq-btn" type="submit">Get My Quote</button>
+            </form>
+            <p class="qq-alt">
+              Prefer to talk it through?
+              <a href="tel:+2487955751">Call (248)&nbsp;795-5751</a>
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section class="section-booking-tint">
         <h2 class="section-heading">Schedule today</h2>
         <div class="booking-tint-container">
@@ -339,15 +709,13 @@
           <div class="booking-accent" aria-hidden="true"></div>
 
           <div class="booking-info">
-            <h3 class="small-heading-h3">
-              Drive Cooler. Tint Smarter. Schedule Now.
-            </h3>
+            <h3 class="small-heading-h3">Ready to change the look? Get on the schedule.</h3>
 
             <p class="window-tint-booking-description booking-contact-row">
               <ion-icon name="navigate" class="booking-icon"></ion-icon>
               <a
                 class="card-schedule-today-link"
-                href=" https://www.google.com/maps?gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MggIAhAAGBYYHjIICAMQABgWGB4yCAgEEAAYFhgeMgYIBRBFGDwyBggGEEUYPDIGCAcQRRg80gEINTk3NGowajeoAgCwAgA&um=1&ie=UTF-8&fb=1&gl=us&sa=X&geocode=KUW1oqH_7TiIMSAUQMx7pxPK&daddr=187+W+Olentangy+St+%23+D,+Powell,+OH+43065"
+                href="https://www.google.com/maps/dir/?api=1&destination=677+S+Lapeer+Rd,+Lake+Orion,+MI+48362"
               >
                 677 S Lapeer Rd, Lake Orion, MI 48362
               </a>

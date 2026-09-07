@@ -5,8 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Wide Open Throttle delivers premium window tinting, lift kits, and custom vehicle upgrades."
+      content="Wide Open Throttle LLC — window tint, paint protection film, ceramic coating, wraps, detailing, and custom truck builds in Lake Orion, MI. XPEL-certified installers, 5.0 stars on Google, work backed in writing."
     />
+
+    <!-- DEMO: homepage decision-maker preview. Reverts with the rest:
+         git checkout -- *.html && rm css/hero-preview.css -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Wide Open Throttle LLC" />
+    <meta
+      property="og:title"
+      content="Wide Open Throttle — Vehicle Protection & Custom Builds in Lake Orion, MI"
+    />
+    <meta
+      property="og:description"
+      content="XPEL-certified window tint, paint protection film, ceramic coating, wraps, detailing and custom builds. 5.0 stars on Google. Every job backed in writing."
+    />
+    <meta property="og:image" content="images/background-images/temp-main-background.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
 
     <link rel="icon" href="images/favicon-images/favicon-16x16.png" />
     <link rel="manifest" href="manifest.webmanifest" />
@@ -14,26 +29,18 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
@@ -54,159 +61,52 @@
       src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
     ></script>
 
-    <title>Wide Open Throttle</title>
+    <title>
+      Window Tint, PPF, Ceramic &amp; Custom Builds in Lake Orion, MI | Wide Open
+      Throttle
+    </title>
 
-    <!-- ===== DEMO: reworked hero (recommendation C1). Scoped here so the
-         whole preview reverts with `git checkout -- index.html`.
-         Rating / review count / years are PLACEHOLDERS — swap in real
-         Google Business Profile numbers before shipping. ===== -->
-    <style>
-      .section-hero .text-box {
-        width: min(92vw, 58rem);
-        top: 50%;
+    <!-- DEMO: LocalBusiness + rating schema (audit rec). Values marked
+         [confirm] should be verified with the owner before shipping. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "AutoRepair",
+        "name": "Wide Open Throttle LLC",
+        "image": "images/background-images/temp-main-background.jpg",
+        "telephone": "+1-248-795-5751",
+        "email": "wotautogarage@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "677 S Lapeer Rd",
+          "addressLocality": "Lake Orion",
+          "addressRegion": "MI",
+          "postalCode": "48362",
+          "addressCountry": "US"
+        },
+        "areaServed": "Oakland County, MI",
+        "priceRange": "$$",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "09:00",
+            "closes": "18:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Saturday",
+            "opens": "10:00",
+            "closes": "14:00"
+          }
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5.0",
+          "reviewCount": "40"
+        }
       }
-      .hero2 {
-        position: relative;
-        text-align: left;
-        text-shadow: 0 2px 16px rgba(0, 0, 0, 0.55);
-      }
-      /* localized scrim so the lighter sub-copy and trust row stay legible
-         over the darkest parts of the shop photo */
-      .hero2::before {
-        content: "";
-        position: absolute;
-        inset: -3.5rem -12vw -3rem -10vw;
-        z-index: -1;
-        background: radial-gradient(
-          130% 120% at 32% 45%,
-          rgba(0, 0, 0, 0.72) 0%,
-          rgba(0, 0, 0, 0.52) 42%,
-          rgba(0, 0, 0, 0) 100%
-        );
-        pointer-events: none;
-      }
-      @media (prefers-reduced-motion: no-preference) {
-        .hero2 { animation: hero2In 0.7s cubic-bezier(0.22, 1, 0.36, 1) both; }
-        @keyframes hero2In { from { opacity: 0; transform: translateY(12px); } }
-      }
-      .hero2-eyebrow {
-        font-family: "Roboto", sans-serif;
-        font-size: clamp(0.68rem, 0.63rem + 0.2vw, 0.78rem);
-        font-weight: 600;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-        color: rgba(255, 255, 255, 0.88);
-        margin: 0 0 1.1rem;
-      }
-      .hero2-title {
-        font-family: "Roboto", sans-serif;
-        text-transform: none;
-        color: #fff;
-        font-size: clamp(2.35rem, 1.6rem + 2.9vw, 4.1rem);
-        font-weight: 800;
-        line-height: 1.04;
-        letter-spacing: -0.01em;
-        text-wrap: balance;
-        margin: 0 0 1rem;
-      }
-      .hero2-sub {
-        font-family: "Lato", sans-serif;
-        color: #fff;
-        font-size: clamp(1.02rem, 0.95rem + 0.35vw, 1.25rem);
-        line-height: 1.5;
-        max-width: 46ch;
-        margin: 0 0 1.7rem;
-      }
-      .hero2-sub strong { font-weight: 700; white-space: nowrap; }
-      .hero2-cta {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 0.8rem;
-        margin-bottom: 0.9rem;
-      }
-      .hero2-btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        font-family: "Roboto", sans-serif;
-        font-weight: 700;
-        font-size: 1.1rem;
-        line-height: 1;
-        padding: 0.95rem 1.8rem;
-        border-radius: 5rem;
-        text-decoration: none;
-        text-shadow: none;
-        border: 2px solid transparent;
-        transition: background-color 0.22s ease, color 0.22s ease,
-          border-color 0.22s ease;
-      }
-      .hero2-btn ion-icon { font-size: 1.15em; }
-      .hero2-btn--primary {
-        background: #7e100b;
-        color: #fff;
-        box-shadow: 0 0.9rem 2rem rgba(0, 0, 0, 0.4);
-      }
-      .hero2-btn--primary:hover,
-      .hero2-btn--primary:focus-visible { background: #fff; color: #7e100b; }
-      .hero2-btn--ghost {
-        background: rgba(255, 255, 255, 0.08);
-        color: #fff;
-        border-color: rgba(255, 255, 255, 0.6);
-        backdrop-filter: blur(4px);
-        -webkit-backdrop-filter: blur(4px);
-      }
-      .hero2-btn--ghost:hover,
-      .hero2-btn--ghost:focus-visible { background: #fff; color: #141110; border-color: #fff; }
-      .hero2-tertiary {
-        display: inline-block;
-        margin: 0 0 1.6rem;
-        font-family: "Lato", sans-serif;
-        font-size: 0.92rem;
-        color: rgba(255, 255, 255, 0.82);
-        text-underline-offset: 3px;
-      }
-      .hero2-tertiary:hover { color: #fff; }
-      .hero2-trust {
-        list-style: none;
-        margin: 0;
-        padding: 1.2rem 0 0;
-        border-top: 1px solid rgba(255, 255, 255, 0.22);
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem 1.5rem;
-      }
-      .hero2-trust li {
-        display: flex;
-        align-items: center;
-        gap: 0.4rem;
-        font-family: "Lato", sans-serif;
-        font-size: 0.88rem;
-        font-weight: 600;
-        color: #fff;
-      }
-      .hero2-trust ion-icon {
-        color: #ff5248;
-        font-size: 1.05rem;
-        flex: none;
-        filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.5));
-      }
-
-      @media (max-width: 740px) {
-        .hero2 { text-align: center; }
-        .hero2::before { inset: -2.5rem -18vw; }
-        .hero2-sub { margin-inline: auto; }
-        .hero2-cta { justify-content: center; }
-        .hero2-btn { flex: 1 1 100%; justify-content: center; }
-        .hero2-trust { justify-content: center; }
-      }
-      @media (max-height: 760px) {
-        .hero2-title { margin-bottom: 0.7rem; }
-        .hero2-sub { margin-bottom: 1.1rem; }
-        .hero2-eyebrow { margin-bottom: 0.8rem; }
-        .hero2-trust { padding-top: 0.9rem; }
-      }
-    </style>
+    </script>
   </head>
   <body>
     <main>
@@ -216,7 +116,7 @@
             <img
               src="images/logo/enhance the uploaded 3.png"
               class="logo"
-              alt=""
+              alt="Wide Open Throttle LLC"
             />
           </a>
           <nav class="navigation">
@@ -260,9 +160,8 @@
                 </ul>
               </li>
               <li><a class="main-nav-link" href="#gallery">Gallery</a></li>
-              <li>
-                <a class="main-nav-link" href="#testimonial">Testimonials</a>
-              </li>
+              <li><a class="main-nav-link" href="#testimonial">Reviews</a></li>
+              <li><a class="main-nav-link" href="#fleet">Fleet</a></li>
               <li><a class="main-nav-link" href="contact.html">Contact</a></li>
             </ul>
           </nav>
@@ -314,7 +213,8 @@
             </h1>
             <p class="hero2-sub">
               XPEL-grade film, precision installs, and every job backed in
-              writing &mdash; for daily drivers, enthusiasts, trucks, and fleets.
+              writing. We protect what your vehicle is worth &mdash; for daily
+              drivers, enthusiasts, truck builds, and business fleets.
             </p>
 
             <div class="hero2-cta">
@@ -323,10 +223,8 @@
                 <ion-icon name="call"></ion-icon> (248)&nbsp;795-5751
               </a>
             </div>
-            <a
-              class="hero2-tertiary"
-              href="https://book.squareup.com/appointments/o9tmaf38mre1zm/location/LCZQ3RDFCTK9K/services"
-              >or book a tint / detail appointment online &rarr;</a
+            <a class="hero2-tertiary" href="#fleet"
+              >Fleet or commercial project? &rarr;</a
             >
 
             <ul class="hero2-trust">
@@ -336,18 +234,45 @@
             </ul>
           </div>
         </div>
-        <!-- <video autoplay loop muted class="back-video">
-          <source src="videos/backgroundVideo.mp4" />
-        </video> -->
       </section>
+
+      <!-- ===== DEMO: credibility band ===== -->
+      <!-- [confirm] founding year, insurance status, warranty term, and
+           financing partner with the owner before shipping. -->
+      <div class="cred-band">
+        <div class="cred-band-inner">
+          <span class="cred-item"
+            ><ion-icon name="ribbon-outline"></ion-icon>
+            <span><b>XPEL</b> Certified Installers</span></span
+          >
+          <span class="cred-item"
+            ><ion-icon name="business-outline"></ion-icon>
+            <span>Locally owned &amp; operated</span></span
+          >
+          <span class="cred-item"
+            ><ion-icon name="shield-checkmark-outline"></ion-icon>
+            <span>Licensed &amp; insured</span></span
+          >
+          <span class="cred-item"
+            ><ion-icon name="create-outline"></ion-icon>
+            <span>Written workmanship warranty</span></span
+          >
+          <span class="cred-item"
+            ><ion-icon name="card-outline"></ion-icon>
+            <span>Financing available</span></span
+          >
+        </div>
+      </div>
+
+      <!-- ===== DEMO: reworked "why it matters" section ===== -->
       <section class="section-catcher">
-        <p class="info-video-kicker">Welcome To Wide Open Throttle</p>
-        <h2 class="section-heading-white">Elevate Your Ride</h2>
+        <p class="info-video-kicker">Why It Matters</p>
+        <h2 class="section-heading-white">Protect What Your Vehicle Is Worth</h2>
         <div class="catcher">
           <div class="catcher-media">
             <img
               src="images/car-wraps/ben-wrapping.jpg"
-              alt=""
+              alt="A Wide Open Throttle technician installing protective film on a vehicle"
               class="catch-img"
             />
             <span class="catcher-media-caption">Expert Film Installation</span>
@@ -355,49 +280,47 @@
           <div class="catcher-information">
             <p class="catcher-text">
               <span class="bold"
-                >Welcome to Wide Open Throttle — where precision meets
-                performance.</span
+                >Michigan roads, sun, and salt take their toll.</span
               >
-              We specialize in elite vehicle protection and enhancement,
-              offering expert window tinting, ceramic coatings, paint protection
-              film, wraps, and professional detailing. Whether you're preserving
-              a showroom finish or transforming your vehicle’s presence on the
-              road, our customizable services are designed to protect your
-              investment and elevate every drive.
+              Faded interiors, rock chips, dull paint &mdash; and it all shows up
+              at trade-in. Wide Open Throttle installs the protection that keeps
+              your vehicle looking new and holding its value: film, coatings, and
+              detailing done right the first time, and backed in writing.
             </p>
-            <a class="center" href="tel:+2487955751">
-              <button class="btn">Call Today</button>
+            <a class="center" href="#services">
+              <button class="btn">See What We Protect &rarr;</button>
             </a>
           </div>
           <div class="catcher-media">
             <img
               src="images/background-images/ceramic-caoting-background.jpg"
-              alt=""
+              alt="A vehicle with a freshly applied ceramic coating and deep gloss finish"
               class="catch-img"
             />
             <span class="catcher-media-caption">Showroom-Ready Finish</span>
           </div>
         </div>
       </section>
-      <section class="section-services">
+
+      <section class="section-services" id="services">
         <p class="info-video-kicker">Our Services</p>
         <h2 class="section-heading-white">What We Do Best</h2>
         <div class="services-container">
           <div class="service">
             <img
               src="images/tint/Sides-and-Back-new.jpg"
-              alt=""
+              alt="Window tint applied to the side and rear glass of a vehicle"
               class="service-image"
             />
             <div class="service-body">
-              <h3 class="service-heading">Tint</h3>
+              <h3 class="service-heading">Window Tint</h3>
               <ul class="features-list">
-                <li>Blocks heat &amp; UV rays</li>
-                <li>Computer-cut, gap-free fit</li>
-                <li>Sharper, more private look</li>
+                <li>Cuts cabin heat and blocks 99% of UV</li>
+                <li>Protects your upholstery and dash from fading</li>
+                <li>Computer-cut for a clean, gap-free look</li>
               </ul>
               <a href="tint.html">
-                <button class="btn-small">Choose Your Shade</button>
+                <button class="btn-small">Explore Tint &rarr;</button>
               </a>
             </div>
           </div>
@@ -405,18 +328,18 @@
           <div class="service">
             <img
               src="images/ppf/main-page-ppf-new.jpg"
-              alt=""
+              alt="Paint protection film being applied to the front end of a car"
               class="service-image"
             />
             <div class="service-body">
               <h3 class="service-heading">Paint Protection Film</h3>
               <ul class="features-list">
-                <li>Self-healing rock chip protection</li>
-                <li>Removes swirls &amp; light scratches</li>
-                <li>Preserves factory paint &amp; resale value</li>
+                <li>Takes the rock chips so your paint doesn&rsquo;t</li>
+                <li>Self-healing &mdash; light scratches vanish with heat</li>
+                <li>Preserves factory paint and resale value</li>
               </ul>
               <a href="ppf.html">
-                <button class="btn-small">Defend the Paint</button>
+                <button class="btn-small">Explore PPF &rarr;</button>
               </a>
             </div>
           </div>
@@ -424,18 +347,18 @@
           <div class="service">
             <img
               src="images/ceramic/ceramic-coating-backgrounds/ceramic-coating-main-page.jpg"
-              alt=""
+              alt="Ceramic coating being hand-applied to a vehicle panel"
               class="service-image"
             />
             <div class="service-body">
               <h3 class="service-heading">Ceramic Coating</h3>
               <ul class="features-list">
-                <li>Long-term UV &amp; contaminant shield</li>
-                <li>Water &amp; dirt bead off easily</li>
-                <li>Deep, mirror-like gloss</li>
+                <li>A hard, glossy shield that lasts for years</li>
+                <li>Water and dirt bead up and rinse right off</li>
+                <li>Multi-stage paint correction included</li>
               </ul>
               <a href="ceramic.html">
-                <button class="btn-small">Lock in the Shine</button>
+                <button class="btn-small">Explore Ceramic &rarr;</button>
               </a>
             </div>
           </div>
@@ -443,18 +366,18 @@
           <div class="service">
             <img
               src="images/detailing/main-page-detailing.jpg"
-              alt=""
+              alt="Interior of a vehicle being deep-cleaned during a detail"
               class="service-image"
             />
             <div class="service-body">
               <h3 class="service-heading">Detailing</h3>
               <ul class="features-list">
-                <li>Deep interior &amp; exterior clean</li>
-                <li>Removes swirls &amp; oxidation</li>
-                <li>Meticulous, showroom-ready finish</li>
+                <li>Interior deep clean and exterior restoration</li>
+                <li>Removes swirls, oxidation, and buildup</li>
+                <li>Honest package pricing, up front</li>
               </ul>
               <a href="details.html">
-                <button class="btn-small">Restore the Gloss</button>
+                <button class="btn-small">Explore Detailing &rarr;</button>
               </a>
             </div>
           </div>
@@ -462,117 +385,86 @@
           <div class="service">
             <img
               src="images/car-wraps/main-page-car-wrap-cut.jpg"
-              alt=""
+              alt="A vehicle mid-way through a color-change vinyl wrap"
               class="service-image"
             />
             <div class="service-body">
-              <h3 class="service-heading">Wraps</h3>
+              <h3 class="service-heading">Vinyl Wraps</h3>
               <ul class="features-list">
-                <li>Matte, gloss &amp; satin finishes</li>
-                <li>Adds a layer of paint protection</li>
-                <li>Clean, factory-quality install</li>
+                <li>Full color changes and accent wraps</li>
+                <li>Reversible &mdash; the factory paint stays protected</li>
+                <li>Fleet graphics that advertise while parked</li>
               </ul>
               <a href="wraps.html">
-                <button class="btn-small">Wrap Your Ride</button>
+                <button class="btn-small">Explore Wraps &rarr;</button>
               </a>
             </div>
           </div>
           <div class="service">
             <img
               src="images/background-images/trucks-in-shop.jpg"
-              alt=""
+              alt="Custom trucks being built inside the Wide Open Throttle shop"
               class="service-image"
             />
             <div class="service-body">
-              <h3 class="service-heading">Customization</h3>
+              <h3 class="service-heading">Custom Builds</h3>
               <ul class="features-list">
-                <li>Wheels, lift kits &amp; suspension</li>
-                <li>Off-road bumpers &amp; LED lighting</li>
-                <li>A build that's uniquely yours</li>
+                <li>Lift, leveling, wheels, and tires</li>
+                <li>Lighting, audio, exhaust, and off-road armor</li>
+                <li>Dialed for fitment, installed in-house</li>
               </ul>
               <a href="custom.html">
-                <button class="btn-small">Customize your ride</button>
+                <button class="btn-small">Explore Builds &rarr;</button>
               </a>
             </div>
           </div>
         </div>
       </section>
-      <section class="section-partnerships">
-        <h2 class="section-heading">Trusted Industry Partners</h2>
 
-        <div class="partnerships-container carousel">
-          <div class="carousel-track">
-            <img
-              src="images/logo/xpel-no-r-blk.png"
-              alt="XPEL Paint Protection Film Partner"
-              class="partnerships-img"
-            />
-            <img
-              src="images/logo/American-Force.png"
-              alt="American Force Wheels Partner"
-              class="partnerships-img"
-            />
-            <img
-              src="images/logo/AVIX-TIRE-LOGO-BLK.png"
-              alt="AVIX Tire Partner"
-              class="partnerships-img"
-            />
-            <img
-              src="images/logo/rc-logo-stamp2.png"
-              alt="RC Partner"
-              class="partnerships-img"
-            />
-            <img
-              src="images/logo/Black_Rhino_Hard_Alloys_Logo_Black.png"
-              alt="RC Partner"
-              class="partnerships-img"
-            />
-            <img
-              src="images/logo/DS18_We_Like_It_Loud_Logo_White_Background.png"
-              alt="RC Partner"
-              class="partnerships-img"
-            />
-            <img
-              src="images/logo/Fuel_Off_Road_Logo_Black.png"
-              alt="RC Partner"
-              class="partnerships-img"
-            />
-            <img
-              src="images/logo/KMC_Wheels_Logo_Black.png"
-              alt="RC Partner"
-              class="partnerships-img"
-            />
-            <img
-              src="images/logo/Morimoto_Logo_Black.png"
-              alt="RC Partner"
-              class="partnerships-img"
-            />
-            <img
-              src="images/logo/Oracle_Lighting_Technology_Winged_Logo.png"
-              alt="RC Partner"
-              class="partnerships-img"
-            />
-            <img
-              src="images/logo/Ready_Air_by_LOGIQ_Logo.png"
-              alt="RC Partner"
-              class="partnerships-img"
-            />
-            <img
-              src="images/logo/ReadyLIFT_Suspensions_Logo.png"
-              alt="RC Partner"
-              class="partnerships-img"
-            />
+      <section class="section-testimonials section" id="testimonial">
+        <h2 class="section-heading">Reviews</h2>
+
+        <!-- ===== DEMO: aggregate rating header ===== -->
+        <div class="reviews-agg">
+          <div class="reviews-agg-top">
+            <span class="reviews-agg-score">5.0</span>
+            <span class="reviews-agg-stars" aria-hidden="true"
+              >&#9733;&#9733;&#9733;&#9733;&#9733;</span
+            >
+          </div>
+          <p class="reviews-agg-meta">
+            <svg viewBox="0 0 48 48" aria-hidden="true">
+              <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+              <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+              <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+              <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+            </svg>
+            Rated 5.0 by 40 customers on Google
+          </p>
+          <div class="reviews-agg-links">
+            <a
+              href="https://www.google.com/search?q=Wide+Open+Throttle+LLC+Lake+Orion+reviews"
+              target="_blank"
+              rel="noopener"
+              >Read all reviews</a
+            >
+            <a
+              href="https://www.google.com/search?q=Wide+Open+Throttle+LLC+Lake+Orion"
+              target="_blank"
+              rel="noopener"
+              >Leave a review</a
+            >
           </div>
         </div>
-      </section>
-      <section class="section-testimonials section" id="testimonial">
-        <h2 class="section-heading">Testimonials</h2>
+
         <div class="slider">
           <div class="slide">
             <div class="testimonials-box">
               <div class="testimonial-text">
                 <div class="testimonials-title">
-                  <p class="testimonials-name">Dan Bilan</p>
+                  <p class="testimonials-name">
+                    Dan Bilan<span class="rev-tag">Tint &amp; Mods</span>
+                  </p>
                 </div>
                 <div class="testimonial-star-list">
                   <ion-icon class="star-icon" name="star"></ion-icon>
@@ -595,7 +487,9 @@
             <div class="testimonials-box">
               <div class="testimonial-text">
                 <div class="testimonials-title">
-                  <p class="testimonials-name">Adam Zentner</p>
+                  <p class="testimonials-name">
+                    Adam Zentner<span class="rev-tag">Leveling &amp; Tires</span>
+                  </p>
                 </div>
                 <div class="testimonial-star-list">
                   <ion-icon class="star-icon" name="star"></ion-icon>
@@ -619,7 +513,9 @@
             <div class="testimonials-box">
               <div class="testimonial-text">
                 <div class="testimonials-title">
-                  <p class="testimonials-name">Justin Peak</p>
+                  <p class="testimonials-name">
+                    Justin Peak<span class="rev-tag">Window Tint</span>
+                  </p>
                 </div>
                 <div class="testimonial-star-list">
                   <ion-icon class="star-icon" name="star"></ion-icon>
@@ -642,7 +538,9 @@
             <div class="testimonials-box">
               <div class="testimonial-text">
                 <div class="testimonials-title">
-                  <p class="testimonials-name">Scott Reitman</p>
+                  <p class="testimonials-name">
+                    Scott Reitman<span class="rev-tag">PPF &amp; Tint</span>
+                  </p>
                 </div>
                 <div class="testimonial-star-list">
                   <ion-icon class="star-icon" name="star"></ion-icon>
@@ -665,7 +563,9 @@
             <div class="testimonials-box">
               <div class="testimonial-text">
                 <div class="testimonials-title">
-                  <p class="testimonials-name">David Brunell</p>
+                  <p class="testimonials-name">
+                    David Brunell<span class="rev-tag">Window Tint</span>
+                  </p>
                 </div>
                 <div class="testimonial-star-list">
                   <ion-icon class="star-icon" name="star"></ion-icon>
@@ -689,7 +589,9 @@
             <div class="testimonials-box">
               <div class="testimonial-text">
                 <div class="testimonials-title">
-                  <p class="testimonials-name">Ethan Smotherman</p>
+                  <p class="testimonials-name">
+                    Ethan Smotherman<span class="rev-tag">Repeat Customer</span>
+                  </p>
                 </div>
                 <div class="testimonial-star-list">
                   <ion-icon class="star-icon" name="star"></ion-icon>
@@ -715,6 +617,7 @@
           <button class="slider__btn slider__btn--right">&rarr;</button>
         </div>
       </section>
+
       <section class="section-gallery" id="gallery">
         <h2 class="section-heading-white">Gallery</h2>
         <div class="gallery-container">
@@ -723,27 +626,27 @@
               <img
                 src="images/gallery/gallery-image-one.jpg"
                 class="gallery-images"
-                alt=""
+                alt="Wide Open Throttle completed vehicle"
               />
               <img
                 src="images/gallery/gallery-image-three.jpg"
                 class="gallery-images"
-                alt=""
+                alt="Wide Open Throttle completed vehicle"
               />
               <img
                 src="images/gallery/gallery-image-five.jpg"
                 class="gallery-images"
-                alt=""
+                alt="Wide Open Throttle completed vehicle"
               />
               <img
                 src="images/gallery/gallery-image-seven.jpg"
                 class="gallery-images"
-                alt=""
+                alt="Wide Open Throttle completed vehicle"
               />
               <img
                 src="images/gallery/gallery-image-nine.jpg"
                 class="gallery-images"
-                alt=""
+                alt="Wide Open Throttle completed vehicle"
               />
             </div>
           </div>
@@ -752,22 +655,22 @@
               <img
                 src="images/gallery/gallery-image-two.jpg"
                 class="gallery-images"
-                alt=""
+                alt="Wide Open Throttle completed vehicle"
               />
               <img
                 src="images/gallery/gallery-image-four.jpg"
                 class="gallery-images"
-                alt=""
+                alt="Wide Open Throttle completed vehicle"
               />
               <img
                 src="images/gallery/gallery-image-six.jpg"
                 class="gallery-images"
-                alt=""
+                alt="Wide Open Throttle completed vehicle"
               />
               <img
                 src="images/gallery/gallery-image-eight.jpg"
                 class="gallery-images"
-                alt=""
+                alt="Wide Open Throttle completed vehicle"
               />
             </div>
           </div>
@@ -778,6 +681,241 @@
         <button class="lightbox-close" aria-label="Close">&times;</button>
         <img class="lightbox-img" src="" alt="" />
       </div>
+
+      <!-- ===== DEMO: how it works ===== -->
+      <section class="hp-band hp-band--dark">
+        <div class="hp-inner">
+          <p class="hp-kicker">Simple Process</p>
+          <h2 class="hp-h2 hp-h2--dark">How It Works</h2>
+          <p class="hp-lead">
+            No guesswork and no runaround &mdash; four steps from first call to
+            driving away protected.
+          </p>
+          <ol class="how-steps">
+            <li class="how-step">
+              <span class="how-step-num">1</span>
+              <h3>Get a quote</h3>
+              <p>Tell us the vehicle and what you want done. Quote back fast.</p>
+            </li>
+            <li class="how-step">
+              <span class="how-step-num">2</span>
+              <h3>Book your date</h3>
+              <p>Lock in a time online or by phone that works for you.</p>
+            </li>
+            <li class="how-step">
+              <span class="how-step-num">3</span>
+              <h3>Drop it off</h3>
+              <p>Most installs are finished in one to three days.</p>
+            </li>
+            <li class="how-step">
+              <span class="how-step-num">4</span>
+              <h3>Drive protected</h3>
+              <p>Leave with the work &mdash; and the warranty &mdash; in writing.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section-partnerships">
+        <h2 class="section-heading">The Brands We Install</h2>
+        <p class="partners-claim">
+          We install genuine XPEL film and carry the wheel, suspension, lighting,
+          and audio brands we&rsquo;d put on our own trucks &mdash; Fuel, KMC,
+          Black Rhino, ReadyLIFT, American Force, Oracle, Morimoto, DS18, and
+          more.
+        </p>
+
+        <div class="partnerships-container carousel">
+          <div class="carousel-track">
+            <img
+              src="images/logo/xpel-no-r-blk.png"
+              alt="XPEL"
+              class="partnerships-img"
+            />
+            <img
+              src="images/logo/American-Force.png"
+              alt="American Force Wheels"
+              class="partnerships-img"
+            />
+            <img
+              src="images/logo/AVIX-TIRE-LOGO-BLK.png"
+              alt="AVIX Tire"
+              class="partnerships-img"
+            />
+            <img
+              src="images/logo/rc-logo-stamp2.png"
+              alt="Rough Country"
+              class="partnerships-img"
+            />
+            <img
+              src="images/logo/Black_Rhino_Hard_Alloys_Logo_Black.png"
+              alt="Black Rhino Wheels"
+              class="partnerships-img"
+            />
+            <img
+              src="images/logo/DS18_We_Like_It_Loud_Logo_White_Background.png"
+              alt="DS18 Audio"
+              class="partnerships-img"
+            />
+            <img
+              src="images/logo/Fuel_Off_Road_Logo_Black.png"
+              alt="Fuel Off-Road Wheels"
+              class="partnerships-img"
+            />
+            <img
+              src="images/logo/KMC_Wheels_Logo_Black.png"
+              alt="KMC Wheels"
+              class="partnerships-img"
+            />
+            <img
+              src="images/logo/Morimoto_Logo_Black.png"
+              alt="Morimoto Lighting"
+              class="partnerships-img"
+            />
+            <img
+              src="images/logo/Oracle_Lighting_Technology_Winged_Logo.png"
+              alt="Oracle Lighting"
+              class="partnerships-img"
+            />
+            <img
+              src="images/logo/Ready_Air_by_LOGIQ_Logo.png"
+              alt="Ready Air by LOGIQ"
+              class="partnerships-img"
+            />
+            <img
+              src="images/logo/ReadyLIFT_Suspensions_Logo.png"
+              alt="ReadyLIFT Suspensions"
+              class="partnerships-img"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== DEMO: fleet & commercial ===== -->
+      <section class="hp-band hp-band--light" id="fleet">
+        <div class="hp-inner fleet-wrap">
+          <div>
+            <p class="hp-kicker">Fleet &amp; Commercial</p>
+            <h2 class="hp-h2 hp-h2--light">
+              Vehicles and buildings, handled at volume
+            </h2>
+            <p style="font-family: 'Lato', sans-serif; line-height: 1.6">
+              Dealerships, service fleets, and property managers &mdash; one shop
+              for tint, PPF, ceramic, wraps, and architectural window film,
+              scheduled around how you actually operate.
+            </p>
+            <ul class="fleet-list">
+              <li>
+                <ion-icon name="megaphone-outline"></ion-icon>
+                <span>Wraps and graphics that market your business on every job</span>
+              </li>
+              <li>
+                <ion-icon name="car-sport-outline"></ion-icon>
+                <span>PPF, ceramic, and tint for dealership inventory</span>
+              </li>
+              <li>
+                <ion-icon name="business-outline"></ion-icon>
+                <span>Architectural window film for storefronts and offices</span>
+              </li>
+              <li>
+                <ion-icon name="document-text-outline"></ion-icon>
+                <span>Insurance/COI handling and consolidated invoicing</span>
+              </li>
+              <li>
+                <ion-icon name="calendar-outline"></ion-icon>
+                <span>Scheduling that works around your downtime</span>
+              </li>
+              <li>
+                <ion-icon name="pricetags-outline"></ion-icon>
+                <span>Volume pricing for multi-vehicle work</span>
+              </li>
+            </ul>
+            <a href="contact.html"
+              ><button class="btn">Request a Fleet Quote</button></a
+            >
+          </div>
+          <div>
+            <img
+              src="images/background-images/trucks-in-shop.jpg"
+              alt="Multiple trucks being worked on inside the Wide Open Throttle shop"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== DEMO: on-page quick quote ===== -->
+      <section class="hp-band hp-band--dark" id="quote">
+        <div class="hp-inner">
+          <p class="hp-kicker">Get Started</p>
+          <h2 class="hp-h2 hp-h2--dark">Get Your Quote</h2>
+          <p class="hp-lead">
+            Tell us what you&rsquo;re working with. We&rsquo;ll get back to you
+            fast &mdash; usually the same day.
+          </p>
+          <div class="qq-wrap">
+            <form
+              class="qq-form"
+              action="https://api.web3forms.com/submit"
+              method="POST"
+            >
+              <input
+                type="hidden"
+                name="access_key"
+                value="26408754-11fc-47ae-ba6e-036a18819a21"
+              />
+              <input type="hidden" name="from_page" value="homepage-quick-quote" />
+              <select class="qq-select qq-full" name="service" required>
+                <option value="" disabled selected>Which service?</option>
+                <option>Window Tint</option>
+                <option>Paint Protection Film</option>
+                <option>Ceramic Coating</option>
+                <option>Detailing</option>
+                <option>Vinyl Wrap</option>
+                <option>Custom Build</option>
+                <option>Fleet / Commercial</option>
+                <option>Not sure yet</option>
+              </select>
+              <input
+                class="qq-input qq-full"
+                type="text"
+                name="vehicle"
+                placeholder="Year, make &amp; model"
+              />
+              <input
+                class="qq-input"
+                type="text"
+                name="name"
+                placeholder="Name"
+                required
+              />
+              <input
+                class="qq-input"
+                type="tel"
+                name="phone"
+                placeholder="Phone"
+                required
+              />
+              <input
+                class="qq-input qq-full"
+                type="email"
+                name="email"
+                placeholder="Email"
+                required
+              />
+              <textarea
+                class="qq-textarea qq-full"
+                name="message"
+                placeholder="What do you want done?"
+              ></textarea>
+              <button class="qq-btn" type="submit">Get My Quote</button>
+            </form>
+            <p class="qq-alt">
+              Prefer to talk it through?
+              <a href="tel:+2487955751">Call (248)&nbsp;795-5751</a>
+            </p>
+          </div>
+        </div>
+      </section>
 
       <footer class="footer" id="contact">
         <div class="footer-div">
@@ -790,15 +928,13 @@
               <div class="booking-accent" aria-hidden="true"></div>
 
               <div class="booking-info">
-                <h3 class="small-heading-h3">
-                  Drive Cooler. Tint Smarter. Schedule Now.
-                </h3>
+                <h3 class="small-heading-h3">Ready when you are.</h3>
 
                 <p class="window-tint-booking-description booking-contact-row">
                   <ion-icon name="navigate" class="booking-icon"></ion-icon>
                   <a
                     class="card-schedule-today-link"
-                    href=" https://www.google.com/maps?gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MggIAhAAGBYYHjIICAMQABgWGB4yCAgEEAAYFhgeMgYIBRBFGDwyBggGEEUYPDIGCAcQRRg80gEINTk3NGowajeoAgCwAgA&um=1&ie=UTF-8&fb=1&gl=us&sa=X&geocode=KUW1oqH_7TiIMSAUQMx7pxPK&daddr=187+W+Olentangy+St+%23+D,+Powell,+OH+43065"
+                    href="https://www.google.com/maps/dir/?api=1&destination=677+S+Lapeer+Rd,+Lake+Orion,+MI+48362"
                   >
                     677 S Lapeer Rd, Lake Orion, MI 48362
                   </a>
@@ -821,8 +957,8 @@
                 <p class="window-tint-booking-description">
                   Your vehicle deserves more than average. At Wide Open
                   Throttle, we specialize in precision installs and premium
-                  finishes built to last. Call today and take your ride to the
-                  next level.
+                  finishes built to last. Reach out today and take your ride to
+                  the next level.
                 </p>
 
                 <div class="booking-cta-group">
@@ -847,6 +983,7 @@
                     loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"
                     class="footer-map"
+                    title="Wide Open Throttle LLC on Google Maps"
                   ></iframe>
                 </div>
               </div>
@@ -863,7 +1000,7 @@
                 <img
                   src="images/logo/enhance the uploaded 3.png"
                   class="logo"
-                  alt=""
+                  alt="Wide Open Throttle LLC"
                 />
               </a>
             </div>
@@ -882,7 +1019,7 @@
                   ><img
                     class="logo-icons"
                     src="images/logo-icons/instagram.png"
-                    alt=""
+                    alt="Instagram"
                 /></a>
               </li>
               <li>
@@ -892,17 +1029,17 @@
                   ><img
                     class="logo-icons"
                     src="images/logo-icons/facebook.png"
-                    alt=""
+                    alt="Facebook"
                 /></a>
               </li>
               <li>
                 <a
                   class="footer-link"
-                  href="https://www.google.com/search?q=wide+open+throttle+lake+orion&sca_esv=057fc6654ed8140d&sxsrf=ANbL-n7qz0Rk_BhCf18-MWpi8Gq2eRvO9Q%3A1774578401375&ei=4erFafnPFobIwN4PuvOXOA&gs_ssp=eJzj4tVP1zc0rDDPKDcpryozYLRSNaiwsDAySU1JS0kzNDOzTDM3tTKoME9JNbRINjVNtDA1sTQzSvGSLc9MSVXIL0jNUyjJKMovKclJVchJzAYKFWXm5wEAOFAasg&oq=wide+open+throttle+lake+&gs_lp=Egxnd3Mtd2l6LXNlcnAiGHdpZGUgb3BlbiB0aHJvdHRsZSBsYWtlICoCCAAyCxAuGIAEGMcBGK8BMgYQABgWGB4yAhAmMgsQABiABBiGAxiKBTILEAAYgAQYhgMYigUyCBAAGIAEGKIEMggQABiiBBiJBTIFEAAY7wUyCBAAGIAEGKIEMgUQABjvBTIaEC4YgAQYxwEYrwEYlwUY3AQY3gQY4ATYAQFI-BZQgQlY0QxwAngAkAEAmAFqoAGjBKoBAzUuMbgBA8gBAPgBAZgCCKAC_AvCAgsQABiABBiwAxiiBMICCBAAGLADGO8FwgILEAAYsAMYogQYiQWYAwCIBgGQBgW6BgYIARABGBSSBwc1LjIuNi0xoAepOrIHAzMuMrgH9APCBwUwLjMuNcgHHoAIAA&sclient=gws-wiz-serp"
+                  href="https://www.google.com/search?q=wide+open+throttle+lake+orion"
                   ><img
                     class="logo-icons"
                     src="images/logo-icons/google.png"
-                    alt=""
+                    alt="Google"
                 /></a>
               </li>
               <li>
@@ -912,7 +1049,7 @@
                   ><img
                     class="logo-icons"
                     src="images/logo-icons/yelp.png"
-                    alt=""
+                    alt="Yelp"
                 /></a>
               </li>
             </ul>

@@ -5,8 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Wide Open Throttle delivers premium window tinting, lift kits, and custom vehicle upgrades."
+      content="Ceramic coating in Lake Orion, MI — multi-stage paint correction plus a hard ceramic layer with up to an 8-year warranty. Auto and marine. 5.0 stars on Google."
     />
+
+    <!-- DEMO: decision-maker preview. Reverts with:
+         git checkout -- ceramic.html css/hero-preview.css -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Wide Open Throttle LLC" />
+    <meta
+      property="og:title"
+      content="Ceramic Coating in Lake Orion, MI | Wide Open Throttle"
+    />
+    <meta
+      property="og:description"
+      content="Paint correction plus a hand-applied ceramic layer — lasting gloss, easy washes, up to 8-year warranty. Auto &amp; marine."
+    />
+    <meta property="og:image" content="images/ceramic/ceramic-coating-backgrounds/ceramic-coating-main-page.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
 
     <link rel="icon" href="images/favicon-images/favicon-16x16.png" />
     <link rel="manifest" href="manifest.webmanifest" />
@@ -53,7 +68,75 @@
       type="module"
       src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
     ></script>
-    <title>WOT Ceramic Coating</title>
+    <title>Ceramic Coating in Lake Orion, MI | Wide Open Throttle</title>
+
+    <!-- DEMO: Service + FAQ schema (audit rec). -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Ceramic Coating",
+        "provider": {
+          "@type": "AutoRepair",
+          "name": "Wide Open Throttle LLC",
+          "telephone": "+1-248-795-5751",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "677 S Lapeer Rd",
+            "addressLocality": "Lake Orion",
+            "addressRegion": "MI",
+            "postalCode": "48362",
+            "addressCountry": "US"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "40"
+          }
+        },
+        "areaServed": "Oakland County, MI"
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How long does a ceramic coating last?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Our Regular coating carries a 4-year warranty and the Premium tier an 8-year warranty, with proper maintenance. Real-world life depends on wash habits and storage."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is ceramic coating worth it over a good wax?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes for most owners. Wax lasts weeks; a ceramic coating lasts years, adds real gloss and chemical resistance, and makes every wash faster because dirt and water release instead of sticking."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Ceramic coating or paint protection film?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "They solve different problems. PPF is a physical barrier against rock chips; ceramic coating is a chemical layer for gloss, UV, and easy cleaning. Many owners do PPF on the front end and ceramic over the whole car."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you coat used or older vehicles?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Older paint usually needs more correction first, which is why we inspect the vehicle before quoting. The result is a deep, uniform finish under the coating."
+            }
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <main>
@@ -173,10 +256,22 @@
             <ul class="hero2-trust">
               <li><ion-icon name="color-wand-outline"></ion-icon> Paint correction included</li>
               <li><ion-icon name="water-outline"></ion-icon> Hydrophobic finish</li>
-              <li><ion-icon name="shield-checkmark-outline"></ion-icon> Up to 8-year warranty</li>            </ul>
+              <li><ion-icon name="shield-checkmark-outline"></ion-icon> Up to 8-year warranty</li>
+            </ul>
           </div>
         </div>
       </section>
+
+      <!-- ===== DEMO: page-jump nav ===== -->
+      <nav class="page-jump" aria-label="Jump to section">
+        <div class="page-jump-inner">
+          <a href="#ceramic-pricing">Pricing</a>
+          <a href="#ceramic-work">Our Work</a>
+          <a href="#ceramic-faq">FAQ</a>
+          <a href="#ceramic-quote">Get a Quote</a>
+        </div>
+      </nav>
+
       <section class="info-slider">
         <div class="info-track">
           <div class="info-slide">
@@ -216,7 +311,63 @@
         </div>
         <div class="info-dots"></div>
       </section>
-      <section class="section-ceramic-coating-prices">
+      <!-- ===== DEMO: on-page proof (credentials + reviews) ===== -->
+      <section class="hp-band hp-band--light">
+        <div class="hp-inner">
+          <p class="hp-kicker">Why Owners Trust Us With Their Finish</p>
+          <h2 class="hp-h2 hp-h2--light">Corrected first, coated right, warrantied</h2>
+          <div class="tproof-cred">
+            <span
+              ><ion-icon name="color-wand-outline"></ion-icon> Multi-stage
+              correction included</span
+            >
+            <span
+              ><ion-icon name="shield-checkmark-outline"></ion-icon> Up to 8-year
+              warranty</span
+            >
+            <span
+              ><ion-icon name="star"></ion-icon> 5.0&#9733; &middot; 40 Google
+              reviews</span
+            >
+            <span
+              ><ion-icon name="time-outline"></ion-icon> Climate-controlled bay,
+              proper cure time</span
+            >
+          </div>
+          <div class="tproof-reviews">
+            <div class="tproof-review">
+              <div class="tpr-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p>
+                &ldquo;Team WOT is excellent! I trust them for all my
+                modifications and accessories. Honest work, and they do it right
+                the first time.&rdquo;
+              </p>
+              <div class="tpr-name">Dan Bilan</div>
+              <div class="tpr-src">Google review</div>
+            </div>
+            <div class="tproof-review">
+              <div class="tpr-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p>
+                &ldquo;Will take every vehicle I get there. They did a wonderful
+                job on both of my vehicles. Customer support is 10/10.&rdquo;
+              </p>
+              <div class="tpr-name">Scott Reitman</div>
+              <div class="tpr-src">Google review</div>
+            </div>
+            <div class="tproof-review">
+              <div class="tpr-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p>
+                &ldquo;Hard to find a shop you can trust like this one. Fair
+                prices, honest work, and they do it right the first time.&rdquo;
+              </p>
+              <div class="tpr-name">Ethan Smotherman</div>
+              <div class="tpr-src">Google review</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-ceramic-coating-prices" id="ceramic-pricing">
         <h2 class="section-heading-white">Ceramic Coating Pricing</h2>
         <div class="price-cards-container price-cards-container--feature">
           <div class="price-card price-card--feature price-card--expandable">
@@ -423,7 +574,7 @@
             <h3 class="small-heading-h3">Hydrophobic Water Repellency</h3>
             <p class="window-tint-benifits-description">
               Water beads up and rolls off the surface, carrying dirt and grime
-              away and helping keep the vehicle cleaner longe
+              away and helping keep the vehicle cleaner between washes.
             </p>
           </div>
           <div class="benefits-card">
@@ -431,7 +582,7 @@
             <h3 class="small-heading-h3">Enhanced Gloss & Shine</h3>
             <p class="window-tint-benifits-description">
               The coating enhances the depth and clarity of your paint, giving
-              the vehicle a deep, glossy showroom finish. Icon idea:
+              the vehicle a deep, glossy showroom finish.
             </p>
           </div>
           <div class="benefits-card">
@@ -452,6 +603,159 @@
           </div>
         </div>
       </section>
+
+      <!-- ===== DEMO: recent ceramic work (labeled). Swap in real photos /
+           before-after pairs; captions are placeholders. ===== -->
+      <section class="hp-band hp-band--dark" id="ceramic-work">
+        <div class="hp-inner">
+          <p class="hp-kicker">Recent Work</p>
+          <h2 class="hp-h2 hp-h2--dark">Finishes we&rsquo;ve locked in</h2>
+          <div class="twork-grid">
+            <figure>
+              <img src="images/ceramic/ceramic-coating-backgrounds/ceramic-slide-one-optimized.jpg" alt="Ceramic coated vehicle" />
+              <figcaption>Full correction + 8-year coating</figcaption>
+            </figure>
+            <figure>
+              <img src="images/ceramic/ceramic-coating-backgrounds/ceramic-slider.jpg" alt="Ceramic coated vehicle in the rain" />
+              <figcaption>Hydrophobic finish &mdash; water sheeting off</figcaption>
+            </figure>
+            <figure>
+              <img src="images/ceramic/ceramic-coating-backgrounds/ceramic-slide-three-optimized.jpg" alt="Deep gloss on a coated car" />
+              <figcaption>Two-stage correction &mdash; deep gloss restored</figcaption>
+            </figure>
+            <figure>
+              <img src="images/ceramic/ceramic-boat.jpg" alt="Ceramic coated boat hull" />
+              <figcaption>Marine coating &mdash; gelcoat correction + ceramic</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== DEMO: FAQ ===== -->
+      <section class="hp-band hp-band--light" id="ceramic-faq">
+        <div class="hp-inner">
+          <p class="hp-kicker">Common Questions</p>
+          <h2 class="hp-h2 hp-h2--light">Ceramic Coating FAQ</h2>
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary>How long does a ceramic coating last?</summary>
+              <div class="faq-a">
+                Our Regular coating carries a 4-year warranty and the Premium
+                tier an 8-year warranty, with proper maintenance. Real-world life
+                depends on how the vehicle is washed and stored &mdash; we&rsquo;ll
+                walk you through care.
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>Is it worth it over a good wax?</summary>
+              <div class="faq-a">
+                Wax lasts weeks; a coating lasts years. It adds real gloss and
+                chemical resistance, and every wash gets faster because dirt and
+                water release instead of sticking. For most owners who keep a
+                vehicle more than a year, it pays off.
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>Ceramic coating or paint protection film?</summary>
+              <div class="faq-a">
+                Different jobs. PPF is a physical barrier against rock chips;
+                ceramic is a chemical layer for gloss, UV, and easy cleaning.
+                Plenty of owners do PPF on the front end and ceramic over the
+                whole car.
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>Why do you need to see the car before quoting?</summary>
+              <div class="faq-a">
+                The price is driven by how much paint correction the finish
+                needs. A newer car in good shape needs less; older or swirled
+                paint needs more. The inspection lets us give a firm number and
+                the right warranty tier.
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>How do I maintain it?</summary>
+              <div class="faq-a">
+                Regular two-bucket hand washes, a ceramic-safe soap, and no
+                automatic brushes. We can also set you up with an annual
+                maintenance service to keep the warranty and the gloss going.
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== DEMO: on-page quote form ===== -->
+      <section class="hp-band hp-band--dark" id="ceramic-quote">
+        <div class="hp-inner">
+          <p class="hp-kicker">Get Started</p>
+          <h2 class="hp-h2 hp-h2--dark">Get Your Ceramic Quote</h2>
+          <p class="hp-lead">
+            Tell us the vehicle and its condition. We&rsquo;ll set up an
+            inspection and get you a firm number and warranty tier.
+          </p>
+          <div class="qq-wrap">
+            <form
+              class="qq-form"
+              action="https://api.web3forms.com/submit"
+              method="POST"
+            >
+              <input
+                type="hidden"
+                name="access_key"
+                value="26408754-11fc-47ae-ba6e-036a18819a21"
+              />
+              <input type="hidden" name="service" value="Ceramic Coating" />
+              <input type="hidden" name="from_page" value="ceramic-quote" />
+              <select class="qq-select qq-full" name="scope" required>
+                <option value="" disabled selected>What are we coating?</option>
+                <option>Car / SUV / truck</option>
+                <option>Boat / marine</option>
+                <option>Ceramic + PPF combo</option>
+                <option>Not sure yet</option>
+              </select>
+              <input
+                class="qq-input qq-full"
+                type="text"
+                name="vehicle"
+                placeholder="Year, make &amp; model (or boat length)"
+              />
+              <input
+                class="qq-input"
+                type="text"
+                name="name"
+                placeholder="Name"
+                required
+              />
+              <input
+                class="qq-input"
+                type="tel"
+                name="phone"
+                placeholder="Phone"
+                required
+              />
+              <input
+                class="qq-input qq-full"
+                type="email"
+                name="email"
+                placeholder="Email"
+                required
+              />
+              <textarea
+                class="qq-textarea qq-full"
+                name="message"
+                placeholder="Paint condition, timeline, anything else&hellip;"
+              ></textarea>
+              <button class="qq-btn" type="submit">Get My Quote</button>
+            </form>
+            <p class="qq-alt">
+              Prefer to talk it through?
+              <a href="tel:+2487955751">Call (248)&nbsp;795-5751</a>
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section class="section-booking-tint">
         <h2 class="section-heading">Schedule today</h2>
         <div class="booking-tint-container">
@@ -459,15 +763,13 @@
           <div class="booking-accent" aria-hidden="true"></div>
 
           <div class="booking-info">
-            <h3 class="small-heading-h3">
-              Drive Cooler. Tint Smarter. Schedule Now.
-            </h3>
+            <h3 class="small-heading-h3">Lock in your finish &mdash; get on the schedule.</h3>
 
             <p class="window-tint-booking-description booking-contact-row">
               <ion-icon name="navigate" class="booking-icon"></ion-icon>
               <a
                 class="card-schedule-today-link"
-                href=" https://www.google.com/maps?gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MggIAhAAGBYYHjIICAMQABgWGB4yCAgEEAAYFhgeMgYIBRBFGDwyBggGEEUYPDIGCAcQRRg80gEINTk3NGowajeoAgCwAgA&um=1&ie=UTF-8&fb=1&gl=us&sa=X&geocode=KUW1oqH_7TiIMSAUQMx7pxPK&daddr=187+W+Olentangy+St+%23+D,+Powell,+OH+43065"
+                href="https://www.google.com/maps/dir/?api=1&destination=677+S+Lapeer+Rd,+Lake+Orion,+MI+48362"
               >
                 677 S Lapeer Rd, Lake Orion, MI 48362
               </a>

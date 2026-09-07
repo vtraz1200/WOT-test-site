@@ -472,7 +472,7 @@ a {
    scan all five services without scrolling through five full-width rows */
 .services-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2.8rem;
   padding-top: 3.2rem;
   max-width: 120rem;

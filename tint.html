@@ -5,8 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Wide Open Throttle delivers premium window tinting, lift kits, and custom vehicle upgrades."
+      content="XPEL ceramic &amp; CS window tint in Lake Orion, MI — computer-cut, 99% UV block, lifetime warranty. Plus XPEL VISION architectural film for homes and businesses. 5.0 stars on Google."
     />
+
+    <!-- DEMO: decision-maker preview. Reverts with:
+         git checkout -- tint.html css/hero-preview.css -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Wide Open Throttle LLC" />
+    <meta
+      property="og:title"
+      content="Window Tinting in Lake Orion, MI — Auto, Home &amp; Commercial | Wide Open Throttle"
+    />
+    <meta
+      property="og:description"
+      content="XPEL ceramic &amp; CS auto tint with real pricing, plus XPEL VISION architectural film for homes and businesses. Computer-cut, 99% UV block, backed in writing."
+    />
+    <meta property="og:image" content="images/tint/tint-percentages-one.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
 
     <link rel="icon" href="images/favicon-images/favicon-16x16.png" />
     <link rel="manifest" href="manifest.webmanifest" />
@@ -53,7 +68,71 @@
       type="module"
       src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
     ></script>
-    <title>WOT Tint</title>
+    <title>
+      Window Tinting in Lake Orion, MI — Auto, Home &amp; Commercial | Wide Open
+      Throttle
+    </title>
+
+    <!-- DEMO: Service + FAQ + LocalBusiness schema (audit rec). -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Window Tinting",
+        "provider": {
+          "@type": "AutoRepair",
+          "name": "Wide Open Throttle LLC",
+          "telephone": "+1-248-795-5751",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "677 S Lapeer Rd",
+            "addressLocality": "Lake Orion",
+            "addressRegion": "MI",
+            "postalCode": "48362",
+            "addressCountry": "US"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "40"
+          }
+        },
+        "areaServed": "Oakland County, MI"
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is window tint legal in Michigan?",
+            "acceptedText": "yes",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Michigan allows a non-reflective tint strip on the top 4 inches of the windshield and front side windows. Rear side windows and the rear window can be any darkness. We confirm exactly what is legal for your vehicle before we install. Verify current MCL 257.709 for exact figures."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Will the tint bubble, peel, or turn purple?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Not with genuine XPEL film installed correctly. Bubbling and purpling come from low-grade dyed film and poor installs. Our work is computer-cut, installed in a clean bay, and carries a manufacturer warranty."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does an install take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Most vehicles are in and out the same day. Times per package are listed on this page — a two-front install runs about 1.5 hours; a full vehicle runs 3 to 4 hours."
+            }
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <main>
@@ -177,10 +256,23 @@
             <ul class="hero2-trust">
               <li><ion-icon name="ribbon-outline"></ion-icon> Genuine XPEL film</li>
               <li><ion-icon name="sunny-outline"></ion-icon> Up to 99% UV block</li>
-              <li><ion-icon name="cut-outline"></ion-icon> Computer-cut, no gaps</li>            </ul>
+              <li><ion-icon name="cut-outline"></ion-icon> Computer-cut, no gaps</li>
+            </ul>
           </div>
         </div>
       </section>
+
+      <!-- ===== DEMO: page-jump nav ===== -->
+      <nav class="page-jump" aria-label="Jump to section">
+        <div class="page-jump-inner">
+          <a href="#auto-pricing">Auto Tint &amp; Pricing</a>
+          <a href="#tint-law">Michigan Tint Law</a>
+          <a href="#home-business">Home &amp; Business Film</a>
+          <a href="#tint-faq">FAQ</a>
+          <a href="contact.html">Get a Quote</a>
+        </div>
+      </nav>
+
       <section class="section-tint-comparison">
         <h2 class="section-heading-white">Window Tinting</h2>
 
@@ -253,8 +345,91 @@
           </div>
         </div>
       </section>
-      <section class="section-price-cards">
+
+      <!-- ===== DEMO: on-page proof (credentials + tint reviews) ===== -->
+      <section class="hp-band hp-band--light">
+        <div class="hp-inner">
+          <p class="hp-kicker">Why Drivers Trust Us</p>
+          <h2 class="hp-h2 hp-h2--light">Tinted right, backed in writing</h2>
+          <div class="tproof-cred">
+            <span
+              ><ion-icon name="ribbon-outline"></ion-icon> XPEL Certified
+              Installer</span
+            >
+            <span
+              ><ion-icon name="shield-checkmark-outline"></ion-icon> Lifetime
+              XPEL film warranty</span
+            >
+            <span
+              ><ion-icon name="star"></ion-icon> 5.0&#9733; &middot; 40 Google
+              reviews</span
+            >
+            <span
+              ><ion-icon name="time-outline"></ion-icon> Most vehicles done same
+              day</span
+            >
+          </div>
+          <div class="tproof-reviews">
+            <div class="tproof-review">
+              <div class="tpr-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p>
+                &ldquo;They tinted my truck two years ago, and there are still no
+                bubbles or peeling. It looks just as fresh as the day it was
+                installed.&rdquo;
+              </p>
+              <div class="tpr-name">Dan Bilan</div>
+              <div class="tpr-src">Google review</div>
+            </div>
+            <div class="tproof-review">
+              <div class="tpr-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p>
+                &ldquo;They&rsquo;ve tinted 2 brand new trucks for me so far and
+                both came out great and looked great until the day I got rid of
+                them. Would recommend to anyone.&rdquo;
+              </p>
+              <div class="tpr-name">Justin Peak</div>
+              <div class="tpr-src">Google review</div>
+            </div>
+            <div class="tproof-review">
+              <div class="tpr-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p>
+                &ldquo;Great experience and fantastic work with window tinting.
+                I&rsquo;ll definitely be returning in the future for some more
+                upgrades.&rdquo;
+              </p>
+              <div class="tpr-name">David Brunell</div>
+              <div class="tpr-src">Google review</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-price-cards" id="auto-pricing">
         <h2 class="section-heading">Window Tint Services</h2>
+
+        <!-- ===== DEMO: CS vs XR explainer (defines the codes before they're
+             used as price labels below) ===== -->
+        <div class="csxr-note">
+          <div class="csxr-card">
+            <b>Prime CS &mdash; the standard</b>
+            <span
+              >Deep, clean color with 99% UV block and no signal interference. A
+              great everyday tint at the best price.</span
+            >
+          </div>
+          <div class="csxr-card">
+            <b>Prime XR &mdash; nano-ceramic</b>
+            <span
+              >Everything CS does, plus serious heat and infrared rejection &mdash;
+              a noticeably cooler cabin and less strain on your A/C.</span
+            >
+          </div>
+          <p class="csxr-help">
+            Not sure which tier or shade fits your vehicle?
+            <a href="sms:+2487955751">Text us your year / make / model &rarr;</a>
+          </p>
+        </div>
+
         <div class="price-cards-container">
           <div class="price-card price-card--expandable">
             <button
@@ -670,7 +845,61 @@
           </div>
         </div>
       </section>
-      <section class="section-window-tint-residential-commercial">
+
+      <!-- ===== DEMO: Michigan tint law. SHOP: verify current MCL 257.709 and
+           replace the [confirm] items with exact, current figures before this
+           ships. Stating the wrong legal limit can get a customer ticketed. -->
+      <section class="hp-band hp-band--dark" id="tint-law">
+        <div class="hp-inner">
+          <p class="hp-kicker">Michigan Tint Law</p>
+          <h2 class="hp-h2 hp-h2--dark">Know what&rsquo;s legal before you tint</h2>
+          <p class="hp-lead">
+            Michigan&rsquo;s rules are stricter than most states, and enforcement
+            varies. Here&rsquo;s the short version &mdash; and we&rsquo;ll confirm
+            exactly what&rsquo;s legal for your vehicle before we install.
+          </p>
+          <dl class="tintlaw-grid">
+            <div class="tintlaw-cell">
+              <dt>Windshield</dt>
+              <dd>
+                Non-reflective tint on the <b>top 4 inches</b> only (down to the
+                AS-1 line).
+              </dd>
+            </div>
+            <div class="tintlaw-cell">
+              <dt>Front side windows</dt>
+              <dd>
+                Tint allowed on the <b>top 4 inches</b>.
+                <b>[confirm current MI VLT allowance for the rest of the glass]</b>
+              </dd>
+            </div>
+            <div class="tintlaw-cell">
+              <dt>Rear side &amp; rear window</dt>
+              <dd>
+                <b>Any darkness</b> allowed. Dual side mirrors required if the
+                rear window is tinted.
+              </dd>
+            </div>
+            <div class="tintlaw-cell">
+              <dt>Other rules</dt>
+              <dd>
+                No red, amber, or blue tint. Reflectivity limits apply.
+                <b>[confirm]</b> Medical exemptions available with paperwork.
+              </dd>
+            </div>
+          </dl>
+          <p class="tintlaw-foot">
+            This is a general summary, not legal advice. Michigan tint law
+            (MCL&nbsp;257.709) has been amended in recent years &mdash; ask us for
+            the current legal shade for your vehicle.
+          </p>
+        </div>
+      </section>
+
+      <section
+        class="section-window-tint-residential-commercial"
+        id="home-business"
+      >
         <div class="rescom-intro">
           <p class="rescom-eyebrow">XPEL VISION™ Architectural Window Film</p>
           <h2 class="section-heading">
@@ -732,21 +961,53 @@
             <span class="rescom-tag">For Your Business</span>
             <h3 class="rescom-heading">Commercial &amp; Industrial Tint</h3>
             <p class="rescom-text">
-              From offices to storefronts, professional-grade film improves
-              comfort and lowers cooling costs while giving your building a
-              sharper, more polished exterior.
+              Offices, storefronts, medical, retail, and multi-family &mdash;
+              XPEL VISION film lowers cooling load, cuts glare for staff and
+              customers, and can add safety and security performance to existing
+              glass without replacing it.
             </p>
             <ul class="features-list rescom-features">
-              <li>Reduced cooling &amp; energy costs</li>
-              <li>Glare &amp; UV control</li>
-              <li>Increased privacy &amp; security</li>
-              <li>Improved comfort for employees &amp; customers</li>
-              <li>A more professional building appearance</li>
+              <li>Lower cooling &amp; energy costs (ask for an estimate)</li>
+              <li>Glare, UV &amp; fade control for interiors and stock</li>
+              <li>Safety &amp; security film &mdash; forced-entry and blast options</li>
+              <li>Privacy and a sharper building exterior</li>
+              <li>Installed around your hours, with minimal disruption</li>
             </ul>
             <a href="contact.html"
-              ><button class="btn-small">Get a Quote</button></a
+              ><button class="btn-small">Request a Commercial Quote</button></a
             >
           </div>
+        </div>
+
+        <!-- ===== DEMO: commercial trust + consultation CTA ===== -->
+        <div class="commx-row">
+          <span
+            ><ion-icon name="shield-checkmark-outline"></ion-icon> Licensed &amp;
+            insured &middot; COI provided</span
+          >
+          <span
+            ><ion-icon name="business-outline"></ion-icon> Multi-property &amp;
+            portfolio pricing</span
+          >
+          <span
+            ><ion-icon name="document-text-outline"></ion-icon> Performance spec
+            sheets on request</span
+          >
+          <span
+            ><ion-icon name="time-outline"></ion-icon> After-hours &amp; weekend
+            installs</span
+          >
+        </div>
+        <div class="commx-cta">
+          <a href="contact.html"
+            ><button class="btn">Book a Site Assessment</button></a
+          >
+          <p>
+            Have drawings or a window schedule?
+            <a href="mailto:wotautogarage@gmail.com"
+              >Send them over for a firm bid &rarr;</a
+            >
+          </p>
         </div>
       </section>
       <section class="section-window-tint-benefits">
@@ -786,11 +1047,112 @@
             <p class="window-tint-benifits-description">
               Tinted windows reduce visibility from the outside, protecting
               valuables and passengers. Added discretion gives you peace of mind
-              wherever you par
+              wherever you park.
             </p>
           </div>
         </div>
       </section>
+
+      <!-- ===== DEMO: recent tint work (labeled). Swap in real photos /
+           before-after pairs; captions are placeholders. ===== -->
+      <section class="hp-band hp-band--dark">
+        <div class="hp-inner">
+          <p class="hp-kicker">Recent Work</p>
+          <h2 class="hp-h2 hp-h2--dark">Tint we&rsquo;ve done</h2>
+          <div class="twork-grid">
+            <figure>
+              <img src="images/tint/passenger-andrear-window-tint.jpg" alt="Sides and back window tint" />
+              <figcaption>Ceramic sides &amp; back &mdash; full SUV</figcaption>
+            </figure>
+            <figure>
+              <img src="images/tint/front-windows-tint.jpg" alt="Front window tint" />
+              <figcaption>Two-front ceramic match</figcaption>
+            </figure>
+            <figure>
+              <img src="images/tint/front-window-tint.jpg" alt="Windshield tint" />
+              <figcaption>XR windshield &mdash; full clear ceramic</figcaption>
+            </figure>
+            <figure>
+              <img src="images/tint/brow-window-tint.jpg" alt="Windshield brow tint" />
+              <figcaption>Windshield brow</figcaption>
+            </figure>
+            <figure>
+              <img src="images/tint/head-rear-tail-tint.jpg" alt="Tail light tint" />
+              <figcaption>Tail light tint</figcaption>
+            </figure>
+            <figure>
+              <img src="images/tint/commercial-residential-tint.jpg" alt="Commercial window film" />
+              <figcaption>Storefront glare &amp; heat film</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== DEMO: FAQ ===== -->
+      <section class="hp-band hp-band--light" id="tint-faq">
+        <div class="hp-inner">
+          <p class="hp-kicker">Common Questions</p>
+          <h2 class="hp-h2 hp-h2--light">Tint FAQ</h2>
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary>Is window tint legal in Michigan?</summary>
+              <div class="faq-a">
+                Michigan allows a non-reflective tint strip on the top 4 inches
+                of the windshield and front side windows; rear side windows and
+                the rear window can be any darkness. We confirm the current legal
+                shade for your specific vehicle before we install &mdash; see the
+                Michigan Tint Law section above.
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>Will the tint bubble, peel, or turn purple?</summary>
+              <div class="faq-a">
+                Not with genuine XPEL film installed correctly. Bubbling and
+                purpling come from low-grade dyed film and rushed installs. Our
+                work is computer-cut, installed in a clean bay, and carries a
+                manufacturer warranty.
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>How long does an install take? Can I drive the same day?</summary>
+              <div class="faq-a">
+                Most vehicles are in and out the same day. A two-front install
+                runs about 1.5 hours; a full vehicle is 3&ndash;4 hours. Leave
+                the windows up for a few days while the film cures &mdash;
+                we&rsquo;ll walk you through aftercare.
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>Is ceramic (XR) worth it over standard (CS)?</summary>
+              <div class="faq-a">
+                If heat is your issue &mdash; a black interior, a daily
+                commute, kids in the back &mdash; yes. XR rejects far more heat
+                and infrared for a noticeably cooler cabin. If you mainly want
+                the look and UV protection, CS is an excellent value.
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>Do you offer a warranty?</summary>
+              <div class="faq-a">
+                Genuine XPEL film carries a manufacturer warranty against
+                bubbling, peeling, cracking, and color change, plus our
+                workmanship guarantee on the install. Ask us for the exact terms
+                for the film you choose.
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>Can you tint my home or business windows?</summary>
+              <div class="faq-a">
+                Yes &mdash; we install XPEL VISION architectural film for homes,
+                offices, storefronts, and multi-family buildings, including
+                safety and security film. See the Home &amp; Business section
+                above, or request a site assessment.
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
       <!-- <section class="section-carousel">
         <div class="carousel">
           <h2 class="section-heading">Check out our work</h2>
@@ -831,7 +1193,7 @@
               <ion-icon name="navigate" class="booking-icon"></ion-icon>
               <a
                 class="card-schedule-today-link"
-                href=" https://www.google.com/maps?gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MggIAhAAGBYYHjIICAMQABgWGB4yCAgEEAAYFhgeMgYIBRBFGDwyBggGEEUYPDIGCAcQRRg80gEINTk3NGowajeoAgCwAgA&um=1&ie=UTF-8&fb=1&gl=us&sa=X&geocode=KUW1oqH_7TiIMSAUQMx7pxPK&daddr=187+W+Olentangy+St+%23+D,+Powell,+OH+43065"
+                href="https://www.google.com/maps/dir/?api=1&destination=677+S+Lapeer+Rd,+Lake+Orion,+MI+48362"
               >
                 677 S Lapeer Rd, Lake Orion, MI 48362
               </a>

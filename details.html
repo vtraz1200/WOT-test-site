@@ -5,8 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Wide Open Throttle delivers premium window tinting, lift kits, and custom vehicle upgrades."
+      content="Auto &amp; marine detailing in Lake Orion, MI — interior deep cleans, wash &amp; wax, paint correction, and boat detailing. Hand-washed, honest package pricing up front. 5.0 stars on Google."
     />
+
+    <!-- DEMO: decision-maker preview. Reverts with:
+         git checkout -- details.html css/hero-preview.css -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Wide Open Throttle LLC" />
+    <meta
+      property="og:title"
+      content="Auto &amp; Marine Detailing in Lake Orion, MI | Wide Open Throttle"
+    />
+    <meta
+      property="og:description"
+      content="Interior deep cleans, wash &amp; wax, paint correction, and boat detailing — done by hand with honest pricing up front."
+    />
+    <meta property="og:image" content="images/detailing/main-page-detailing.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
 
     <link rel="icon" href="images/favicon-images/favicon-16x16.png" />
     <link rel="manifest" href="manifest.webmanifest" />
@@ -53,7 +68,75 @@
       type="module"
       src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
     ></script>
-    <title>WOT Detailing</title>
+    <title>Auto &amp; Marine Detailing in Lake Orion, MI | Wide Open Throttle</title>
+
+    <!-- DEMO: Service + FAQ schema (audit rec). -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Auto Detailing",
+        "provider": {
+          "@type": "AutoRepair",
+          "name": "Wide Open Throttle LLC",
+          "telephone": "+1-248-795-5751",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "677 S Lapeer Rd",
+            "addressLocality": "Lake Orion",
+            "addressRegion": "MI",
+            "postalCode": "48362",
+            "addressCountry": "US"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "40"
+          }
+        },
+        "areaServed": "Oakland County, MI"
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How long does a full detail take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "An interior detail runs about 3.5 to 4 hours; a wash and wax about 2 to 3 hours; the combined package 6 to 7 hours. Most jobs are same-day drop-off and pickup."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you charge extra for pet hair or heavy stains?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The listed prices are estimates. Heavy pet hair, deep stains, or excessive dirt add time, so we confirm the final price when we see the vehicle."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is paint correction and do I need it?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Paint correction is machine polishing that removes swirl marks and oxidation to restore gloss. It is a separate add-on from a standard detail and is the right first step before a ceramic coating."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you detail boats?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. We detail boats, pontoons, and jet skis, priced per foot based on length, condition, and level of oxidation."
+            }
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <main>
@@ -178,10 +261,22 @@
             <ul class="hero2-trust">
               <li><ion-icon name="pricetag-outline"></ion-icon> Upfront package pricing</li>
               <li><ion-icon name="brush-outline"></ion-icon> Hand-washed, not automated</li>
-              <li><ion-icon name="sparkles-outline"></ion-icon> Paint correction available</li>            </ul>
+              <li><ion-icon name="sparkles-outline"></ion-icon> Paint correction available</li>
+            </ul>
           </div>
         </div>
       </section>
+
+      <!-- ===== DEMO: page-jump nav ===== -->
+      <nav class="page-jump" aria-label="Jump to section">
+        <div class="page-jump-inner">
+          <a href="#detail-packages">Packages &amp; Pricing</a>
+          <a href="#detail-work">Our Work</a>
+          <a href="#detail-faq">FAQ</a>
+          <a href="#detail-quote">Get a Quote</a>
+        </div>
+      </nav>
+
       <section class="info-slider">
         <div class="info-track">
           <div class="info-slide">
@@ -222,7 +317,62 @@
         </div>
         <div class="info-dots"></div>
       </section>
-      <section class="section-price-cards">
+      <!-- ===== DEMO: on-page proof (credentials + reviews) ===== -->
+      <section class="hp-band hp-band--light">
+        <div class="hp-inner">
+          <p class="hp-kicker">Why People Bring Their Vehicles Here</p>
+          <h2 class="hp-h2 hp-h2--light">Done by hand, priced up front</h2>
+          <div class="tproof-cred">
+            <span
+              ><ion-icon name="pricetag-outline"></ion-icon> Package pricing
+              published, not "call for a quote"</span
+            >
+            <span
+              ><ion-icon name="brush-outline"></ion-icon> Hand-washed &mdash;
+              never an automatic brush</span
+            >
+            <span
+              ><ion-icon name="star"></ion-icon> 5.0&#9733; &middot; 40 Google
+              reviews</span
+            >
+            <span
+              ><ion-icon name="sparkles-outline"></ion-icon> Paint correction &amp;
+              coatings in-house</span
+            >
+          </div>
+          <div class="tproof-reviews">
+            <div class="tproof-review">
+              <div class="tpr-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p>
+                &ldquo;Fair prices, honest work, and they do it right the first
+                time. Hard to find a shop you can trust like this one.&rdquo;
+              </p>
+              <div class="tpr-name">Ethan Smotherman</div>
+              <div class="tpr-src">Google review</div>
+            </div>
+            <div class="tproof-review">
+              <div class="tpr-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p>
+                &ldquo;Team WOT is excellent! I trust them for all my
+                modifications and accessories.&rdquo;
+              </p>
+              <div class="tpr-name">Dan Bilan</div>
+              <div class="tpr-src">Google review</div>
+            </div>
+            <div class="tproof-review">
+              <div class="tpr-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p>
+                &ldquo;They did a wonderful job on both of my vehicles. Customer
+                support is 10/10.&rdquo;
+              </p>
+              <div class="tpr-name">Scott Reitman</div>
+              <div class="tpr-src">Google review</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-price-cards" id="detail-packages">
         <h2 class="section-heading">Detailing Packages</h2>
         <div class="price-cards-container price-cards-container--feature">
           <div class="price-card price-card--feature price-card--expandable">
@@ -621,6 +771,158 @@
           </div>
         </div>
       </section>
+
+      <!-- ===== DEMO: recent detailing work (labeled). Swap in real
+           before-after pairs; captions are placeholders. ===== -->
+      <section class="hp-band hp-band--dark" id="detail-work">
+        <div class="hp-inner">
+          <p class="hp-kicker">Recent Work</p>
+          <h2 class="hp-h2 hp-h2--dark">Before &amp; after</h2>
+          <div class="twork-grid">
+            <figure>
+              <img src="images/detailing/info-slider-auto-detail-slide.jpg" alt="Detailed vehicle interior" />
+              <figcaption>Interior detail &mdash; steam clean &amp; leather</figcaption>
+            </figure>
+            <figure>
+              <img src="images/detailing/main-page-detailing.jpg" alt="Wash and wax result" />
+              <figcaption>Wash &amp; wax &mdash; polymer sealant</figcaption>
+            </figure>
+            <figure>
+              <img src="images/detailing/new-detail-image.jpg" alt="Full inside and out detail" />
+              <figcaption>Full inside &amp; out combo</figcaption>
+            </figure>
+            <figure>
+              <img src="images/detailing/boat-detail.jpg" alt="Boat detailing" />
+              <figcaption>Marine detail &mdash; oxidation &amp; scum line</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== DEMO: FAQ ===== -->
+      <section class="hp-band hp-band--light" id="detail-faq">
+        <div class="hp-inner">
+          <p class="hp-kicker">Common Questions</p>
+          <h2 class="hp-h2 hp-h2--light">Detailing FAQ</h2>
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary>How long does a detail take? Can I wait?</summary>
+              <div class="faq-a">
+                An interior detail is about 3.5&ndash;4 hours, a wash &amp; wax
+                2&ndash;3 hours, the combo 6&ndash;7. Most jobs are same-day
+                drop-off and pickup rather than a wait.
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>Why is the price an estimate?</summary>
+              <div class="faq-a">
+                The listed prices cover a normally dirty vehicle. Heavy pet hair,
+                deep stains, or excessive dirt add real time, so we confirm the
+                final number when we see it &mdash; no surprises after.
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>What is paint correction and do I need it?</summary>
+              <div class="faq-a">
+                It&rsquo;s machine polishing that removes swirl marks and
+                oxidation to bring back gloss. It&rsquo;s an add-on to a standard
+                detail, and it&rsquo;s the right first step if you&rsquo;re
+                planning a ceramic coating.
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>How often should I have my vehicle detailed?</summary>
+              <div class="faq-a">
+                A full interior once or twice a year keeps ahead of wear; a
+                wash &amp; wax every few months keeps the exterior protected.
+                We can set up a schedule that fits how you drive.
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>Do you detail boats and jet skis?</summary>
+              <div class="faq-a">
+                Yes &mdash; boats, pontoons, and PWCs, priced per foot based on
+                length, condition, and oxidation. Heavy oxidation correction and
+                bilge work are quoted separately.
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== DEMO: on-page quote form ===== -->
+      <section class="hp-band hp-band--dark" id="detail-quote">
+        <div class="hp-inner">
+          <p class="hp-kicker">Get Started</p>
+          <h2 class="hp-h2 hp-h2--dark">Get Your Detailing Quote</h2>
+          <p class="hp-lead">
+            Tell us the vehicle and the package. We&rsquo;ll confirm the price
+            and get you a time &mdash; usually the same day.
+          </p>
+          <div class="qq-wrap">
+            <form
+              class="qq-form"
+              action="https://api.web3forms.com/submit"
+              method="POST"
+            >
+              <input
+                type="hidden"
+                name="access_key"
+                value="26408754-11fc-47ae-ba6e-036a18819a21"
+              />
+              <input type="hidden" name="service" value="Detailing" />
+              <input type="hidden" name="from_page" value="detail-quote" />
+              <select class="qq-select qq-full" name="package" required>
+                <option value="" disabled selected>Which package?</option>
+                <option>Interior Detail</option>
+                <option>Wash &amp; Wax</option>
+                <option>Wash, Wax &amp; Interior (full)</option>
+                <option>Paint correction / polish</option>
+                <option>Marine / boat detail</option>
+                <option>Not sure &mdash; help me choose</option>
+              </select>
+              <input
+                class="qq-input qq-full"
+                type="text"
+                name="vehicle"
+                placeholder="Year, make &amp; model (or boat length)"
+              />
+              <input
+                class="qq-input"
+                type="text"
+                name="name"
+                placeholder="Name"
+                required
+              />
+              <input
+                class="qq-input"
+                type="tel"
+                name="phone"
+                placeholder="Phone"
+                required
+              />
+              <input
+                class="qq-input qq-full"
+                type="email"
+                name="email"
+                placeholder="Email"
+                required
+              />
+              <textarea
+                class="qq-textarea qq-full"
+                name="message"
+                placeholder="Pet hair, stains, timeline, anything else&hellip;"
+              ></textarea>
+              <button class="qq-btn" type="submit">Get My Quote</button>
+            </form>
+            <p class="qq-alt">
+              Prefer to talk it through?
+              <a href="tel:+2487955751">Call (248)&nbsp;795-5751</a>
+            </p>
+          </div>
+        </div>
+      </section>
+
       <!-- <section class="section-carousel">
         <div class="carousel">
           <h2 class="section-heading">Check out our work</h2>
@@ -653,15 +955,13 @@
           <div class="booking-accent" aria-hidden="true"></div>
 
           <div class="booking-info">
-            <h3 class="small-heading-h3">
-              Drive Cooler. Tint Smarter. Schedule Now.
-            </h3>
+            <h3 class="small-heading-h3">Book your detail &mdash; we&rsquo;ll confirm the price.</h3>
 
             <p class="window-tint-booking-description booking-contact-row">
               <ion-icon name="navigate" class="booking-icon"></ion-icon>
               <a
                 class="card-schedule-today-link"
-                href=" https://www.google.com/maps?gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MggIAhAAGBYYHjIICAMQABgWGB4yCAgEEAAYFhgeMgYIBRBFGDwyBggGEEUYPDIGCAcQRRg80gEINTk3NGowajeoAgCwAgA&um=1&ie=UTF-8&fb=1&gl=us&sa=X&geocode=KUW1oqH_7TiIMSAUQMx7pxPK&daddr=187+W+Olentangy+St+%23+D,+Powell,+OH+43065"
+                href="https://www.google.com/maps/dir/?api=1&destination=677+S+Lapeer+Rd,+Lake+Orion,+MI+48362"
               >
                 677 S Lapeer Rd, Lake Orion, MI 48362
               </a>
