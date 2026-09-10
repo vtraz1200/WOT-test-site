@@ -66,8 +66,7 @@
       Throttle
     </title>
 
-    <!-- DEMO: LocalBusiness + rating schema (audit rec). Values marked
-         [confirm] should be verified with the owner before shipping. -->
+    <!-- LocalBusiness + rating schema -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -111,6 +110,23 @@
   <body>
     <main>
       <section class="section-hero">
+        <video
+          class="back-video"
+          autoplay
+          loop
+          muted
+          playsinline
+          preload="auto"
+          poster="images/background-images/temp-main-background.jpg"
+          aria-hidden="true"
+        >
+          <source
+            src="videos/combined_videos-web-sm.mp4"
+            type="video/mp4"
+            media="(max-width: 700px)"
+          />
+          <source src="videos/website-background-desktop.mp4" type="video/mp4" />
+        </video>
         <div class="header">
           <a href="#" class="section-footer-logo-link">
             <img
@@ -236,9 +252,7 @@
         </div>
       </section>
 
-      <!-- ===== DEMO: credibility band ===== -->
-      <!-- [confirm] founding year, insurance status, warranty term, and
-           financing partner with the owner before shipping. -->
+      <!-- ===== credibility band ===== -->
       <div class="cred-band">
         <div class="cred-band-inner">
           <span class="cred-item"

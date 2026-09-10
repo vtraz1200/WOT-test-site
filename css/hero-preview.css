@@ -1208,3 +1208,156 @@
   font-family: "Roboto", sans-serif;
   color: #7e100b;
 }
+
+/* ============================================================================
+   "WHAT GOES INTO YOUR PRICE" quote-qualifier band (service pages).
+   Sits on a .hp-band--dark between the benefits cards and the FAQ.
+   Reverts with:  git checkout -- <page>.html css/hero-preview.css
+   ========================================================================== */
+.qprice-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 112rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.4rem;
+}
+.qprice-factor {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(242, 237, 228, 0.14);
+  border-radius: 0.9rem;
+  padding: 1.6rem 1.4rem;
+  text-align: left;
+}
+.qprice-factor > ion-icon {
+  font-size: 1.8rem;
+  color: #ff5248;
+}
+.qprice-factor h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 1.08rem;
+  color: #fff;
+  margin: 0.6rem 0 0.4rem;
+}
+.qprice-factor p {
+  font-family: "Lato", sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: rgba(242, 237, 228, 0.75);
+  margin: 0 0 0.9rem;
+}
+.qprice-range {
+  display: block;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 0.78rem;
+  line-height: 1.35;
+  color: #f2ede4;
+  background: rgba(126, 16, 11, 0.35);
+  border: 1px solid rgba(255, 82, 72, 0.4);
+  border-radius: 0.5rem;
+  padding: 0.4rem 0.65rem;
+}
+.qprice-compare {
+  max-width: 92rem;
+  margin: 2.6rem auto 0;
+  padding: 1.6rem 1.8rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(242, 237, 228, 0.14);
+  border-radius: 0.9rem;
+}
+.qprice-compare-h {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #fff;
+  margin: 0 0 0.9rem;
+  text-align: center;
+}
+.qprice-compare ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem 1.6rem;
+}
+.qprice-compare li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  font-family: "Lato", sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: rgba(242, 237, 228, 0.82);
+}
+.qprice-compare li ion-icon {
+  color: #3fae6b;
+  font-size: 1.15rem;
+  flex: none;
+  margin-top: 0.05rem;
+}
+.qprice-cta {
+  text-align: center;
+  margin: 2.6rem auto 0;
+}
+.qprice-cta p {
+  font-family: "Lato", sans-serif;
+  font-size: 0.92rem;
+  color: rgba(242, 237, 228, 0.72);
+  margin: 0.9rem 0 0;
+}
+.qprice-cta p a {
+  color: #ff8078;
+  font-weight: 700;
+}
+@media (max-width: 900px) {
+  .qprice-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 540px) {
+  .qprice-grid,
+  .qprice-compare ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================================
+   HERO BACKGROUND VIDEO  (index.html section-hero)
+   Uses the site's existing .back-video class.
+
+   Keep this block free of anything that (a) makes .section-hero a stacking
+   context or (b) sets position/z-index on .header — the header becomes
+   position:fixed / z-index:999 on scroll (.sticky .header in style.css) and
+   any equal-specificity rule here would silently override it and kill the
+   sticky nav. The video just needs to paint behind the header and copy, which
+   DOM order + object-fit already handle; a heavier brightness filter replaces
+   the old full-section scrim so no extra layer is needed.
+   ========================================================================== */
+
+.section-hero {
+  /* Track the video's own 16:9 shape so a full-width background clip fills
+     the hero with no vertical crop / "zoom". Never taller than the viewport,
+     never shorter than the copy needs. */
+  height: min(100vh, 56.25vw);
+  min-height: 640px;
+}
+.section-hero .back-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+  filter: brightness(0.4) saturate(1.05);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-hero .back-video {
+    display: none;
+  }
+}

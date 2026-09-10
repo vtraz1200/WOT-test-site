@@ -888,6 +888,15 @@
     aspect-ratio: 1 / 1;
   }
 
+  .benefits-container {
+    grid-template-columns: repeat(1, 1fr);
+    /* max-width: 120rem; */
+  }
+
+  .window-tint-benifits-description {
+    font-size: 1.1rem;
+  }
+
   /* INFO VIDEO SECTION (ppf.html, custom.html) — 2 columns squeeze the
      caption text box down to ~205px, wrapping it into an almost
      one-word-per-line column. Stack video and caption instead. */
