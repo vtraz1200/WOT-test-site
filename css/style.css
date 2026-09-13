@@ -212,6 +212,163 @@ a {
 }
 
 /*******************************************/
+/* STICKY MOBILE ACTION BAR (phones only) */
+/* Fixed to the bottom of the viewport so Call / Text / Get a Quote are one
+   tap away at every scroll position. Hidden on desktop — the phone number
+   and quote button live in the header action strip below instead. */
+/*******************************************/
+
+.mobile-bar {
+  display: none;
+}
+
+@media (max-width: 740px) {
+  .mobile-bar {
+    display: flex;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background: rgba(19, 16, 15, 0.94);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.16);
+    box-shadow: 0 -8px 26px rgba(0, 0, 0, 0.4);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    transition: transform 0.25s ease;
+  }
+
+  .mobile-bar-item {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    min-height: 3.6rem;
+    padding: 0.5rem 0.35rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 0.92rem;
+    line-height: 1;
+    color: #fff;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .mobile-bar-item + .mobile-bar-item {
+    border-left: 1px solid rgba(255, 255, 255, 0.12);
+  }
+  .mobile-bar-item ion-icon {
+    font-size: 1.2rem;
+    color: #ff5248;
+    flex: none;
+  }
+  .mobile-bar-item:active {
+    background: rgba(255, 255, 255, 0.09);
+  }
+
+  .mobile-bar-item--primary {
+    background: #7e100b;
+  }
+  .mobile-bar-item--primary ion-icon {
+    color: #fff;
+  }
+  .mobile-bar-item--primary:active {
+    background: #9c1710;
+  }
+
+  /* keep the fixed bar from covering the end of the page / footer */
+  body {
+    padding-bottom: 3.6rem;
+  }
+
+  /* slide the bar out of the way while the full-screen mobile nav is open */
+  body:has(.nav-open) .mobile-bar {
+    transform: translateY(110%);
+    pointer-events: none;
+  }
+}
+
+@media (max-width: 740px) and (prefers-reduced-motion: no-preference) {
+  .mobile-bar {
+    animation: mobileBarUp 0.45s ease-out 0.35s both;
+  }
+  @keyframes mobileBarUp {
+    from {
+      transform: translateY(100%);
+    }
+  }
+}
+
+/*******************************************/
+/* HEADER ACTION STRIP (desktop) */
+/* Phone + "Get a Quote" live in the header, so once the sticky-header
+   behavior below pins the bar to the top on scroll (.sticky .header) both
+   actions stay visible on every screen. Hidden below the desktop-nav
+   breakpoint, where the hamburger + mobile action bar above take over. */
+/*******************************************/
+
+.header-cta {
+  display: none;
+}
+
+@media (min-width: 945px) {
+  .header-cta {
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
+    margin-left: 1.4rem;
+  }
+
+  .header-cta-phone {
+    display: none; /* shown at a wider breakpoint below */
+    align-items: center;
+    gap: 0.4rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 1.02rem;
+    color: #fff;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+  }
+  .header-cta-phone ion-icon {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+  }
+  .header-cta-phone:hover {
+    color: #ff8078;
+  }
+
+  .header-cta-btn {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    line-height: 1;
+    color: #7e100b;
+    background: #fff;
+    border: 2px solid #fff;
+    border-radius: 5rem;
+    padding: 0.55rem 1.2rem;
+    text-decoration: none;
+    white-space: nowrap;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+  .header-cta-btn:hover,
+  .header-cta-btn:focus-visible {
+    background: transparent;
+    color: #fff;
+  }
+}
+
+@media (min-width: 1120px) {
+  .header-cta-phone {
+    display: inline-flex;
+  }
+}
+
+/*******************************************/
 /* STICKY NAVIGATION SECTION */
 /*******************************************/
 .sticky .header {
@@ -275,6 +432,368 @@ a {
   .back-video {
     width: auto;
     height: 100%;
+  }
+}
+
+/* Hero content layout (badge, eyebrow, title, CTAs, trust row) used on the
+   homepage and every service-page hero. .text-box is qualified with an
+   ancestor element so it reliably beats the plain .text-box rules in
+   general.css / queries.css regardless of stylesheet order. */
+main .text-box {
+  width: min(92vw, 58rem);
+}
+
+.hero2 {
+  position: relative;
+  text-align: left;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.55);
+}
+
+/* localized scrim so the lighter sub-copy and trust row stay legible over
+   the darkest parts of the background photo */
+.hero2::before {
+  content: "";
+  position: absolute;
+  inset: -3.5rem -12vw -3rem -10vw;
+  z-index: -1;
+  background: radial-gradient(
+    130% 120% at 32% 45%,
+    rgba(0, 0, 0, 0.72) 0%,
+    rgba(0, 0, 0, 0.52) 42%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero2 {
+    animation: hero2In 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  @keyframes hero2In {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+  }
+}
+
+.hero2-eyebrow {
+  font-family: "Roboto", sans-serif;
+  font-size: clamp(0.68rem, 0.63rem + 0.2vw, 0.78rem);
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.88);
+  margin: 0 0 1.1rem;
+}
+
+.hero2-title {
+  font-family: "Roboto", sans-serif;
+  text-transform: none;
+  color: #fff;
+  font-size: clamp(2.35rem, 1.6rem + 2.9vw, 4.1rem);
+  font-weight: 800;
+  line-height: 1.04;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+  margin: 0 0 1rem;
+}
+.hero2-title-brand {
+  display: block;
+  font-size: 0.4em;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: #ff5248;
+  margin-bottom: 0.55rem;
+}
+
+.hero2-sub {
+  font-family: "Lato", sans-serif;
+  color: #fff;
+  font-size: clamp(1.02rem, 0.95rem + 0.35vw, 1.25rem);
+  line-height: 1.5;
+  max-width: 48ch;
+  margin: 0 0 1.7rem;
+}
+.hero2-sub strong {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.hero2-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.9rem;
+}
+
+.hero2-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 1;
+  padding: 0.95rem 1.8rem;
+  border-radius: 5rem;
+  text-decoration: none;
+  text-shadow: none;
+  border: 2px solid transparent;
+  transition: background-color 0.22s ease, color 0.22s ease,
+    border-color 0.22s ease;
+}
+.hero2-btn ion-icon {
+  font-size: 1.15em;
+}
+.hero2-btn--primary {
+  background: #7e100b;
+  color: #fff;
+  box-shadow: 0 0.9rem 2rem rgba(0, 0, 0, 0.4);
+}
+.hero2-btn--primary:hover,
+.hero2-btn--primary:focus-visible {
+  background: #fff;
+  color: #7e100b;
+}
+.hero2-btn--ghost {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+.hero2-btn--ghost:hover,
+.hero2-btn--ghost:focus-visible {
+  background: #fff;
+  color: #141110;
+  border-color: #fff;
+}
+
+.hero2-tertiary {
+  display: inline-block;
+  margin: 0 0 1.6rem;
+  font-family: "Lato", sans-serif;
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.82);
+  text-underline-offset: 3px;
+}
+.hero2-tertiary:hover {
+  color: #fff;
+}
+
+.hero2-trust {
+  list-style: none;
+  margin: 0;
+  padding: 1.2rem 0 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+}
+.hero2-trust li {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: "Lato", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #fff;
+}
+.hero2-trust ion-icon {
+  color: #ff5248;
+  font-size: 1.05rem;
+  flex: none;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.5));
+}
+
+@media (max-width: 740px) {
+  .hero2 {
+    text-align: center;
+  }
+  .hero2::before {
+    inset: -2.5rem -18vw;
+  }
+  .hero2-sub {
+    margin-inline: auto;
+  }
+  .hero2-cta {
+    justify-content: center;
+  }
+  .hero2-btn {
+    flex: 1 1 100%;
+    justify-content: center;
+  }
+  .hero2-trust {
+    justify-content: center;
+  }
+}
+
+@media (max-height: 760px) {
+  .hero2-title {
+    margin-bottom: 0.7rem;
+  }
+  .hero2-sub {
+    margin-bottom: 1.1rem;
+  }
+  .hero2-eyebrow {
+    margin-bottom: 0.8rem;
+  }
+  .hero2-trust {
+    padding-top: 0.9rem;
+  }
+  .g-badge {
+    margin-bottom: 0.9rem;
+  }
+}
+
+/* Google reviews badge — real data: 5.0 rating, 40 reviews. Sits as the
+   first element in the hero so it's among the first things seen. */
+
+.g-badge {
+  display: flex;
+  width: fit-content;
+  max-width: 100%;
+  align-items: center;
+  gap: 0.62rem;
+  margin: 0 0 1.5rem;
+  padding: 0.55rem 0.95rem 0.55rem 0.68rem;
+  border-radius: 999px;
+  text-decoration: none;
+  text-shadow: none;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+  box-shadow: 0 12px 34px -12px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+.g-badge:hover,
+.g-badge:focus-visible {
+  transform: translateY(-1px);
+  border-color: rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.g-badge-g {
+  width: 20px;
+  height: 20px;
+  flex: none;
+}
+
+.g-badge-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.g-badge-score {
+  font-family: "Roboto", sans-serif;
+  font-weight: 800;
+  font-size: 1.02rem;
+  line-height: 1;
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+}
+.g-badge-stars {
+  color: #fbbc04;
+  font-size: 0.95rem;
+  letter-spacing: 1.5px;
+  line-height: 1;
+  /* trims the trailing letter-spacing after the last star */
+  margin-right: -1.5px;
+}
+
+.g-badge-divider {
+  width: 1px;
+  height: 15px;
+  flex: none;
+  background: rgba(255, 255, 255, 0.32);
+}
+
+.g-badge-count {
+  font-family: "Lato", sans-serif;
+  font-size: 0.85rem;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.85);
+  white-space: nowrap;
+}
+
+.g-badge-chevron {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.55);
+  flex: none;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+.g-badge:hover .g-badge-chevron,
+.g-badge:focus-visible .g-badge-chevron {
+  color: #fff;
+  transform: translateX(2px);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .g-badge::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(
+      115deg,
+      transparent 32%,
+      rgba(255, 255, 255, 0.38) 50%,
+      transparent 68%
+    );
+    transform: translateX(-130%);
+    animation: gBadgeSheen 1.05s ease-out 0.9s 1 both;
+  }
+  @keyframes gBadgeSheen {
+    to {
+      transform: translateX(130%);
+    }
+  }
+}
+
+@media (max-width: 740px) {
+  .g-badge {
+    margin-inline: auto;
+  }
+}
+
+/* Hero background video (index.html section-hero only). Uses the site's
+   existing .back-video class; must come after the base .section-hero /
+   .back-video rules above so its height/position win the equal-specificity
+   tie. Keep this free of anything that makes .section-hero a stacking
+   context or sets position/z-index on .header — the header becomes
+   position:fixed / z-index:999 on scroll (.sticky .header above) and an
+   equal-specificity rule here would silently override it and kill the
+   sticky nav. The video paints behind the header and copy via DOM order +
+   object-fit; a brightness filter stands in for a separate scrim layer. */
+.section-hero {
+  /* Track the video's own 16:9 shape so a full-width background clip fills
+     the hero with no vertical crop / "zoom". Never taller than the viewport,
+     never shorter than the copy needs. */
+  height: min(100vh, 56.25vw);
+  min-height: 640px;
+}
+.section-hero .back-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+  filter: brightness(0.4) saturate(1.05);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-hero .back-video {
+    display: none;
   }
 }
 
@@ -1149,9 +1668,776 @@ a {
 
 /************************************************************************************/
 /************************************************************************************/
+/***********************************SITE-WIDE COMPONENTS***********************************/
+/* Shared across the homepage and every service page: the page-jump nav,   */
+/* the dark/light content band, the credibility band, the reviews header,  */
+/* how-it-works steps, the on-page review proof band, the price-logic      */
+/* band, the financing note, fleet & commercial, the FAQ, the quick-quote  */
+/* form, and the partners claim line.                                      */
+/************************************************************************************/
+
+/* --- page jump nav (under hero, every service page) --- */
+.page-jump {
+  background: #0d0c0b;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.85rem clamp(1rem, 4vw, 3rem);
+}
+.page-jump-inner {
+  max-width: 122rem;
+  margin-inline: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem 0.7rem;
+}
+.page-jump a {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  color: #f2ede4;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  padding: 0.4rem 0.95rem;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+.page-jump a:hover {
+  background: rgba(255, 82, 72, 0.14);
+  border-color: #ff5248;
+  color: #fff;
+}
+
+/* --- dark/light content band (homepage + every service page) --- */
+.hp-band {
+  padding: clamp(4rem, 8vw, 7rem) clamp(1.2rem, 5vw, 4.8rem);
+}
+.hp-band--dark {
+  background: #131110;
+  color: #f2ede4;
+}
+.hp-band--light {
+  background: #f2f2f2;
+  color: #201c19;
+}
+.hp-inner {
+  max-width: 120rem;
+  margin-inline: auto;
+}
+.hp-kicker {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #ff5248;
+  margin: 0 0 0.8rem;
+  text-align: center;
+}
+.hp-h2 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.9rem, 1.3rem + 2vw, 2.9rem);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  text-align: center;
+  text-wrap: balance;
+  margin: 0 0 1rem;
+}
+.hp-h2--dark {
+  color: #fff;
+}
+.hp-h2--light {
+  color: #201c19;
+}
+.hp-lead {
+  max-width: 62ch;
+  margin: 0 auto 3rem;
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  opacity: 0.92;
+}
+
+/* --- credibility band (under homepage hero) --- */
+.cred-band {
+  background: #0d0c0b;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1.35rem clamp(1rem, 4vw, 3rem);
+}
+.cred-band-inner {
+  max-width: 122rem;
+  margin-inline: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.9rem 2.4rem;
+}
+.cred-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: "Lato", sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #f2ede4;
+  position: relative;
+}
+.cred-item ion-icon {
+  font-size: 1.3rem;
+  color: #ff5248;
+  flex: none;
+}
+@media (min-width: 940px) {
+  .cred-item + .cred-item::before {
+    content: "";
+    position: absolute;
+    left: -1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 1.5rem;
+    background: rgba(255, 255, 255, 0.16);
+  }
+}
+
+/* --- reviews aggregate header (homepage) --- */
+.reviews-agg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin: -1rem auto 2.6rem;
+}
+.reviews-agg-top {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+.reviews-agg-score {
+  font-family: "Roboto", sans-serif;
+  font-weight: 800;
+  font-size: 2.5rem;
+  line-height: 1;
+  color: #201c19;
+}
+.reviews-agg-stars {
+  color: #fbbc04;
+  font-size: 1.35rem;
+  letter-spacing: 2px;
+}
+.reviews-agg-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Lato", sans-serif;
+  font-size: 0.95rem;
+  color: #5a5148;
+}
+.reviews-agg-meta svg {
+  width: 17px;
+  height: 17px;
+}
+.reviews-agg-links {
+  display: flex;
+  gap: 1.3rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 0.88rem;
+}
+.rev-tag {
+  display: inline-block;
+  margin-left: 0.6rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #7e100b;
+  background: rgba(126, 16, 11, 0.1);
+  border-radius: 4px;
+  padding: 0.12rem 0.4rem;
+  vertical-align: middle;
+}
+
+/* --- how it works (homepage) --- */
+.how-steps {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.6rem;
+  max-width: 108rem;
+  margin-inline: auto;
+}
+.how-step {
+  text-align: center;
+  padding: 0 0.4rem;
+}
+.how-step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: 2px solid #ff5248;
+  color: #ff5248;
+  font-family: "Roboto", sans-serif;
+  font-weight: 800;
+  font-size: 1.15rem;
+  margin-bottom: 1rem;
+}
+.how-step h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 1.12rem;
+  color: #fff;
+  margin: 0 0 0.4rem;
+}
+.how-step p {
+  font-family: "Lato", sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: rgba(242, 237, 228, 0.75);
+  margin: 0;
+}
+@media (max-width: 760px) {
+  .how-steps {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem 1rem;
+  }
+}
+@media (max-width: 430px) {
+  .how-steps {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- on-page proof: credentials + review quotes (every service page) --- */
+.tproof-cred {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem 2rem;
+  margin: 0 auto 2.6rem;
+  max-width: 90rem;
+}
+.tproof-cred span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Lato", sans-serif;
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: #201c19;
+}
+.tproof-cred ion-icon {
+  font-size: 1.25rem;
+  color: #7e100b;
+  flex: none;
+}
+.tproof-reviews {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.2rem;
+  max-width: 100rem;
+  margin-inline: auto;
+}
+.tproof-review {
+  background: #fff;
+  border: 1px solid #e0dccf;
+  border-radius: 0.8rem;
+  padding: 1.3rem 1.4rem;
+  font-family: "Lato", sans-serif;
+}
+.tproof-review .tpr-stars {
+  color: #fbbc04;
+  letter-spacing: 2px;
+  font-size: 0.95rem;
+}
+.tproof-review p {
+  margin: 0.5rem 0 0.8rem;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: #33302b;
+}
+.tproof-review .tpr-name {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #201c19;
+}
+.tproof-review .tpr-src {
+  font-size: 0.8rem;
+  color: #7a7168;
+}
+
+/* --- FAQ, native details/summary (every service page) --- */
+.faq-list {
+  max-width: 68rem;
+  margin-inline: auto;
+  display: grid;
+  gap: 0.7rem;
+}
+.faq-item {
+  background: #fff;
+  border: 1px solid #e0dccf;
+  border-radius: 0.7rem;
+  overflow: hidden;
+}
+.faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 1.05rem 1.3rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #201c19;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+.faq-item summary::after {
+  content: "+";
+  font-size: 1.4rem;
+  color: #7e100b;
+  line-height: 1;
+  flex: none;
+}
+.faq-item[open] summary::after {
+  content: "\2013";
+}
+.faq-item .faq-a {
+  padding: 0 1.3rem 1.15rem;
+  font-family: "Lato", sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #4a423b;
+}
+
+/* --- "what goes into your price" quote-qualifier band (every service
+   page). Sits on a .hp-band--dark between the benefits cards and the
+   FAQ. --- */
+.qprice-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 112rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.4rem;
+}
+.qprice-factor {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(242, 237, 228, 0.14);
+  border-radius: 0.9rem;
+  padding: 1.6rem 1.4rem;
+  text-align: left;
+}
+.qprice-factor > ion-icon {
+  font-size: 1.8rem;
+  color: #ff5248;
+}
+.qprice-factor h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 1.08rem;
+  color: #fff;
+  margin: 0.6rem 0 0.4rem;
+}
+.qprice-factor p {
+  font-family: "Lato", sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: rgba(242, 237, 228, 0.75);
+  margin: 0 0 0.9rem;
+}
+.qprice-range {
+  display: block;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 0.78rem;
+  line-height: 1.35;
+  color: #f2ede4;
+  background: rgba(126, 16, 11, 0.35);
+  border: 1px solid rgba(255, 82, 72, 0.4);
+  border-radius: 0.5rem;
+  padding: 0.4rem 0.65rem;
+}
+.qprice-compare {
+  max-width: 92rem;
+  margin: 2.6rem auto 0;
+  padding: 1.6rem 1.8rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(242, 237, 228, 0.14);
+  border-radius: 0.9rem;
+}
+.qprice-compare-h {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #fff;
+  margin: 0 0 0.9rem;
+  text-align: center;
+}
+.qprice-compare ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem 1.6rem;
+}
+.qprice-compare li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  font-family: "Lato", sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: rgba(242, 237, 228, 0.82);
+}
+.qprice-compare li ion-icon {
+  color: #3fae6b;
+  font-size: 1.15rem;
+  flex: none;
+  margin-top: 0.05rem;
+}
+.qprice-cta {
+  text-align: center;
+  margin: 2.6rem auto 0;
+}
+.qprice-cta p {
+  font-family: "Lato", sans-serif;
+  font-size: 0.92rem;
+  color: rgba(242, 237, 228, 0.72);
+  margin: 0.9rem 0 0;
+}
+@media (max-width: 900px) {
+  .qprice-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 540px) {
+  .qprice-grid,
+  .qprice-compare ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- financing / investment note (ppf, wraps, custom) --- */
+.ppf-finance {
+  max-width: 60rem;
+  margin: 0 auto 2.4rem;
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  font-size: 0.95rem;
+  color: #4a423b;
+  background: #fff;
+  border: 1px solid #e0dccf;
+  border-radius: 0.7rem;
+  padding: 0.9rem 1.2rem;
+}
+.ppf-finance b {
+  font-family: "Roboto", sans-serif;
+  color: #7e100b;
+}
+
+/* --- fleet & commercial (homepage + wraps) --- */
+.fleet-wrap {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  max-width: 112rem;
+  margin-inline: auto;
+  text-align: left;
+}
+.fleet-wrap > div:last-child img {
+  width: 100%;
+  border-radius: 1rem;
+  display: block;
+}
+.fleet-wrap .hp-kicker,
+.fleet-wrap .hp-h2 {
+  text-align: left;
+}
+.fleet-wrap .hp-h2 {
+  margin-bottom: 0.8rem;
+}
+.fleet-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.3rem 0 2rem;
+  display: grid;
+  gap: 0.7rem;
+}
+.fleet-list li {
+  display: flex;
+  gap: 0.6rem;
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.fleet-list ion-icon {
+  color: #ff5248;
+  font-size: 1.2rem;
+  flex: none;
+  margin-top: 0.15rem;
+}
+@media (max-width: 860px) {
+  .fleet-wrap {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .fleet-wrap > div:last-child {
+    order: -1;
+  }
+}
+
+/* --- quick-quote form (homepage + every service page except tint) --- */
+.qq-wrap {
+  max-width: 58rem;
+  margin-inline: auto;
+  background: #1b1613;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1.2rem;
+  padding: clamp(1.6rem, 4vw, 2.6rem);
+}
+.qq-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+}
+.qq-form .qq-full {
+  grid-column: 1 / -1;
+}
+.qq-input,
+.qq-select,
+.qq-textarea {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(126, 16, 11, 0.45);
+  border-radius: 0.7rem;
+  padding: 0.8rem 1rem;
+  color: #f2ede4;
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+}
+.qq-input::placeholder,
+.qq-textarea::placeholder {
+  color: rgba(242, 237, 228, 0.5);
+}
+.qq-select {
+  appearance: none;
+}
+.qq-select:invalid {
+  color: rgba(242, 237, 228, 0.5);
+}
+/* the native option list renders on a light system menu — force dark text
+   so it stays readable when the dropdown is open */
+.qq-select option {
+  color: #201c19;
+  background: #fff;
+}
+.qq-textarea {
+  min-height: 5.5rem;
+  resize: vertical;
+}
+.qq-input:focus,
+.qq-select:focus,
+.qq-textarea:focus {
+  outline: none;
+  border-color: #b23d2f;
+  background: rgba(255, 255, 255, 0.08);
+}
+.qq-btn {
+  grid-column: 1 / -1;
+  background: #7e100b;
+  color: #fff;
+  border: 2px solid #7e100b;
+  border-radius: 5rem;
+  padding: 0.95rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.qq-btn:hover,
+.qq-btn:focus-visible {
+  background: #fff;
+  color: #7e100b;
+}
+.qq-alt {
+  text-align: center;
+  margin: 1rem 0 0;
+  font-family: "Lato", sans-serif;
+  font-size: 0.9rem;
+  color: rgba(242, 237, 228, 0.72);
+}
+.qq-alt a {
+  color: #ff8078;
+}
+@media (max-width: 560px) {
+  .qq-form {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- partners reframe (homepage) --- */
+.partners-claim {
+  max-width: 64ch;
+  margin: 0.5rem auto 0;
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: #5a5148;
+  text-align: center;
+}
+
+/************************************************************************************/
+/************************************************************************************/
 /***********************************TINT PAGE STYLING***********************************/
 /************************************************************************************/
 /************************************************************************************/
+
+/* --- CS vs XR explainer (above the price cards) --- */
+.csxr-note {
+  max-width: 70rem;
+  margin: 0 auto 2.4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.csxr-card {
+  background: var(--wot-surface, #fff);
+  border: 1px solid #e0dccf;
+  border-left: 3px solid #7e100b;
+  border-radius: 0.7rem;
+  padding: 1rem 1.2rem;
+  font-family: "Lato", sans-serif;
+}
+.csxr-card b {
+  font-family: "Roboto", sans-serif;
+  display: block;
+  font-size: 1.02rem;
+  margin-bottom: 0.2rem;
+  color: #201c19;
+}
+.csxr-card span {
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: #4a423b;
+}
+.csxr-help {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  font-size: 0.95rem;
+  color: #4a423b;
+}
+.csxr-help a {
+  font-weight: 700;
+  color: #7e100b;
+}
+@media (max-width: 620px) {
+  .csxr-note {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Michigan tint law --- */
+.tintlaw-grid {
+  max-width: 78rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0.8rem;
+  overflow: hidden;
+}
+.tintlaw-cell {
+  background: #17130f;
+  padding: 1.1rem 1.2rem;
+}
+.tintlaw-cell dt {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #ff8078;
+  margin-bottom: 0.4rem;
+}
+.tintlaw-cell dd {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #f2ede4;
+}
+.tintlaw-cell dd b {
+  color: #fff;
+}
+.tintlaw-foot {
+  max-width: 78rem;
+  margin: 1.2rem auto 0;
+  font-family: "Lato", sans-serif;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: rgba(242, 237, 228, 0.62);
+  text-align: center;
+}
+
+/* --- commercial section enhancements (residential & commercial block) --- */
+.commx-row {
+  max-width: 100rem;
+  margin: 2rem auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.7rem 1.8rem;
+}
+.commx-row span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Lato", sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #33302b;
+}
+.commx-row ion-icon {
+  color: #7e100b;
+  font-size: 1.15rem;
+  flex: none;
+}
+.commx-cta {
+  max-width: 100rem;
+  margin: 2.4rem auto 0;
+  text-align: center;
+}
+.commx-cta p {
+  font-family: "Lato", sans-serif;
+  font-size: 0.95rem;
+  color: #4a423b;
+  margin: 0.8rem 0 0;
+}
+.commx-cta p a {
+  font-weight: 700;
+  color: #7e100b;
+}
 
 /***********************************HERO SECTION***********************************/
 
@@ -1163,12 +2449,42 @@ a {
 
 .section-hero-tint {
   position: relative;
+  /* Background image is the fallback shown before the video loads (also
+     used as the <video poster>) and if it fails or reduced-motion hides it. */
   background: url("../images/tint/tintbackgoundimg.jpg") center / cover
     no-repeat;
-  height: 100vh;
+  overflow: hidden;
+  /* Track the video's own 16:9 shape so a full-width clip fills the hero
+     with no vertical crop / "zoom". Never taller than the viewport, never
+     shorter than the copy needs. */
+  height: min(100vh, 56.25vw);
+  min-height: 640px;
   /* display: flex; */
   justify-content: center;
   align-items: center;
+}
+
+/* Background video. Sits behind .header / .text-box via DOM order (it's
+   the first child) plus an explicit lower z-index — .section-hero-tint > *
+   above puts z-index:2 on every direct child, so this pins the video under
+   that regardless of markup order later. No position/z-index changes to
+   .header here, so .sticky .header (higher specificity) still wins on
+   scroll and the sticky nav keeps working. */
+.section-hero-tint .back-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+  filter: brightness(0.42) saturate(1.05);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-hero-tint .back-video {
+    display: none;
+  }
 }
 
 .section-hero-tint::before {
@@ -1485,6 +2801,42 @@ a {
   color: #7e100b;
   font-weight: 700;
   white-space: nowrap;
+}
+
+/* Short description under a basic price-card's heading (tint.html), above
+   the "Starting at $X" line. */
+.price-card-desc {
+  font-family: "Lato", sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #4a423b;
+  max-width: 34ch;
+  margin: 0 auto 0.9rem;
+}
+
+/* Descriptions under an expandable price card's individual options
+   (tint.html). .has-desc is a modifier so plain two-span .price-option rows
+   elsewhere (details.html / ceramic.html / custom.html) are unaffected —
+   its compound selector already outranks the plain .price-option rule
+   above regardless of source order. */
+.price-option.has-desc {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.35rem;
+}
+.price-option-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+.price-option-desc {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: #666;
 }
 
 /***********************************WINDOW TINT COMPARISON SECTION*******************************/
