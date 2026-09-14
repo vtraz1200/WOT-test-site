@@ -21,6 +21,22 @@ if (toggle && menu && dropdown) {
 }
 
 //////////////////////////////////////////////////////////
+// HERO BACKGROUND VIDEO FADE-IN
+// .back-video starts at opacity:0 (see css/style.css) so the section's own
+// background-image — the same jpg as the video's poster — shows through
+// while the video file is still downloading. Once the video has a decoded
+// frame ready, fade it in instead of hard-cutting from the static image.
+
+document.querySelectorAll(".back-video").forEach((video) => {
+  const reveal = () => video.classList.add("is-ready");
+  if (video.readyState >= 2) {
+    reveal();
+  } else {
+    video.addEventListener("loadeddata", reveal, { once: true });
+  }
+});
+
+//////////////////////////////////////////////////////////
 // SCROLL REVEAL (shared by any element that should fade/slide in once it
 // actually scrolls into view, instead of animating immediately on load —
 // a plain CSS animation on a below-the-fold element plays out invisibly

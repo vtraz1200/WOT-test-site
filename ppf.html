@@ -52,6 +52,15 @@
       rel="stylesheet"
     />
 
+    <!-- Preload hero background video so it starts fetching before the
+         parser reaches the <video> tag -->
+    <link
+      rel="preload"
+      as="video"
+      href="videos/ppf_merged_recommended_web_720p.mp4"
+      type="video/mp4"
+    />
+
     <!-- css files -->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/general.css" />
@@ -140,6 +149,21 @@
   <body>
     <main>
       <section class="section-hero-ppf">
+        <video
+          class="back-video"
+          autoplay
+          loop
+          muted
+          playsinline
+          preload="auto"
+          poster="images/ppf/ppf-hero.jpg"
+          aria-hidden="true"
+        >
+          <source
+            src="videos/ppf_merged_recommended_web_720p.mp4"
+            type="video/mp4"
+          />
+        </video>
         <header class="header">
           <a href="index.html" class="section-footer-logo-link">
             <img

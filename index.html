@@ -44,6 +44,15 @@
       rel="stylesheet"
     />
 
+    <!-- Preload hero background video so it starts fetching before the
+         parser reaches the <video> tag -->
+    <link
+      rel="preload"
+      as="video"
+      href="videos/index_hero_horizontal_no_pauses_web_720p.mp4"
+      type="video/mp4"
+    />
+
     <!-- css files -->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/general.css" />
@@ -118,11 +127,9 @@
           aria-hidden="true"
         >
           <source
-            src="videos/combined_videos-web-sm.mp4"
+            src="videos/index_hero_horizontal_no_pauses_web_720p.mp4"
             type="video/mp4"
-            media="(max-width: 700px)"
           />
-          <source src="videos/website-background-desktop.mp4" type="video/mp4" />
         </video>
         <div class="header">
           <a href="#" class="section-footer-logo-link">

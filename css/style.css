@@ -353,7 +353,9 @@ a {
     text-decoration: none;
     white-space: nowrap;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
-    transition: background-color 0.2s ease, color 0.2s ease;
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease;
   }
   .header-cta-btn:hover,
   .header-cta-btn:focus-visible {
@@ -426,6 +428,18 @@ a {
 
   /* Darkens the video background */
   filter: brightness(0.3);
+
+  /* Starts invisible so the section's own background-image (the same jpg
+     as the <video poster>) shows through underneath while the video file
+     is still downloading/buffering. js/script.js adds .is-ready once the
+     video has a decoded frame ready (loadeddata), fading it in instead of
+     hard-cutting from the static poster straight to a moving frame. */
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.back-video.is-ready {
+  opacity: 1;
 }
 
 @media (max-aspect-ratio: 16/9) {
@@ -542,7 +556,9 @@ main .text-box {
   text-decoration: none;
   text-shadow: none;
   border: 2px solid transparent;
-  transition: background-color 0.22s ease, color 0.22s ease,
+  transition:
+    background-color 0.22s ease,
+    color 0.22s ease,
     border-color 0.22s ease;
 }
 .hero2-btn ion-icon {
@@ -667,11 +683,14 @@ main .text-box {
   border: 1px solid rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(9px);
   -webkit-backdrop-filter: blur(9px);
-  box-shadow: 0 12px 34px -12px rgba(0, 0, 0, 0.6),
+  box-shadow:
+    0 12px 34px -12px rgba(0, 0, 0, 0.6),
     inset 0 1px 0 rgba(255, 255, 255, 0.12);
   position: relative;
   overflow: hidden;
-  transition: transform 0.2s ease, border-color 0.2s ease,
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
     background-color 0.2s ease;
 }
 .g-badge:hover,
@@ -728,7 +747,9 @@ main .text-box {
   font-size: 0.95rem;
   color: rgba(255, 255, 255, 0.55);
   flex: none;
-  transition: transform 0.2s ease, color 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease;
 }
 .g-badge:hover .g-badge-chevron,
 .g-badge:focus-visible .g-badge-chevron {
@@ -1700,7 +1721,9 @@ main .text-box {
   border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: 999px;
   padding: 0.4rem 0.95rem;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
 }
 .page-jump a:hover {
   background: rgba(255, 82, 72, 0.14);
@@ -1810,7 +1833,7 @@ main .text-box {
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
-  margin: -1rem auto 2.6rem;
+  /* margin: -1rem auto 2.6rem; */
 }
 .reviews-agg-top {
   display: flex;
@@ -2270,7 +2293,9 @@ main .text-box {
   font-weight: 700;
   font-size: 1.1rem;
   cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 .qq-btn:hover,
 .qq-btn:focus-visible {
@@ -3620,6 +3645,30 @@ main .text-box {
   align-items: center;
 }
 
+/* Background video. Sits behind .header / .text-box via DOM order (it's
+   the first child) plus an explicit lower z-index — .section-hero-ppf > *
+   above puts z-index:2 on every direct child, so this pins the video under
+   that regardless of markup order later. The section's own background
+   (dark gradient + ppf-hero.jpg) stays as the poster/fallback if the video
+   fails or reduced-motion hides it; the filter here stands in for that
+   gradient's darkening since the video paints on top of it. */
+.section-hero-ppf .back-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+  filter: brightness(0.4) saturate(1.05);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-hero-ppf .back-video {
+    display: none;
+  }
+}
+
 /* Animated overlay */
 .section-hero-ppf::before {
   content: "";
@@ -3687,6 +3736,30 @@ main .text-box {
   /* display: flex; */
   justify-content: center;
   align-items: center;
+}
+
+/* Background video. Sits behind .header / .text-box via DOM order (it's
+   the first child) plus an explicit lower z-index — .section-hero-ceramic > *
+   above puts z-index:2 on every direct child, so this pins the video under
+   that regardless of markup order later. The section's own background
+   image stays as the poster/fallback if the video fails or reduced-motion
+   hides it; the ::before dark overlay below darkens the video the same way
+   it darkens the fallback image. */
+.section-hero-ceramic .back-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+  filter: brightness(0.4) saturate(1.05);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-hero-ceramic .back-video {
+    display: none;
+  }
 }
 
 .section-hero-ceramic::before {
@@ -4264,6 +4337,30 @@ input[type="number"]::-webkit-outer-spin-button {
   /* display: flex; */
   justify-content: center;
   align-items: center;
+}
+
+/* Background video. Sits behind .header / .text-box via DOM order (it's
+   the first child) plus an explicit lower z-index — .section-hero-custom > *
+   above puts z-index:2 on every direct child, so this pins the video under
+   that regardless of markup order later. The section's own background
+   image stays as the poster/fallback if the video fails or reduced-motion
+   hides it; the ::before dark overlay below darkens the video the same way
+   it darkens the fallback image. */
+.section-hero-custom .back-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+  filter: brightness(0.4) saturate(1.05);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-hero-custom .back-video {
+    display: none;
+  }
 }
 
 .section-hero-custom::before {
