@@ -1255,7 +1255,43 @@ main .text-box {
 
 .partnerships-container {
   /* max-width: 1100px; */
-  margin: 6.4rem auto 0;
+  margin: 4.8rem auto 0;
+
+  /* Edge-fade: logos dissolve at the sides instead of hard-clipping where
+     the marquee's overflow:hidden cuts them off. */
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0,
+    #000 6%,
+    #000 94%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0,
+    #000 6%,
+    #000 94%,
+    transparent 100%
+  );
+}
+
+/* Trust-bar framing — two hairlines bracket the logo strip. The bottom one
+   also doubles as the seam between this section and Fleet & Commercial,
+   which otherwise share the same flat #f2f2f2 background with no border
+   between them. */
+.brand-divider {
+  max-width: 72rem;
+  height: 1px;
+  margin: 3.2rem auto 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(126, 16, 11, 0.35),
+    transparent
+  );
+}
+.brand-divider--bottom {
+  margin: 4.8rem auto 0;
 }
 
 /* Auto-scrolling marquee — reuses the site's existing generic
@@ -1317,13 +1353,43 @@ main .text-box {
   transition: 0.3s;
   text-align: center;
   margin: 0 auto;
+
+  /* Tonal-by-service panel — sits inside .slide, so the JS's translateX
+     carries it along as the slider moves. Every tone below is the same
+     black → oxblood ramp at a different mix, not a new hue, to stay
+     inside the site's existing palette. */
+  background: linear-gradient(135deg, #171412 0%, #2a1815 100%);
+  border: 1px solid rgba(255, 82, 72, 0.18);
+  box-shadow: 0 1.6rem 3.2rem rgba(0, 0, 0, 0.25);
+}
+
+/* Window Tint */
+.testimonials-box.tone-tint {
+  background: linear-gradient(135deg, #1a1210 0%, #341410 100%);
+}
+/* Tint & Mods */
+.testimonials-box.tone-mods {
+  background: linear-gradient(135deg, #1d1210 0%, #40150f 100%);
+}
+/* PPF & Tint — the richest film combo gets the deepest red */
+.testimonials-box.tone-ppf {
+  background: linear-gradient(135deg, #220f0c 0%, #5a1610 100%);
+}
+/* Leveling & Tires — a build/mod job, kept closest to plain charcoal */
+.testimonials-box.tone-build {
+  background: linear-gradient(135deg, #141110 0%, #211714 100%);
+}
+/* Repeat Customer — the strongest trust signal gets the boldest glow */
+.testimonials-box.tone-repeat {
+  background: linear-gradient(135deg, #270f0c 0%, #7e100b 100%);
+  border-color: rgba(255, 82, 72, 0.35);
 }
 
 .testimonials-name {
   font-weight: 700;
   font-size: 2.2rem;
   font-family: "merriweather";
-  color: #7e100b;
+  color: #ff8078;
   padding-top: 0.8rem;
 }
 
@@ -1331,16 +1397,21 @@ main .text-box {
   align-items: center;
 }
 
+.testimonials-box .rev-tag {
+  color: #ffd9d5;
+  background: rgba(255, 82, 72, 0.22);
+}
+
 .testimonials-review {
   font-size: 1.5rem;
   padding-top: 1.2rem;
   font-family: "merriweather";
   line-height: 1.4;
-  color: #333;
+  color: rgba(242, 237, 228, 0.92);
 }
 .test-parenth {
   font-size: 1.8rem;
-  color: #7e100b;
+  color: #ff5248;
 }
 
 /* SLIDER */
@@ -1402,7 +1473,7 @@ main .text-box {
 }
 
 .star-icon {
-  color: #7e100b;
+  color: #fbbc04;
   font-size: 2rem;
 }
 
@@ -1685,6 +1756,249 @@ main .text-box {
 .footer-link:active {
   background-color: rgba(0, 0, 0, 0.1);
   transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   SITE FOOTER — dark, multi-column (Explore / Services / Get In Touch),
+   the shop-hours widget as its own banded strip, then a slim credit bar.
+   Used on every page. Inspiration: gpautoglass.com's quick-contact strip,
+   multi-column dark footer and circular social icons — reworked in WOT's
+   own black/oxblood palette rather than their navy/yellow.
+   The old .footer / .footer-div / .footer-pic-info / .booking-* rules
+   above are untouched — index.html's "Schedule Today" band still uses
+   them; this new block only concerns what comes after it (or, on every
+   other page, the entire footer). ========================================================================== */
+.site-footer {
+  position: relative;
+  background: #15130f;
+}
+.site-footer::before {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(90deg, #7e100b, #ff5248, #7e100b);
+}
+.site-footer-inner {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: clamp(3.5rem, 6vw, 5.5rem) clamp(1.5rem, 5vw, 4.8rem) 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr 1.2fr;
+  gap: 3rem;
+  padding-bottom: 3.5rem;
+}
+.footer-col {
+  min-width: 0;
+}
+
+.footer-brand-logo {
+  width: 7rem;
+  height: auto;
+  margin-bottom: 1.2rem;
+}
+.footer-tagline {
+  font-family: "Lato", sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: rgba(242, 237, 228, 0.68);
+  max-width: 30ch;
+  margin: 0 0 1.4rem;
+}
+.footer-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #7e100b;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 0.88rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5rem;
+  text-decoration: none;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+.footer-cta:hover {
+  background: #ff5248;
+  transform: translateY(-2px);
+}
+
+.footer-heading {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0 0 1.3rem;
+  position: relative;
+  padding-bottom: 0.8rem;
+}
+.footer-heading::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 2.4rem;
+  height: 3px;
+  background: linear-gradient(90deg, #7e100b, #ff5248);
+  border-radius: 999px;
+}
+
+.footer-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+.footer-links a {
+  font-family: "Lato", sans-serif;
+  font-size: 0.92rem;
+  color: rgba(242, 237, 228, 0.78);
+  text-decoration: none;
+  transition:
+    color 0.2s ease,
+    padding-left 0.2s ease;
+}
+.footer-links a:hover {
+  color: #ff5248;
+  padding-left: 0.3rem;
+}
+
+.footer-contact {
+  list-style: none;
+  margin: 0 0 1.6rem;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+.footer-contact li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+}
+.footer-contact ion-icon {
+  color: #ff5248;
+  font-size: 1.15rem;
+  flex: none;
+  margin-top: 0.15rem;
+}
+.footer-contact a {
+  font-family: "Lato", sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: rgba(242, 237, 228, 0.78);
+  text-decoration: none;
+}
+.footer-contact a:hover {
+  color: #ff5248;
+}
+
+.footer-social {
+  display: flex;
+  gap: 0.8rem;
+}
+.footer-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+.footer-social-link:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 82, 72, 0.5);
+  background: rgba(255, 82, 72, 0.12);
+}
+.footer-social-link img {
+  width: 1.3rem;
+  height: 1.3rem;
+  object-fit: contain;
+}
+
+/* --- shop hours: same #hoursBar widget and JS, re-themed for a dark
+   footer by overriding the custom properties .hours-bar/.hours-pill
+   already read from (see the :root block above) --- */
+.footer-hours-wrap {
+  --bg: #1c1815;
+  --card: #241f1b;
+  --text: #f2ede4;
+  --muted: #b9ac9f;
+  --border: rgba(255, 255, 255, 0.1);
+  --brand: #ff5248;
+  padding: 2.6rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+.footer-hours-label {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ff5248;
+  margin: 0 0 1rem;
+  text-align: center;
+}
+.footer-hours-wrap .hours-pill.is-today.is-open {
+  background: linear-gradient(180deg, rgba(255, 82, 72, 0.18), #241f1b 70%);
+}
+.footer-hours-wrap .hours-pill.is-today.is-closed {
+  background: linear-gradient(180deg, rgba(255, 82, 72, 0.1), #241f1b 70%);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1.6rem 0;
+  text-align: center;
+}
+.footer-copy {
+  font-family: "Lato", sans-serif;
+  font-size: 0.82rem;
+  color: rgba(242, 237, 228, 0.5);
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.4rem 2rem;
+  }
+  .footer-col--brand {
+    grid-column: 1 / -1;
+  }
+}
+@media (max-width: 560px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .footer-heading::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .footer-contact li {
+    justify-content: center;
+  }
+  .footer-social {
+    justify-content: center;
+  }
+  .footer-tagline {
+    margin-inline: auto;
+  }
 }
 
 /************************************************************************************/
@@ -2544,6 +2858,15 @@ main .text-box {
   align-items: start;
 }
 
+/* Stacks the two tint cards in the left column so the image (right column)
+   has a full-height column to sit beside instead of running full-bleed
+   below everything. */
+.tint-cards-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
 /* Cards */
 .tint-card {
   background: #161616;
@@ -2593,16 +2916,55 @@ main .text-box {
   color: #ccc;
 }
 
-/* Image */
+/* Image — sits beside the stacked cards instead of running full-bleed
+   below everything. Sized to the column, not stretched/cropped to match
+   the cards' height, so the full 5%-to-No-Tint strip stays visible;
+   align-self centers it within whatever extra height the stack has. */
 .tint-image-wrapper {
-  grid-column: span 2;
-  margin-top: 20px;
+  align-self: center;
 }
 
 .tint-image-wrapper img {
   width: 100%;
+  height: auto;
   border-radius: 12px;
-  object-fit: cover;
+  display: block;
+}
+
+/* Quote widget — a compact lead-capture form instead of making visitors
+   scroll to the footer contact form. Reuses the site's existing web3forms
+   field/button classes (.footer-input-form-card, .btn-submit-block) for
+   visual + functional consistency with the contact page form. */
+.tint-quote-card {
+  grid-column: span 2;
+  margin-top: 20px;
+  background: #161616;
+  border: 1px solid rgba(126, 16, 11, 0.35);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.tint-quote-title {
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.tint-quote-subtitle {
+  font-size: 1rem;
+  color: #bbb;
+  margin-bottom: 20px;
+}
+
+.tint-quote-form {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.tint-quote-select {
+  appearance: none;
+  cursor: pointer;
 }
 
 /* Highlight Ceramic (money maker 👀) */
@@ -2632,8 +2994,13 @@ main .text-box {
     grid-template-columns: 1fr;
   }
 
-  .tint-image-wrapper {
+  .tint-quote-card {
     grid-column: span 1;
+  }
+
+  .footer-card-firlas-name-cont,
+  .footer-card-vehicle-cont {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -4217,6 +4584,31 @@ input[type="number"]::-webkit-outer-spin-button {
   /* display: flex; */
   justify-content: center;
   align-items: center;
+}
+
+/* Background video. Sits behind .header / .text-box via DOM order (it's
+   the first child) plus z-index:0 — .header is position:relative and
+   .text-box is position:absolute with z-index:1 (see css/general.css),
+   so both already paint above a z-index:0 layer without needing a
+   dedicated ">* { z-index: 2 }" rule here. The section's own background
+   (dark gradient + wrap-hero-background.jpg) stays as the poster/fallback
+   if the video fails or reduced-motion hides it; the filter below stands
+   in for that gradient's darkening since the video paints on top of it. */
+.section-hero-wraps .back-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+  filter: brightness(0.4) saturate(1.05);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-hero-wraps .back-video {
+    display: none;
+  }
 }
 
 .section-wraps-prices {

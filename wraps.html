@@ -52,6 +52,15 @@
       rel="stylesheet"
     />
 
+    <!-- Preload hero background video so it starts fetching before the
+         parser reaches the <video> tag -->
+    <link
+      rel="preload"
+      as="video"
+      href="videos/wraps_hero_sameformat_web_720p.mp4"
+      type="video/mp4"
+    />
+
     <!-- css files -->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/general.css" />
@@ -140,6 +149,21 @@
   <body>
     <main>
       <section class="section-hero-wraps">
+        <video
+          class="back-video"
+          autoplay
+          loop
+          muted
+          playsinline
+          preload="auto"
+          poster="images/car-wraps/wrap-hero-background.jpg"
+          aria-hidden="true"
+        >
+          <source
+            src="videos/wraps_hero_sameformat_web_720p.mp4"
+            type="video/mp4"
+          />
+        </video>
         <header class="header">
           <a href="index.html" class="section-footer-logo-link">
             <img
@@ -829,71 +853,120 @@
           </div>
         </div>
       </section>
-      <footer class="footer">
-        <div
-          class="hours-bar"
-          id="hoursBar"
-          aria-label="Business hours by day"
-        ></div>
-        <div class="logo-link-copy">
-          <div>
-            <a href="#" class="footer-link">
-              <img
-                src="images/logo/enhance the uploaded 3.png"
-                class="footer-logo"
-                alt=""
-              />
-            </a>
+      <!-- ===== site footer (dark, multi-column) — inspired by
+           gpautoglass.com's contact strip + column layout, reworked in
+           WOT's own black/oxblood palette. Keeps the same #hoursBar
+           widget/JS, just re-themed for a dark band. ===== -->
+      <footer class="site-footer">
+        <div class="site-footer-inner">
+          <div class="footer-grid">
+            <div class="footer-col footer-col--brand">
+              <a href="index.html" class="footer-brand-link">
+                <img
+                  src="images/logo/enhance the uploaded 3.png"
+                  class="footer-brand-logo"
+                  alt="Wide Open Throttle LLC"
+                />
+              </a>
+              <p class="footer-tagline">
+                Lake Orion&rsquo;s vehicle protection &amp; custom shop
+                &mdash; tint, PPF, ceramic, wraps, detailing, and builds,
+                backed in writing.
+              </p>
+              <a
+                href="https://app.alpha.circuitsuite.net/bookings/wot"
+                class="footer-cta"
+                >Get a Quote</a
+              >
+            </div>
+
+            <div class="footer-col">
+              <h3 class="footer-heading">Explore</h3>
+              <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#gallery">Gallery</a></li>
+                <li><a href="index.html#testimonial">Reviews</a></li>
+                <li><a href="index.html#fleet">Fleet &amp; Commercial</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-col">
+              <h3 class="footer-heading">Services</h3>
+              <ul class="footer-links">
+                <li><a href="tint.html">Window Tint</a></li>
+                <li><a href="ppf.html">Paint Protection Film</a></li>
+                <li><a href="ceramic.html">Ceramic Coating</a></li>
+                <li><a href="details.html">Detailing</a></li>
+                <li><a href="wraps.html">Vinyl Wraps</a></li>
+                <li><a href="custom.html">Custom Builds</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-col">
+              <h3 class="footer-heading">Get In Touch</h3>
+              <ul class="footer-contact">
+                <li>
+                  <ion-icon name="location-outline"></ion-icon>
+                  <a
+                    href="https://www.google.com/maps/dir/?api=1&destination=677+S+Lapeer+Rd,+Lake+Orion,+MI+48362"
+                    >677 S Lapeer Rd<br />Lake Orion, MI 48362</a
+                  >
+                </li>
+                <li>
+                  <ion-icon name="call-outline"></ion-icon>
+                  <a href="tel:+2487955751">(248) 795-5751</a>
+                </li>
+                <li>
+                  <ion-icon name="mail-outline"></ion-icon>
+                  <a href="mailto:wotautogarage@gmail.com"
+                    >wotautogarage@gmail.com</a
+                  >
+                </li>
+              </ul>
+              <div class="footer-social">
+                <a
+                  href="https://www.instagram.com/wotautogarage/"
+                  class="footer-social-link"
+                  aria-label="Instagram"
+                  ><img src="images/logo-icons/instagram.png" alt=""
+                /></a>
+                <a
+                  href="https://www.facebook.com/wotautogarage/"
+                  class="footer-social-link"
+                  aria-label="Facebook"
+                  ><img src="images/logo-icons/facebook.png" alt=""
+                /></a>
+                <a
+                  href="https://www.google.com/search?q=wide+open+throttle+lake+orion"
+                  class="footer-social-link"
+                  aria-label="Google"
+                  ><img src="images/logo-icons/google.png" alt="" /></a>
+                <a
+                  href="https://www.yelp.com/biz/wide-open-throttle-lake-orion"
+                  class="footer-social-link"
+                  aria-label="Yelp"
+                  ><img src="images/logo-icons/yelp.png" alt="" /></a>
+              </div>
+            </div>
           </div>
 
-          <p class="copyright copyright-order-1">
-            Copyright &copy; <span class="year">2025</span> by Wide Open
-            Throttle All rights reserved.<br />
-            Developed by Vontraz Glasper
-          </p>
+          <div class="footer-hours-wrap">
+            <p class="footer-hours-label">Shop Hours</p>
+            <div
+              class="hours-bar"
+              id="hoursBar"
+              aria-label="Business hours by day"
+            ></div>
+          </div>
 
-          <ul class="social-links copyright-order-2">
-            <li>
-              <a
-                class="footer-link"
-                href="https://www.instagram.com/wotautogarage/"
-                ><img
-                  class="logo-icons"
-                  src="images/logo-icons/instagram.png"
-                  alt=""
-              /></a>
-            </li>
-            <li>
-              <a
-                class="footer-link"
-                href="https://www.facebook.com/wotautogarage/"
-                ><img
-                  class="logo-icons"
-                  src="images/logo-icons/facebook.png"
-                  alt=""
-              /></a>
-            </li>
-            <li>
-              <a
-                class="footer-link"
-                href="https://www.google.com/search?q=wide+open+throttle+lake+orion&sca_esv=057fc6654ed8140d&sxsrf=ANbL-n7qz0Rk_BhCf18-MWpi8Gq2eRvO9Q%3A1774578401375&ei=4erFafnPFobIwN4PuvOXOA&gs_ssp=eJzj4tVP1zc0rDDPKDcpryozYLRSNaiwsDAySU1JS0kzNDOzTDM3tTKoME9JNbRINjVNtDA1sTQzSvGSLc9MSVXIL0jNUyjJKMovKclJVchJzAYKFWXm5wEAOFAasg&oq=wide+open+throttle+lake+&gs_lp=Egxnd3Mtd2l6LXNlcnAiGHdpZGUgb3BlbiB0aHJvdHRsZSBsYWtlICoCCAAyCxAuGIAEGMcBGK8BMgYQABgWGB4yAhAmMgsQABiABBiGAxiKBTILEAAYgAQYhgMYigUyCBAAGIAEGKIEMggQABiiBBiJBTIFEAAY7wUyCBAAGIAEGKIEMgUQABjvBTIaEC4YgAQYxwEYrwEYlwUY3AQY3gQY4ATYAQFI-BZQgQlY0QxwAngAkAEAmAFqoAGjBKoBAzUuMbgBA8gBAPgBAZgCCKAC_AvCAgsQABiABBiwAxiiBMICCBAAGLADGO8FwgILEAAYsAMYogQYiQWYAwCIBgGQBgW6BgYIARABGBSSBwc1LjIuNi0xoAepOrIHAzMuMrgH9APCBwUwLjMuNcgHHoAIAA&sclient=gws-wiz-serp"
-                ><img
-                  class="logo-icons"
-                  src="images/logo-icons/google.png"
-                  alt=""
-              /></a>
-            </li>
-            <li>
-              <a
-                class="footer-link"
-                href="https://www.yelp.com/biz/wide-open-throttle-lake-orion"
-                ><img
-                  class="logo-icons"
-                  src="images/logo-icons/yelp.png"
-                  alt=""
-              /></a>
-            </li>
-          </ul>
+          <div class="footer-bottom">
+            <p class="footer-copy">
+              &copy; <span class="year">2025</span> Wide Open Throttle LLC.
+              All rights reserved.<br />
+              Developed by Vontraz Glasper
+            </p>
+          </div>
         </div>
       </footer>
     </main>
