@@ -381,6 +381,45 @@
         </div>
       </section>
 
+      <!-- ===== before/after comparison ===== -->
+      <section class="section-ba">
+        <div class="hp-inner">
+          <p class="hp-kicker">Drag To Compare</p>
+          <h2 class="hp-h2 hp-h2--light">See The Difference</h2>
+          <p class="hp-lead">
+            Same Jeep, before and after the wrap &mdash; drag the handle to
+            compare.
+          </p>
+          <div class="ba-slider">
+            <div class="ba-slider-frame">
+              <img
+                class="ba-img ba-img--before"
+                src="images/car-wraps/wrap-slider-one.jpg"
+                alt="Jeep Wrangler stripped down to bare paint during a custom build, before its vinyl wrap"
+              />
+              <img
+                class="ba-img ba-img--after"
+                src="images/car-wraps/wrap-slider-two.jpg"
+                alt="The same Jeep Wrangler finished in a gloss pink vinyl wrap"
+              />
+              <span class="ba-slider-label ba-slider-label--before">Before</span>
+              <span class="ba-slider-label ba-slider-label--after">After</span>
+              <div class="ba-slider-handle" aria-hidden="true">
+                <ion-icon name="swap-horizontal"></ion-icon>
+              </div>
+              <input
+                type="range"
+                class="ba-slider-range"
+                min="0"
+                max="100"
+                value="50"
+                aria-label="Drag to compare the Jeep before and after its vinyl wrap"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- ===== DEMO: on-page proof (credentials + reviews) ===== -->
       <section class="hp-band hp-band--light">
         <div class="hp-inner">
@@ -717,7 +756,21 @@
       </section>
 
       <!-- ===== DEMO: on-page quote form ===== -->
-      <section class="hp-band hp-band--dark" id="wrap-quote">
+      <section class="hp-band hp-band--dark hp-band--video" id="wrap-quote">
+        <video
+          class="back-video"
+          autoplay
+          loop
+          muted
+          playsinline
+          preload="auto"
+          aria-hidden="true"
+        >
+          <source
+            src="videos/getquote_sameformat_web_720p.mp4"
+            type="video/mp4"
+          />
+        </video>
         <div class="hp-inner">
           <p class="hp-kicker">Get Started</p>
           <h2 class="hp-h2 hp-h2--dark">Get Your Wrap Quote</h2>

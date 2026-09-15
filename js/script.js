@@ -400,6 +400,19 @@ if (slides.length && btnLeft && btnRight && dotContainer) {
 }
 
 //////////////////////////////////////////////////////////
+// BEFORE/AFTER COMPARISON SLIDER
+
+document.querySelectorAll(".ba-slider-frame").forEach((frame) => {
+  const range = frame.querySelector(".ba-slider-range");
+  if (!range) return;
+
+  const update = () => frame.style.setProperty("--reveal", `${range.value}%`);
+
+  range.addEventListener("input", update);
+  update();
+});
+
+//////////////////////////////////////////////////////////
 // GALLERY LIGHTBOX
 
 const galleryContainer = document.querySelector(".gallery-container");

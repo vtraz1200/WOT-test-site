@@ -1069,6 +1069,19 @@ main .text-box {
   margin-bottom: 1rem;
 }
 
+.service-price {
+  display: inline-block;
+  margin: -0.5rem 0 1.1rem;
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(126, 16, 11, 0.08);
+  color: #7e100b;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+}
+
 .service-body .features-list {
   text-align: center;
   margin-bottom: 1.4rem;
@@ -2053,6 +2066,19 @@ main .text-box {
   background: #131110;
   color: #f2ede4;
 }
+.hp-band--video {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  /* Fallback shown only until the video's loadeddata fires and
+     js/script.js adds .is-ready to fade it in (see .back-video below) —
+     once the video is visible it fully covers this. */
+  background: #131110;
+}
+.hp-band--video > .hp-inner {
+  position: relative;
+  z-index: 1;
+}
 .hp-band--light {
   background: #f2f2f2;
   color: #201c19;
@@ -2538,6 +2564,220 @@ main .text-box {
   .fleet-wrap > div:last-child {
     order: -1;
   }
+}
+
+/* --- about section (homepage) --- */
+.about-wrap {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  max-width: 112rem;
+  margin-inline: auto;
+  text-align: left;
+}
+.about-wrap > div:last-child img {
+  width: 100%;
+  border-radius: 1rem;
+  display: block;
+}
+.about-wrap .hp-kicker,
+.about-wrap .hp-h2 {
+  text-align: left;
+}
+.about-wrap .hp-h2 {
+  margin-bottom: 0.8rem;
+}
+.about-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.3rem 0 2rem;
+  display: grid;
+  gap: 0.7rem;
+}
+.about-list li {
+  display: flex;
+  gap: 0.6rem;
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.about-list ion-icon {
+  color: #ff5248;
+  font-size: 1.2rem;
+  flex: none;
+  margin-top: 0.15rem;
+}
+@media (max-width: 860px) {
+  .about-wrap {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .about-wrap > div:last-child {
+    order: -1;
+  }
+}
+
+/* --- financing band (homepage) --- */
+.finance-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 2.2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem 2.2rem;
+  max-width: 60rem;
+}
+.finance-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: "Lato", sans-serif;
+  font-size: 0.98rem;
+  font-weight: 600;
+}
+.finance-list ion-icon {
+  color: #ff5248;
+  font-size: 1.3rem;
+  flex: none;
+}
+
+/* --- guides & tips grid (homepage) --- */
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1.4rem;
+  max-width: 100rem;
+  margin-inline: auto;
+}
+.tip-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 1.6rem 1.5rem;
+}
+.tip-card h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #fff;
+  margin: 0 0 0.6rem;
+  line-height: 1.3;
+}
+.tip-card p {
+  font-family: "Lato", sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: rgba(242, 237, 228, 0.85);
+  margin: 0 0 0.9rem;
+}
+.tip-card a {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #ff5248;
+  text-decoration: none;
+}
+.tip-card a:hover {
+  text-decoration: underline;
+}
+
+/* --- before/after comparison slider (homepage) --- */
+.section-ba {
+  background: #fff;
+  padding: clamp(4rem, 8vw, 7rem) clamp(1.2rem, 5vw, 4.8rem);
+}
+.ba-slider {
+  max-width: 70rem;
+  margin: 0 auto;
+}
+.ba-slider-frame {
+  --reveal: 50%;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  box-shadow: 0 1.4rem 3.2rem rgba(0, 0, 0, 0.18);
+}
+.ba-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+}
+.ba-img--before {
+  z-index: 1;
+}
+.ba-img--after {
+  z-index: 2;
+  clip-path: inset(0 0 0 var(--reveal));
+}
+.ba-slider-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--reveal);
+  width: 3px;
+  background: #fff;
+  transform: translateX(-50%);
+  z-index: 3;
+  pointer-events: none;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15);
+}
+.ba-slider-handle ion-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 2.6rem;
+  height: 2.6rem;
+  background: #fff;
+  color: #7e100b;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+.ba-slider-label {
+  position: absolute;
+  top: 1rem;
+  z-index: 3;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  pointer-events: none;
+}
+.ba-slider-label--before {
+  left: 1rem;
+}
+.ba-slider-label--after {
+  right: 1rem;
+}
+.ba-slider-range {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: ew-resize;
+  z-index: 4;
+  appearance: none;
+  -webkit-appearance: none;
 }
 
 /* --- quick-quote form (homepage + every service page except tint) --- */

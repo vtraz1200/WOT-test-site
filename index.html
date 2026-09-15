@@ -121,6 +121,72 @@
         }
       }
     </script>
+
+    <!-- Homepage FAQ schema — mirrors the copy in #faq below -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is window tint legal in Michigan?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Michigan allows a non-reflective strip on the top 4 inches of the windshield and front side windows; rear side and back windows can be any darkness. We confirm the legal shade for your specific vehicle before we install."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much does paint protection film cost?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It depends on coverage and vehicle. Partial-front packages start lower; full-vehicle coverage is the largest investment. We give a firm quote after seeing the vehicle, and financing is available."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is ceramic coating worth it over a good wax?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes for most owners. Wax lasts weeks; a ceramic coating lasts years, adds real gloss and chemical resistance, and makes every wash faster because dirt and water release instead of sticking."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you charge extra for pet hair or heavy stains on a detail?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Our listed detailing prices are estimates. Heavy pet hair, deep stains, or excessive dirt add time, so we confirm the final price when we see the vehicle."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Will a wrap damage my factory paint?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. On factory paint in good condition, wrap film removes cleanly and actually protects the paint underneath from UV and light abrasion while it's on."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I finance a custom build?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Builds are often several thousand dollars or more, so we offer financing to spread the cost. Ask for terms with your quote."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you offer financing on every service?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes — tint, PPF, ceramic coating, wraps, detailing, and full builds can all be financed. Ask for terms when you request your quote."
+            }
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <main>
@@ -317,6 +383,57 @@
         </div>
       </div>
 
+      <!-- ===== about ===== -->
+      <section class="hp-band hp-band--light" id="about">
+        <div class="hp-inner about-wrap">
+          <div>
+            <p class="hp-kicker">Who We Are</p>
+            <h2 class="hp-h2 hp-h2--light">
+              Lake Orion&rsquo;s Vehicle Protection Shop
+            </h2>
+            <p
+              style="
+                font-family: &quot;Lato&quot;, sans-serif;
+                line-height: 1.6;
+              "
+            >
+              Wide Open Throttle LLC is a locally owned and operated shop at
+              677 S Lapeer Rd in Lake Orion, MI. We&rsquo;re XPEL-certified
+              installers, licensed and insured, and every tint, PPF, ceramic
+              coating, wrap, detail, or custom build we do is backed by a
+              written workmanship warranty. Rated 5.0 stars across 40 Google
+              reviews, we treat every vehicle that comes through our bay like
+              it&rsquo;s our own.
+            </p>
+            <ul class="about-list">
+              <li>
+                <ion-icon name="ribbon-outline"></ion-icon>
+                <span>XPEL Certified Installers</span>
+              </li>
+              <li>
+                <ion-icon name="business-outline"></ion-icon>
+                <span>Locally owned &amp; operated</span>
+              </li>
+              <li>
+                <ion-icon name="shield-checkmark-outline"></ion-icon>
+                <span>Licensed &amp; insured</span>
+              </li>
+              <li>
+                <ion-icon name="create-outline"></ion-icon>
+                <span>Every job backed in writing</span>
+              </li>
+            </ul>
+            <a href="#gallery"><button class="btn">See Our Work &rarr;</button></a>
+          </div>
+          <div>
+            <img
+              src="images/gallery/gallery-image-five.jpg"
+              alt="A Wide Open Throttle completed vehicle in the shop"
+            />
+          </div>
+        </div>
+      </section>
+
       <!-- ===== DEMO: reworked "why it matters" section ===== -->
       <section class="section-catcher">
         <p class="info-video-kicker">Why It Matters</p>
@@ -375,6 +492,7 @@
             />
             <div class="service-body">
               <h3 class="service-heading">Window Tint</h3>
+              <p class="service-price">From $149.99</p>
               <ul class="features-list">
                 <li>Cuts cabin heat and blocks 99% of UV</li>
                 <li>Protects your upholstery and dash from fading</li>
@@ -394,6 +512,7 @@
             />
             <div class="service-body">
               <h3 class="service-heading">Paint Protection Film</h3>
+              <p class="service-price">Custom Quote</p>
               <ul class="features-list">
                 <li>Takes the rock chips so your paint doesn&rsquo;t</li>
                 <li>Self-healing &mdash; light scratches vanish with heat</li>
@@ -413,6 +532,7 @@
             />
             <div class="service-body">
               <h3 class="service-heading">Ceramic Coating</h3>
+              <p class="service-price">From $1,249.99</p>
               <ul class="features-list">
                 <li>A hard, glossy shield that lasts for years</li>
                 <li>Water and dirt bead up and rinse right off</li>
@@ -432,6 +552,7 @@
             />
             <div class="service-body">
               <h3 class="service-heading">Detailing</h3>
+              <p class="service-price">From $149.99</p>
               <ul class="features-list">
                 <li>Interior deep clean and exterior restoration</li>
                 <li>Removes swirls, oxidation, and buildup</li>
@@ -451,6 +572,7 @@
             />
             <div class="service-body">
               <h3 class="service-heading">Vinyl Wraps</h3>
+              <p class="service-price">Custom Quote</p>
               <ul class="features-list">
                 <li>Full color changes and accent wraps</li>
                 <li>Reversible &mdash; the factory paint stays protected</li>
@@ -469,6 +591,7 @@
             />
             <div class="service-body">
               <h3 class="service-heading">Custom Builds</h3>
+              <p class="service-price">Custom Quote</p>
               <ul class="features-list">
                 <li>Lift, leveling, wheels, and tires</li>
                 <li>Lighting, audio, exhaust, and off-road armor</li>
@@ -872,6 +995,40 @@
         <div class="brand-divider brand-divider--bottom" aria-hidden="true"></div>
       </section>
 
+      <!-- ===== financing ===== -->
+      <section class="hp-band hp-band--dark" id="financing">
+        <div class="hp-inner">
+          <p class="hp-kicker">Flexible Payment</p>
+          <h2 class="hp-h2 hp-h2--dark">Financing Available</h2>
+          <p class="hp-lead">
+            Big jobs don&rsquo;t have to happen all at once. Paint protection
+            film, ceramic coating, wraps, and full custom builds can all be
+            financed &mdash; ask for terms when you request your quote.
+          </p>
+          <ul class="finance-list">
+            <li>
+              <ion-icon name="shield-outline"></ion-icon>
+              <span>Paint Protection Film</span>
+            </li>
+            <li>
+              <ion-icon name="sparkles-outline"></ion-icon>
+              <span>Ceramic Coating</span>
+            </li>
+            <li>
+              <ion-icon name="color-palette-outline"></ion-icon>
+              <span>Vinyl Wraps &amp; Graphics</span>
+            </li>
+            <li>
+              <ion-icon name="construct-outline"></ion-icon>
+              <span>Custom Truck Builds</span>
+            </li>
+          </ul>
+          <a class="center" href="https://app.alpha.circuitsuite.net/bookings/wot">
+            <button class="btn">Ask About Financing &rarr;</button>
+          </a>
+        </div>
+      </section>
+
       <!-- ===== DEMO: fleet & commercial ===== -->
       <section class="hp-band hp-band--light" id="fleet">
         <div class="hp-inner fleet-wrap">
@@ -934,8 +1091,160 @@
         </div>
       </section>
 
+      <!-- ===== guides & tips ===== -->
+      <section class="hp-band hp-band--dark" id="guides">
+        <div class="hp-inner">
+          <p class="hp-kicker">Learn</p>
+          <h2 class="hp-h2 hp-h2--dark">Guides &amp; Tips</h2>
+          <p class="hp-lead">
+            A few honest answers to the questions we get asked most before
+            someone books.
+          </p>
+          <div class="tips-grid">
+            <div class="tip-card">
+              <h3>PPF vs. Ceramic Coating &mdash; Which Do You Need?</h3>
+              <p>
+                They solve different problems: PPF is a physical barrier
+                against rock chips, while ceramic coating is a chemical layer
+                for gloss, UV protection, and easier washing. Many owners run
+                PPF on the front end and ceramic over the whole vehicle.
+              </p>
+              <a href="ceramic.html#ceramic-faq">More on Ceramic Coating &rarr;</a>
+            </div>
+            <div class="tip-card">
+              <h3>Is Ceramic Coating Worth It Over Wax?</h3>
+              <p>
+                Wax lasts weeks. A quality ceramic coating lasts years, adds
+                real gloss and chemical resistance, and makes every wash
+                faster because dirt and water release instead of sticking.
+              </p>
+              <a href="ceramic.html#ceramic-faq">More on Ceramic Coating &rarr;</a>
+            </div>
+            <div class="tip-card">
+              <h3>What Is Paint Correction?</h3>
+              <p>
+                Paint correction is machine polishing that removes swirl
+                marks and oxidation to restore gloss. It&rsquo;s a separate
+                add-on from a standard detail, and the right first step
+                before a ceramic coating.
+              </p>
+              <a href="details.html#detail-faq">More on Detailing &rarr;</a>
+            </div>
+            <div class="tip-card">
+              <h3>Window Tint Laws in Michigan</h3>
+              <p>
+                Michigan allows a non-reflective strip on the top 4 inches of
+                the windshield and front side windows; rear windows can be
+                any darkness. We confirm the legal shade for your specific
+                vehicle before we install.
+              </p>
+              <a href="tint.html#tint-faq">More on Window Tint &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== homepage FAQ ===== -->
+      <section class="hp-band hp-band--light" id="faq">
+        <div class="hp-inner">
+          <p class="hp-kicker">Common Questions</p>
+          <h2 class="hp-h2 hp-h2--light">Frequently Asked Questions</h2>
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary>Is window tint legal in Michigan?</summary>
+              <div class="faq-a">
+                Michigan allows a non-reflective strip on the top 4 inches of
+                the windshield and front side windows; rear side and back
+                windows can be any darkness. We confirm the legal shade for
+                your specific vehicle before we install.
+                <br />
+                <a href="tint.html#tint-faq">More window tint questions &rarr;</a>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>How much does paint protection film cost?</summary>
+              <div class="faq-a">
+                It depends on coverage and vehicle. Partial-front packages
+                start lower; full-vehicle coverage is the largest investment.
+                We give a firm quote after seeing the vehicle, and financing
+                is available.
+                <br />
+                <a href="ppf.html#ppf-faq">More PPF questions &rarr;</a>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>Is ceramic coating worth it over a good wax?</summary>
+              <div class="faq-a">
+                Yes for most owners. Wax lasts weeks; a ceramic coating lasts
+                years, adds real gloss and chemical resistance, and makes
+                every wash faster because dirt and water release instead of
+                sticking.
+                <br />
+                <a href="ceramic.html#ceramic-faq"
+                  >More ceramic coating questions &rarr;</a
+                >
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                Do you charge extra for pet hair or heavy stains on a detail?
+              </summary>
+              <div class="faq-a">
+                Our listed detailing prices are estimates. Heavy pet hair,
+                deep stains, or excessive dirt add time, so we confirm the
+                final price when we see the vehicle.
+                <br />
+                <a href="details.html#detail-faq">More detailing questions &rarr;</a>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>Will a wrap damage my factory paint?</summary>
+              <div class="faq-a">
+                No. On factory paint in good condition, wrap film removes
+                cleanly and actually protects the paint underneath from UV
+                and light abrasion while it&rsquo;s on.
+                <br />
+                <a href="wraps.html#wrap-faq">More wrap questions &rarr;</a>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>Can I finance a custom build?</summary>
+              <div class="faq-a">
+                Yes. Builds are often several thousand dollars or more, so we
+                offer financing to spread the cost. Ask for terms with your
+                quote.
+                <br />
+                <a href="custom.html#build-faq">More custom build questions &rarr;</a>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>Do you offer financing on every service?</summary>
+              <div class="faq-a">
+                Yes &mdash; tint, PPF, ceramic coating, wraps, detailing, and
+                full builds can all be financed. Ask for terms when you
+                request your quote.
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
       <!-- ===== DEMO: on-page quick quote ===== -->
-      <section class="hp-band hp-band--dark" id="quote">
+      <section class="hp-band hp-band--dark hp-band--video" id="quote">
+        <video
+          class="back-video"
+          autoplay
+          loop
+          muted
+          playsinline
+          preload="auto"
+          aria-hidden="true"
+        >
+          <source
+            src="videos/getquote_sameformat_web_720p.mp4"
+            type="video/mp4"
+          />
+        </video>
         <div class="hp-inner">
           <p class="hp-kicker">Get Started</p>
           <h2 class="hp-h2 hp-h2--dark">Get Your Quote</h2>
@@ -1118,9 +1427,11 @@
               <h3 class="footer-heading">Explore</h3>
               <ul class="footer-links">
                 <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
                 <li><a href="index.html#gallery">Gallery</a></li>
                 <li><a href="index.html#testimonial">Reviews</a></li>
                 <li><a href="index.html#fleet">Fleet &amp; Commercial</a></li>
+                <li><a href="index.html#faq">FAQ</a></li>
                 <li><a href="contact.html">Contact</a></li>
               </ul>
             </div>
