@@ -2320,6 +2320,38 @@ main .text-box {
   margin-top: 0.15rem;
 }
 
+/* Google rating badge on a light band (about section). Two-class selectors
+   so the left-aligned margin beats the mobile .g-badge centering rule. */
+.g-badge.g-badge--light {
+  margin: 0 0 2rem;
+  background: #fff;
+  border-color: rgba(32, 28, 25, 0.14);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: 0 8px 22px -14px rgba(0, 0, 0, 0.35);
+}
+.g-badge.g-badge--light:hover,
+.g-badge.g-badge--light:focus-visible {
+  background: #fff;
+  border-color: rgba(32, 28, 25, 0.3);
+}
+.g-badge--light .g-badge-score {
+  color: #201c19;
+}
+.g-badge--light .g-badge-divider {
+  background: rgba(32, 28, 25, 0.2);
+}
+.g-badge--light .g-badge-count {
+  color: #555;
+}
+.g-badge--light .g-badge-chevron {
+  color: rgba(32, 28, 25, 0.4);
+}
+.g-badge--light:hover .g-badge-chevron,
+.g-badge--light:focus-visible .g-badge-chevron {
+  color: #201c19;
+}
+
 
 /* --- financing band (homepage) --- */
 .finance-list {
@@ -2595,10 +2627,10 @@ main .text-box {
 
 /* --- CS vs XR explainer (above the price cards) --- */
 .csxr-note {
-  max-width: 70rem;
+  max-width: 100rem;
   margin: 0 auto 2.4rem;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
 .csxr-card {
@@ -3126,6 +3158,35 @@ main .text-box {
   color: #4a423b;
   max-width: 34ch;
   margin: 0 auto 0.9rem;
+}
+
+/* Smaller expandable price cards (tint.html). Scoped to the --expandable
+   modifier so the shared .price-card on ppf/custom/details is untouched.
+   The narrower container is what shrinks each card; the rest tightens
+   the spacing and type inside to match. */
+.price-cards-container:has(> .price-card--expandable) {
+  max-width: 860px;
+  gap: 2rem;
+}
+.price-card.price-card--expandable {
+  padding: 1.8rem;
+  border-radius: 14px;
+}
+.price-card--expandable .price-card-image {
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+.price-card--expandable .price-card-title {
+  font-size: 1.7rem;
+  padding: 0.3rem 0 0.5rem;
+}
+.price-card--expandable .price-card-description {
+  font-size: 1.15rem;
+  margin-bottom: 1rem;
+}
+.price-card--expandable .price-card-toggle-hint {
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
 }
 
 /* Descriptions under an expandable price card's individual options

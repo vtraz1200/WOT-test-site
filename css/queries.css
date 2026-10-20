@@ -477,6 +477,13 @@
     max-width: 50rem;
   }
 
+  /* Single-column expandable cards (tint.html) stay narrower too — this
+     also stops style.css's 860px :has() rule from out-ranking the 50rem
+     above. */
+  .price-cards-container:has(> .price-card--expandable) {
+    max-width: 42rem;
+  }
+
   /* Trim the generous full-desktop whitespace inside each price card
      (tint/custom/ppf/details) at this width. */
   .price-card {
@@ -1197,9 +1204,9 @@
 }
 
 /*******************************************/
-/* BELOW 620px */
+/* BELOW 900px */
 /*******************************************/
-@media (max-width: 620px) {
+@media (max-width: 900px) {
   .csxr-note {
     grid-template-columns: 1fr;
   }
