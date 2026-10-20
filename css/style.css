@@ -2968,12 +2968,12 @@ main .text-box {
 
 /* Center + constrain the grid so it looks intentional */
 .price-cards-container {
-  max-width: 1100px;
+  max-width: 860px;
   margin: 3.2rem auto 0;
 
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 2.8rem;
+  gap: 2rem;
   align-items: start;
 }
 
@@ -2985,9 +2985,9 @@ main .text-box {
   box-sizing: border-box;
 
   text-align: center;
-  padding: 2.6rem;
+  padding: 1.8rem;
   background-color: #e9ecef;
-  border-radius: 18px;
+  border-radius: 14px;
   border: solid 2px rgba(126, 16, 11, 0.35);
 
   box-shadow: 0 2.2rem 4.6rem rgba(0, 0, 0, 0.18);
@@ -3034,19 +3034,19 @@ main .text-box {
   aspect-ratio: 3 / 2;
   object-fit: cover;
 
-  border-radius: 16px;
+  border-radius: 12px;
   border: solid 2px rgba(126, 16, 11, 0.35);
   box-shadow: 0 1.4rem 2.8rem rgba(0, 0, 0, 0.14);
 
-  margin: 0 auto 1.4rem;
+  margin: 0 auto 1rem;
   display: block;
 }
 
 /* Title */
 .price-card-title {
   color: #7e100b;
-  font-size: 2rem;
-  padding: 0.6rem 0 0.8rem;
+  font-size: 1.7rem;
+  padding: 0.3rem 0 0.5rem;
 }
 
 /* Coverage-scope tag (no dollar amount — used where pricing needs a quote) */
@@ -3064,10 +3064,10 @@ main .text-box {
 /* Description: readable, not too wide */
 .price-card-description {
   color: #333;
-  font-size: 1.3rem;
+  font-size: 1.15rem;
   line-height: 1.6;
   max-width: 48ch;
-  margin: 0 auto 1.6rem;
+  margin: 0 auto 1rem;
   padding: 0;
 }
 
@@ -3090,9 +3090,9 @@ main .text-box {
   align-items: center;
   gap: 0.4rem;
   color: #7e100b;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 700;
-  margin-bottom: 1.4rem;
+  margin-bottom: 0.8rem;
 }
 
 .price-card-toggle-hint .arrow {
@@ -3158,35 +3158,6 @@ main .text-box {
   color: #4a423b;
   max-width: 34ch;
   margin: 0 auto 0.9rem;
-}
-
-/* Smaller expandable price cards (tint.html). Scoped to the --expandable
-   modifier so the shared .price-card on ppf/custom/details is untouched.
-   The narrower container is what shrinks each card; the rest tightens
-   the spacing and type inside to match. */
-.price-cards-container:has(> .price-card--expandable) {
-  max-width: 860px;
-  gap: 2rem;
-}
-.price-card.price-card--expandable {
-  padding: 1.8rem;
-  border-radius: 14px;
-}
-.price-card--expandable .price-card-image {
-  border-radius: 12px;
-  margin-bottom: 1rem;
-}
-.price-card--expandable .price-card-title {
-  font-size: 1.7rem;
-  padding: 0.3rem 0 0.5rem;
-}
-.price-card--expandable .price-card-description {
-  font-size: 1.15rem;
-  margin-bottom: 1rem;
-}
-.price-card--expandable .price-card-toggle-hint {
-  font-size: 1.1rem;
-  margin-bottom: 0.8rem;
 }
 
 /* Descriptions under an expandable price card's individual options

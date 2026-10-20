@@ -474,20 +474,18 @@
 
   .price-cards-container {
     grid-template-columns: 1fr;
-    max-width: 50rem;
+    max-width: 42rem;
   }
 
-  /* Single-column expandable cards (tint.html) stay narrower too — this
-     also stops style.css's 860px :has() rule from out-ranking the 50rem
-     above. */
-  .price-cards-container:has(> .price-card--expandable) {
-    max-width: 42rem;
+  /* Spotlight cards (ceramic/details) keep their wider single column. */
+  .price-cards-container--feature {
+    max-width: 50rem;
   }
 
   /* Trim the generous full-desktop whitespace inside each price card
      (tint/custom/ppf/details) at this width. */
   .price-card {
-    padding: 2rem;
+    padding: 1.8rem;
   }
 
   /* height removed — see note near the 75em breakpoint's
