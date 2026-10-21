@@ -1897,3 +1897,94 @@
     display: none;
   }
 }
+
+/*******************************************/
+/* HERO OVERLAP FIX — PHONES (all pages) */
+/*******************************************/
+/* Every hero is a fixed height with .text-box absolutely centered in it.
+   On phones the copy (Google badge, eyebrow, title, three stacked buttons)
+   is taller than the hero, so centering pushed its top up under the logo
+   and menu icon. Here the copy flows normally, starting below the header,
+   and the hero grows to fit it.
+   The header is taken out of flow with position:absolute so the hero's
+   height doesn't change when the sticky nav pins it (position:fixed) on
+   scroll — otherwise the page would jump by the header's height. The
+   :where() keeps this selector at the same weight as .header, so the
+   heavier `.sticky .header` rule in style.css still wins once scrolled. */
+@media (max-width: 740px) {
+  .section-hero,
+  .section-hero-tint,
+  .section-hero-ppf,
+  .section-hero-ceramic,
+  .section-hero-details,
+  .section-hero-wraps,
+  .section-hero-custom {
+    height: auto;
+    min-height: 640px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* 4.2rem header + breathing room */
+    padding: 6rem 0 3.2rem;
+  }
+
+  :where(
+      .section-hero,
+      .section-hero-tint,
+      .section-hero-ppf,
+      .section-hero-ceramic,
+      .section-hero-details,
+      .section-hero-wraps,
+      .section-hero-custom
+    )
+    > .header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+  }
+
+  main .text-box {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    z-index: 2;
+  }
+
+  /* FULL-HERO SHADE — on phones the centered copy spans nearly the whole
+     hero, so the desktop's localized oval scrim (.hero2::before) left its
+     edges visible around the badge and buttons. Swap it for one even shade
+     over the entire hero: darker at the top (badge / eyebrow) and bottom
+     (buttons), lighter through the middle so the already-dimmed video
+     still reads. Replaces tint.html's flat 60% overlay and the empty
+     ::before on ppf/ceramic/details/custom so all heroes match.
+     Layers: video 0 → shade 1 → copy 2 → header 3. */
+  .hero2::before {
+    display: none;
+  }
+
+  .section-hero::before,
+  .section-hero-tint::before,
+  .section-hero-ppf::before,
+  .section-hero-ceramic::before,
+  .section-hero-details::before,
+  .section-hero-wraps::before,
+  .section-hero-custom::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.45) 0%,
+      rgba(0, 0, 0, 0.25) 35%,
+      rgba(0, 0, 0, 0.25) 60%,
+      rgba(0, 0, 0, 0.5) 100%
+    );
+    animation: none;
+  }
+}
