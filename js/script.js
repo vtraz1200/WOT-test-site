@@ -750,6 +750,67 @@ document
   });
 
 //////////////////////////////////////////////////////////
+// FORM SUBMISSIONS (Web3Forms)
+// Sends every quote/contact form in the background so visitors stay on the
+// site, then swaps the form for a thank-you message. Without JS the forms
+// still post normally to Web3Forms (its own success page).
+
+const PHONE_LINK = '<a href="tel:+2487955751">(248)&nbsp;795-5751</a>';
+
+document.querySelectorAll('form[action*="web3forms.com"]').forEach((form) => {
+  const btn = form.querySelector('[type="submit"]');
+  const status = document.createElement("div");
+  status.className = "form-status";
+  status.setAttribute("role", "status");
+  status.tabIndex = -1;
+  status.hidden = true;
+  form.append(status);
+
+  const show = (type, html) => {
+    status.className = `form-status form-status--${type}`;
+    status.innerHTML = html;
+    status.hidden = false;
+    status.focus({ preventScroll: true });
+    status.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  };
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const label = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = "Sending…";
+    status.hidden = true;
+
+    try {
+      const res = await fetch(form.action, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: new FormData(form),
+      });
+      const data = await res.json();
+      if (!res.ok || !data.success) throw new Error(data.message);
+
+      form.reset();
+      form.classList.add("is-sent");
+      show(
+        "success",
+        `<strong>Thanks &mdash; your request was sent!</strong>
+         <span>We&rsquo;ll be in touch soon. Need an answer faster? Call or text ${PHONE_LINK}.</span>`
+      );
+    } catch {
+      show(
+        "error",
+        `<strong>Sorry, your request didn&rsquo;t go through.</strong>
+         <span>Please try again, or call or text us at ${PHONE_LINK}.</span>`
+      );
+    } finally {
+      btn.disabled = false;
+      btn.textContent = label;
+    }
+  });
+});
+
+//////////////////////////////////////////////////////////
 // FLEXBOX GAP SAFARI FIX
 
 function checkFlexGap() {
