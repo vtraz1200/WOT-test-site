@@ -3101,6 +3101,17 @@ form.is-sent > :not(.form-status) {
   align-items: start;
 }
 
+/* Odd number of cards: center the last one under the 2-column grid at
+   normal card width (one column = half the row minus half the 2rem gap).
+   Single-column breakpoints reset the width in queries.css. Spotlight
+   (--feature) grids are already one column, so they're excluded. */
+.price-cards-container:not(.price-cards-container--feature)
+  > .price-card:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: calc(50% - 1rem);
+}
+
 /* Card looks more "designed" and consistent */
 .price-card {
   position: relative;

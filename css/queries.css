@@ -477,6 +477,12 @@
     max-width: 42rem;
   }
 
+  /* one column now — the odd last card goes back to full width */
+  .price-cards-container:not(.price-cards-container--feature)
+    > .price-card:last-child:nth-child(odd) {
+    width: 100%;
+  }
+
   /* Spotlight cards (ceramic/details) keep their wider single column. */
   .price-cards-container--feature {
     max-width: 50rem;
