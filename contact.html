@@ -136,7 +136,6 @@
           class="form"
           action="https://api.web3forms.com/submit"
           method="POST"
-          autocomplete="off"
         >
           <input
             type="hidden"
@@ -155,7 +154,7 @@
                 <h2 class="footer-card-title-address">
                   <a
                     class="footer-card-title-address-link"
-                    href=" https://www.google.com/maps?gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MggIAhAAGBYYHjIICAMQABgWGB4yCAgEEAAYFhgeMgYIBRBFGDwyBggGEEUYPDIGCAcQRRg80gEINTk3NGowajeoAgCwAgA&um=1&ie=UTF-8&fb=1&gl=us&sa=X&geocode=KUW1oqH_7TiIMSAUQMx7pxPK&daddr=187+W+Olentangy+St+%23+D,+Powell,+OH+43065"
+                    href="https://www.google.com/maps/dir/?api=1&destination=677+S+Lapeer+Rd,+Lake+Orion,+MI+48362"
                   >
                     677 S Lapeer Rd, Lake Orion, MI 48362
                   </a>
@@ -239,13 +238,20 @@
               </div>
 
               <div class="footer-card-info">
+                <p class="contact-form-note">* Required</p>
+
+                <h3 class="footer-card-info-title">Your contact info</h3>
+
                 <div class="footer-card-firlas-name-cont">
                   <input
                     name="first_name"
                     class="footer-input-form-card"
                     type="text"
                     id="first_name"
-                    placeholder="First Name"
+                    placeholder="First Name *"
+                    aria-label="First Name"
+                    autocomplete="given-name"
+                    required
                   />
                   <input
                     name="last_name"
@@ -253,24 +259,33 @@
                     type="text"
                     id="last_name"
                     placeholder="Last Name"
+                    aria-label="Last Name"
+                    autocomplete="family-name"
                   />
                 </div>
 
-                <input
-                  name="phone_number"
-                  class="footer-input-form-card-two"
-                  type="tel"
-                  id="phone"
-                  placeholder="Phone Number"
-                />
-
-                <input
-                  name="email"
-                  class="footer-input-form-card-two"
-                  type="email"
-                  id="email"
-                  placeholder="Email"
-                />
+                <div class="footer-card-firlas-name-cont">
+                  <input
+                    name="phone_number"
+                    class="footer-input-form-card"
+                    type="tel"
+                    id="phone"
+                    placeholder="Phone Number *"
+                    aria-label="Phone Number"
+                    autocomplete="tel"
+                    required
+                  />
+                  <input
+                    name="email"
+                    class="footer-input-form-card"
+                    type="email"
+                    id="email"
+                    placeholder="Email *"
+                    aria-label="Email"
+                    autocomplete="email"
+                    required
+                  />
+                </div>
 
                 <h3 class="footer-card-info-title">
                   Tell us about your vehicle
@@ -278,44 +293,164 @@
 
                 <div class="footer-card-vehicle-cont">
                   <input
+                    name="year"
+                    class="footer-input-form-card"
+                    type="text"
+                    id="year"
+                    placeholder="Year *"
+                    aria-label="Year"
+                    inputmode="numeric"
+                    maxlength="4"
+                    pattern="[0-9]{4}"
+                    title="4-digit year, like 2024"
+                    required
+                  />
+                  <input
                     name="vehicle_make"
                     class="footer-input-form-card"
                     type="text"
                     id="vehicle_make"
-                    placeholder="Vehicle Make"
+                    placeholder="Make *"
+                    aria-label="Make"
+                    required
                   />
                   <input
                     name="model"
                     class="footer-input-form-card"
                     type="text"
                     id="model"
-                    placeholder="Model"
+                    placeholder="Model *"
+                    aria-label="Model"
+                    required
                   />
+                </div>
+
+                <div class="footer-card-vehicle-cont">
                   <input
-                    name="year"
+                    name="vehicle_trim"
                     class="footer-input-form-card"
                     type="text"
-                    inputmode="numeric"
-                    maxlength="4"
-                    id="year"
-                    placeholder="Year"
+                    id="vehicle_trim"
+                    placeholder="Trim (optional)"
+                    aria-label="Trim (optional)"
                   />
+                  <input
+                    name="vehicle_color"
+                    class="footer-input-form-card"
+                    type="text"
+                    id="vehicle_color"
+                    placeholder="Color (optional)"
+                    aria-label="Color (optional)"
+                  />
+                  <select
+                    name="vehicle_type"
+                    id="vehicle_type"
+                    class="footer-input-form-card-two contact-select"
+                    aria-label="Vehicle type"
+                  >
+                    <option value="">Vehicle type</option>
+                    <option>Coupe / Sedan</option>
+                    <option>Crossover / Small SUV</option>
+                    <option>Full-size SUV</option>
+                    <option>Pickup Truck</option>
+                    <option>Van</option>
+                    <option>Other</option>
+                  </select>
                 </div>
 
                 <h3 class="footer-card-info-title">
                   What would you like to have done?
                 </h3>
 
+                <div class="contact-chips">
+                  <label class="contact-chip">
+                    <input type="checkbox" name="Service: Window Tint" value="Yes" />
+                    <span>Window Tint</span>
+                  </label>
+                  <label class="contact-chip">
+                    <input type="checkbox" name="Service: Paint Protection Film" value="Yes" />
+                    <span>Paint Protection Film</span>
+                  </label>
+                  <label class="contact-chip">
+                    <input type="checkbox" name="Service: Ceramic Coating" value="Yes" />
+                    <span>Ceramic Coating</span>
+                  </label>
+                  <label class="contact-chip">
+                    <input type="checkbox" name="Service: Vinyl Wrap" value="Yes" />
+                    <span>Vinyl Wrap</span>
+                  </label>
+                  <label class="contact-chip">
+                    <input type="checkbox" name="Service: Detailing" value="Yes" />
+                    <span>Detailing</span>
+                  </label>
+                  <label class="contact-chip">
+                    <input type="checkbox" name="Service: Custom Build / Accessories" value="Yes" />
+                    <span>Custom Build / Accessories</span>
+                  </label>
+                  <label class="contact-chip">
+                    <input type="checkbox" name="Service: Fleet / Commercial" value="Yes" />
+                    <span>Fleet / Commercial</span>
+                  </label>
+                  <label class="contact-chip">
+                    <input type="checkbox" name="Service: Not sure yet" value="Yes" />
+                    <span>Not sure yet</span>
+                  </label>
+                </div>
+
                 <textarea
                   name="Message"
-                  autocomplete="off"
-                  placeholder="Message"
+                  placeholder="Anything else we should know? Shade or coverage you want, existing tint or film to remove, damage, questions..."
+                  aria-label="Anything else we should know?"
                   class="footer-input-form-message"
-                  rows="6"
+                  rows="5"
                 ></textarea>
+
+                <h3 class="footer-card-info-title">Timing &amp; follow-up</h3>
+
+                <div class="footer-card-firlas-name-cont">
+                  <select
+                    name="timeline"
+                    id="timeline"
+                    class="footer-input-form-card-two contact-select"
+                    aria-label="When do you want this done?"
+                  >
+                    <option value="">When do you want this done?</option>
+                    <option>As soon as possible</option>
+                    <option>Within 2 weeks</option>
+                    <option>Within a month</option>
+                    <option>Just getting pricing</option>
+                  </select>
+                  <select
+                    name="preferred_contact"
+                    id="preferred_contact"
+                    class="footer-input-form-card-two contact-select"
+                    aria-label="Best way to reach you?"
+                  >
+                    <option value="">Best way to reach you?</option>
+                    <option>Call</option>
+                    <option>Text</option>
+                    <option>Email</option>
+                  </select>
+                </div>
+
+                <select
+                  name="heard_about"
+                  id="heard_about"
+                  class="footer-input-form-card-two contact-select"
+                  aria-label="How did you hear about us?"
+                >
+                  <option value="">How did you hear about us?</option>
+                  <option>Google search</option>
+                  <option>Google review</option>
+                  <option>Social media</option>
+                  <option>Friend or family</option>
+                  <option>Saw our work on the road</option>
+                  <option>Repeat customer</option>
+                  <option>Other</option>
+                </select>
               </div>
               <button type="submit" class="btn-submit-block btn-block">
-                Submit
+                Get My Quote
               </button>
             </div>
           </div>
