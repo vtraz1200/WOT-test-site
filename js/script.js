@@ -456,13 +456,41 @@ if (galleryContainer && lightbox && lightboxImg) {
 //////////////////////////////////////////////////////////
 // CAROUSEL ANIMATION (YOUR ORIGINAL FEATURE)
 
-document.querySelectorAll(".carousel").forEach((carousel) => {
+// Waits for a track's images so their real widths can be measured (logos
+// size to their natural width and are 0px wide until loaded).
+const imagesLoaded = (track) =>
+  Promise.all(
+    Array.from(track.querySelectorAll("img")).map((img) =>
+      img.complete
+        ? null
+        : new Promise((done) => {
+            img.addEventListener("load", done, { once: true });
+            img.addEventListener("error", done, { once: true });
+          })
+    )
+  );
+
+document.querySelectorAll(".carousel").forEach(async (carousel) => {
   const track = carousel.querySelector(".carousel-track");
   if (!track) return;
 
-  const images = Array.from(track.children);
-  images.forEach((img) => track.appendChild(img.cloneNode(true)));
+  await imagesLoaded(track);
 
+  // The loop works by sliding one full "set" of items and snapping back,
+  // so one set must be at least as wide as the screen — otherwise a short
+  // strip (e.g. a few gallery photos on a wide monitor) runs out and shows
+  // a blank gap. Repeat the originals until one set covers the widest the
+  // window can get (screen.width covers maximizing later), then double it.
+  const originals = Array.from(track.children);
+  const minSetWidth = Math.max(carousel.clientWidth, window.screen.width);
+  for (let i = 0; i < 10 && track.scrollWidth < minSetWidth; i++) {
+    originals.forEach((item) => track.appendChild(item.cloneNode(true)));
+  }
+  Array.from(track.children).forEach((item) =>
+    track.appendChild(item.cloneNode(true))
+  );
+
+  const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
   let position = 0;
   const speed = 1.5;
   const direction = carousel.classList.contains("carousel--reverse") ? 1 : -1;
@@ -470,7 +498,8 @@ document.querySelectorAll(".carousel").forEach((carousel) => {
   function animate() {
     position += speed * direction;
 
-    const totalWidth = track.scrollWidth / 2;
+    // one set = half the track plus half a gap (the halves share one gap)
+    const totalWidth = (track.scrollWidth + gap) / 2;
 
     // Smooth wrap (no jump, no blank)
     if (direction === -1 && position <= -totalWidth) {

@@ -323,22 +323,6 @@ main .text-box {
   text-shadow: 0 2px 16px rgba(0, 0, 0, 0.55);
 }
 
-/* localized scrim so the lighter sub-copy and trust row stay legible over
-   the darkest parts of the background photo */
-.hero2::before {
-  content: "";
-  position: absolute;
-  inset: -3.5rem -12vw -3rem -10vw;
-  z-index: -1;
-  background: radial-gradient(
-    130% 120% at 32% 45%,
-    rgba(0, 0, 0, 0.72) 0%,
-    rgba(0, 0, 0, 0.52) 42%,
-    rgba(0, 0, 0, 0) 100%
-  );
-  pointer-events: none;
-}
-
 
 .hero2-eyebrow {
   font-family: "Roboto", sans-serif;
@@ -958,6 +942,25 @@ main .text-box {
   gap: 1.6rem;
 }
 
+/* Same soft edge-fade as the brands strip (.partnerships-container), so
+   photos dissolve at the sides instead of hard-clipping. */
+.gallery-container .carousel {
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0,
+    #000 6%,
+    #000 94%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0,
+    #000 6%,
+    #000 94%,
+    transparent 100%
+  );
+}
+
 /* .carousel img (sized/cropped for the Tintcar photo strip elsewhere
    on the site) is a class+tag selector, more specific than the single
    class on .gallery-images, so it would otherwise win the cascade
@@ -1144,43 +1147,13 @@ main .text-box {
   transition: 0.3s;
   text-align: center;
   margin: 0 auto;
-
-  /* Tonal-by-service panel — sits inside .slide, so the JS's translateX
-     carries it along as the slider moves. Every tone below is the same
-     black → oxblood ramp at a different mix, not a new hue, to stay
-     inside the site's existing palette. */
-  background: linear-gradient(135deg, #171412 0%, #2a1815 100%);
-  border: 1px solid rgba(255, 82, 72, 0.18);
-  box-shadow: 0 1.6rem 3.2rem rgba(0, 0, 0, 0.25);
-}
-
-/* Window Tint */
-.testimonials-box.tone-tint {
-  background: linear-gradient(135deg, #1a1210 0%, #341410 100%);
-}
-/* Tint & Mods */
-.testimonials-box.tone-mods {
-  background: linear-gradient(135deg, #1d1210 0%, #40150f 100%);
-}
-/* PPF & Tint — the richest film combo gets the deepest red */
-.testimonials-box.tone-ppf {
-  background: linear-gradient(135deg, #220f0c 0%, #5a1610 100%);
-}
-/* Leveling & Tires — a build/mod job, kept closest to plain charcoal */
-.testimonials-box.tone-build {
-  background: linear-gradient(135deg, #141110 0%, #211714 100%);
-}
-/* Repeat Customer — the strongest trust signal gets the boldest glow */
-.testimonials-box.tone-repeat {
-  background: linear-gradient(135deg, #270f0c 0%, #7e100b 100%);
-  border-color: rgba(255, 82, 72, 0.35);
 }
 
 .testimonials-name {
   font-weight: 700;
   font-size: 2.2rem;
   font-family: "merriweather";
-  color: #ff8078;
+  color: #7e100b;
   padding-top: 0.8rem;
 }
 
@@ -1188,21 +1161,16 @@ main .text-box {
   align-items: center;
 }
 
-.testimonials-box .rev-tag {
-  color: #ffd9d5;
-  background: rgba(255, 82, 72, 0.22);
-}
-
 .testimonials-review {
   font-size: 1.5rem;
   padding-top: 1.2rem;
   font-family: "merriweather";
   line-height: 1.4;
-  color: rgba(242, 237, 228, 0.92);
+  color: #333;
 }
 .test-parenth {
   font-size: 1.8rem;
-  color: #ff5248;
+  color: #7e100b;
 }
 
 /* SLIDER */
@@ -1695,6 +1663,122 @@ main .text-box {
 .footer-social {
   display: flex;
   gap: 0.8rem;
+}
+
+/* --- BBB seal: footer card (every page) --- */
+.footer-bbb {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  width: fit-content;
+  max-width: 100%;
+  margin-top: 1.4rem;
+  padding: 0.55rem 1.1rem 0.55rem 0.55rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(242, 242, 242, 0.14);
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+.footer-bbb:hover {
+  border-color: rgba(242, 242, 242, 0.3);
+  background: rgba(255, 255, 255, 0.07);
+}
+.footer-bbb-text {
+  display: grid;
+  gap: 0.2rem;
+  text-align: left;
+}
+.footer-bbb-text strong {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #fff;
+}
+.footer-bbb-text a {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #ff8078;
+  text-decoration: none;
+}
+.footer-bbb-text a:hover,
+.footer-bbb-text a:focus-visible {
+  color: #fff;
+}
+
+/* --- BBB seal: about-section card, paired with the Google badge --- */
+.trust-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.2rem;
+  margin: 0 0 2rem;
+}
+.trust-row .g-badge.g-badge--light {
+  margin: 0;
+}
+.bbb-card {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.5rem 1.2rem 0.5rem 0.5rem;
+  border-radius: 1rem;
+  background: #fff;
+  border: 1px solid rgba(32, 28, 25, 0.14);
+  box-shadow: 0 8px 22px -14px rgba(0, 0, 0, 0.35);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+.bbb-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(0, 90, 140, 0.35);
+  box-shadow: 0 14px 28px -16px rgba(0, 40, 90, 0.45);
+}
+.bbb-card-text {
+  display: grid;
+  gap: 0.2rem;
+}
+.bbb-card-text strong {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #201c19;
+}
+.bbb-card-text a {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: #005a8c; /* BBB blue */
+  text-decoration: none;
+}
+.bbb-card-text a:hover,
+.bbb-card-text a:focus-visible {
+  text-decoration: underline;
+}
+
+/* the seal itself (both cards): 160x144 source shown at 64px tall */
+.footer-bbb .ruvtbul,
+.bbb-card .ruvtbul {
+  flex: none;
+  display: block;
+  line-height: 0;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+.footer-bbb .ruvtbul img,
+.bbb-card .ruvtbul img {
+  display: block;
+  height: 64px;
+  width: auto;
+}
+.footer-bbb .ruvtbul:hover,
+.bbb-card .ruvtbul:hover {
+  transform: scale(1.04);
 }
 .footer-social-link {
   display: flex;
@@ -2637,7 +2721,8 @@ main .text-box {
 }
 /* the native option list renders on a light system menu — force dark text
    so it stays readable when the dropdown is open */
-.qq-select option {
+.qq-select option,
+.tint-quote-select option {
   color: #201c19;
   background: #fff;
 }
@@ -4844,4 +4929,111 @@ input[type="number"]::-webkit-outer-spin-button {
 .info-slider-custom-paragraph::first-line {
   font-weight: 600;
   color: #333;
+}
+
+
+/***********************************HERO SHADE (all pages)***********************************/
+/* One shade over the whole hero, replacing the old oval scrim behind the
+   copy (.hero2::before), whose edges cut across the logo and nav as the
+   page narrowed, and the per-page flat overlays on tint/ceramic/custom.
+   - left → right: darkest behind the left-aligned copy, fading so the
+     video still shows on the right
+   - top band: keeps the logo, nav and phone number readable over any frame
+   Phones (≤740px, centered copy) swap in a top/bottom shade in queries.css.
+   Placed at the end of the file so it overrides the per-page ::before rules
+   above. Layers: video 0 → shade 1 → copy 1 (later in the DOM, so on top)
+   → header 3. */
+.section-hero::before,
+.section-hero-tint::before,
+.section-hero-ppf::before,
+.section-hero-ceramic::before,
+.section-hero-details::before,
+.section-hero-wraps::before,
+.section-hero-custom::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  animation: none;
+  background:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0) 9rem),
+    linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.7) 0%,
+      rgba(0, 0, 0, 0.55) 40%,
+      rgba(0, 0, 0, 0.25) 80%,
+      rgba(0, 0, 0, 0.2) 100%
+    );
+}
+
+/* keep the header above the shade (index.html's header has no z-index of
+   its own); :where() keeps this light so `.sticky .header` still wins */
+:where(
+    .section-hero,
+    .section-hero-tint,
+    .section-hero-ppf,
+    .section-hero-ceramic,
+    .section-hero-details,
+    .section-hero-wraps,
+    .section-hero-custom
+  )
+  > .header {
+  z-index: 3;
+}
+
+
+/***********************************BENEFITS BACKGROUNDS (service pages)***********************************/
+/* Each service page's benefits section gets its own photo (images/backgrounds/
+   benefits-*.jpg — none of them used anywhere else on the site), darkened
+   with the site's black → oxblood wash so the light benefit cards and the
+   white heading read clearly on top. Photos are pre-shrunk/compressed since
+   they always sit under a heavy overlay. */
+.benefits-bg {
+  background-color: #131110; /* shows while the photo loads */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.benefits-bg--tint {
+  background-image:
+    linear-gradient(135deg, rgba(19, 17, 16, 0.86), rgba(74, 9, 6, 0.78)),
+    url("../images/backgrounds/benefits-tint.jpg");
+}
+.benefits-bg--ppf {
+  background-image:
+    linear-gradient(135deg, rgba(19, 17, 16, 0.86), rgba(74, 9, 6, 0.78)),
+    url("../images/backgrounds/benefits-ppf.jpg");
+}
+.benefits-bg--ceramic {
+  background-image:
+    linear-gradient(135deg, rgba(19, 17, 16, 0.86), rgba(74, 9, 6, 0.78)),
+    url("../images/backgrounds/benefits-ceramic.jpg");
+}
+.benefits-bg--details {
+  background-image:
+    linear-gradient(135deg, rgba(19, 17, 16, 0.86), rgba(74, 9, 6, 0.78)),
+    url("../images/backgrounds/benefits-details.jpg");
+}
+.benefits-bg--wraps {
+  background-image:
+    linear-gradient(135deg, rgba(19, 17, 16, 0.86), rgba(74, 9, 6, 0.78)),
+    url("../images/backgrounds/benefits-wraps.jpg");
+}
+
+/* The site-wide heading is a dark-red gradient fill made for light
+   backgrounds — switch it to solid white over the photo. */
+.benefits-bg .section-heading {
+  background: none;
+  color: #fff;
+  -webkit-text-fill-color: #fff;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.45);
+}
+
+/* lift the light cards off the darker photo a little more */
+.benefits-bg .benefits-card {
+  box-shadow: 0 1.6rem 3.2rem rgba(0, 0, 0, 0.4);
+}
+.benefits-bg .benefits-card:hover {
+  box-shadow: 0 2.2rem 4.4rem rgba(0, 0, 0, 0.5);
 }

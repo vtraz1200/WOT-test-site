@@ -189,17 +189,27 @@
     font-size: 0.62rem;
   }
 
+  /* Arrows as a centered pair just above the dots. Each arrow's left/right
+     marks its center (style.css translates it by half its width), so
+     50% - 3rem puts the two 5rem buttons 1rem apart. Applies to every
+     width below this too — no smaller breakpoint resets left/right. */
   .slider__btn--left {
-    left: 5%;
+    left: calc(50% - 3rem);
+    top: 80%;
   }
 
   .slider__btn--right {
-    right: 5%;
+    right: calc(50% - 3rem);
+    top: 80%;
   }
 
   .slider__btn {
     height: 5rem;
     width: 5rem;
+  }
+
+  .slide {
+    height: 70%;
   }
 
   /* height removed — .price-card-image now uses aspect-ratio (style.css),
@@ -415,13 +425,6 @@
     padding: 1.2rem;
   }
 
-  .slider__btn--left {
-    left: 4.2%;
-  }
-
-  .slider__btn--right {
-    right: 4.2%;
-  }
 
   .slider__btn {
     height: 3.6rem;
@@ -914,13 +917,6 @@
     font-size: 1rem;
   }
 
-  .slider__btn--left {
-    left: 4.4%;
-  }
-
-  .slider__btn--right {
-    right: 4.4%;
-  }
   /* HERO (index.html) — the 59em fix (3.4rem heading / 40px buttons)
      was sized for tablets; at phone widths a 54px heading and 40px
      button label read oversized. clamp() keeps the heading fluid
@@ -1112,7 +1108,9 @@
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 5;
+    /* above in-page layers like the slider arrows (10); still under the
+       sticky header (999) and the photo lightbox (9999) */
+    z-index: 100;
     background: rgba(19, 16, 15, 0.94);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -1173,9 +1171,6 @@
 
   .hero2 {
     text-align: center;
-  }
-  .hero2::before {
-    inset: -2.5rem -18vw;
   }
   .hero2-sub {
     margin-inline: auto;
@@ -1259,6 +1254,9 @@
   .footer-social {
     justify-content: center;
   }
+  .footer-bbb {
+    margin-inline: auto;
+  }
   .footer-tagline {
     margin-inline: auto;
   }
@@ -1319,13 +1317,6 @@
     font-size: 2.2rem;
   }
 
-  .slider__btn--left {
-    left: 6%;
-  }
-
-  .slider__btn--right {
-    right: 6%;
-  }
 
   .section-testimonials {
     padding: 1rem;
@@ -1621,20 +1612,12 @@
 
   .slider__btn {
     font-size: 2rem;
-    top: 70%;
   }
 
   .slide {
     height: 70%;
   }
 
-  .slider__btn--left {
-    left: 10%;
-  }
-
-  .slider__btn--right {
-    right: 10%;
-  }
 
   .booking-info .btn {
     font-size: 1rem;
@@ -1960,17 +1943,11 @@
     z-index: 2;
   }
 
-  /* FULL-HERO SHADE — on phones the centered copy spans nearly the whole
-     hero, so the desktop's localized oval scrim (.hero2::before) left its
-     edges visible around the badge and buttons. Swap it for one even shade
-     over the entire hero: darker at the top (badge / eyebrow) and bottom
-     (buttons), lighter through the middle so the already-dimmed video
-     still reads. Replaces tint.html's flat 60% overlay and the empty
-     ::before on ppf/ceramic/details/custom so all heroes match.
+  /* PHONE HERO SHADE — the copy is centered here, so swap the desktop's
+     left-to-right shade (style.css "HERO SHADE") for an even one: darker
+     at the top (badge / eyebrow) and bottom (buttons), lighter through
+     the middle so the already-dimmed video still reads.
      Layers: video 0 → shade 1 → copy 2 → header 3. */
-  .hero2::before {
-    display: none;
-  }
 
   .section-hero::before,
   .section-hero-tint::before,
