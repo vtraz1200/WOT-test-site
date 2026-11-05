@@ -4554,6 +4554,20 @@ textarea {
   outline-offset: 2px;
 }
 
+/* Contact form: vehicle / home-or-business groups */
+.contact-group {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  row-gap: 0.85rem;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.contact-group[hidden] {
+  display: none;
+}
+
 /* Remove spinner for number */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {

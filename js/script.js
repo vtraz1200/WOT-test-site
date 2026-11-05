@@ -839,6 +839,38 @@ document.querySelectorAll('form[action*="web3forms.com"]').forEach((form) => {
   });
 });
 
+// Contact form: show the vehicle or home/business fields for the chosen quote.
+// A disabled fieldset isn't validated or sent, so a homeowner is never asked
+// for a vehicle (and the other way around).
+const quoteToggle = document.querySelector('input[name="quote_for"]');
+
+if (quoteToggle) {
+  const form = quoteToggle.form;
+  const message = form.querySelector('textarea[name="Message"]');
+  const vehicleHint = message.placeholder;
+  const buildingHint =
+    "Anything else we should know? Window sizes, which floors, existing film to remove, questions...";
+
+  const syncQuoteGroups = () => {
+    const choice = form.querySelector('input[name="quote_for"]:checked').value;
+    form.querySelectorAll("[data-quote-group]").forEach((group) => {
+      const active = group.dataset.quoteGroup === choice;
+      group.hidden = !active;
+      group.disabled = !active;
+    });
+    message.placeholder = choice === "Vehicle" ? vehicleHint : buildingHint;
+  };
+
+  form.addEventListener("change", (e) => {
+    if (e.target.name === "quote_for") syncQuoteGroups();
+  });
+  // reset fires before the fields clear, so wait a tick
+  form.addEventListener("reset", () => setTimeout(syncQuoteGroups));
+  // browsers can restore the radio choice on reload or back navigation
+  window.addEventListener("pageshow", syncQuoteGroups);
+  syncQuoteGroups();
+}
+
 //////////////////////////////////////////////////////////
 // FLEXBOX GAP SAFARI FIX
 

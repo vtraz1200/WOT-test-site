@@ -196,7 +196,7 @@
                   href="https://www.google.com/search?q=Wide+Open+Throttle+LLC+Lake+Orion+reviews"
                   target="_blank"
                   rel="noopener"
-                  aria-label="Rated 5.0 out of 5 from 40 Google reviews — read them on Google"
+                  aria-label="Rated 5.0 out of 5 from 48 Google reviews — read them on Google"
                 >
                   <svg
                     class="g-badge-g"
@@ -228,7 +228,7 @@
                     >
                   </span>
                   <span class="g-badge-divider" aria-hidden="true"></span>
-                  <span class="g-badge-count">40 Google reviews</span>
+                  <span class="g-badge-count">48 Google reviews</span>
                   <ion-icon
                     class="g-badge-chevron"
                     name="chevron-forward"
@@ -287,115 +287,207 @@
                   />
                 </div>
 
-                <h3 class="footer-card-info-title">
-                  Tell us about your vehicle
-                </h3>
+                <h3 class="footer-card-info-title">What is this quote for?</h3>
 
-                <div class="footer-card-vehicle-cont">
-                  <input
-                    name="year"
-                    class="footer-input-form-card"
-                    type="text"
-                    id="year"
-                    placeholder="Year *"
-                    aria-label="Year"
-                    inputmode="numeric"
-                    maxlength="4"
-                    pattern="[0-9]{4}"
-                    title="4-digit year, like 2024"
-                    required
-                  />
-                  <input
-                    name="vehicle_make"
-                    class="footer-input-form-card"
-                    type="text"
-                    id="vehicle_make"
-                    placeholder="Make *"
-                    aria-label="Make"
-                    required
-                  />
-                  <input
-                    name="model"
-                    class="footer-input-form-card"
-                    type="text"
-                    id="model"
-                    placeholder="Model *"
-                    aria-label="Model"
-                    required
-                  />
+                <div class="contact-chips" role="radiogroup" aria-label="What is this quote for?">
+                  <label class="contact-chip">
+                    <input type="radio" name="quote_for" value="Vehicle" checked />
+                    <span>My Vehicle</span>
+                  </label>
+                  <label class="contact-chip">
+                    <input type="radio" name="quote_for" value="Home or Business" />
+                    <span>My Home or Business</span>
+                  </label>
                 </div>
 
-                <div class="footer-card-vehicle-cont">
-                  <input
-                    name="vehicle_trim"
-                    class="footer-input-form-card"
-                    type="text"
-                    id="vehicle_trim"
-                    placeholder="Trim (optional)"
-                    aria-label="Trim (optional)"
-                  />
-                  <input
-                    name="vehicle_color"
-                    class="footer-input-form-card"
-                    type="text"
-                    id="vehicle_color"
-                    placeholder="Color (optional)"
-                    aria-label="Color (optional)"
-                  />
-                  <select
-                    name="vehicle_type"
-                    id="vehicle_type"
-                    class="footer-input-form-card-two contact-select"
-                    aria-label="Vehicle type"
-                  >
-                    <option value="">Vehicle type</option>
-                    <option>Coupe / Sedan</option>
-                    <option>Crossover / Small SUV</option>
-                    <option>Full-size SUV</option>
-                    <option>Pickup Truck</option>
-                    <option>Van</option>
-                    <option>Other</option>
-                  </select>
-                </div>
+                <!-- Only the group that matches the choice above is shown and sent.
+                     A disabled fieldset skips required checks and stays out of the email. -->
+                <fieldset class="contact-group" data-quote-group="Vehicle" aria-label="Vehicle details">
+                  <h3 class="footer-card-info-title">
+                    Tell us about your vehicle
+                  </h3>
 
-                <h3 class="footer-card-info-title">
-                  What would you like to have done?
-                </h3>
+                  <div class="footer-card-vehicle-cont">
+                    <input
+                      name="year"
+                      class="footer-input-form-card"
+                      type="text"
+                      id="year"
+                      placeholder="Year *"
+                      aria-label="Year"
+                      inputmode="numeric"
+                      maxlength="4"
+                      pattern="[0-9]{4}"
+                      title="4-digit year, like 2024"
+                      required
+                    />
+                    <input
+                      name="vehicle_make"
+                      class="footer-input-form-card"
+                      type="text"
+                      id="vehicle_make"
+                      placeholder="Make *"
+                      aria-label="Make"
+                      required
+                    />
+                    <input
+                      name="model"
+                      class="footer-input-form-card"
+                      type="text"
+                      id="model"
+                      placeholder="Model *"
+                      aria-label="Model"
+                      required
+                    />
+                  </div>
 
-                <div class="contact-chips">
-                  <label class="contact-chip">
-                    <input type="checkbox" name="Service: Window Tint" value="Yes" />
-                    <span>Window Tint</span>
-                  </label>
-                  <label class="contact-chip">
-                    <input type="checkbox" name="Service: Paint Protection Film" value="Yes" />
-                    <span>Paint Protection Film</span>
-                  </label>
-                  <label class="contact-chip">
-                    <input type="checkbox" name="Service: Ceramic Coating" value="Yes" />
-                    <span>Ceramic Coating</span>
-                  </label>
-                  <label class="contact-chip">
-                    <input type="checkbox" name="Service: Vinyl Wrap" value="Yes" />
-                    <span>Vinyl Wrap</span>
-                  </label>
-                  <label class="contact-chip">
-                    <input type="checkbox" name="Service: Detailing" value="Yes" />
-                    <span>Detailing</span>
-                  </label>
-                  <label class="contact-chip">
-                    <input type="checkbox" name="Service: Custom Build / Accessories" value="Yes" />
-                    <span>Custom Build / Accessories</span>
-                  </label>
-                  <label class="contact-chip">
-                    <input type="checkbox" name="Service: Fleet / Commercial" value="Yes" />
-                    <span>Fleet / Commercial</span>
-                  </label>
-                  <label class="contact-chip">
-                    <input type="checkbox" name="Service: Not sure yet" value="Yes" />
-                    <span>Not sure yet</span>
-                  </label>
-                </div>
+                  <div class="footer-card-vehicle-cont">
+                    <input
+                      name="vehicle_trim"
+                      class="footer-input-form-card"
+                      type="text"
+                      id="vehicle_trim"
+                      placeholder="Trim (optional)"
+                      aria-label="Trim (optional)"
+                    />
+                    <input
+                      name="vehicle_color"
+                      class="footer-input-form-card"
+                      type="text"
+                      id="vehicle_color"
+                      placeholder="Color (optional)"
+                      aria-label="Color (optional)"
+                    />
+                    <select
+                      name="vehicle_type"
+                      id="vehicle_type"
+                      class="footer-input-form-card-two contact-select"
+                      aria-label="Vehicle type"
+                    >
+                      <option value="">Vehicle type</option>
+                      <option>Coupe / Sedan</option>
+                      <option>Crossover / Small SUV</option>
+                      <option>Full-size SUV</option>
+                      <option>Pickup Truck</option>
+                      <option>Van</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+
+                  <h3 class="footer-card-info-title">
+                    What would you like to have done?
+                  </h3>
+
+                  <div class="contact-chips">
+                    <label class="contact-chip">
+                      <input type="checkbox" name="Service: Window Tint" value="Yes" />
+                      <span>Window Tint</span>
+                    </label>
+                    <label class="contact-chip">
+                      <input type="checkbox" name="Service: Paint Protection Film" value="Yes" />
+                      <span>Paint Protection Film</span>
+                    </label>
+                    <label class="contact-chip">
+                      <input type="checkbox" name="Service: Ceramic Coating" value="Yes" />
+                      <span>Ceramic Coating</span>
+                    </label>
+                    <label class="contact-chip">
+                      <input type="checkbox" name="Service: Vinyl Wrap" value="Yes" />
+                      <span>Vinyl Wrap</span>
+                    </label>
+                    <label class="contact-chip">
+                      <input type="checkbox" name="Service: Detailing" value="Yes" />
+                      <span>Detailing</span>
+                    </label>
+                    <label class="contact-chip">
+                      <input type="checkbox" name="Service: Custom Build / Accessories" value="Yes" />
+                      <span>Custom Build / Accessories</span>
+                    </label>
+                    <label class="contact-chip">
+                      <input type="checkbox" name="Service: Fleet / Commercial" value="Yes" />
+                      <span>Fleet / Commercial</span>
+                    </label>
+                    <label class="contact-chip">
+                      <input type="checkbox" name="Service: Not sure yet" value="Yes" />
+                      <span>Not sure yet</span>
+                    </label>
+                  </div>
+                </fieldset>
+
+                <fieldset class="contact-group" data-quote-group="Home or Business" aria-label="Property details" hidden disabled>
+                  <h3 class="footer-card-info-title">
+                    Tell us about your property
+                  </h3>
+
+                  <div class="footer-card-firlas-name-cont">
+                    <select
+                      name="property_type"
+                      id="property_type"
+                      class="footer-input-form-card-two contact-select"
+                      aria-label="Property type"
+                      required
+                    >
+                      <option value="">Property type *</option>
+                      <option>Home</option>
+                      <option>Office</option>
+                      <option>Storefront / Retail</option>
+                      <option>Multi-family building</option>
+                      <option>Other</option>
+                    </select>
+                    <input
+                      name="property_location"
+                      class="footer-input-form-card"
+                      type="text"
+                      id="property_location"
+                      placeholder="Property address or city *"
+                      aria-label="Property address or city"
+                      required
+                    />
+                  </div>
+
+                  <div class="footer-card-firlas-name-cont">
+                    <input
+                      name="window_count"
+                      class="footer-input-form-card"
+                      type="text"
+                      id="window_count"
+                      placeholder="Number of windows (optional)"
+                      aria-label="Number of windows (optional)"
+                      inputmode="numeric"
+                    />
+                    <input
+                      name="approx_sq_ft"
+                      class="footer-input-form-card"
+                      type="text"
+                      id="approx_sq_ft"
+                      placeholder="Approx. sq ft of glass (optional)"
+                      aria-label="Approximate square feet of glass (optional)"
+                    />
+                  </div>
+
+                  <h3 class="footer-card-info-title">
+                    What do you want the film to do?
+                  </h3>
+
+                  <div class="contact-chips">
+                    <label class="contact-chip">
+                      <input type="checkbox" name="Goal: Heat reduction" value="Yes" />
+                      <span>Heat reduction</span>
+                    </label>
+                    <label class="contact-chip">
+                      <input type="checkbox" name="Goal: Glare reduction" value="Yes" />
+                      <span>Glare reduction</span>
+                    </label>
+                    <label class="contact-chip">
+                      <input type="checkbox" name="Goal: UV / fade protection" value="Yes" />
+                      <span>UV / fade protection</span>
+                    </label>
+                    <label class="contact-chip">
+                      <input type="checkbox" name="Goal: Privacy" value="Yes" />
+                      <span>Privacy</span>
+                    </label>
+                  </div>
+                </fieldset>
 
                 <textarea
                   name="Message"
@@ -414,7 +506,7 @@
                     class="footer-input-form-card-two contact-select"
                     aria-label="When do you want this done?"
                   >
-                    <option value="">When do you want this done?</option>
+                    <option value="">Preferred timing</option>
                     <option>As soon as possible</option>
                     <option>Within 2 weeks</option>
                     <option>Within a month</option>
