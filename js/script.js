@@ -784,7 +784,7 @@ document
 // site, then swaps the form for a thank-you message. Without JS the forms
 // still post normally to Web3Forms (its own success page).
 
-const PHONE_LINK = '<a href="tel:+2487955751">(248)&nbsp;795-5751</a>';
+const PHONE_LINK = '<a href="tel:+12487955751">(248)&nbsp;795-5751</a>';
 
 document.querySelectorAll('form[action*="web3forms.com"]').forEach((form) => {
   const btn = form.querySelector('[type="submit"]');

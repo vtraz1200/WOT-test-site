@@ -425,7 +425,6 @@
     padding: 1.2rem;
   }
 
-
   .slider__btn {
     height: 3.6rem;
     width: 3.6rem;
@@ -493,9 +492,9 @@
 
   /* Trim the generous full-desktop whitespace inside each price card
      (tint/custom/ppf/details) at this width. */
-  .price-card {
+  /* .price-card {
     padding: 1.8rem;
-  }
+  } */
 
   /* height removed — see note near the 75em breakpoint's
      .price-card-image rule; aspect-ratio handles this now. */
@@ -825,6 +824,31 @@
 
   .footer-map {
     min-height: 18rem;
+  }
+
+  /* Grid columns won't shrink below their widest content by default, so on
+     narrow phones the map, Google badge and form pushed past the card's
+     edge. Let the columns (and everything in them) shrink to fit. */
+  .footer-card > * {
+    min-width: 0;
+  }
+  .footer-card .footer-map,
+  .footer-card .g-badge {
+    max-width: 100%;
+  }
+}
+
+/* Small phones: the contact card's Google badge is wider than the card, so
+   let its pieces wrap onto two centered rows instead of being clipped. */
+@media (max-width: 420px) {
+  .footer-card .g-badge {
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 0.4rem;
+    border-radius: 1.2rem;
+  }
+  .footer-card .g-badge-divider {
+    display: none;
   }
 }
 
@@ -1323,7 +1347,6 @@
     font-size: 2.2rem;
   }
 
-
   .section-testimonials {
     padding: 1rem;
   }
@@ -1623,7 +1646,6 @@
   .slide {
     height: 70%;
   }
-
 
   .booking-info .btn {
     font-size: 1rem;

@@ -459,7 +459,7 @@ main .text-box {
 }
 
 
-/* Google reviews badge — real data: 5.0 rating, 40 reviews. Sits as the
+/* Google reviews badge — real data: 5.0 rating, 48 reviews. Sits as the
    first element in the hero so it's among the first things seen. */
 
 .g-badge {
@@ -3396,6 +3396,23 @@ form.is-sent > :not(.form-status) {
   justify-content: space-between;
   align-items: baseline;
   gap: 1rem;
+}
+/* When the name and price don't fit on one line (narrow phones, or long
+   prices like "Custom Pricing · On-site estimate"), drop the price to its
+   own right-aligned line instead of letting the list clip it. */
+.price-option-row,
+.price-option:not(.has-desc) {
+  flex-wrap: wrap;
+  row-gap: 0.2rem;
+}
+.price-option-meta {
+  margin-left: auto;
+}
+/* Only wraps if the price alone is wider than the whole row. */
+.price-option-row .price-option-meta,
+.price-option:not(.has-desc) .price-option-meta {
+  white-space: normal;
+  text-align: right;
 }
 .price-option-desc {
   margin: 0;
